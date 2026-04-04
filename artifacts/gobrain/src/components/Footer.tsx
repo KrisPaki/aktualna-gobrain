@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Brain } from "lucide-react";
+import { Brain, Phone, Mail, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,9 +13,23 @@ export default function Footer() {
               </div>
               <span className="font-bold text-xl tracking-tight text-foreground">GoBrain</span>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-5">
               Interaktywny Trening Słuchowy. Zindywidualizowany program online wspierający rozwój Twojego dziecka.
             </p>
+            <div className="space-y-2">
+              <a href="tel:+48608650435" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-phone">
+                <Phone className="w-4 h-4 shrink-0" />
+                608 650 435
+              </a>
+              <a href="mailto:gobrainterapeuta@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-email">
+                <Mail className="w-4 h-4 shrink-0" />
+                gobrainterapeuta@gmail.com
+              </a>
+              <a href="https://www.facebook.com/zabawyzdzwiekami" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-facebook">
+                <Facebook className="w-4 h-4 shrink-0" />
+                Facebook
+              </a>
+            </div>
           </div>
           
           <div>
