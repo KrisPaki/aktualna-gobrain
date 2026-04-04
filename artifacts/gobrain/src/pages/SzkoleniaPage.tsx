@@ -26,7 +26,7 @@ export default function SzkoleniaPage() {
     <div className="min-h-screen bg-background flex flex-col font-sans">
 
 
-      <main className="flex-1 pt-16">
+      <div className="pt-16">
 
         {/* Hero */}
         <section className="py-20 md:py-28 bg-card/40 border-b border-border">
@@ -257,7 +257,7 @@ export default function SzkoleniaPage() {
           </div>
         </section>
 
-      </main>
+      </div>
 
 
     </div>

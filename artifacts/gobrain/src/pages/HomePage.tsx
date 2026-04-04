@@ -37,7 +37,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background flex flex-col font-sans">
 
       
-      <main className="flex-1 pt-16">
+      <div className="pt-16">
         
         {/* SECTION 1 - Hero */}
         <section className="relative py-20 md:py-32 overflow-hidden bg-card/30">
@@ -530,7 +530,7 @@ export default function HomePage() {
           </div>
         </section>
 
-      </main>
+      </div>
       
 
     </div>

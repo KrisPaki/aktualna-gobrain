@@ -91,7 +91,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-background flex flex-col font-sans">
 
 
-      <main className="flex-1 pt-16">
+      <div className="pt-16">
 
         {/* Hero */}
         <section className="py-16 md:py-24 bg-card/40 border-b border-border">
@@ -151,7 +151,7 @@ export default function BlogPage() {
           </div>
         </section>
 
-      </main>
+      </div>
 
 
     </div>
