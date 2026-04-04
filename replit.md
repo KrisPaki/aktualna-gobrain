@@ -16,6 +16,21 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### GoBrain (`artifacts/gobrain/`)
+- **Type**: React + Vite (static frontend, no backend)
+- **Preview path**: `/`
+- **Description**: Marketing website redesign for gobrain.pl in Apple-style minimalism
+- **Stack**: React 19, Vite, Tailwind CSS, shadcn/ui, Framer Motion, wouter
+- **Key files**:
+  - `src/pages/HomePage.tsx` — Full homepage with 12 sections
+  - `src/components/Navbar.tsx` — Sticky glassmorphism navbar
+  - `src/components/Footer.tsx` — Footer with navigation links
+  - `src/index.css` — GoBrain theme (primary blue #0066cc, accent green #00aa55)
+- **Routing (wouter)**: `/` (Home), `/its`, `/strefa-terapeuty`, `/szkolenia-i-webinary`, `/blog`, `/faq`, `/pomoc`
+- **Pending (Task #2)**: Full subpage implementations
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages

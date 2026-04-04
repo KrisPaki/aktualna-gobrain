@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "GoBrain"
+version = "1.0.0"
+id = "artifacts/gobrain"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21971
+
+[services.development]
+run = "pnpm --filter @workspace/gobrain run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gobrain", "run", "build" ]
+publicDir = "artifacts/gobrain/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21971"
+BASE_PATH = "/"
