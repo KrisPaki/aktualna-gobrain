@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import {
   CheckCircle2,
   BarChart2,
@@ -58,7 +58,7 @@ export default function StrefaTerapeutyPage() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 px-8 text-base" asChild>
-                  <Link href="/szkolenia-i-webinary">Szkolenia dla terapeutów</Link>
+                  <Link to="/szkolenia-i-webinary">Szkolenia dla terapeutów</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -230,7 +230,7 @@ export default function StrefaTerapeutyPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="h-12 px-8" asChild>
-                  <Link href="/szkolenia-i-webinary">Zapisz się na szkolenie</Link>
+                  <Link to="/szkolenia-i-webinary">Zapisz się na szkolenie</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-12 px-8" asChild>
                   <a href="mailto:gobrainterapeuta@gmail.com">Skontaktuj się z nami</a>

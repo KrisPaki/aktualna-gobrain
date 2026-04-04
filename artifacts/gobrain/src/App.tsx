@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,16 +15,16 @@ const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={HomePage} />
-      <Route path="/its" component={ItsPage} />
-      <Route path="/strefa-terapeuty" component={StrefaTerapeutyPage} />
-      <Route path="/szkolenia-i-webinary" component={SzkoleniaPage} />
-      <Route path="/blog" component={BlogPage} />
-      <Route path="/faq" component={FaqPage} />
-      <Route path="/pomoc" component={PomocPage} />
-      <Route component={NotFound} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/its" element={<ItsPage />} />
+      <Route path="/strefa-terapeuty" element={<StrefaTerapeutyPage />} />
+      <Route path="/szkolenia-i-webinary" element={<SzkoleniaPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/faq" element={<FaqPage />} />
+      <Route path="/pomoc" element={<PomocPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
@@ -32,10 +32,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
-        </WouterRouter>
-        <Toaster />
+          <Toaster />
+        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import profGalkowskiImg from "@/assets/prof-galkowski.png";
 import anetaPakielaImg from "@/assets/aneta-pakiela.png";
 import { 
@@ -70,7 +70,7 @@ export default function HomePage() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-14 px-8 bg-background" asChild data-testid="hero-learn-btn">
-                  <Link href="/its">Dowiedz się więcej</Link>
+                  <Link to="/its">Dowiedz się więcej</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -126,7 +126,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold text-foreground mb-1">{prod.title}</h3>
                   <p className="text-sm font-medium text-primary mb-3">{prod.subtitle}</p>
                   <p className="text-muted-foreground mb-6 line-clamp-3">{prod.desc}</p>
-                  <Link href={prod.link} className="inline-flex items-center text-sm font-semibold text-foreground group-hover:text-primary transition-colors" data-testid={`prod-link-${i}`}>
+                  <Link to={prod.link} className="inline-flex items-center text-sm font-semibold text-foreground group-hover:text-primary transition-colors" data-testid={`prod-link-${i}`}>
                     Dowiedz się więcej <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
@@ -372,7 +372,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Button variant="outline" className="w-full h-12" asChild data-testid="pricing-school-btn">
-                  <Link href="/strefa-terapeuty">Zamów licencję</Link>
+                  <Link to="/strefa-terapeuty">Zamów licencję</Link>
                 </Button>
               </motion.div>
 
@@ -415,7 +415,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Button variant="outline" className="w-full h-12" asChild data-testid="pricing-therapist-btn">
-                  <Link href="/strefa-terapeuty">Dowiedz się więcej</Link>
+                  <Link to="/strefa-terapeuty">Dowiedz się więcej</Link>
                 </Button>
               </motion.div>
 
@@ -475,7 +475,7 @@ export default function HomePage() {
             </motion.div>
             <div className="text-center">
               <Button variant="outline" size="lg" asChild data-testid="locations-btn">
-                <Link href="/strefa-terapeuty">Sprawdź listę terapeutów</Link>
+                <Link to="/strefa-terapeuty">Sprawdź listę terapeutów</Link>
               </Button>
             </div>
           </div>
@@ -526,7 +526,7 @@ export default function HomePage() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-8">Chcesz zostać terapeutą GoBrain? Zapisz się na szkolenie!</h2>
               <Button size="lg" className="h-14 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90" asChild data-testid="final-cta-btn">
-                <Link href="/szkolenia-i-webinary">Szkolenia i webinary</Link>
+                <Link to="/szkolenia-i-webinary">Szkolenia i webinary</Link>
               </Button>
             </motion.div>
           </div>

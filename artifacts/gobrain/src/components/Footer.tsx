@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Brain, Phone, Mail, Facebook } from "lucide-react";
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4" data-testid="link-footer-logo">
+            <Link to="/" className="flex items-center gap-2 mb-4" data-testid="link-footer-logo">
               <div className="bg-primary/10 p-2 rounded-lg">
                 <Brain className="w-6 h-6 text-primary" />
               </div>
@@ -35,18 +35,18 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Produkty</h3>
             <ul className="space-y-3">
-              <li><Link href="/its" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-its">ITS GoBrain</Link></li>
-              <li><Link href="/its-school" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-its-school">ITS GoBrain School</Link></li>
-              <li><Link href="/strefa-terapeuty" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-terapeuta">Platforma Terapeuta</Link></li>
+              <li><Link to="/its" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-its">ITS GoBrain</Link></li>
+              <li><Link to="/its-school" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-its-school">ITS GoBrain School</Link></li>
+              <li><Link to="/strefa-terapeuty" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-terapeuta">Platforma Terapeuta</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-foreground mb-4">Firma</h3>
             <ul className="space-y-3">
-              <li><Link href="/szkolenia-i-webinary" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-szkolenia">Szkolenia</Link></li>
-              <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-blog">Blog</Link></li>
-              <li><Link href="/pomoc" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pomoc">Pomoc i Kontakt</Link></li>
+              <li><Link to="/szkolenia-i-webinary" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-szkolenia">Szkolenia</Link></li>
+              <li><Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-blog">Blog</Link></li>
+              <li><Link to="/pomoc" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pomoc">Pomoc i Kontakt</Link></li>
             </ul>
           </div>
           
@@ -72,8 +72,8 @@ export default function Footer() {
             © {new Date().getFullYear()} GoBrain Aneta Pakieła. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <Link href="/polityka-prywatnosci" className="hover:text-primary transition-colors" data-testid="link-footer-privacy">Polityka prywatności</Link>
-            <Link href="/regulamin" className="hover:text-primary transition-colors" data-testid="link-footer-terms">Regulamin</Link>
+            <Link to="/polityka-prywatnosci" className="hover:text-primary transition-colors" data-testid="link-footer-privacy">Polityka prywatności</Link>
+            <Link to="/regulamin" className="hover:text-primary transition-colors" data-testid="link-footer-terms">Regulamin</Link>
           </div>
         </div>
       </div>

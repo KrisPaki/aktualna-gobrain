@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import {
   CheckCircle2,
   Ear,
@@ -332,7 +332,7 @@ export default function ItsPage() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 px-8 text-base text-background border-background/30 hover:bg-background/10" asChild>
-                  <Link href="/faq">Pytania i odpowiedzi</Link>
+                  <Link to="/faq">Pytania i odpowiedzi</Link>
                 </Button>
               </div>
             </motion.div>

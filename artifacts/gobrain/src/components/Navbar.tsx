@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Brain, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo">
+        <Link to="/" className="flex items-center gap-2 group" data-testid="link-logo">
           <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
             <Brain className="w-6 h-6 text-primary" />
           </div>
@@ -30,7 +30,7 @@ export default function Navbar() {
           {links.map((link) => (
             <Link 
               key={link.href} 
-              href={link.href} 
+              to={link.href} 
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               data-testid={`link-${link.label.toLowerCase().replace(/ /g, "-")}`}
             >
@@ -62,7 +62,7 @@ export default function Navbar() {
             {links.map((link) => (
               <Link 
                 key={link.href} 
-                href={link.href} 
+                to={link.href} 
                 onClick={() => setIsOpen(false)}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
                 data-testid={`link-mobile-${link.label.toLowerCase().replace(/ /g, "-")}`}

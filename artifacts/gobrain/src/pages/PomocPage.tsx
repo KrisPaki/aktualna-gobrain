@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import {
   Phone,
   Mail,
@@ -120,7 +120,7 @@ export default function PomocPage() {
                       { icon: Download, label: "Pobierz wersję demo Android", href: "http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk", internal: false },
                     ].map((link, i) => (
                       link.internal ? (
-                        <Link key={i} href={link.href as string} className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                        <Link key={i} to={link.href as string} className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                           <link.icon className="w-4 h-4 shrink-0" />
                           {link.label}
                         </Link>
@@ -177,7 +177,7 @@ export default function PomocPage() {
 
                     <p className="text-xs text-muted-foreground">
                       Twoje dane osobowe będą przetwarzane wyłącznie w celu odpowiedzi na Twoje zapytanie, zgodnie z{" "}
-                      <Link href="/polityka-prywatnosci" className="text-primary hover:underline">polityką prywatności</Link>.
+                      <Link to="/polityka-prywatnosci" className="text-primary hover:underline">polityką prywatności</Link>.
                     </p>
 
                     <Button type="submit" className="w-full h-12">
@@ -215,7 +215,7 @@ export default function PomocPage() {
               <motion.div variants={fadeInUp} className="bg-background rounded-2xl border border-border p-6">
                 <h3 className="font-bold text-foreground mb-3">Pytania o program</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">Sprawdź nasze FAQ — odpowiedzi na najczęściej zadawane pytania dotyczące programów ITS GoBrain.</p>
-                <Link href="/faq" className="text-sm font-semibold text-primary hover:underline">Przejdź do FAQ →</Link>
+                <Link to="/faq" className="text-sm font-semibold text-primary hover:underline">Przejdź do FAQ →</Link>
               </motion.div>
             </motion.div>
           </div>

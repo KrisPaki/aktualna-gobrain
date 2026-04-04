@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { HelpCircle } from "lucide-react";
 import {
   Accordion,
@@ -142,7 +142,7 @@ export default function FaqPage() {
               <p className="text-muted-foreground mb-8">Skontaktuj się z nami — odpowiemy na wszystkie Twoje pytania.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild>
-                  <Link href="/pomoc">Przejdź do centrum pomocy</Link>
+                  <Link to="/pomoc">Przejdź do centrum pomocy</Link>
                 </Button>
                 <Button variant="outline" asChild>
                   <a href="mailto:gobrainterapeuta@gmail.com">Napisz do nas</a>
