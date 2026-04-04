@@ -2,6 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import profGalkowskiImg from "@/assets/prof-galkowski.png";
 import anetaPakielaImg from "@/assets/aneta-pakiela.png";
+import heroChildImg from "@/assets/hero-child-headphones.png";
 import { 
   Play, 
   Download, 
@@ -40,42 +41,70 @@ export default function HomePage() {
       <div className="pt-16">
         
         {/* SECTION 1 - Hero */}
-        <section className="relative py-20 md:py-32 overflow-hidden bg-card/30">
+        <section className="relative py-16 md:py-24 overflow-hidden bg-card/30">
           <div className="container mx-auto px-4">
-            <motion.div 
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                <Brain className="w-4 h-4" />
-                <span>Nowoczesna terapia słuchowa</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text */}
+              <motion.div 
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
+              >
+                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                  <Brain className="w-4 h-4" />
+                  <span>Nowoczesna terapia słuchowa</span>
+                </motion.div>
+                
+                <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
+                  Interaktywny Trening Słuchowy dla dzieci
+                </motion.h1>
+                
+                <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  Poprawa koncentracji, pamięci i sukces edukacyjny Twojego dziecka. Zindywidualizowany program online ITS GoBrain.
+                </motion.p>
+                
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="text-base h-14 px-8 shadow-lg shadow-primary/20" asChild data-testid="hero-buy-btn">
+                    <Link to="/sklep">
+                      Przejdź do sklepu
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="text-base h-14 px-8 bg-background" asChild data-testid="hero-learn-btn">
+                    <Link to="/its">Dowiedz się więcej</Link>
+                  </Button>
+                </motion.div>
               </motion.div>
-              
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
-                Interaktywny Trening Słuchowy <br className="hidden md:block"/> dla dzieci
-              </motion.h1>
-              
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-                Poprawa koncentracji, pamięci i sukces edukacyjny Twojego dziecka. Zindywidualizowany program online ITS GoBrain.
-              </motion.p>
-              
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" className="w-full sm:w-auto text-base h-14 px-8 shadow-lg shadow-primary/20" asChild data-testid="hero-buy-btn">
-                  <a href="https://automater.com/rest/order-viewer/buy/1073862" target="_blank" rel="noopener noreferrer">
-                    Kup kod aktywacyjny
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-14 px-8 bg-background" asChild data-testid="hero-learn-btn">
-                  <Link to="/its">Dowiedz się więcej</Link>
-                </Button>
+
+              {/* Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                className="relative"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+                  <img
+                    src={heroChildImg}
+                    alt="Dziecko korzystające z programu ITS GoBrain w słuchawkach"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                </div>
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -left-4 bg-background rounded-2xl border border-border shadow-lg px-5 py-3 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Brain className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Ocena rodziców</p>
+                    <p className="font-bold text-foreground text-sm">⭐ 4.9 / 5.0</p>
+                  </div>
+                </div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
           
-          {/* Subtle background decoration */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
         </section>
 
         {/* SECTION 2 - Products */}

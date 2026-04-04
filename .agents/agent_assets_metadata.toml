@@ -12,3 +12,27 @@ id = "34uhWJeM87rAemtnyHETo"
 uri = "file://artifacts/gobrain/src/assets/aneta-pakiela.png"
 type = "image"
 title = "speech therapist portrait"
+
+[[generated]]
+id = "lJLzaDhTaFtnhiFY-YoWN"
+uri = "file://artifacts/gobrain/src/assets/hero-child-headphones.png"
+type = "image"
+title = "child with headphones learning"
+
+[[generated]]
+id = "q5ewtranl_HDjoKHEVqbH"
+uri = "file://artifacts/gobrain/src/assets/product-its-gobrain.png"
+type = "image"
+title = "ITS GoBrain product"
+
+[[generated]]
+id = "d56SPqV8YKfBuD7UYeudL"
+uri = "file://artifacts/gobrain/src/assets/product-its-school.png"
+type = "image"
+title = "school classroom tablets"
+
+[[generated]]
+id = "eK8t335KnygLNetif52ak"
+uri = "file://artifacts/gobrain/src/assets/product-terapeuta.png"
+type = "image"
+title = "therapist at work"

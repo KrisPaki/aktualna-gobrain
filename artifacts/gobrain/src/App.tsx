@@ -11,6 +11,7 @@ import SzkoleniaPage from "@/pages/SzkoleniaPage";
 import BlogPage from "@/pages/BlogPage";
 import FaqPage from "@/pages/FaqPage";
 import PomocPage from "@/pages/PomocPage";
+import SklepPage from "@/pages/SklepPage";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/pomoc" element={<PomocPage />} />
+              <Route path="/sklep" element={<SklepPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
