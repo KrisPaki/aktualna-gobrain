@@ -36,3 +36,27 @@ id = "eK8t335KnygLNetif52ak"
 uri = "file://artifacts/gobrain/src/assets/product-terapeuta.png"
 type = "image"
 title = "therapist at work"
+
+[[generated]]
+id = "3Ia4MCqIfZ4JEFWBtCfj-"
+uri = "file://artifacts/gobrain/src/assets/child-tablet-fun.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "cmPWdIGdBOTEC4Jagu82Z"
+uri = "file://artifacts/gobrain/src/assets/therapist-child.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "NLbVmPxzPImsxc1oYbPrw"
+uri = "file://artifacts/gobrain/src/assets/children-classroom.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "AYGcmOIkacUe8HPp6htJ-"
+uri = "file://artifacts/gobrain/src/assets/parent-child-home.png"
+type = "image"
+title = "generated_image"

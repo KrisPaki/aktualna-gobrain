@@ -1,12 +1,16 @@
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants, animate } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import profGalkowskiImg from "@/assets/prof-galkowski.png";
 import anetaPakielaImg from "@/assets/aneta-pakiela.png";
 import heroChildImg from "@/assets/hero-child-headphones.png";
+import childTabletImg from "@/assets/child-tablet-fun.png";
+import therapistChildImg from "@/assets/therapist-child.png";
+import childrenClassroomImg from "@/assets/children-classroom.png";
+import parentChildImg from "@/assets/parent-child-home.png";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { 
   Play, 
-  Download, 
   CheckCircle2, 
   Brain, 
   School, 
@@ -17,9 +21,35 @@ import {
   Quote,
   ChevronRight,
   Monitor,
-  Smartphone
+  Smartphone,
+  Music,
+  Star,
+  Zap,
+  Heart,
+  Target,
+  BookOpen,
+  Headphones,
+  Smile,
+  Trophy,
+  Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const [value, setValue] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const controls = animate(0, target, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate: (v) => setValue(Math.round(v)),
+    });
+    return controls.stop;
+  }, [target]);
+
+  return <span ref={ref}>{value}{suffix}</span>;
+}
 
 export default function HomePage() {
   const fadeInUp: Variants = {
@@ -46,6 +76,27 @@ export default function HomePage() {
           <AuroraBackground className="absolute inset-0" showRadialGradient={true}>
             <span />
           </AuroraBackground>
+
+          {/* Floating animated icons */}
+          {[
+            { icon: Music, x: "8%", y: "15%", color: "text-blue-400", delay: 0, size: "w-8 h-8" },
+            { icon: Star, x: "85%", y: "20%", color: "text-yellow-400", delay: 0.5, size: "w-6 h-6" },
+            { icon: Headphones, x: "90%", y: "70%", color: "text-purple-400", delay: 1, size: "w-7 h-7" },
+            { icon: Heart, x: "5%", y: "75%", color: "text-pink-400", delay: 0.8, size: "w-6 h-6" },
+            { icon: Zap, x: "15%", y: "45%", color: "text-orange-400", delay: 1.2, size: "w-5 h-5" },
+            { icon: Smile, x: "78%", y: "45%", color: "text-green-400", delay: 0.3, size: "w-7 h-7" },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              className={`absolute ${item.color} opacity-60 pointer-events-none hidden lg:block`}
+              style={{ left: item.x, top: item.y }}
+              animate={{ y: [0, -12, 0], rotate: [0, 8, -8, 0] }}
+              transition={{ duration: 3 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: item.delay }}
+            >
+              <item.icon className={item.size} />
+            </motion.div>
+          ))}
+
           <div className="relative z-10 container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text */}
@@ -67,19 +118,30 @@ export default function HomePage() {
                   Poprawa koncentracji, pamięci i sukces edukacyjny Twojego dziecka. Zindywidualizowany program online ITS GoBrain.
                 </motion.p>
                 
-                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="text-base h-14 px-8 shadow-lg shadow-primary/20" asChild data-testid="hero-buy-btn">
-                    <Link to="/sklep">
-                      Przejdź do sklepu
-                    </Link>
+                    <Link to="/sklep">Przejdź do sklepu</Link>
                   </Button>
                   <Button size="lg" variant="outline" className="text-base h-14 px-8 bg-background" asChild data-testid="hero-learn-btn">
                     <Link to="/its">Dowiedz się więcej</Link>
                   </Button>
                 </motion.div>
+
+                {/* Mini stat pills */}
+                <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
+                  {[
+                    { icon: "🧠", label: "5000+ dzieci" },
+                    { icon: "⭐", label: "4.9/5.0 ocena" },
+                    { icon: "🎵", label: "20 ćwiczeń" },
+                  ].map((s, i) => (
+                    <div key={i} className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-background border border-border shadow-sm text-sm font-medium text-foreground">
+                      <span>{s.icon}</span>{s.label}
+                    </div>
+                  ))}
+                </motion.div>
               </motion.div>
 
-              {/* Image */}
+              {/* Images — hero + secondary */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -95,7 +157,11 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 bg-background rounded-2xl border border-border shadow-lg px-5 py-3 flex items-center gap-3">
+                <motion.div 
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-4 -left-4 bg-background rounded-2xl border border-border shadow-lg px-5 py-3 flex items-center gap-3"
+                >
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
                   </div>
@@ -103,16 +169,78 @@ export default function HomePage() {
                     <p className="text-xs text-muted-foreground">Ocena rodziców</p>
                     <p className="font-bold text-foreground text-sm">⭐ 4.9 / 5.0</p>
                   </div>
-                </div>
+                </motion.div>
+                {/* Second floating badge top-right */}
+                <motion.div 
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute -top-4 -right-4 bg-background rounded-2xl border border-border shadow-lg px-4 py-3 flex items-center gap-2"
+                >
+                  <Trophy className="w-5 h-5 text-yellow-500" />
+                  <p className="font-bold text-foreground text-sm">Rekomendowany przez ekspertów</p>
+                </motion.div>
               </motion.div>
             </div>
           </div>
-          
+        </section>
+
+        {/* STATS BAR */}
+        <section className="py-12 bg-primary">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-primary-foreground"
+            >
+              {[
+                { target: 5000, suffix: "+", label: "Dzieci skorzystało" },
+                { target: 98, suffix: "%", label: "Zadowolonych rodziców" },
+                { target: 20, suffix: "", label: "Zadań treningowych" },
+                { target: 4, suffix: "", label: "Poziomy trudności" },
+              ].map((stat, i) => (
+                <motion.div key={i} variants={fadeInUp} className="flex flex-col items-center gap-1">
+                  <span className="text-4xl md:text-5xl font-black">
+                    <AnimatedCounter target={stat.target} suffix={stat.suffix} />
+                  </span>
+                  <span className="text-primary-foreground/80 text-sm font-medium">{stat.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </section>
 
         {/* SECTION 2 - Products */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
+            {/* Section header with child tablet image */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Brain className="w-4 h-4" />
+                  <span>Nasze programy</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz program dla swojego dziecka</h2>
+                <p className="text-xl text-muted-foreground">Trzy rozwiązania dostosowane do różnych potrzeb — dla domu, szkoły i gabinetu terapeutycznego.</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative rounded-2xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
+              >
+                <img src={childTabletImg} alt="Dziecko ćwiczy z programem ITS GoBrain na tablecie" className="w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
+              </motion.div>
+            </div>
+
             <motion.div 
               initial="hidden"
               whileInView="visible"
@@ -168,6 +296,49 @@ export default function HomePage() {
         {/* SECTION 3 - Demo */}
         <section className="py-20 bg-card/50 border-y border-border">
           <div className="container mx-auto px-4">
+            {/* Demo photo banner */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center mb-12">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl"
+              >
+                <img src={parentChildImg} alt="Rodzic i dziecko ćwiczą z GoBrain" className="w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-md"
+                >
+                  <span className="text-2xl">🎮</span>
+                  <span className="font-bold text-sm text-foreground">Wypróbuj DEMO za darmo!</span>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:col-span-3"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Play className="w-4 h-4" />
+                  <span>Bezpłatne demo</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Sprawdź GoBrain zanim kupisz</h2>
+                <p className="text-xl text-muted-foreground mb-6">Pobierz bezpłatną wersję demo i przetestuj program razem z dzieckiem. Bez rejestracji i opłat.</p>
+                <div className="flex flex-wrap gap-3">
+                  {["Bezpłatne", "Bez rejestracji", "PC i Android", "Kilka ćwiczeń w zestawie"].map((t, i) => (
+                    <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> {t}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
               <motion.div 
@@ -234,43 +405,78 @@ export default function HomePage() {
 
         {/* SECTION 4 - For whom? */}
         <section className="py-24 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-              <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
-            </motion.div>
-
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
-            >
-              {[
-                "Dziecko słyszy, ale nie słucha",
-                "Nie rozumie poleceń",
-                "Ma problemy z nauką czytania i pisania",
-                "Nie potrafi się skoncentrować",
-                "Jest wrażliwe na dźwięki",
-                "Wymagające powtarzania poleceń",
-                "Ma zaburzenia przetwarzania słuchowego (CAPD)",
-                "Miało problemy ze słuchem (przerost migdałków)"
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp} className="flex items-start gap-4 p-4 rounded-xl hover:bg-card transition-colors">
-                  <div className="mt-1 bg-accent/10 rounded-full p-1 shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-accent" />
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Photo side */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
+                </div>
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-6 -right-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+                    <Target className="w-6 h-6 text-green-600" />
                   </div>
-                  <span className="text-foreground font-medium">{item}</span>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Skuteczność</p>
+                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
+                  </div>
                 </motion.div>
-              ))}
-            </motion.div>
+              </motion.div>
+
+              {/* Text side */}
+              <div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  className="mb-10"
+                >
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                    <Users className="w-4 h-4" />
+                    <span>Dla kogo?</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
+                  <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
+                </motion.div>
+
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                >
+                  {[
+                    { icon: Ear, text: "Słyszy, ale nie słucha" },
+                    { icon: Brain, text: "Nie rozumie poleceń" },
+                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
+                    { icon: Target, text: "Trudności z koncentracją" },
+                    { icon: Headphones, text: "Wrażliwe na dźwięki" },
+                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
+                    { icon: GraduationCap, text: "Wymaga powtarzania poleceń" },
+                    { icon: Heart, text: "Po problemach ze słuchem" },
+                  ].map((item, i) => (
+                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
+                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                        <item.icon className="w-4 h-4 text-accent" />
+                      </div>
+                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -284,31 +490,69 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Efekty stosowania ITS GoBrain</h2>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+                <Trophy className="w-4 h-4" />
+                <span>Efekty terapii</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Co zyskuje Twoje dziecko?</h2>
+              <p className="text-xl text-muted-foreground">Potwierdzone naukowo rezultaty regularnych treningów</p>
             </motion.div>
 
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
-            >
-              {[
-                { icon: Ear, text: "Poprawa przetwarzania słuchowego" },
-                { icon: GraduationCap, text: "Poprawa wyników w nauce" },
-                { icon: Activity, text: "Poprawa wymowy oraz komunikacji językowej" },
-                { icon: Brain, text: "Poprawa uwagi i koncentracji, pamięci" },
-                { icon: Stethoscope, text: "Normalizacja wrażliwości słuchowej" }
-              ].map((effect, i) => (
-                <motion.div key={i} variants={fadeInUp} className="bg-background rounded-2xl p-6 text-center border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center min-h-[200px]">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
-                    <effect.icon className="w-6 h-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Effects cards */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
+                {[
+                  { icon: Ear, emoji: "👂", text: "Poprawa przetwarzania słuchowego", color: "bg-blue-50 border-blue-200", iconColor: "text-blue-600", iconBg: "bg-blue-100" },
+                  { icon: GraduationCap, emoji: "📚", text: "Lepsze wyniki w nauce i szkole", color: "bg-green-50 border-green-200", iconColor: "text-green-600", iconBg: "bg-green-100" },
+                  { icon: Activity, emoji: "🗣️", text: "Lepsza wymowa i komunikacja", color: "bg-purple-50 border-purple-200", iconColor: "text-purple-600", iconBg: "bg-purple-100" },
+                  { icon: Brain, emoji: "🧠", text: "Więcej uwagi, koncentracji i pamięci", color: "bg-orange-50 border-orange-200", iconColor: "text-orange-600", iconBg: "bg-orange-100" },
+                  { icon: Headphones, emoji: "🎧", text: "Normalizacja wrażliwości na dźwięki", color: "bg-pink-50 border-pink-200", iconColor: "text-pink-600", iconBg: "bg-pink-100" },
+                  { icon: Smile, emoji: "😊", text: "Wzrost pewności siebie dziecka", color: "bg-yellow-50 border-yellow-200", iconColor: "text-yellow-600", iconBg: "bg-yellow-100" },
+                ].map((effect, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className={`rounded-2xl p-5 border ${effect.color} flex items-start gap-4 transition-all`}
+                  >
+                    <div className={`w-12 h-12 ${effect.iconBg} rounded-xl flex items-center justify-center shrink-0 text-2xl`}>
+                      {effect.emoji}
+                    </div>
+                    <p className="font-semibold text-foreground text-sm leading-snug mt-1">{effect.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Classroom photo */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={childrenClassroomImg} alt="Dzieci uczą się z GoBrain w klasie" className="w-full object-cover" />
+                </div>
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-5 -left-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <span className="text-3xl">🏆</span>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Ocena szkół</p>
+                    <p className="font-bold text-foreground">100% poleca!</p>
                   </div>
-                  <p className="font-medium text-foreground">{effect.text}</p>
                 </motion.div>
-              ))}
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
