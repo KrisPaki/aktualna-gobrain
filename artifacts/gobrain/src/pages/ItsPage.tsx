@@ -13,8 +13,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -29,7 +27,7 @@ const staggerContainer: Variants = {
 export default function ItsPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      <Navbar />
+
 
       <main className="flex-1 pt-16">
 
@@ -341,7 +339,7 @@ export default function ItsPage() {
 
       </main>
 
-      <Footer />
+
     </div>
   );
 }

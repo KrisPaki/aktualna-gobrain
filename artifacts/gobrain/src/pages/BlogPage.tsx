@@ -1,7 +1,5 @@
 import { motion, type Variants } from "framer-motion";
 import { Calendar, ArrowRight } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -91,7 +89,7 @@ const articles = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      <Navbar />
+
 
       <main className="flex-1 pt-16">
 
@@ -155,7 +153,7 @@ export default function BlogPage() {
 
       </main>
 
-      <Footer />
+
     </div>
   );
 }

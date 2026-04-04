@@ -18,8 +18,6 @@ import {
   Smartphone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const fadeInUp: Variants = {
@@ -37,7 +35,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      <Navbar />
+
       
       <main className="flex-1 pt-16">
         
@@ -534,7 +532,7 @@ export default function HomePage() {
 
       </main>
       
-      <Footer />
+
     </div>
   );
 }

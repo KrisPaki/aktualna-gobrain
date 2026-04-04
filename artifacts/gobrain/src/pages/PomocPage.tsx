@@ -12,8 +12,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -28,7 +26,7 @@ const staggerContainer: Variants = {
 export default function PomocPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      <Navbar />
+
 
       <main className="flex-1 pt-16">
 
@@ -223,7 +221,7 @@ export default function PomocPage() {
 
       </main>
 
-      <Footer />
+
     </div>
   );
 }

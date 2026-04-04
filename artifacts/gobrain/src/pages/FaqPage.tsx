@@ -8,8 +8,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -75,7 +73,7 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      <Navbar />
+
 
       <main className="flex-1 pt-16">
 
@@ -154,7 +152,7 @@ export default function FaqPage() {
 
       </main>
 
-      <Footer />
+
     </div>
   );
 }
