@@ -481,37 +481,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 4 - For whom? */}
+        {/* SECTION 4 - For whom? — PHOTO RIGHT */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Photo side */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="relative"
-              >
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
-                </div>
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -right-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                    <Target className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Skuteczność</p>
-                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
-                  </div>
-                </motion.div>
-              </motion.div>
 
-              {/* Text side */}
+              {/* Text side — LEFT */}
               <div>
                 <motion.div
                   initial="hidden"
@@ -554,6 +529,33 @@ export default function HomePage() {
                   ))}
                 </motion.div>
               </div>
+
+              {/* Photo side — RIGHT */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
+                </div>
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-6 -left-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+                    <Target className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Skuteczność</p>
+                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
             </div>
           </div>
         </section>
@@ -809,31 +811,165 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 7 - Founder */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <motion.div 
+        {/* SECTION 7 - Founder — expanded expert profile */}
+        <section className="py-24 bg-background overflow-hidden">
+          <div className="container mx-auto px-4 max-w-6xl">
+
+            {/* Header */}
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="flex flex-col md:flex-row items-center md:items-start gap-12"
+              className="text-center mb-16"
             >
-              <img
-                src={anetaPakielaImg}
-                alt="Aneta Pakieła – twórczyni metody GoBrain"
-                className="w-48 h-48 rounded-full object-cover object-top shrink-0 shadow-xl border-4 border-primary/10"
-              />
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-2">Aneta Pakieła – twórczyni metody GoBrain</h2>
-                <p className="text-sm font-medium text-primary mb-6 leading-relaxed">
-                  Neurologopeda, surdologopeda, pedagog, terapeuta IJAS, Tomatis, SAS, terapeuta II stopnia integracji odruchów, terapeuta modelu wczesnej interwencji INSITE, studia doktoranckie na Warszawskim Uniwersytecie Medycznym, Katedra Otolaryngologii. Członek Zarządu Polskiego Komitetu Audiofonologii.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  "GoBrain to efekt wieloletniej praktyki klinicznej i pracy z dziećmi z zaburzeniami przetwarzania słuchowego. Metoda łączy wiedzę neurologopedyczną z nowoczesnymi technologiami, dając dzieciom dostępne i skuteczne narzędzie do treningu słuchowego."
-                </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <GraduationCap className="w-4 h-4" />
+                <span>Twórczyni metody</span>
               </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Aneta Pakieła</h2>
+              <p className="text-xl text-muted-foreground">Neurologopeda, surdologopeda, twórczyni metody GoBrain</p>
             </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+
+              {/* Photo column */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="lg:col-span-2 flex flex-col items-center gap-6"
+              >
+                <div className="relative">
+                  <div className="w-64 h-72 rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/10">
+                    <img
+                      src={anetaPakielaImg}
+                      alt="Aneta Pakieła – twórczyni metody GoBrain"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <motion.div
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-2xl px-4 py-2 shadow-xl"
+                  >
+                    <p className="text-xs font-medium opacity-80">Doświadczenie</p>
+                    <p className="font-black text-lg">20+ lat</p>
+                  </motion.div>
+                </div>
+
+                {/* Associations */}
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="w-full space-y-3"
+                >
+                  {[
+                    { label: "Polski Komitet Audiofonologii", role: "Członek Zarządu", color: "border-blue-200 bg-blue-50" },
+                    { label: "Warszawski Uniwersytet Medyczny", role: "Studia doktoranckie, Katedra Otolaryngologii", color: "border-green-200 bg-green-50" },
+                    { label: "SAS Centre Polska", role: "Certyfikowany terapeuta SAS", color: "border-purple-200 bg-purple-50" },
+                  ].map((assoc, i) => (
+                    <motion.div key={i} variants={fadeInUp} className={`rounded-xl p-3 border ${assoc.color}`}>
+                      <p className="font-bold text-foreground text-sm">{assoc.label}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{assoc.role}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* Content column */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="lg:col-span-3 space-y-8"
+              >
+
+                {/* Titles */}
+                <motion.div variants={fadeInUp}>
+                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">Tytu\u0142y zawodowe</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Neurologopeda",
+                      "Surdologopeda",
+                      "Pedagog specjalny",
+                      "Twórczyni metody GoBrain",
+                    ].map((t, i) => (
+                      <span key={i} className="px-3 py-1.5 rounded-lg bg-primary/10 text-primary font-bold text-sm border border-primary/20">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Certifications */}
+                <motion.div variants={fadeInUp}>
+                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">Specjalizacje i certyfikaty</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {[
+                      { label: "Terapeuta IJAS", desc: "Integracja Jawna i Sekwencyjna", color: "bg-blue-50 border-blue-200 text-blue-700" },
+                      { label: "Terapeuta Tomatis", desc: "Metoda stymulacji słuchowej", color: "bg-green-50 border-green-200 text-green-700" },
+                      { label: "Terapeuta SAS", desc: "Sound Auditory Stimulation", color: "bg-purple-50 border-purple-200 text-purple-700" },
+                      { label: "Integracja odruchów II st.", desc: "Zaawansowany terapeuta", color: "bg-orange-50 border-orange-200 text-orange-700" },
+                      { label: "Terapeuta INSITE", desc: "Model wczesnej interwencji", color: "bg-pink-50 border-pink-200 text-pink-700" },
+                      { label: "Diagnosta CAPD", desc: "Centralne zaburzenia przetwarzania słuchowego", color: "bg-teal-50 border-teal-200 text-teal-700" },
+                    ].map((cert, i) => (
+                      <motion.div
+                        key={i}
+                        variants={fadeInUp}
+                        whileHover={{ scale: 1.02 }}
+                        className={`rounded-xl p-3 border ${cert.color} transition-all`}
+                      >
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-bold text-sm">{cert.label}</p>
+                            <p className="text-xs opacity-75 mt-0.5">{cert.desc}</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* About / Quote */}
+                <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-6">
+                  <Quote className="w-8 h-8 text-primary/30 mb-3" />
+                  <blockquote className="text-base text-foreground leading-relaxed font-medium mb-4">
+                    GoBrain to efekt ponad 20 lat praktyki klinicznej i pracy z dziećmi z zaburzeniami przetwarzania słuchowego. Metoda \u0142\u0105czy wiedzę neurologopedyczną z nowoczesnymi technologiami, dając dzieciom skuteczne i dostępne narzędzie do treningu słuchowego — w domu, szkole i gabinecie.
+                  </blockquote>
+                  <div className="border-t border-border pt-4">
+                    <p className="font-bold text-foreground">Aneta Pakieła</p>
+                    <p className="text-sm text-muted-foreground">Neurologopeda, surdologopeda, twórczyni metody GoBrain</p>
+                  </div>
+                </motion.div>
+
+                {/* Key achievements */}
+                <motion.div variants={fadeInUp}>
+                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">Dokonania i dzia\u0142alno\u015b\u0107</h3>
+                  <div className="space-y-3">
+                    {[
+                      { icon: Brain, text: "Opracowała unikalną metodę ITS GoBrain do terapii zaburzeń przetwarzania słuchowego u dzieci", color: "text-primary bg-primary/10" },
+                      { icon: Users, text: "Przeszkoliła ponad 500 terapeutów w całej Polsce w zakresie diagnozy i terapii CAPD", color: "text-green-600 bg-green-100" },
+                      { icon: GraduationCap, text: "Prowadzi szkolenia certyfikacyjne dla logopedów, pedagogów i psychologów", color: "text-purple-600 bg-purple-100" },
+                      { icon: Activity, text: "Badania doktoranckie na Katedrze Otolaryngologii Warszawskiego Uniwersytetu Medycznego", color: "text-orange-600 bg-orange-100" },
+                    ].map((ach, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className={`w-9 h-9 rounded-lg ${ach.color} flex items-center justify-center shrink-0`}>
+                          <ach.icon className="w-4 h-4" />
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed pt-1">{ach.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+              </motion.div>
+            </div>
           </div>
         </section>
 
