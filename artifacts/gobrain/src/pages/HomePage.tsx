@@ -2,7 +2,7 @@ import { motion, type Variants, animate, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import profGalkowskiImg from "@/assets/prof-galkowski.png";
-import anetaPakielaImg from "@/assets/aneta-pakiela.png";
+import anetaPakielaImg from "@/assets/aneta-pakiela-real.webp";
 import heroChildImg from "@/assets/hero-child-headphones.png";
 import childTabletImg from "@/assets/child-tablet-fun.png";
 import therapistChildImg from "@/assets/therapist-child.png";
@@ -842,11 +842,12 @@ export default function HomePage() {
                 className="lg:col-span-2 flex flex-col items-center gap-6"
               >
                 <div className="relative">
-                  <div className="w-64 h-72 rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/10">
+                  <div className="w-60 h-60 rounded-full overflow-hidden shadow-2xl border-4 border-primary/10">
                     <img
                       src={anetaPakielaImg}
                       alt="Aneta Pakieła – twórczyni metody GoBrain"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: "76% 10%" }}
                     />
                   </div>
                   <motion.div
