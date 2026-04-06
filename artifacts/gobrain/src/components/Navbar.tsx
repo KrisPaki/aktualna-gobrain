@@ -21,11 +21,9 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border transition-all shadow-sm">
       <div className="container mx-auto px-4 h-18 flex items-center justify-between" style={{ height: "72px" }}>
         <Link to="/" className="flex items-center gap-3 group" data-testid="link-logo">
-          <img
-            src={logoImg}
-            alt="GoBrain logo"
-            className="w-11 h-11 rounded-xl object-contain"
-          />
+          <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors border border-primary/10">
+            <img src={logoImg} alt="GoBrain logo" className="w-9 h-9 rounded-lg object-contain" />
+          </div>
           <div className="flex flex-col leading-none">
             <span className="font-black text-2xl tracking-tight text-foreground" style={{ letterSpacing: "-0.02em" }}>GoBrain</span>
             <span className="text-[10px] font-semibold text-orange-500 uppercase tracking-widest">{'Trening s\u0142uchowy'}</span>
