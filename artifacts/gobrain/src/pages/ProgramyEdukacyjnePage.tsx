@@ -5,7 +5,6 @@ import {
   BookOpen,
   Palette,
   ChevronRight,
-  ExternalLink,
   Volume2,
   Type,
   Sparkles,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import childrenClassroomImg from "@/assets/children-classroom.png";
+import { programsByCategory } from "@/data/programyData";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -25,47 +25,18 @@ const staggerContainer: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
-const zabawLogopedycznych = [
-  { name: "Zestaw gier logopedycznych", emoji: "🎮", href: "https://gobrain.pl/zabawy-logopedyczne" },
-  { name: "Głoski ciszące (zestaw I)", emoji: "🤫", href: "https://gobrain.pl/pegobrain/zabawylogopedyczne02" },
-  { name: "Głoski ciszące (zestaw II)", emoji: "🤫", href: "https://gobrain.pl/pegobrain/zabawylogopedyczne03" },
-  { name: "Głoski KR i GR", emoji: "🦁", href: "https://gobrain.pl/zabawylogopedyczne05" },
-  { name: "Głoski PR i BR", emoji: "🐘", href: "https://gobrain.pl/pegobrain/zabawylogo-pr-br" },
-  { name: "Głoski TR i DR", emoji: "🥁", href: "https://gobrain.pl/pegobrain/gloski_tr_dr" },
-  { name: "Głoski miękkie", emoji: "🌸", href: "https://gobrain.pl/gloski_miekkie" },
-  { name: "Szereg szumiący SZ", emoji: "🐍", href: "https://gobrain.pl/pegobrain/szereg_szumiacy_01" },
-  { name: "Szereg szumiący CZ", emoji: "⚡", href: "https://gobrain.pl/pegobrain/szereg_szumiacy_cz" },
-  { name: "Szereg szumiący RZ/Ż", emoji: "🌊", href: "https://gobrain.pl/pegobrain/szereg_szumiacy_rz" },
-];
-
-const zabawLiterkami = [
-  { name: "Samogłoski A O E U I Y", emoji: "🔤", href: "https://gobrain.pl/literkiaoeuiy" },
-  { name: "Spółgłoski T i D", emoji: "🅃", href: "https://gobrain.pl/literki-t-d" },
-  { name: "Spółgłoski P i B", emoji: "🅿", href: "https://gobrain.pl/literki-p-b" },
-  { name: "Literki M i N", emoji: "📝", href: "https://gobrain.pl/literkimn" },
-  { name: "Literki K, G, H", emoji: "🔑", href: "https://gobrain.pl/literkikgh" },
-  { name: "Literki L, R, J", emoji: "🌈", href: "https://gobrain.pl/literkilrj" },
-  { name: "Literki W i F", emoji: "🌬️", href: "https://gobrain.pl/literki-wf" },
-  { name: "Literki C, S, Z", emoji: "✨", href: "https://gobrain.pl/pegobrain/literki-csz" },
-];
-
-const kreatywneBrzdace = [
-  { name: "Kreatywny brzdąc — zestaw I", emoji: "🎨", href: "https://gobrain.pl/pegobrain/brzdac-2" },
-];
-
-function GameCard({ name, emoji, href }: { name: string; emoji: string; href: string }) {
+function GameCard({ name, emoji, slug }: { name: string; emoji: string; slug: string }) {
   return (
-    <motion.a
-      variants={fadeInUp}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex items-center gap-4 p-4 bg-background border border-border rounded-2xl hover:border-primary/40 hover:shadow-md transition-all duration-200"
-    >
-      <span className="text-3xl shrink-0">{emoji}</span>
-      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors flex-1 leading-tight">{name}</span>
-      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary shrink-0 transition-colors" />
-    </motion.a>
+    <motion.div variants={fadeInUp}>
+      <Link
+        to={`/programy-edukacyjne/${slug}`}
+        className="group flex items-center gap-4 p-4 bg-background border border-border rounded-2xl hover:border-primary/40 hover:shadow-md transition-all duration-200"
+      >
+        <span className="text-3xl shrink-0">{emoji}</span>
+        <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors flex-1 leading-tight">{name}</span>
+        <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary shrink-0 transition-colors" />
+      </Link>
+    </motion.div>
   );
 }
 
@@ -83,7 +54,7 @@ function CategorySection({
   iconColor: string;
   title: string;
   desc: string;
-  games: { name: string; emoji: string; href: string }[];
+  games: { name: string; emoji: string; slug: string }[];
   badge: string;
 }) {
   return (
@@ -194,8 +165,8 @@ export default function ProgramyEdukacyjnePage() {
             iconColor="text-blue-600"
             title="Zabawy logopedyczne"
             desc="Interaktywne gry ćwiczące wymowę trudnych głosek. Kolorowe ćwiczenia dla dzieci, które uczą się prawidłowej artykulacji — w angażującej formie zabawy."
-            games={zabawLogopedycznych}
-            badge="10 programów"
+            games={programsByCategory.logopedyczne.map((p) => ({ name: p.title.replace(/^Zabawy logopedyczne\.\s*/i, ""), emoji: p.emoji, slug: p.slug }))}
+            badge={`${programsByCategory.logopedyczne.length} programów`}
           />
 
           <div className="border-t border-border mb-16" />
@@ -207,8 +178,8 @@ export default function ProgramyEdukacyjnePage() {
             iconColor="text-green-600"
             title="Zabawy z literkami"
             desc="Nauka liter i głosek w formie interaktywnej zabawy. Każdy zestaw skupia się na konkretnych spółgłoskach lub grupach liter — idealne dla dzieci zaczynających przygodę z czytaniem."
-            games={zabawLiterkami}
-            badge="8 programów"
+            games={programsByCategory.literkami.map((p) => ({ name: p.title.replace(/^Zabawy z literkami\.\s*/i, ""), emoji: p.emoji, slug: p.slug }))}
+            badge={`${programsByCategory.literkami.length} programów`}
           />
 
           <div className="border-t border-border mb-16" />
@@ -219,9 +190,9 @@ export default function ProgramyEdukacyjnePage() {
             iconBg="bg-orange-50"
             iconColor="text-orange-600"
             title="Kreatywny brzdąc"
-            desc="Twórcze zabawy rozwijające wyobraźnię i kreatywność najmłodszych. Ćwiczenia manualne, kolorowanki i aktywności artystyczne wspierające wszechstronny rozwój dziecka."
-            games={kreatywneBrzdace}
-            badge="Aktywności twórcze"
+            desc="Gry logiczne, matematyczne i twórcze rozwijające pamiec, koncentrację i wyobraźnię. Idealne dla dzieci w wieku przedszkolnym i wczesnoszkolnym."
+            games={programsByCategory.brzdac.map((p) => ({ name: p.title, emoji: p.emoji, slug: p.slug }))}
+            badge={`${programsByCategory.brzdac.length} programy`}
           />
         </div>
       </section>

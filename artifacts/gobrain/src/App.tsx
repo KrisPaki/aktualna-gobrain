@@ -15,6 +15,7 @@ import FaqPage from "@/pages/FaqPage";
 import PomocPage from "@/pages/PomocPage";
 import SklepPage from "@/pages/SklepPage";
 import ProgramyEdukacyjnePage from "@/pages/ProgramyEdukacyjnePage";
+import ProgramPage from "@/pages/ProgramPage";
 import ItsSchoolPage from "@/pages/ItsSchoolPage";
 import KartaMowyPage from "@/pages/KartaMowyPage";
 
@@ -38,6 +39,7 @@ function App() {
               <Route path="/pomoc" element={<PomocPage />} />
               <Route path="/sklep" element={<SklepPage />} />
               <Route path="/programy-edukacyjne" element={<ProgramyEdukacyjnePage />} />
+              <Route path="/programy-edukacyjne/:slug" element={<ProgramPage />} />
               <Route path="/karta-mowy" element={<KartaMowyPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
