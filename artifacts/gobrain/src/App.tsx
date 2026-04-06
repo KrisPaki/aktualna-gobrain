@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +14,7 @@ import FaqPage from "@/pages/FaqPage";
 import PomocPage from "@/pages/PomocPage";
 import SklepPage from "@/pages/SklepPage";
 import PomoceDydaktycznePage from "@/pages/PomoceDydaktycznePage";
+import ItsSchoolPage from "@/pages/ItsSchoolPage";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/its" element={<ItsPage />} />
-              <Route path="/its-school" element={<Navigate to="/its" replace />} />
+              <Route path="/its-school" element={<ItsSchoolPage />} />
               <Route path="/strefa-terapeuty" element={<StrefaTerapeutyPage />} />
               <Route path="/szkolenia-i-webinary" element={<SzkoleniaPage />} />
               <Route path="/blog" element={<BlogPage />} />
