@@ -859,7 +859,7 @@ export default function HomePage() {
 
                 {/* Key achievements */}
                 <motion.div variants={fadeInUp}>
-                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">Dokonania i dzia\u0142alno\u015b\u0107</h3>
+                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">Dokonania i działalność</h3>
                   <div className="space-y-3">
                     {[
                       { icon: Brain, text: "Opracowała unikalną metodę ITS GoBrain do terapii zaburzeń przetwarzania słuchowego u dzieci", color: "text-primary bg-primary/10" },
@@ -1077,7 +1077,7 @@ export default function HomePage() {
             </motion.div>
             <div className="text-center">
               <Button variant="outline" size="lg" asChild data-testid="locations-btn">
-                <Link to="/strefa-terapeuty">Sprawdź listę terapeutów</Link>
+                <Link to="/strefa-terapeuty#mapa-terapeutow">Sprawdź listę terapeutów</Link>
               </Button>
             </div>
           </div>

@@ -176,7 +176,7 @@ export default function StrefaTerapeutyPage() {
               className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-primary-foreground"
             >
               {[
-                { to: 500, suffix: "+", label: "Certyfikowanych Providerów" },
+                { to: 100, suffix: "+", label: "Certyfikowanych Providerów" },
                 { to: 8, suffix: "", label: "Obszarów diagnostycznych" },
                 { to: 98, suffix: "%", label: "Terapeutów poleca platformę" },
                 { to: 100, suffix: "%", label: "Online — bez instalacji" },
@@ -643,7 +643,7 @@ export default function StrefaTerapeutyPage() {
         </section>
 
         {/* ─── MAP ─── */}
-        <section className="py-20 bg-card border-t border-border">
+        <section id="mapa-terapeutow" className="py-20 bg-card border-t border-border">
           <div className="container mx-auto px-4 max-w-5xl">
             <motion.div
               initial="hidden"

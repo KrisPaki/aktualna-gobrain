@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4" data-testid="link-footer-logo">
               <img src={logoImg} alt="GoBrain logo" className="w-9 h-9 rounded-lg object-contain" />
@@ -50,21 +50,6 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Pobierz Demo</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-demo-pc">
-                  ITS Starter (PC)
-                </a>
-              </li>
-              <li>
-                <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-demo-android">
-                  ITS Starter (Android)
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">

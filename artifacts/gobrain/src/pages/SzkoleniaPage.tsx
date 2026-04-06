@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   CheckCircle2,
@@ -8,6 +9,9 @@ import {
   BookOpen,
   Users,
   ExternalLink,
+  X,
+  Send,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -21,10 +25,179 @@ const staggerContainer: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
 };
 
+function RegistrationModal({ onClose }: { onClose: () => void }) {
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    zawod: "",
+    message: "",
+  });
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const subject = encodeURIComponent("Zgłoszenie na szkolenie GoBrain — Provider");
+    const body = encodeURIComponent(
+      `Imię i nazwisko: ${form.name}\nEmail: ${form.email}\nTelefon: ${form.phone}\nZawód / specjalizacja: ${form.zawod}\n\nWiadomość:\n${form.message}`
+    );
+    window.location.href = `mailto:gobrainterapeuta@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Formularz zgłoszeniowy na szkolenie"
+    >
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+
+      <div className="relative z-10 bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col">
+        <div className="bg-gradient-to-br from-primary to-blue-700 px-8 pt-8 pb-8 text-white relative shrink-0">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10"
+            aria-label="Zamknij"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/15 mb-4">
+            <GraduationCap className="w-7 h-7 text-white" />
+          </div>
+          <h2 className="text-2xl font-extrabold mb-1 leading-tight">
+            Formularz zgłoszeniowy
+          </h2>
+          <p className="text-white/80 text-sm">
+            Szkolenie certyfikacyjne Provider GoBrain — ITS GoBrain Interaktywny Trening Słuchowy
+          </p>
+        </div>
+
+        <div className="overflow-y-auto flex-1">
+          {submitted ? (
+            <div className="flex flex-col items-center justify-center text-center px-8 py-12">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                <CheckCircle className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">Zgłoszenie wysłane!</h3>
+              <p className="text-muted-foreground mb-6">
+                Dziękujemy za zainteresowanie szkoleniem. Skontaktujemy się z Tobą w ciągu 1–2 dni roboczych.
+              </p>
+              <Button onClick={onClose}>Zamknij</Button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="px-8 py-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="reg-name">
+                  Imię i nazwisko <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="reg-name"
+                  name="name"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Jan Kowalski"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="reg-email">
+                  Adres e-mail <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="reg-email"
+                  name="email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="jan@przyklad.pl"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="reg-phone">
+                  Telefon (opcjonalnie)
+                </label>
+                <input
+                  id="reg-phone"
+                  name="phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="+48 123 456 789"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="reg-zawod">
+                  Zawód / specjalizacja <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="reg-zawod"
+                  name="zawod"
+                  required
+                  value={form.zawod}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                >
+                  <option value="" disabled>Wybierz zawód</option>
+                  <option value="Logopeda">Logopeda</option>
+                  <option value="Pedagog">Pedagog</option>
+                  <option value="Psycholog">Psycholog</option>
+                  <option value="Neurologopeda">Neurologopeda</option>
+                  <option value="Surdologopeda">Surdologopeda</option>
+                  <option value="Terapeuta integracji sensorycznej">Terapeuta integracji sensorycznej</option>
+                  <option value="Inny specjalista">Inny specjalista</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="reg-message">
+                  Dodatkowe pytania / uwagi
+                </label>
+                <textarea
+                  id="reg-message"
+                  name="message"
+                  rows={3}
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Np. Pytanie dotyczące terminu szkolenia..."
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition resize-none"
+                />
+              </div>
+
+              <Button type="submit" className="w-full h-12 text-base font-semibold">
+                <Send className="w-4 h-4 mr-2" />
+                Wyślij zgłoszenie
+              </Button>
+              <p className="text-xs text-muted-foreground text-center pb-2">
+                Skontaktujemy się z Tobą w ciągu 1–2 dni roboczych.
+              </p>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function SzkoleniaPage() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
 
+      {showModal && <RegistrationModal onClose={() => setShowModal(false)} />}
 
       <div className="pt-16">
 
@@ -68,14 +241,14 @@ export default function SzkoleniaPage() {
                     <ExternalLink className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-base" asChild>
-                  <a
-                    href="https://docs.google.com/document/d/1vEsYI-Gi6Wuj9dqq-qIDSq-BZiPv1D1I/edit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Formularz zgłoszeniowy
-                  </a>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-14 px-8 text-base"
+                  onClick={() => setShowModal(true)}
+                  data-testid="btn-formularz"
+                >
+                  Formularz zgłoszeniowy
                 </Button>
               </motion.div>
             </motion.div>
@@ -246,13 +419,23 @@ export default function SzkoleniaPage() {
               variants={fadeInUp}
               className="max-w-2xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{'Chcesz zostać terapeutą GoBrain?'}</h2>
-              <p className="text-white/80 mb-10 text-lg">{'Zapisz się na kurs certyfikacyjny i dołącz do rosnącej sieci Providerów GoBrain w całej Polsce.'}</p>
-              <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90 font-semibold" asChild>
-                <a href="https://automater.pl/rest/order-viewer/buy/787759" target="_blank" rel="noopener noreferrer">
-                  {'Zapisz się na szkolenie'}
-                </a>
-              </Button>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Chcesz zostać terapeutą GoBrain?</h2>
+              <p className="text-white/80 mb-10 text-lg">Zapisz się na kurs certyfikacyjny i dołącz do rosnącej sieci Providerów GoBrain w całej Polsce.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90 font-semibold" asChild>
+                  <a href="https://automater.pl/rest/order-viewer/buy/787759" target="_blank" rel="noopener noreferrer">
+                    Zapisz się na szkolenie
+                  </a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-14 px-8 text-base border-white text-white hover:bg-white/10"
+                  onClick={() => setShowModal(true)}
+                >
+                  Formularz zgłoszeniowy
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
