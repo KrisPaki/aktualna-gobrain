@@ -289,54 +289,94 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 2 - For whom? — PHOTO RIGHT */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* SECTION 2 - For whom? — COLORFUL */}
+        <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #fef9ff 0%, #f0f7ff 50%, #f0fff8 100%)" }}>
+          {/* Floating decorative blobs */}
+          <motion.div animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-10 left-10 w-20 h-20 rounded-full opacity-20 pointer-events-none"
+            style={{ background: "radial-gradient(circle, #ff6b9d, #ff9f43)" }} />
+          <motion.div animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute top-20 right-16 w-14 h-14 rounded-full opacity-25 pointer-events-none"
+            style={{ background: "radial-gradient(circle, #a29bfe, #6c5ce7)" }} />
+          <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-16 left-1/4 w-10 h-10 rounded-full opacity-20 pointer-events-none"
+            style={{ background: "radial-gradient(circle, #55efc4, #00b894)" }} />
+          <motion.div animate={{ y: [0, 18, 0], x: [0, 8, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute bottom-24 right-1/3 w-16 h-16 rounded-full opacity-15 pointer-events-none"
+            style={{ background: "radial-gradient(circle, #fdcb6e, #e17055)" }} />
 
-              {/* Text side — LEFT */}
-              <div>
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  className="mb-10"
-                >
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                    <Users className="w-4 h-4" />
-                    <span>Dla kogo?</span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-                  <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
-                </motion.div>
-
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
-                >
-                  {[
-                    { icon: Ear, text: "S\u0142yszy, ale nie s\u0142ucha" },
-                    { icon: Brain, text: "Nie rozumie polece\u0144" },
-                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
-                    { icon: Target, text: "Trudno\u015bci z koncentracj\u0105" },
-                    { icon: Headphones, text: "Wra\u017cliwe na d\u017awi\u0119ki" },
-                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
-                    { icon: GraduationCap, text: "Wymaga powtarzania polece\u0144" },
-                    { icon: Heart, text: "Po problemach ze s\u0142uchem" },
-                  ].map((item, i) => (
-                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
-                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                        <item.icon className="w-4 h-4 text-accent" />
-                      </div>
-                      <span className="text-foreground font-medium text-sm">{item.text}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
+          <div className="container mx-auto px-4 max-w-6xl relative">
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-14"
+            >
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="text-5xl mb-4 inline-block"
+              >
+                &#x1F9E0;
+              </motion.div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-4"
+                style={{ background: "linear-gradient(135deg, #a29bfe22, #6c5ce722)", color: "#6c5ce7", border: "2px solid #a29bfe55" }}>
+                <Users className="w-4 h-4" />
+                <span>Dla kogo?</span>
               </div>
+              <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">
+                Dla kogo jest program{" "}
+                <span style={{ background: "linear-gradient(90deg, #6c5ce7, #0984e3, #00b894)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                  ITS GoBrain?
+                </span>
+              </h2>
+              <p className="text-xl text-muted-foreground">Dedykowany dzieciom w wieku <strong>5&#x2013;12 lat</strong>, kt&oacute;re potrzebuj&#x0105; wsparcia w nauce i komunikacji</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Colorful cards */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
+                {[
+                  { emoji: "\ud83d\udc42", text: "S\u0142yszy, ale nie s\u0142ucha", bg: "#fff0f6", border: "#ff9cc8", icon: "#ff6b9d", shadow: "rgba(255,107,157,0.2)" },
+                  { emoji: "\ud83e\udde0", text: "Nie rozumie polece\u0144", bg: "#f3f0ff", border: "#b197fc", icon: "#7950f2", shadow: "rgba(121,80,242,0.2)" },
+                  { emoji: "\ud83d\udcda", text: "Problemy z czytaniem i pisaniem", bg: "#fff8e1", border: "#ffd43b", icon: "#f59f00", shadow: "rgba(245,159,0,0.2)" },
+                  { emoji: "\ud83c\udfaf", text: "Trudno\u015bci z koncentracj\u0105", bg: "#e8f5e9", border: "#69db7c", icon: "#2f9e44", shadow: "rgba(47,158,68,0.2)" },
+                  { emoji: "\ud83c\udfa7", text: "Wra\u017cliwe na d\u017awi\u0119ki", bg: "#e3f2fd", border: "#74c0fc", icon: "#1971c2", shadow: "rgba(25,113,194,0.2)" },
+                  { emoji: "\ud83d\udce1", text: "Zaburzenia przetwarzania (CAPD)", bg: "#fce4ec", border: "#f48fb1", icon: "#c2185b", shadow: "rgba(194,24,91,0.2)" },
+                  { emoji: "\ud83d\udd04", text: "Wymaga powtarzania polece\u0144", bg: "#fff3e0", border: "#ffb74d", icon: "#e65100", shadow: "rgba(230,81,0,0.2)" },
+                  { emoji: "\ud83d\udc9a", text: "Po problemach ze s\u0142uchem", bg: "#e8f5e9", border: "#a5d6a7", icon: "#388e3c", shadow: "rgba(56,142,60,0.2)" },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.05, y: -4, transition: { type: "spring", stiffness: 400 } }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center gap-3 p-4 rounded-2xl cursor-default"
+                    style={{
+                      background: item.bg,
+                      border: `2px solid ${item.border}`,
+                      boxShadow: `0 4px 16px ${item.shadow}`,
+                    }}
+                  >
+                    <motion.span
+                      animate={{ rotate: [0, 8, -8, 0] }}
+                      transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
+                      className="text-2xl shrink-0"
+                    >
+                      {item.emoji}
+                    </motion.span>
+                    <span className="font-semibold text-sm text-gray-800 leading-snug">{item.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
 
               {/* Photo side — RIGHT */}
               <motion.div
@@ -346,24 +386,33 @@ export default function HomePage() {
                 transition={{ duration: 0.7 }}
                 className="relative"
               >
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ border: "4px solid white", boxShadow: "0 20px 60px rgba(108,92,231,0.2)" }}>
                   <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
                 </div>
+                {/* Floating badge 1 */}
                 <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -left-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-6 -left-6 rounded-2xl p-4 flex items-center gap-3"
+                  style={{ background: "white", border: "2px solid #b197fc", boxShadow: "0 8px 24px rgba(121,80,242,0.2)" }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                    <Target className="w-6 h-6 text-green-600" />
-                  </div>
+                  <span className="text-2xl">&#x2705;</span>
                   <div>
-                    <p className="text-xs text-muted-foreground">Skuteczno\u015b\u0107</p>
-                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
+                    <p className="text-xs text-muted-foreground">Skuteczno&#x15b;&#x107;</p>
+                    <p className="font-bold text-foreground text-sm">Potwierdzona klinicznie</p>
                   </div>
                 </motion.div>
+                {/* Floating badge 2 */}
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -top-5 -right-4 rounded-2xl px-4 py-3 flex items-center gap-2"
+                  style={{ background: "linear-gradient(135deg, #ff6b9d, #ff9f43)", boxShadow: "0 8px 24px rgba(255,107,157,0.35)" }}
+                >
+                  <span className="text-xl">&#x1F476;</span>
+                  <p className="font-bold text-white text-sm">5&#x2013;12 lat</p>
+                </motion.div>
               </motion.div>
-
             </div>
           </div>
         </section>
