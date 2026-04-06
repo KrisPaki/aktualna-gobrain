@@ -442,7 +442,7 @@ export default function HomePage() {
                 <span>Efekty terapii</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">
-                Co zyskuje Twoje dziecko?
+                Co zyskuje dziecko?
               </h2>
               <p className="text-lg text-blue-800">
                 Potwierdzone naukowo rezultaty regularnych trening&oacute;w
