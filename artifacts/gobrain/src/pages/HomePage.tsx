@@ -289,7 +289,86 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 2 - Products */}
+        {/* SECTION 2 - For whom? — PHOTO RIGHT */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* Text side — LEFT */}
+              <div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  className="mb-10"
+                >
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                    <Users className="w-4 h-4" />
+                    <span>Dla kogo?</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
+                  <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
+                </motion.div>
+
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                >
+                  {[
+                    { icon: Ear, text: "S\u0142yszy, ale nie s\u0142ucha" },
+                    { icon: Brain, text: "Nie rozumie polece\u0144" },
+                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
+                    { icon: Target, text: "Trudno\u015bci z koncentracj\u0105" },
+                    { icon: Headphones, text: "Wra\u017cliwe na d\u017awi\u0119ki" },
+                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
+                    { icon: GraduationCap, text: "Wymaga powtarzania polece\u0144" },
+                    { icon: Heart, text: "Po problemach ze s\u0142uchem" },
+                  ].map((item, i) => (
+                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
+                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                        <item.icon className="w-4 h-4 text-accent" />
+                      </div>
+                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Photo side — RIGHT */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
+                </div>
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-6 -left-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+                    <Target className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Skuteczno\u015b\u0107</p>
+                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 3 - Products */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             {/* Section header with child tablet image */}
@@ -475,85 +554,6 @@ export default function HomePage() {
                     </a>
                   </Button>
                 </div>
-              </motion.div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 4 - For whom? — PHOTO RIGHT */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-              {/* Text side — LEFT */}
-              <div>
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  className="mb-10"
-                >
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                    <Users className="w-4 h-4" />
-                    <span>Dla kogo?</span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-                  <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
-                </motion.div>
-
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
-                >
-                  {[
-                    { icon: Ear, text: "Słyszy, ale nie słucha" },
-                    { icon: Brain, text: "Nie rozumie poleceń" },
-                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
-                    { icon: Target, text: "Trudności z koncentracją" },
-                    { icon: Headphones, text: "Wrażliwe na dźwięki" },
-                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
-                    { icon: GraduationCap, text: "Wymaga powtarzania poleceń" },
-                    { icon: Heart, text: "Po problemach ze słuchem" },
-                  ].map((item, i) => (
-                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
-                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                        <item.icon className="w-4 h-4 text-accent" />
-                      </div>
-                      <span className="text-foreground font-medium text-sm">{item.text}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-
-              {/* Photo side — RIGHT */}
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="relative"
-              >
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
-                </div>
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -left-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                    <Target className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Skuteczność</p>
-                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
-                  </div>
-                </motion.div>
               </motion.div>
 
             </div>
