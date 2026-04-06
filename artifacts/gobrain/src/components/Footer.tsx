@@ -24,7 +24,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 shrink-0" />
                 gobrainterapeuta@gmail.com
               </a>
-              <a href="https://www.facebook.com/zabawyzdzwiekami" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-facebook">
+              <a href="https://www.facebook.com/gobrainpl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-facebook">
                 <Facebook className="w-4 h-4 shrink-0" />
                 Facebook
               </a>
