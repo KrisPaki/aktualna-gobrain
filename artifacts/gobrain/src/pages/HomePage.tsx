@@ -582,9 +582,9 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 6 - Prof Recommendation */}
-        <section className="py-24 bg-foreground text-background">
+        <section className="py-24" style={{ background: "#f3f4f6" }}>
           <div className="container mx-auto px-4 max-w-5xl relative">
-            <Quote className="absolute top-0 left-4 w-24 h-24 text-background/10 -translate-y-8 -translate-x-8" />
+            <Quote className="absolute top-0 left-4 w-24 h-24 -translate-y-8 -translate-x-8" style={{ color: "#d1d5db" }} />
             <motion.div 
               initial="hidden"
               whileInView="visible"
@@ -595,20 +595,21 @@ export default function HomePage() {
               <div className="shrink-0 flex flex-col items-center gap-4">
                 <img 
                   src={profGalkowskiImg} 
-                  alt="Prof. dr hab. Tadeusz Stanisław Gałkowski" 
-                  className="w-36 h-36 rounded-full object-cover object-top border-4 border-background/20 shadow-xl"
+                  alt="Prof. dr hab. Tadeusz Stanis&#x0142;aw Ga&#x0142;kowski" 
+                  className="w-36 h-36 rounded-full object-cover object-top shadow-xl"
+                  style={{ border: "4px solid #e5e7eb" }}
                 />
                 <div className="text-center hidden md:block">
-                  <p className="font-bold text-sm leading-tight max-w-[140px]">Prof. dr hab. T.S. Gałkowski</p>
+                  <p className="font-bold text-sm leading-tight max-w-[140px] text-gray-800">Prof. dr hab. T.S. Ga&#x0142;kowski</p>
                 </div>
               </div>
               <div className="flex-1">
-                <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-8">
-                  „Chciałbym powiedzieć jako przewodniczący Polskiego Komitetu Audiofonologii, że program Zabawy z dźwiękami to jest pomysł wspaniały dostosowany do potrzeb rozwojowych dzieci mających dość często duże kłopoty z przetwarzaniem bodźców słuchowych. Program GoBrain z czystym sumieniem mogę polecić i zachęcić do stosowania zarówno w domu jak i ośrodkach logopedycznych program ten ćwiczy i uwagę i pamięć słuchową. GoBrain przyczynia się do postępu szkolnych dzieci, zwłaszcza jeśli chodzi o czytanie i pisanie. Także GoBrain to dobry pomysł warty wykorzystania tam wszędzie gdzie to możliwe zarówno w placówkach szkolnych, w poradniach jak i na terenie rodzinnego domu."
+                <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-8 text-gray-800">
+                  &#x201E;Chcia&#x0142;bym powiedzie&#x107; jako przewodnicz&#x0105;cy Polskiego Komitetu Audiofonologii, &#x017c;e program Zabawy z d&#x17a;wi&#x0119;kami to jest pomys&#x0142; wspania&#x0142;y dostosowany do potrzeb rozwojowych dzieci maj&#x0105;cych do&#x15b;&#x107; cz&#x0119;sto du&#x017c;e k&#x0142;opoty z przetwarzaniem bod&#x17a;c&oacute;w s&#x0142;uchowych. Program GoBrain z czystym sumieniem mog&#x0119; poleci&#x107; i zach&#x0119;ci&#x107; do stosowania zar&oacute;wno w domu jak i o&#x15b;rodkach logopedycznych program ten &#x107;wiczy i uwag&#x0119; i pami&#x0119;&#x107; s&#x0142;uchow&#x0105;. GoBrain przyczynia si&#x0119; do post&#x0119;pu szkolnych dzieci, zw&#x0142;aszcza je&#x15b;li chodzi o czytanie i pisanie. Tak&#x017c;e GoBrain to dobry pomys&#x0142; warty wykorzystania tam wsz&#x0119;dzie gdzie to mo&#x017c;liwe zar&oacute;wno w plac&oacute;wkach szkolnych, w poradniach jak i na terenie rodzinnego domu.&#x201D;
                 </blockquote>
-                <div className="border-t border-background/20 pt-6">
-                  <p className="font-bold text-lg">Prof. dr hab. Tadeusz Stanisław Gałkowski</p>
-                  <p className="text-background/70 text-sm mt-1">Wybitny polski psycholog, profesor nauk humanistycznych, pracownik naukowy Wydziału Psychologii Uniwersytetu Warszawskiego. Przewodniczący Polskiego Komitetu Audiofonologii.</p>
+                <div className="pt-6" style={{ borderTop: "1px solid #e5e7eb" }}>
+                  <p className="font-bold text-lg text-gray-900">Prof. dr hab. Tadeusz Stanis&#x0142;aw Ga&#x0142;kowski</p>
+                  <p className="text-sm mt-1 text-gray-500">Wybitny polski psycholog, profesor nauk humanistycznych, pracownik naukowy Wydzia&#x0142;u Psychologii Uniwersytetu Warszawskiego. Przewodnicz&#x0105;cy Polskiego Komitetu Audiofonologii.</p>
                 </div>
               </div>
             </motion.div>
