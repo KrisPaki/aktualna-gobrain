@@ -13,7 +13,7 @@ import BlogPage from "@/pages/BlogPage";
 import FaqPage from "@/pages/FaqPage";
 import PomocPage from "@/pages/PomocPage";
 import SklepPage from "@/pages/SklepPage";
-import PomoceDydaktycznePage from "@/pages/PomoceDydaktycznePage";
+import ProgramyEdukacyjnePage from "@/pages/ProgramyEdukacyjnePage";
 import ItsSchoolPage from "@/pages/ItsSchoolPage";
 import KartaMowyPage from "@/pages/KartaMowyPage";
 
@@ -35,7 +35,7 @@ function App() {
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/pomoc" element={<PomocPage />} />
               <Route path="/sklep" element={<SklepPage />} />
-              <Route path="/pomoce-dydaktyczne" element={<PomoceDydaktycznePage />} />
+              <Route path="/programy-edukacyjne" element={<ProgramyEdukacyjnePage />} />
               <Route path="/karta-mowy" element={<KartaMowyPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
