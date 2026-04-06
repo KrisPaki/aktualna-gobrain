@@ -184,9 +184,9 @@ export default function HomePage() {
                 animate="visible"
                 variants={staggerContainer}
               >
-                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  <Brain className="w-4 h-4" />
-                  <span>Nowoczesna terapia słuchowa</span>
+                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 font-black text-sm uppercase tracking-widest" style={{ background: "linear-gradient(90deg, #0066cc, #7c3aed, #ea580c)", color: "#fff", letterSpacing: "0.12em" }}>
+                  <Brain className="w-4 h-4 shrink-0" />
+                  <span>ITS GoBrain KOLOROWE</span>
                 </motion.div>
                 
                 <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
