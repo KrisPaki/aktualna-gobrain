@@ -884,53 +884,55 @@ export default function HomePage() {
 
         {/* SECTION 7b - Prof. Gałkowski video */}
         <section className="py-20 bg-background border-t border-border">
-          <div className="container mx-auto px-4 max-w-5xl">
+          <div className="container mx-auto px-4 max-w-6xl">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="text-center mb-10"
+              className="mb-10 text-center"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                 <GraduationCap className="w-4 h-4" />
-                Patron naukowy GoBrain
+                Rekomendacja naukowa
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Prof. dr hab. Tadeusz Gałkowski
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                {'Wybitny psycholog, naukowiec i patron merytoryczny GoBrain — przez lata wspierał twórczą energią projekt ITS GoBrain, który powstał w oparciu o wieloletnie badania kliniczne.'}
-              </p>
             </motion.div>
 
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeInUp}
-              className="rounded-3xl overflow-hidden shadow-2xl border border-border bg-black max-w-3xl mx-auto"
+              variants={staggerContainer}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
             >
-              <video
-                controls
-                preload="metadata"
-                className="w-full aspect-video"
-                poster=""
-              >
-                <source src="https://gobraintech.pl/current/www/ProfGalkowski01.mp4" type="video/mp4" />
-                {'Twoja przeglądarka nie obsługuje odtwarzania wideo.'}
-              </video>
-            </motion.div>
+              {/* Left — video */}
+              <motion.div variants={fadeInUp} className="rounded-3xl overflow-hidden shadow-2xl border border-border bg-black">
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full aspect-video"
+                >
+                  <source src="https://gobraintech.pl/current/www/ProfGalkowski01.mp4#t=3" type="video/mp4" />
+                  {'Twoja przeglądarka nie obsługuje odtwarzania wideo.'}
+                </video>
+              </motion.div>
 
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center text-sm text-muted-foreground mt-6"
-            >
-              {'Prof. Tadeusz Gałkowski (1936–2020) — psycholog, neurologopeda, kierownik Katedry Edukacji SWPS, wieloletni przewodniczący Krajowego Towarzystwa Autyzmu, założyciel Polskiego Komitetu Audiofonologii.'}
-            </motion.p>
+              {/* Right — quote */}
+              <motion.div variants={fadeInUp} className="flex flex-col justify-center">
+                <svg className="w-12 h-12 text-primary/20 mb-4" fill="currentColor" viewBox="0 0 32 32">
+                  <path d="M10 8C5.6 8 2 11.6 2 16s3.6 8 8 8c1.8 0 3.4-.6 4.7-1.6C13.6 24.9 12 28 8 28v4c8 0 12-5.4 12-12V8H10zm20 0h-12v12c0 6.6-4 12-12 12v-4c4 0 5.6-3.1 6.7-5.6C11.4 23.4 10 21.8 10 20c0-4.4 3.6-8 8-8h2V8h10z" />
+                </svg>
+                <blockquote className="text-lg md:text-xl text-foreground leading-relaxed font-medium italic mb-6">
+                  {'"Chciałbym powiedzieć jako przewodniczący Polskiego Komitetu Audiofonologii, że program Zabawy z dźwiękami to jest pomysł wspaniały dostosowany do potrzeb rozwojowych dzieci mających dość często duże kłopoty z przetwarzaniem bodźców słuchowych. Program GoBrain z czystym sumieniem mogę polecić i zachęcić do stosowania zarówno w domu jak i ośrodkach logopedycznych — program ten ćwiczy uwagę i pamięć słuchową. GoBrain przyczynia się do postępów szkolnych dzieci, zwłaszcza jeśli chodzi o czytanie i pisanie."'}
+                </blockquote>
+                <div className="border-l-4 border-primary pl-4">
+                  <p className="font-bold text-foreground text-lg">Prof. dr hab. Tadeusz Gałkowski</p>
+                  <p className="text-sm text-muted-foreground mt-1">{'Psycholog, naukowiec, patron merytoryczny GoBrain'}</p>
+                  <p className="text-sm text-muted-foreground">{'Przewodniczący Polskiego Komitetu Audiofonologii'}</p>
+                  <p className="text-sm text-muted-foreground">{'Kierownik Katedry Edukacji SWPS (1936–2020)'}</p>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
