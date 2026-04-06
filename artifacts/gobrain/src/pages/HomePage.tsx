@@ -331,7 +331,7 @@ export default function HomePage() {
                   icon: Brain,
                   title: 'ITS GoBrain',
                   subtitle: '"Zabawy z dźwiękami"',
-                  desc: 'Dla dzieci 5-12 lat do stosowania w domu.',
+                  desc: 'Dla dzieci od pi\u0105tego roku \u017cycia, do stosowania w domu.',
                   link: '/its',
                   color: 'text-primary',
                   bg: 'bg-primary/10'
@@ -339,8 +339,8 @@ export default function HomePage() {
                 {
                   icon: School,
                   title: 'ITS GoBrain School',
-                  subtitle: 'Dla placówek',
-                  desc: 'Dla szkół i przedszkoli, licencja wielostanowiskowa.',
+                  subtitle: 'Pre-end school',
+                  desc: 'Dla terapeut\u00f3w, gabinet\u00f3w, szk\u00f3\u0142, przedszkoli, poradni i instytucji.',
                   link: '/its-school',
                   color: 'text-accent',
                   bg: 'bg-accent/10'
@@ -349,7 +349,7 @@ export default function HomePage() {
                   icon: Stethoscope,
                   title: 'Platforma Terapeuta',
                   subtitle: 'Narzędzie specjalisty',
-                  desc: 'Dla logopedów, pedagogów i psychologów.',
+                  desc: 'Dla terapeut\u00f3w: logoped\u00f3w, pedagog\u00f3w, psycholog\u00f3w, itp.',
                   link: '/strefa-terapeuty',
                   color: 'text-foreground',
                   bg: 'bg-muted'
@@ -456,12 +456,12 @@ export default function HomePage() {
                 className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
-                  <School className="w-4 h-4" /> DLA PLACÓWEK
+                  <School className="w-4 h-4" /> {'DLA TERAPEUTÓW I PLACÓWEK'}
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain School DEMO</h3>
-                <p className="text-lg text-foreground font-medium mb-4">Przetestuj w placówce przed wdrożeniem</p>
+                <p className="text-lg text-foreground font-medium mb-4">{'Przetestuj przed wdrożeniem w gabinecie, szkole lub poradni'}</p>
                 <p className="text-muted-foreground mb-8">
-                  Wersja demonstracyjna ITS GoBrain School pozwala sprawdzić program w realnych warunkach: w szkole, przedszkolu lub gabinecie.
+                  {'Wersja demonstracyjna ITS GoBrain School — dla terapeutów, gabinetów, szkół, przedszkoli i poradni. Sprawdź program w realnych warunkach.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-pc">
@@ -500,7 +500,7 @@ export default function HomePage() {
                     <span>Dla kogo?</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-                  <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
+                  <p className="text-xl text-muted-foreground">{'Program dla dzieci od piątego roku życia'}</p>
                 </motion.div>
 
                 <motion.div
@@ -778,9 +778,9 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 6 - Prof Recommendation */}
-        <section className="py-24 bg-foreground text-background">
+        <section className="py-24 bg-blue-50 border-y border-blue-100">
           <div className="container mx-auto px-4 max-w-5xl relative">
-            <Quote className="absolute top-0 left-4 w-24 h-24 text-background/10 -translate-y-8 -translate-x-8" />
+            <Quote className="absolute top-0 left-4 w-24 h-24 text-primary/10 -translate-y-8 -translate-x-8" />
             <motion.div 
               initial="hidden"
               whileInView="visible"
@@ -792,7 +792,7 @@ export default function HomePage() {
                 <img 
                   src={profGalkowskiImg} 
                   alt="Prof. dr hab. Tadeusz Stanisław Gałkowski" 
-                  className="w-36 h-36 rounded-full object-cover object-top border-4 border-background/20 shadow-xl"
+                  className="w-36 h-36 rounded-full object-cover object-top border-4 border-primary/20 shadow-xl"
                 />
                 <div className="text-center hidden md:block">
                   <p className="font-bold text-sm leading-tight max-w-[140px]">Prof. dr hab. T.S. Gałkowski</p>
@@ -802,9 +802,9 @@ export default function HomePage() {
                 <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-8">
                   „Chciałbym powiedzieć jako przewodniczący Polskiego Komitetu Audiofonologii, że program Zabawy z dźwiękami to jest pomysł wspaniały dostosowany do potrzeb rozwojowych dzieci mających dość często duże kłopoty z przetwarzaniem bodźców słuchowych. Program GoBrain z czystym sumieniem mogę polecić i zachęcić do stosowania zarówno w domu jak i ośrodkach logopedycznych program ten ćwiczy i uwagę i pamięć słuchową. GoBrain przyczynia się do postępu szkolnych dzieci, zwłaszcza jeśli chodzi o czytanie i pisanie. Także GoBrain to dobry pomysł warty wykorzystania tam wszędzie gdzie to możliwe zarówno w placówkach szkolnych, w poradniach jak i na terenie rodzinnego domu."
                 </blockquote>
-                <div className="border-t border-background/20 pt-6">
-                  <p className="font-bold text-lg">Prof. dr hab. Tadeusz Stanisław Gałkowski</p>
-                  <p className="text-background/70 text-sm mt-1">Wybitny polski psycholog, profesor nauk humanistycznych, pracownik naukowy Wydziału Psychologii Uniwersytetu Warszawskiego. Przewodniczący Polskiego Komitetu Audiofonologii.</p>
+                <div className="border-t border-blue-200 pt-6">
+                  <p className="font-bold text-lg text-foreground">{'Prof. dr hab. Tadeusz Stanisław Gałkowski'}</p>
+                  <p className="text-muted-foreground text-sm mt-1">{'Wybitny polski psycholog, profesor nauk humanistycznych, pracownik naukowy Wydziału Psychologii Uniwersytetu Warszawskiego. Przewodniczący Polskiego Komitetu Audiofonologii.'}</p>
                 </div>
               </div>
             </motion.div>
@@ -940,8 +940,9 @@ export default function HomePage() {
                 {/* About / Quote */}
                 <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-6">
                   <Quote className="w-8 h-8 text-primary/30 mb-3" />
-                  <blockquote className="text-base text-foreground leading-relaxed font-medium mb-4">
-                    GoBrain to efekt ponad 20 lat praktyki klinicznej i pracy z dziećmi z zaburzeniami przetwarzania słuchowego. Metoda \u0142\u0105czy wiedzę neurologopedyczną z nowoczesnymi technologiami, dając dzieciom skuteczne i dostępne narzędzie do treningu słuchowego — w domu, szkole i gabinecie.
+                  <blockquote className="text-base text-foreground leading-relaxed font-medium mb-4 space-y-3">
+                    <p>{'GoBrain to efekt ponad 20 lat praktyki klinicznej — metoda łącząca wiedzę neurologopedyczną z nowoczesnymi technologiami. To nie tylko trening słuchowy, lecz kompleksowe narzędzie wspierające pracę terapeuty i rozwój dziecka w domu, szkole i gabinecie.'}</p>
+                    <p>{'Dedykowany dzieciom od piątego roku życia z deficytami uwagi słuchowej, trudnościami w czytaniu i pisaniu, problemami z wymową oraz zaburzeniami przetwarzania słuchowego (CAPD). Trening GoBrain stymuluje lewą półkulę, organizuje sekwencyjnie informacje i przyspiesza efekty terapeutyczne.'}</p>
                   </blockquote>
                   <div className="border-t border-border pt-4">
                     <p className="font-bold text-foreground">Aneta Pakieła</p>
@@ -992,7 +993,7 @@ export default function HomePage() {
               {/* Card 1: School */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border border-border shadow-sm">
                 <h3 className="text-2xl font-bold text-foreground mb-2">GoBrain School</h3>
-                <p className="text-muted-foreground mb-6 h-10">Dla szkół, przedszkoli, poradni</p>
+                <p className="text-muted-foreground mb-6 h-10">{'Dla terapeutów, szkół, przedszkoli, poradni i instytucji'}</p>
                 <ul className="space-y-4 mb-8 min-h-[200px]">
                   {["Wieloużytkownikowy dostęp", "Panel nauczyciela/terapeuty", "Monitoring postępu", "Licencja instytucjonalna"].map((feat, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm font-medium">
@@ -1012,7 +1013,7 @@ export default function HomePage() {
                   Najpopularniejszy
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2 mt-2">ITS GoBrain</h3>
-                <p className="text-muted-foreground mb-4">Dla dzieci 5-12 lat, do stosowania w domu</p>
+                <p className="text-muted-foreground mb-4">{'Dla dzieci od piątego roku życia, do stosowania w domu'}</p>
                 <div className="flex gap-2 mb-6 flex-wrap">
                   <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">Licencja 365 dni</span>
                   <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full font-medium">Licencja bezterminowa</span>
@@ -1035,7 +1036,7 @@ export default function HomePage() {
               {/* Card 3: Therapist */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border border-border shadow-sm">
                 <h3 className="text-2xl font-bold text-foreground mb-2">Terapeuta</h3>
-                <p className="text-muted-foreground mb-6 h-10">Dla logopedów, pedagogów, psychologów</p>
+                <p className="text-muted-foreground mb-6 h-10">{'Dla terapeutów: logopedów, pedagogów, psychologów, itp.'}</p>
                 <ul className="space-y-4 mb-8 min-h-[200px]">
                   {["Platforma diagnostyczna", "Test 8 obszarów", "Kwestionariusze i ankiety", "Porównanie wyników przed/po", "Dostęp do materiałów szkoleniowych"].map((feat, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm font-medium">

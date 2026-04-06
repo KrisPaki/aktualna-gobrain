@@ -114,14 +114,14 @@ export default function StrefaTerapeutyPage() {
       <div className="pt-16">
 
         {/* ─── HERO ─── */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-foreground text-background">
+        <section className="relative py-20 md:py-28 overflow-hidden bg-primary text-white">
           <div className="absolute inset-0">
             <img
               src={therapistDashboardImg}
               alt="Terapeuta pracuje z platformą GoBrain"
               className="w-full h-full object-cover opacity-20"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/90 to-foreground/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/40" />
           </div>
 
           {/* Floating icons */}
@@ -132,7 +132,7 @@ export default function StrefaTerapeutyPage() {
           ].map((item, i) => (
             <motion.div
               key={i}
-              className="absolute text-background/20 pointer-events-none hidden lg:block"
+              className="absolute text-white/20 pointer-events-none hidden lg:block"
               style={{ left: item.x, top: item.y }}
               animate={{ y: [0, -14, 0], rotate: [0, 6, -6, 0] }}
               transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: item.delay }}
@@ -143,17 +143,19 @@ export default function StrefaTerapeutyPage() {
 
           <div className="relative z-10 container mx-auto px-4 max-w-5xl">
             <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-3xl">
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background/10 text-background text-sm font-medium mb-6 border border-background/20">
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-6 border border-white/20">
                 <ClipboardList className="w-4 h-4" />
-                <span>Dla logopedów i terapeutów</span>
+                <span>{'Dla terapeutów: logopedów, pedagogów, psychologów'}</span>
               </motion.div>
 
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                Platforma<br /><span className="text-primary">TERAPEUTA</span>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                Platforma<br /><span className="text-orange-300">TERAPEUTA</span>
               </motion.h1>
 
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-background/80 mb-10 max-w-2xl leading-relaxed">
-                Profesjonalne narzędzie do diagnozy, monitorowania postępów i porównywania wyników <strong className="text-background">przed i po terapii</strong>. Zwiększ efektywność swojej pracy — dane mówią same za siebie.
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl leading-relaxed">
+                {'Profesjonalne narzędzie do diagnozy, monitorowania postępów i porównywania wyników '}
+                <strong className="text-white">przed i po terapii</strong>
+                {'. Zwiększ efektywność swojej pracy — dane mówią same za siebie.'}
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -163,7 +165,7 @@ export default function StrefaTerapeutyPage() {
                     <ChevronRight className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-base border-background/30 text-background hover:bg-background/10" asChild>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-base border-white/30 text-white hover:bg-white/10" asChild>
                   <Link to="/szkolenia-i-webinary">Szkolenia dla terapeutów</Link>
                 </Button>
               </motion.div>

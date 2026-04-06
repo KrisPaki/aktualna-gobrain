@@ -136,7 +136,7 @@ export default function ItsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-              <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5–12 lat</p>
+              <p className="text-xl text-muted-foreground">{'Program dla dzieci od piątego roku życia'}</p>
             </motion.div>
 
             <motion.div
@@ -312,7 +312,7 @@ export default function ItsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-foreground text-background text-center">
+        <section className="py-20 bg-gradient-to-r from-primary to-blue-700 text-white text-center">
           <div className="container mx-auto px-4">
             <motion.div
               initial="hidden"
@@ -322,14 +322,14 @@ export default function ItsPage() {
               className="max-w-2xl mx-auto"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Gotowy, by wspierać swoje dziecko?</h2>
-              <p className="text-background/70 mb-10 text-lg">Zacznij trening słuchowy już dziś. Dostępne dla dzieci od 5 do 12 lat.</p>
+              <p className="text-white/80 mb-10 text-lg">{'Zacznij trening słuchowy już dziś. Program dla dzieci od piątego roku życia.'}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="h-14 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90 font-semibold" asChild>
                   <a href="https://automater.com/rest/order-viewer/buy/1073862" target="_blank" rel="noopener noreferrer">
                     Kup kod aktywacyjny
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-base text-background border-background/30 hover:bg-background/10" asChild>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-base text-white border-white/30 hover:bg-white/10" asChild>
                   <Link to="/faq">Pytania i odpowiedzi</Link>
                 </Button>
               </div>

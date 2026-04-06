@@ -27,7 +27,7 @@ const products = [
     priceNote: "PLN (brutto)",
     img: productItsImg,
     imgAlt: "Pudełko produktu ITS GoBrain Etap 1",
-    target: "Dla dzieci 5–12 lat — do stosowania w domu",
+    target: "Dla dzieci od pi\u0105tego roku \u017cycia \u2014 do stosowania w domu",
     features: [
       "4 poziomy trudności",
       "20 zadań treningowych",
@@ -66,14 +66,14 @@ const products = [
   {
     id: "its-school",
     badge: "Licencja wielostanowiskowa",
-    badgeColor: "bg-purple-600 text-white",
+    badgeColor: "bg-orange-500 text-white",
     title: "ITS GoBrain School",
-    subtitle: "Dla szkół i przedszkoli",
+    subtitle: "Pre-end school",
     price: "799",
     priceNote: "PLN / rok (brutto)",
     img: productSchoolImg,
-    imgAlt: "Program ITS GoBrain School dla placówek",
-    target: "Dla logopedów, pedagogów, placówek edukacyjnych",
+    imgAlt: "Program ITS GoBrain School dla terapeut\u00f3w i instytucji",
+    target: "Dla terapeut\u00f3w, gabinet\u00f3w, szk\u00f3\u0142, przedszkoli, poradni, instytucji",
     features: [
       "Nieograniczona liczba użytkowników",
       "Terapeuta kontroluje czas i zakres sesji",
@@ -96,7 +96,7 @@ const products = [
     priceNote: "Cena na zapytanie",
     img: productTerapeutaImg,
     imgAlt: "Platforma Terapeuta GoBrain",
-    target: "Dla logopedów, psychologów i pedagogów",
+    target: "Dla terapeut\u00f3w: logoped\u00f3w, pedagog\u00f3w, psycholog\u00f3w, itp.",
     features: [
       "PreTest i PostTest (diagnoza słuchu)",
       "Monitoring postępów podopiecznych",
@@ -152,7 +152,7 @@ export default function SklepPage() {
               Wybierz program<br className="hidden md:block" /> dopasowany do potrzeb
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Interaktywny trening słuchowy dla dzieci 5–12 lat. Bezpieczna płatność, natychmiastowy dostęp, faktura VAT.
+              {'Interaktywny trening słuchowy dla dzieci od piątego roku życia. Bezpieczna płatność, natychmiastowy dostęp, faktura VAT.'}
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
