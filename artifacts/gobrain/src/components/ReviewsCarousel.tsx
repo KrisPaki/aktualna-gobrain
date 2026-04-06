@@ -135,7 +135,7 @@ export default function ReviewsCarousel({
           {showBadge && (
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 border border-yellow-200 text-yellow-700 text-sm font-medium mb-4">
               <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              4.9 / 5.0 — ponad 22 opinie
+              4.9 / 5.0
             </div>
           )}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
