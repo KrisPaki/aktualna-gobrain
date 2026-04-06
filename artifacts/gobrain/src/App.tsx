@@ -10,6 +10,7 @@ import ItsPage from "@/pages/ItsPage";
 import StrefaTerapeutyPage from "@/pages/StrefaTerapeutyPage";
 import SzkoleniaPage from "@/pages/SzkoleniaPage";
 import BlogPage from "@/pages/BlogPage";
+import BlogPostPage from "@/pages/BlogPostPage";
 import FaqPage from "@/pages/FaqPage";
 import PomocPage from "@/pages/PomocPage";
 import SklepPage from "@/pages/SklepPage";
@@ -32,6 +33,7 @@ function App() {
               <Route path="/strefa-terapeuty" element={<StrefaTerapeutyPage />} />
               <Route path="/szkolenia-i-webinary" element={<SzkoleniaPage />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/pomoc" element={<PomocPage />} />
               <Route path="/sklep" element={<SklepPage />} />
