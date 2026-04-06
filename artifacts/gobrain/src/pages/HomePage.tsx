@@ -557,88 +557,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 4 - Products */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            {/* Section header with child tablet image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                  <Brain className="w-4 h-4" />
-                  <span>Nasze programy</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz program dla swojego dziecka</h2>
-                <p className="text-xl text-muted-foreground">Trzy rozwiązania dostosowane do różnych potrzeb — dla domu, szkoły i gabinetu terapeutycznego.</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="relative rounded-2xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
-              >
-                <img src={childTabletImg} alt="Dziecko ćwiczy z programem ITS GoBrain na tablecie" className="w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
-              </motion.div>
-            </div>
-
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            >
-              {[
-                {
-                  icon: Brain,
-                  title: 'ITS GoBrain',
-                  subtitle: '"Zabawy z dźwiękami"',
-                  desc: 'Dla dzieci 5-12 lat do stosowania w domu.',
-                  link: '/its',
-                  color: 'text-primary',
-                  bg: 'bg-primary/10'
-                },
-                {
-                  icon: School,
-                  title: 'ITS GoBrain School',
-                  subtitle: 'Dla placówek',
-                  desc: 'Dla szkół i przedszkoli, licencja wielostanowiskowa.',
-                  link: '/its-school',
-                  color: 'text-accent',
-                  bg: 'bg-accent/10'
-                },
-                {
-                  icon: Stethoscope,
-                  title: 'Platforma Terapeuta',
-                  subtitle: 'Narzędzie specjalisty',
-                  desc: 'Dla logopedów, pedagogów i psychologów.',
-                  link: '/strefa-terapeuty',
-                  color: 'text-foreground',
-                  bg: 'bg-muted'
-                }
-              ].map((prod, i) => (
-                <motion.div key={i} variants={fadeInUp} className="group relative bg-card rounded-2xl p-8 border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                  <div className={`w-14 h-14 rounded-xl ${prod.bg} flex items-center justify-center mb-6`}>
-                    <prod.icon className={`w-7 h-7 ${prod.color}`} />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">{prod.title}</h3>
-                  <p className="text-sm font-medium text-primary mb-3">{prod.subtitle}</p>
-                  <p className="text-muted-foreground mb-6 line-clamp-3">{prod.desc}</p>
-                  <Link to={prod.link} className="inline-flex items-center text-sm font-semibold text-foreground group-hover:text-primary transition-colors" data-testid={`prod-link-${i}`}>
-                    Dowiedz się więcej <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* SECTION 3 - Demo */}
         <section className="py-20 bg-card/50 border-y border-border">
           <div className="container mx-auto px-4">
@@ -1090,10 +1008,20 @@ export default function HomePage() {
         {/* SECTION 8 - Pricing */}
         <section className="py-24 bg-card border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiednią licencję</h2>
-              <p className="text-xl text-muted-foreground">Rozwiązania dopasowane do Twoich potrzeb</p>
-            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <Brain className="w-4 h-4" />
+                <span>Nasze programy</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiedni program</h2>
+              <p className="text-xl text-muted-foreground">Trzy rozwi\u0105zania dopasowane do r\u00f3\u017cnych potrzeb \u2014 dla domu, szko\u0142y i gabinetu terapeutycznego</p>
+            </motion.div>
 
             <motion.div 
               initial="hidden"
