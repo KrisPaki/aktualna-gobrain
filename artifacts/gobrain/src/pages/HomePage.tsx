@@ -306,7 +306,7 @@ export default function HomePage() {
                 <span className="text-muted-foreground font-light">&amp;</span>
                 {" "}efekty stosowania
               </h2>
-              <p className="text-lg text-muted-foreground">Program ITS GoBrain dla dzieci w wieku <strong>5&#x2013;12 lat</strong></p>
+              <p className="text-lg text-muted-foreground">Program ITS GoBrain wspieraj&#x0105;cy rozw&oacute;j s&#x0142;uchu fonologicznego</p>
             </motion.div>
 
             {/* Two-column layout */}
@@ -773,7 +773,7 @@ export default function HomePage() {
                   Najpopularniejszy
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2 mt-2">ITS GoBrain</h3>
-                <p className="text-muted-foreground mb-4">Dla dzieci 5-12 lat, do stosowania w domu</p>
+                <p className="text-muted-foreground mb-4">Do stosowania w domu</p>
                 <div className="flex gap-2 mb-6 flex-wrap">
                   <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">Licencja 365 dni</span>
                   <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full font-medium">Licencja bezterminowa</span>
