@@ -882,6 +882,58 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* SECTION 7b - Prof. Gałkowski video */}
+        <section className="py-20 bg-background border-t border-border">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-10"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-5">
+                <GraduationCap className="w-4 h-4" />
+                Patron naukowy GoBrain
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Prof. dr hab. Tadeusz Gałkowski
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {'Wybitny psycholog, naukowiec i patron merytoryczny GoBrain — przez lata wspierał twórczą energią projekt ITS GoBrain, który powstał w oparciu o wieloletnie badania kliniczne.'}
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="rounded-3xl overflow-hidden shadow-2xl border border-border bg-black max-w-3xl mx-auto"
+            >
+              <video
+                controls
+                preload="metadata"
+                className="w-full aspect-video"
+                poster=""
+              >
+                <source src="https://gobraintech.pl/current/www/ProfGalkowski01.mp4" type="video/mp4" />
+                {'Twoja przeglądarka nie obsługuje odtwarzania wideo.'}
+              </video>
+            </motion.div>
+
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center text-sm text-muted-foreground mt-6"
+            >
+              {'Prof. Tadeusz Gałkowski (1936–2020) — psycholog, neurologopeda, kierownik Katedry Edukacji SWPS, wieloletni przewodniczący Krajowego Towarzystwa Autyzmu, założyciel Polskiego Komitetu Audiofonologii.'}
+            </motion.p>
+          </div>
+        </section>
+
         {/* SECTION 8 - Pricing */}
         <section className="py-24 bg-card border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
