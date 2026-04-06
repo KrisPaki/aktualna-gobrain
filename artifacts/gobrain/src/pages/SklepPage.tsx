@@ -27,7 +27,7 @@ const products = [
     priceNote: "PLN (brutto)",
     img: productItsImg,
     imgAlt: "Pudełko produktu ITS GoBrain Etap 1",
-    target: "Do stosowania w domu",
+    target: "Dla dzieci 5–12 lat — do stosowania w domu",
     features: [
       "4 poziomy trudności",
       "20 zadań treningowych",
@@ -152,7 +152,7 @@ export default function SklepPage() {
               Wybierz program<br className="hidden md:block" /> dopasowany do potrzeb
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Interaktywny trening s&#x0142;uchowy dla dzieci. Bezpieczna p&#x0142;atno&#x015b;&#x107;, natychmiastowy dost&#x0119;p, faktura VAT.
+              Interaktywny trening słuchowy dla dzieci 5–12 lat. Bezpieczna płatność, natychmiastowy dostęp, faktura VAT.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">

@@ -136,7 +136,7 @@ export default function ItsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-              <p className="text-xl text-muted-foreground">Interaktywny trening s&#x0142;uchowy dla dzieci</p>
+              <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5–12 lat</p>
             </motion.div>
 
             <motion.div
@@ -322,7 +322,7 @@ export default function ItsPage() {
               className="max-w-2xl mx-auto"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Gotowy, by wspierać swoje dziecko?</h2>
-              <p className="text-background/70 mb-10 text-lg">Zacznij trening s&#x0142;uchowy ju&#x017c; dzi&#x015b;.</p>
+              <p className="text-background/70 mb-10 text-lg">Zacznij trening słuchowy już dziś. Dostępne dla dzieci od 5 do 12 lat.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="h-14 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                   <a href="https://automater.com/rest/order-viewer/buy/1073862" target="_blank" rel="noopener noreferrer">

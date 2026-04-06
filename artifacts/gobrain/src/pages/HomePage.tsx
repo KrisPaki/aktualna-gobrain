@@ -289,99 +289,349 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 2+3 — Dla kogo & Efekty — MERGED */}
-        <section className="py-24" style={{ background: "#f8fafc" }}>
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* SECTION 2 - Products */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            {/* Section header with child tablet image */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Brain className="w-4 h-4" />
+                  <span>Nasze programy</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz program dla swojego dziecka</h2>
+                <p className="text-xl text-muted-foreground">Trzy rozwiązania dostosowane do różnych potrzeb — dla domu, szkoły i gabinetu terapeutycznego.</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative rounded-2xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
+              >
+                <img src={childTabletImg} alt="Dziecko ćwiczy z programem ITS GoBrain na tablecie" className="w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
+              </motion.div>
+            </div>
 
-            {/* Shared header */}
-            <motion.div
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            >
+              {[
+                {
+                  icon: Brain,
+                  title: 'ITS GoBrain',
+                  subtitle: '"Zabawy z dźwiękami"',
+                  desc: 'Dla dzieci 5-12 lat do stosowania w domu.',
+                  link: '/its',
+                  color: 'text-primary',
+                  bg: 'bg-primary/10'
+                },
+                {
+                  icon: School,
+                  title: 'ITS GoBrain School',
+                  subtitle: 'Dla placówek',
+                  desc: 'Dla szkół i przedszkoli, licencja wielostanowiskowa.',
+                  link: '/its-school',
+                  color: 'text-accent',
+                  bg: 'bg-accent/10'
+                },
+                {
+                  icon: Stethoscope,
+                  title: 'Platforma Terapeuta',
+                  subtitle: 'Narzędzie specjalisty',
+                  desc: 'Dla logopedów, pedagogów i psychologów.',
+                  link: '/strefa-terapeuty',
+                  color: 'text-foreground',
+                  bg: 'bg-muted'
+                }
+              ].map((prod, i) => (
+                <motion.div key={i} variants={fadeInUp} className="group relative bg-card rounded-2xl p-8 border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+                  <div className={`w-14 h-14 rounded-xl ${prod.bg} flex items-center justify-center mb-6`}>
+                    <prod.icon className={`w-7 h-7 ${prod.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-1">{prod.title}</h3>
+                  <p className="text-sm font-medium text-primary mb-3">{prod.subtitle}</p>
+                  <p className="text-muted-foreground mb-6 line-clamp-3">{prod.desc}</p>
+                  <Link to={prod.link} className="inline-flex items-center text-sm font-semibold text-foreground group-hover:text-primary transition-colors" data-testid={`prod-link-${i}`}>
+                    Dowiedz się więcej <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* SECTION 3 - Demo */}
+        <section className="py-20 bg-card/50 border-y border-border">
+          <div className="container mx-auto px-4">
+            {/* Demo photo banner */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center mb-12">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl"
+              >
+                <img src={parentChildImg} alt="Rodzic i dziecko ćwiczą z GoBrain" className="w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-md"
+                >
+                  <span className="text-2xl">🎮</span>
+                  <span className="font-bold text-sm text-foreground">Wypróbuj DEMO za darmo!</span>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:col-span-3"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Play className="w-4 h-4" />
+                  <span>Bezpłatne demo</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Sprawdź GoBrain zanim kupisz</h2>
+                <p className="text-xl text-muted-foreground mb-6">Pobierz bezpłatną wersję demo i przetestuj program razem z dzieckiem. Bez rejestracji i opłat.</p>
+                <div className="flex flex-wrap gap-3">
+                  {["Bezpłatne", "Bez rejestracji", "PC i Android", "Kilka ćwiczeń w zestawie"].map((t, i) => (
+                    <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> {t}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-6">
+                  <Play className="w-4 h-4" /> DEMO
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain Starter</h3>
+                <p className="text-lg text-foreground font-medium mb-4">Sprawdź, jak działa przed zakupem</p>
+                <p className="text-muted-foreground mb-8">
+                  Pobierz bezpłatną wersję ITS GoBrain Starter i poznaj program w praktyce. Demo zawiera kilka wybranych ćwiczeń z pierwszego etapu.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-pc">
+                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe">
+                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-android">
+                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk">
+                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
+                    </a>
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
+                  <School className="w-4 h-4" /> DLA PLACÓWEK
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain School DEMO</h3>
+                <p className="text-lg text-foreground font-medium mb-4">Przetestuj w placówce przed wdrożeniem</p>
+                <p className="text-muted-foreground mb-8">
+                  Wersja demonstracyjna ITS GoBrain School pozwala sprawdzić program w realnych warunkach: w szkole, przedszkolu lub gabinecie.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-pc">
+                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_School_Starter.exe">
+                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-android">
+                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Szkola_starter.apk">
+                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
+                    </a>
+                  </Button>
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4 - For whom? — PHOTO RIGHT */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* Text side — LEFT */}
+              <div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  className="mb-10"
+                >
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                    <Users className="w-4 h-4" />
+                    <span>Dla kogo?</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
+                  <p className="text-xl text-muted-foreground">Program dla dzieci w wieku 5-12 lat</p>
+                </motion.div>
+
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                >
+                  {[
+                    { icon: Ear, text: "Słyszy, ale nie słucha" },
+                    { icon: Brain, text: "Nie rozumie poleceń" },
+                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
+                    { icon: Target, text: "Trudności z koncentracją" },
+                    { icon: Headphones, text: "Wrażliwe na dźwięki" },
+                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
+                    { icon: GraduationCap, text: "Wymaga powtarzania poleceń" },
+                    { icon: Heart, text: "Po problemach ze słuchem" },
+                  ].map((item, i) => (
+                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
+                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                        <item.icon className="w-4 h-4 text-accent" />
+                      </div>
+                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Photo side — RIGHT */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
+                </div>
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-6 -left-6 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+                    <Target className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Skuteczność</p>
+                    <p className="font-bold text-foreground">Potwierdzona klinicznie</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 5 - Effects */}
+        <section className="py-24 bg-card border-y border-border overflow-hidden">
+          <div className="container mx-auto px-4">
+            <motion.div 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">
-                Dla kogo{" "}
-                <span className="text-muted-foreground font-light">&amp;</span>
-                {" "}efekty stosowania
-              </h2>
-              <p className="text-lg text-muted-foreground">Program ITS GoBrain wspieraj&#x0105;cy rozw&oacute;j s&#x0142;uchu fonologicznego</p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+                <Trophy className="w-4 h-4" />
+                <span>Efekty terapii</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Co zyskuje Twoje dziecko?</h2>
+              <p className="text-xl text-muted-foreground">Potwierdzone naukowo rezultaty regularnych treningów</p>
             </motion.div>
 
-            {/* Two-column layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Effects cards */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
+                {[
+                  { icon: Ear, emoji: "👂", text: "Poprawa przetwarzania słuchowego", color: "bg-blue-50 border-blue-200", iconColor: "text-blue-600", iconBg: "bg-blue-100" },
+                  { icon: GraduationCap, emoji: "📚", text: "Lepsze wyniki w nauce i szkole", color: "bg-green-50 border-green-200", iconColor: "text-green-600", iconBg: "bg-green-100" },
+                  { icon: Activity, emoji: "🗣️", text: "Lepsza wymowa i komunikacja", color: "bg-purple-50 border-purple-200", iconColor: "text-purple-600", iconBg: "bg-purple-100" },
+                  { icon: Brain, emoji: "🧠", text: "Więcej uwagi, koncentracji i pamięci", color: "bg-orange-50 border-orange-200", iconColor: "text-orange-600", iconBg: "bg-orange-100" },
+                  { icon: Headphones, emoji: "🎧", text: "Normalizacja wrażliwości na dźwięki", color: "bg-pink-50 border-pink-200", iconColor: "text-pink-600", iconBg: "bg-pink-100" },
+                  { icon: Smile, emoji: "😊", text: "Wzrost pewności siebie dziecka", color: "bg-yellow-50 border-yellow-200", iconColor: "text-yellow-600", iconBg: "bg-yellow-100" },
+                ].map((effect, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className={`rounded-2xl p-5 border ${effect.color} flex items-start gap-4 transition-all`}
+                  >
+                    <div className={`w-12 h-12 ${effect.iconBg} rounded-xl flex items-center justify-center shrink-0 text-2xl`}>
+                      {effect.emoji}
+                    </div>
+                    <p className="font-semibold text-foreground text-sm leading-snug mt-1">{effect.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
 
-              {/* LEFT — Dla kogo */}
-              <div>
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                  className="flex items-center gap-3 mb-5 pb-4" style={{ borderBottom: "2px solid #f97316" }}>
-                  <span className="text-2xl">&#x1F4CC;</span>
-                  <h3 className="text-lg font-bold text-foreground">Kiedy warto si&#x0119;gn&#x0105;&#x0107; po program?</h3>
-                </motion.div>
+              {/* Classroom photo */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={childrenClassroomImg} alt="Dzieci uczą się z GoBrain w klasie" className="w-full object-cover" />
+                </div>
                 <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className="flex flex-col gap-2"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-5 -left-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
                 >
-                  {[
-                    { emoji: "\ud83d\udc42", text: "S\u0142yszy, ale nie s\u0142ucha" },
-                    { emoji: "\ud83e\udde0", text: "Nie rozumie polece\u0144" },
-                    { emoji: "\ud83d\udcda", text: "Problemy z czytaniem i pisaniem" },
-                    { emoji: "\ud83c\udfaf", text: "Trudno\u015bci z koncentracj\u0105" },
-                    { emoji: "\ud83c\udfa7", text: "Nadwra\u017cliwo\u015b\u0107 lub niedo wra\u017cliwo\u015b\u0107 na d\u017awi\u0119ki" },
-                    { emoji: "\ud83d\udce1", text: "Zaburzenia przetwarzania s\u0142uchowego (CAPD)" },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      variants={fadeInUp}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white cursor-default"
-                      style={{ border: "1px solid #e5e7eb", borderLeft: "4px solid #f97316" }}
-                    >
-                      <span className="text-lg shrink-0">{item.emoji}</span>
-                      <span className="text-sm font-medium text-gray-700 leading-snug">{item.text}</span>
-                    </motion.div>
-                  ))}
+                  <span className="text-3xl">🏆</span>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Ocena szkół</p>
+                    <p className="font-bold text-foreground">100% poleca!</p>
+                  </div>
                 </motion.div>
-              </div>
-
-              {/* RIGHT — Efekty stosowania */}
-              <div>
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                  className="flex items-center gap-3 mb-5 pb-4" style={{ borderBottom: "2px solid #10b981" }}>
-                  <span className="text-2xl">&#x2705;</span>
-                  <h3 className="text-lg font-bold text-foreground">Efekty regularnych trening&oacute;w</h3>
-                </motion.div>
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className="flex flex-col gap-2"
-                >
-                  {[
-                    { emoji: "\ud83d\udc42", text: "Poprawa przetwarzania s\u0142uchowego" },
-                    { emoji: "\ud83d\udcda", text: "Lepsze wyniki w nauce i szkole" },
-                    { emoji: "\ud83d\udde3\ufe0f", text: "Lepsza wymowa i komunikacja" },
-                    { emoji: "\ud83e\udde0", text: "Wi\u0119cej uwagi i koncentracji" },
-                    { emoji: "\ud83c\udfa7", text: "Normalizacja wra\u017cliwo\u015bci na d\u017awi\u0119ki" },
-                    { emoji: "\ud83d\ude0a", text: "Wzrost pewno\u015bci siebie dziecka" },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      variants={fadeInUp}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white cursor-default"
-                      style={{ border: "1px solid #e5e7eb", borderLeft: "4px solid #10b981" }}
-                    >
-                      <span className="text-lg shrink-0">{item.emoji}</span>
-                      <span className="text-sm font-medium text-gray-700 leading-snug">{item.text}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-
+              </motion.div>
             </div>
           </div>
         </section>
@@ -528,9 +778,9 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 6 - Prof Recommendation */}
-        <section className="py-24" style={{ background: "#f3f4f6" }}>
+        <section className="py-24 bg-foreground text-background">
           <div className="container mx-auto px-4 max-w-5xl relative">
-            <Quote className="absolute top-0 left-4 w-24 h-24 -translate-y-8 -translate-x-8" style={{ color: "#d1d5db" }} />
+            <Quote className="absolute top-0 left-4 w-24 h-24 text-background/10 -translate-y-8 -translate-x-8" />
             <motion.div 
               initial="hidden"
               whileInView="visible"
@@ -541,21 +791,20 @@ export default function HomePage() {
               <div className="shrink-0 flex flex-col items-center gap-4">
                 <img 
                   src={profGalkowskiImg} 
-                  alt="Prof. dr hab. Tadeusz Stanis&#x0142;aw Ga&#x0142;kowski" 
-                  className="w-36 h-36 rounded-full object-cover object-top shadow-xl"
-                  style={{ border: "4px solid #e5e7eb" }}
+                  alt="Prof. dr hab. Tadeusz Stanisław Gałkowski" 
+                  className="w-36 h-36 rounded-full object-cover object-top border-4 border-background/20 shadow-xl"
                 />
                 <div className="text-center hidden md:block">
-                  <p className="font-bold text-sm leading-tight max-w-[140px] text-gray-800">Prof. dr hab. T.S. Ga&#x0142;kowski</p>
+                  <p className="font-bold text-sm leading-tight max-w-[140px]">Prof. dr hab. T.S. Gałkowski</p>
                 </div>
               </div>
               <div className="flex-1">
-                <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-8 text-gray-800">
-                  &#x201E;Chcia&#x0142;bym powiedzie&#x107; jako przewodnicz&#x0105;cy Polskiego Komitetu Audiofonologii, &#x017c;e program Zabawy z d&#x17a;wi&#x0119;kami to jest pomys&#x0142; wspania&#x0142;y dostosowany do potrzeb rozwojowych dzieci maj&#x0105;cych do&#x15b;&#x107; cz&#x0119;sto du&#x017c;e k&#x0142;opoty z przetwarzaniem bod&#x17a;c&oacute;w s&#x0142;uchowych. Program GoBrain z czystym sumieniem mog&#x0119; poleci&#x107; i zach&#x0119;ci&#x107; do stosowania zar&oacute;wno w domu jak i o&#x15b;rodkach logopedycznych program ten &#x107;wiczy i uwag&#x0119; i pami&#x0119;&#x107; s&#x0142;uchow&#x0105;. GoBrain przyczynia si&#x0119; do post&#x0119;pu szkolnych dzieci, zw&#x0142;aszcza je&#x15b;li chodzi o czytanie i pisanie. Tak&#x017c;e GoBrain to dobry pomys&#x0142; warty wykorzystania tam wsz&#x0119;dzie gdzie to mo&#x017c;liwe zar&oacute;wno w plac&oacute;wkach szkolnych, w poradniach jak i na terenie rodzinnego domu.&#x201D;
+                <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-8">
+                  „Chciałbym powiedzieć jako przewodniczący Polskiego Komitetu Audiofonologii, że program Zabawy z dźwiękami to jest pomysł wspaniały dostosowany do potrzeb rozwojowych dzieci mających dość często duże kłopoty z przetwarzaniem bodźców słuchowych. Program GoBrain z czystym sumieniem mogę polecić i zachęcić do stosowania zarówno w domu jak i ośrodkach logopedycznych program ten ćwiczy i uwagę i pamięć słuchową. GoBrain przyczynia się do postępu szkolnych dzieci, zwłaszcza jeśli chodzi o czytanie i pisanie. Także GoBrain to dobry pomysł warty wykorzystania tam wszędzie gdzie to możliwe zarówno w placówkach szkolnych, w poradniach jak i na terenie rodzinnego domu."
                 </blockquote>
-                <div className="pt-6" style={{ borderTop: "1px solid #e5e7eb" }}>
-                  <p className="font-bold text-lg text-gray-900">Prof. dr hab. Tadeusz Stanis&#x0142;aw Ga&#x0142;kowski</p>
-                  <p className="text-sm mt-1 text-gray-500">Wybitny polski psycholog, profesor nauk humanistycznych, pracownik naukowy Wydzia&#x0142;u Psychologii Uniwersytetu Warszawskiego. Przewodnicz&#x0105;cy Polskiego Komitetu Audiofonologii.</p>
+                <div className="border-t border-background/20 pt-6">
+                  <p className="font-bold text-lg">Prof. dr hab. Tadeusz Stanisław Gałkowski</p>
+                  <p className="text-background/70 text-sm mt-1">Wybitny polski psycholog, profesor nauk humanistycznych, pracownik naukowy Wydziału Psychologii Uniwersytetu Warszawskiego. Przewodniczący Polskiego Komitetu Audiofonologii.</p>
                 </div>
               </div>
             </motion.div>
@@ -728,20 +977,10 @@ export default function HomePage() {
         {/* SECTION 8 - Pricing */}
         <section className="py-24 bg-card border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center mb-16"
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                <Brain className="w-4 h-4" />
-                <span>Nasze programy</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiedni program</h2>
-              <p className="text-xl text-muted-foreground">Trzy rozwi\u0105zania dopasowane do r\u00f3\u017cnych potrzeb \u2014 dla domu, szko\u0142y i gabinetu terapeutycznego</p>
-            </motion.div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiednią licencję</h2>
+              <p className="text-xl text-muted-foreground">Rozwiązania dopasowane do Twoich potrzeb</p>
+            </div>
 
             <motion.div 
               initial="hidden"
@@ -773,7 +1012,7 @@ export default function HomePage() {
                   Najpopularniejszy
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2 mt-2">ITS GoBrain</h3>
-                <p className="text-muted-foreground mb-4">Do stosowania w domu</p>
+                <p className="text-muted-foreground mb-4">Dla dzieci 5-12 lat, do stosowania w domu</p>
                 <div className="flex gap-2 mb-6 flex-wrap">
                   <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">Licencja 365 dni</span>
                   <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full font-medium">Licencja bezterminowa</span>
@@ -902,114 +1141,6 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
-          </div>
-        </section>
-
-        {/* SECTION 11b - Demo */}
-        <section className="py-20 bg-card/50 border-y border-border">
-          <div className="container mx-auto px-4">
-            {/* Demo photo banner */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center mb-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl"
-              >
-                <img src={parentChildImg} alt="Rodzic i dziecko &#x107;wicz&#x0105; z GoBrain" className="w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
-                <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-md"
-                >
-                  <span className="text-2xl">&#x1F3AE;</span>
-                  <span className="font-bold text-sm text-foreground">Wypr&oacute;buj DEMO za darmo!</span>
-                </motion.div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="lg:col-span-3"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                  <Play className="w-4 h-4" />
-                  <span>Bezp&#x0142;atne demo</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Sprawd&#x017a; GoBrain zanim kupisz</h2>
-                <p className="text-xl text-muted-foreground mb-6">Pobierz bezp&#x0142;atn&#x0105; wersj&#x0119; demo i przetestuj program razem z dzieckiem. Bez rejestracji i op&#x0142;at.</p>
-                <div className="flex flex-wrap gap-3">
-                  {["Bezp\u0142atne", "Bez rejestracji", "PC i Android", "Kilka \u0107wicze\u0144 w zestawie"].map((t, i) => (
-                    <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5" /> {t}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-6">
-                  <Play className="w-4 h-4" /> DEMO
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain Starter</h3>
-                <p className="text-lg text-foreground font-medium mb-4">Sprawd&#x17a;, jak dzia&#x0142;a przed zakupem</p>
-                <p className="text-muted-foreground mb-8">
-                  Pobierz bezp&#x0142;atn&#x0105; wersj&#x0119; ITS GoBrain Starter i poznaj program w praktyce. Demo zawiera kilka wybranych &eacute;wicze&#x0144; z pierwszego etapu.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-pc">
-                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe">
-                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-android">
-                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk">
-                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
-                  <School className="w-4 h-4" /> DLA PLAC&Oacute;WEK
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain School DEMO</h3>
-                <p className="text-lg text-foreground font-medium mb-4">Przetestuj w plac&oacute;wce przed wdro&#x017c;eniem</p>
-                <p className="text-muted-foreground mb-8">
-                  Wersja demonstracyjna ITS GoBrain School pozwala sprawdzi&#x107; program w realnych warunkach: w szkole, przedszkolu lub gabinecie.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-pc">
-                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_School_Starter.exe">
-                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-android">
-                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Szkola_starter.apk">
-                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
           </div>
         </section>
 
