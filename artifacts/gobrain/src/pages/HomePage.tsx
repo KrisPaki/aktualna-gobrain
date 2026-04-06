@@ -418,35 +418,16 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 3 - Effects */}
-        <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #fffbf0 0%, #fff0e8 50%, #fce8f3 100%)" }}>
-          {/* Floating sparkle stars */}
-          {[
-            { top: "8%",  left: "5%",  size: 28, delay: 0,   dur: 2.5 },
-            { top: "15%", right: "8%", size: 22, delay: 0.4, dur: 3 },
-            { top: "55%", left: "3%",  size: 18, delay: 0.8, dur: 2.8 },
-            { top: "70%", right: "5%", size: 24, delay: 0.2, dur: 3.2 },
-            { top: "35%", left: "48%", size: 16, delay: 1.1, dur: 2.2 },
-            { top: "85%", left: "20%", size: 20, delay: 0.6, dur: 2.7 },
-          ].map((s, i) => (
-            <motion.div
-              key={i}
-              animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0.9, 0.4], rotate: [0, 180, 360] }}
-              transition={{ duration: s.dur, repeat: Infinity, ease: "easeInOut", delay: s.delay }}
-              className="absolute pointer-events-none text-yellow-400"
-              style={{ top: s.top, left: (s as any).left, right: (s as any).right, fontSize: s.size }}
-            >
-              &#x2B50;
-            </motion.div>
-          ))}
+        <section className="py-24 relative overflow-hidden" style={{ background: "#dbeafe" }}>
 
-          <div className="container mx-auto px-4 max-w-6xl relative">
+          <div className="container mx-auto px-4 max-w-5xl relative">
             {/* Header */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="text-center mb-14"
+              className="text-center mb-10"
             >
               <motion.div
                 animate={{ scale: [1, 1.2, 1], rotate: [0, -5, 5, 0] }}
@@ -456,87 +437,122 @@ export default function HomePage() {
                 &#x1F3C6;
               </motion.div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-4"
-                style={{ background: "linear-gradient(135deg, #fdcb6e33, #e1705533)", color: "#c0392b", border: "2px solid #fdcb6e88" }}>
+                style={{ background: "rgba(255,255,255,0.7)", color: "#1d4ed8", border: "2px solid #93c5fd" }}>
                 <Trophy className="w-4 h-4" />
                 <span>Efekty terapii</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">
                 Co zyskuje Twoje dziecko?
               </h2>
-              <p className="text-xl" style={{ color: "#666" }}>
+              <p className="text-lg text-blue-800">
                 Potwierdzone naukowo rezultaty regularnych trening&oacute;w
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Effect cards — spring pop-in, pulse glow on hover */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { emoji: "\ud83d\udc42", text: "Poprawa przetwarzania s\u0142uchowego",  stripe: "#3b82f6", glow: "rgba(59,130,246,0.35)",  bg: "#eff6ff" },
-                  { emoji: "\ud83d\udcda", text: "Lepsze wyniki w nauce i szkole",        stripe: "#10b981", glow: "rgba(16,185,129,0.35)", bg: "#ecfdf5" },
-                  { emoji: "\ud83d\udde3\ufe0f", text: "Lepsza wymowa i komunikacja",     stripe: "#8b5cf6", glow: "rgba(139,92,246,0.35)",  bg: "#f5f3ff" },
-                  { emoji: "\ud83e\udde0", text: "Wi\u0119cej uwagi i koncentracji",      stripe: "#f97316", glow: "rgba(249,115,22,0.35)",  bg: "#fff7ed" },
-                  { emoji: "\ud83c\udfa7", text: "Normalizacja wra\u017cliwo\u015bci na d\u017awi\u0119ki", stripe: "#ec4899", glow: "rgba(236,72,153,0.35)", bg: "#fdf2f8" },
-                  { emoji: "\ud83d\ude0a", text: "Wzrost pewno\u015bci siebie dziecka",   stripe: "#eab308", glow: "rgba(234,179,8,0.35)",   bg: "#fefce8" },
-                ].map((item, i) => (
+            {/* ── MOBILE: 2-col grid ── */}
+            <div className="grid grid-cols-2 gap-3 lg:hidden">
+              {[
+                { emoji: "\ud83d\udc42", text: "Poprawa przetwarzania s\u0142uchowego", color: "#3b82f6" },
+                { emoji: "\ud83d\udcda", text: "Lepsze wyniki w nauce",               color: "#10b981" },
+                { emoji: "\ud83d\udde3\ufe0f", text: "Lepsza wymowa i komunikacja",   color: "#8b5cf6" },
+                { emoji: "\ud83e\udde0", text: "Wi\u0119cej uwagi i koncentracji",    color: "#f97316" },
+                { emoji: "\ud83c\udfa7", text: "Normalizacja wra\u017cliwo\u015bci", color: "#ec4899" },
+                { emoji: "\ud83d\ude0a", text: "Wzrost pewno\u015bci siebie",         color: "#eab308" },
+              ].map((item, i) => (
+                <motion.div key={i}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 260, damping: 18, delay: i * 0.08 }}
+                  className="rounded-2xl p-3 text-center"
+                  style={{ background: "white", border: `2px solid ${item.color}44`, boxShadow: `0 4px 16px ${item.color}22` }}
+                >
+                  <div className="text-2xl mb-1">{item.emoji}</div>
+                  <p className="text-xs font-bold text-gray-800 leading-tight">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* ── DESKTOP: circular layout ── */}
+            <div className="hidden lg:flex justify-center">
+              <div className="relative" style={{ width: 580, height: 640 }}>
+
+                {/* SVG orbit ring + connector lines */}
+                <svg width="580" height="640" className="absolute inset-0 pointer-events-none">
+                  <circle cx="290" cy="320" r="205" fill="none" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8 5" opacity="0.7" />
+                  {[0,1,2,3,4,5].map(i => {
+                    const a = (-90 + i * 60) * Math.PI / 180;
+                    return <line key={i} x1="290" y1="320" x2={290 + 205 * Math.cos(a)} y2={320 + 205 * Math.sin(a)} stroke="#bfdbfe" strokeWidth="1.5" strokeDasharray="5 4" />;
+                  })}
+                </svg>
+
+                {/* Center badge */}
+                <div className="absolute" style={{ left: 215, top: 245, width: 150, height: 150 }}>
                   <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.5, rotate: -8 }}
-                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 260, damping: 18, delay: i * 0.1 }}
-                    whileHover={{ boxShadow: `0 0 0 4px ${item.glow}, 0 12px 32px ${item.glow}`, scale: 1.03, transition: { duration: 0.2 } }}
-                    className="rounded-2xl overflow-hidden cursor-default"
-                    style={{ background: item.bg, border: `2px solid ${item.stripe}33` }}
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 rounded-full"
+                    style={{ border: "2px dashed #60a5fa" }}
+                  />
+                  <motion.div
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute inset-3 rounded-full flex flex-col items-center justify-center text-center gap-1"
+                    style={{ background: "linear-gradient(135deg, #1d4ed8, #0ea5e9)", boxShadow: "0 8px 32px rgba(29,78,216,0.4)" }}
                   >
-                    {/* Colored top stripe */}
-                    <div className="h-1.5 w-full" style={{ background: item.stripe }} />
-                    <div className="p-4 flex items-center gap-3">
+                    <span className="text-3xl">&#x1F3C6;</span>
+                    <p className="text-white font-black text-xs leading-tight px-2">Co zyskuje<br/>dziecko?</p>
+                  </motion.div>
+                </div>
+
+                {/* 6 cards around the orbit */}
+                {[
+                  { emoji: "\ud83d\udc42", text: "Poprawa przetwarzania s\u0142uchowego", color: "#3b82f6", glow: "rgba(59,130,246,0.3)" },
+                  { emoji: "\ud83d\udcda", text: "Lepsze wyniki w nauce i szkole",       color: "#10b981", glow: "rgba(16,185,129,0.3)" },
+                  { emoji: "\ud83d\udde3\ufe0f", text: "Lepsza wymowa i komunikacja",    color: "#8b5cf6", glow: "rgba(139,92,246,0.3)" },
+                  { emoji: "\ud83e\udde0", text: "Wi\u0119cej uwagi i koncentracji",     color: "#f97316", glow: "rgba(249,115,22,0.3)" },
+                  { emoji: "\ud83c\udfa7", text: "Normalizacja wra\u017cliwo\u015bci",  color: "#ec4899", glow: "rgba(236,72,153,0.3)" },
+                  { emoji: "\ud83d\ude0a", text: "Wzrost pewno\u015bci siebie dziecka",  color: "#eab308", glow: "rgba(234,179,8,0.3)" },
+                ].map((item, i) => {
+                  const a = (-90 + i * 60) * Math.PI / 180;
+                  const cx = 290 + 205 * Math.cos(a);
+                  const cy = 320 + 205 * Math.sin(a);
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.3 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ type: "spring", stiffness: 240, damping: 16, delay: i * 0.12 }}
+                      whileHover={{ scale: 1.1, boxShadow: `0 0 0 4px ${item.glow}, 0 12px 28px ${item.glow}`, transition: { duration: 0.18 } }}
+                      style={{
+                        position: "absolute",
+                        left: cx - 80,
+                        top: cy - 38,
+                        width: 160,
+                        background: "white",
+                        border: `2px solid ${item.color}55`,
+                        borderRadius: 16,
+                        padding: "10px 12px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        cursor: "default",
+                        boxShadow: `0 4px 18px ${item.glow}`,
+                      }}
+                    >
                       <motion.span
-                        animate={{ y: [0, -12, 0] }}
-                        transition={{ duration: 1.8 + i * 0.15, repeat: Infinity, ease: "easeInOut", delay: i * 0.25 }}
-                        className="text-3xl shrink-0"
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 1.8 + i * 0.18, repeat: Infinity, ease: "easeInOut", delay: i * 0.22 }}
+                        style={{ fontSize: 26, flexShrink: 0 }}
                       >
                         {item.emoji}
                       </motion.span>
-                      <p className="font-bold text-sm text-gray-800 leading-snug">{item.text}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                      <p style={{ fontSize: 11, fontWeight: 700, color: "#1e293b", lineHeight: 1.35 }}>{item.text}</p>
+                    </motion.div>
+                  );
+                })}
               </div>
-
-              {/* Photo side */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.3 }}
-                className="relative"
-              >
-                <div className="rounded-3xl overflow-hidden" style={{ border: "4px solid white", boxShadow: "0 20px 60px rgba(249,115,22,0.2)" }}>
-                  <img src={childrenClassroomImg} alt="Dzieci ucz\u0105 si\u0119 z GoBrain w klasie" className="w-full object-cover" />
-                </div>
-                {/* Badge top-left */}
-                <motion.div
-                  animate={{ scale: [1, 1.08, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-5 -left-5 rounded-2xl px-4 py-3 flex items-center gap-2"
-                  style={{ background: "linear-gradient(135deg, #f97316, #eab308)", boxShadow: "0 8px 24px rgba(249,115,22,0.4)" }}
-                >
-                  <span className="text-xl">&#x1F31F;</span>
-                  <p className="font-bold text-white text-sm">100% poleca!</p>
-                </motion.div>
-                {/* Badge bottom-right */}
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                  className="absolute -bottom-5 -right-4 rounded-2xl px-4 py-3 flex items-center gap-2"
-                  style={{ background: "white", border: "2px solid #fdcb6e", boxShadow: "0 8px 24px rgba(234,179,8,0.25)" }}
-                >
-                  <span className="text-xl">&#x1F4AA;</span>
-                  <p className="font-bold text-gray-800 text-sm">Widoczne efekty!</p>
-                </motion.div>
-              </motion.div>
             </div>
           </div>
         </section>
