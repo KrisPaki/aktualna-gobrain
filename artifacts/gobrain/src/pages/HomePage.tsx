@@ -440,116 +440,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 3 - Demo */}
-        <section className="py-20 bg-card/50 border-y border-border">
-          <div className="container mx-auto px-4">
-            {/* Demo photo banner */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center mb-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl"
-              >
-                <img src={parentChildImg} alt="Rodzic i dziecko ćwiczą z GoBrain" className="w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
-                <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-md"
-                >
-                  <span className="text-2xl">🎮</span>
-                  <span className="font-bold text-sm text-foreground">Wypróbuj DEMO za darmo!</span>
-                </motion.div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="lg:col-span-3"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                  <Play className="w-4 h-4" />
-                  <span>Bezpłatne demo</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Sprawdź GoBrain zanim kupisz</h2>
-                <p className="text-xl text-muted-foreground mb-6">Pobierz bezpłatną wersję demo i przetestuj program razem z dzieckiem. Bez rejestracji i opłat.</p>
-                <div className="flex flex-wrap gap-3">
-                  {["Bezpłatne", "Bez rejestracji", "PC i Android", "Kilka ćwiczeń w zestawie"].map((t, i) => (
-                    <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5" /> {t}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-6">
-                  <Play className="w-4 h-4" /> DEMO
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain Starter</h3>
-                <p className="text-lg text-foreground font-medium mb-4">Sprawdź, jak działa przed zakupem</p>
-                <p className="text-muted-foreground mb-8">
-                  Pobierz bezpłatną wersję ITS GoBrain Starter i poznaj program w praktyce. Demo zawiera kilka wybranych ćwiczeń z pierwszego etapu.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-pc">
-                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe">
-                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-android">
-                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk">
-                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
-                  <School className="w-4 h-4" /> DLA PLACÓWEK
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain School DEMO</h3>
-                <p className="text-lg text-foreground font-medium mb-4">Przetestuj w placówce przed wdrożeniem</p>
-                <p className="text-muted-foreground mb-8">
-                  Wersja demonstracyjna ITS GoBrain School pozwala sprawdzić program w realnych warunkach: w szkole, przedszkolu lub gabinecie.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-pc">
-                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_School_Starter.exe">
-                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-android">
-                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Szkola_starter.apk">
-                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-
-            </div>
-          </div>
-        </section>
-
         {/* SECTION 5b - Charts & Data */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
@@ -1065,6 +955,114 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* SECTION 11b - Demo */}
+        <section className="py-20 bg-card/50 border-y border-border">
+          <div className="container mx-auto px-4">
+            {/* Demo photo banner */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center mb-12">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl"
+              >
+                <img src={parentChildImg} alt="Rodzic i dziecko &#x107;wicz&#x0105; z GoBrain" className="w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-md"
+                >
+                  <span className="text-2xl">&#x1F3AE;</span>
+                  <span className="font-bold text-sm text-foreground">Wypr&oacute;buj DEMO za darmo!</span>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:col-span-3"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Play className="w-4 h-4" />
+                  <span>Bezp&#x0142;atne demo</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Sprawd&#x017a; GoBrain zanim kupisz</h2>
+                <p className="text-xl text-muted-foreground mb-6">Pobierz bezp&#x0142;atn&#x0105; wersj&#x0119; demo i przetestuj program razem z dzieckiem. Bez rejestracji i op&#x0142;at.</p>
+                <div className="flex flex-wrap gap-3">
+                  {["Bezp\u0142atne", "Bez rejestracji", "PC i Android", "Kilka \u0107wicze\u0144 w zestawie"].map((t, i) => (
+                    <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> {t}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-6">
+                  <Play className="w-4 h-4" /> DEMO
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain Starter</h3>
+                <p className="text-lg text-foreground font-medium mb-4">Sprawd&#x17a;, jak dzia&#x0142;a przed zakupem</p>
+                <p className="text-muted-foreground mb-8">
+                  Pobierz bezp&#x0142;atn&#x0105; wersj&#x0119; ITS GoBrain Starter i poznaj program w praktyce. Demo zawiera kilka wybranych &eacute;wicze&#x0144; z pierwszego etapu.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-pc">
+                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe">
+                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-home-android">
+                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk">
+                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
+                    </a>
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="bg-background rounded-3xl p-8 md:p-10 border border-border shadow-sm"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
+                  <School className="w-4 h-4" /> DLA PLAC&Oacute;WEK
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">ITS GoBrain School DEMO</h3>
+                <p className="text-lg text-foreground font-medium mb-4">Przetestuj w plac&oacute;wce przed wdro&#x017c;eniem</p>
+                <p className="text-muted-foreground mb-8">
+                  Wersja demonstracyjna ITS GoBrain School pozwala sprawdzi&#x107; program w realnych warunkach: w szkole, przedszkolu lub gabinecie.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-pc">
+                    <a href="http://gobraintech.pl/current/Sklep_PC/ITS_School_Starter.exe">
+                      <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-android">
+                    <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Szkola_starter.apk">
+                      <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
+                    </a>
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
