@@ -27,7 +27,7 @@ const products = [
     badgeColor: "bg-primary text-primary-foreground",
     title: "ITS GoBrain",
     subtitle: "'Zabawy z dźwiękami' — Etap 1",
-    price: "329",
+    price: "250",
     priceNote: "PLN (brutto)",
     img: productItsImg,
     imgAlt: "Pudełko produktu ITS GoBrain Etap 1",

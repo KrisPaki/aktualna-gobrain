@@ -63,7 +63,7 @@ export default function SzkoleniaPage() {
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="h-14 px-8 text-base font-semibold" asChild>
-                  <a href="https://gobrain.pl/gobrain_szkolenie_inst" target="_blank" rel="noopener noreferrer">
+                  <a href="https://automater.pl/rest/order-viewer/buy/787759" target="_blank" rel="noopener noreferrer">
                     Kup kurs certyfikacyjny
                     <ExternalLink className="ml-2 w-4 h-4" />
                   </a>
@@ -249,7 +249,7 @@ export default function SzkoleniaPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{'Chcesz zostać terapeutą GoBrain?'}</h2>
               <p className="text-white/80 mb-10 text-lg">{'Zapisz się na kurs certyfikacyjny i dołącz do rosnącej sieci Providerów GoBrain w całej Polsce.'}</p>
               <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90 font-semibold" asChild>
-                <a href="https://gobrain.pl/gobrain_szkolenie_inst" target="_blank" rel="noopener noreferrer">
+                <a href="https://automater.pl/rest/order-viewer/buy/787759" target="_blank" rel="noopener noreferrer">
                   {'Zapisz się na szkolenie'}
                 </a>
               </Button>
