@@ -227,7 +227,7 @@ export default function ProgramyEdukacyjnePage() {
                 step: "01",
                 icon: "🖥️",
                 title: "Otwórz w przeglądarce",
-                desc: "Wszystkie programy działają bezpośrednio w przeglądarce — bez instalacji, bez pobierania. Wystarczy kliknąć i zagrać.",
+                desc: "Wszystkie programy działają bezpośrednio w przeglądarce internetowej. Wystarczy kliknąć i zagrać.",
               },
               {
                 step: "02",
@@ -291,7 +291,7 @@ export default function ProgramyEdukacyjnePage() {
                 {[
                   "Zaprojektowane przez neurologopedę Anetę Pakieła",
                   "Kolorowa grafika angażuje dzieci w każdym wieku",
-                  "Dostępne online — bez instalacji i pobierania",
+                  "Dostępne online w przeglądarce internetowej",
                   "Kompatybilne z programem ITS GoBrain",
                   "Idealne jako uzupełnienie terapii gabinetowej",
                 ].map((item) => (

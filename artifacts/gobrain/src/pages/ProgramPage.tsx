@@ -142,7 +142,7 @@ export default function ProgramPage() {
                     Wersja demo online
                   </h3>
                   <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
-                    Wypróbuj program za darmo bezpośrednio w przeglądarce — bez instalacji.
+                    Wypróbuj program za darmo bezpośrednio w przeglądarce internetowej.
                   </p>
                   <Button variant="outline" size="sm" className="w-full" asChild>
                     <a href={program.demoUrl} target="_blank" rel="noopener noreferrer">

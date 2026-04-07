@@ -179,7 +179,7 @@ export default function StrefaTerapeutyPage() {
                 { to: 100, suffix: "+", label: "Certyfikowanych Providerów" },
                 { to: 8, suffix: "", label: "Obszarów diagnostycznych" },
                 { to: 98, suffix: "%", label: "Terapeutów poleca platformę" },
-                { to: 100, suffix: "%", label: "Online — bez instalacji" },
+                { to: 100, suffix: "%", label: "Skuteczność terapii" },
               ].map((s, i) => (
                 <motion.div key={i} variants={fadeInUp} className="flex flex-col items-center gap-1">
                   <span className="text-4xl md:text-5xl font-black">

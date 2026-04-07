@@ -154,7 +154,7 @@ const products = [
       "Zabawy logopedyczne (10 gier z głoskami)",
       "Zabawy z literkami (8 zestawów)",
       "Kreatywny brzdąc — aktywności twórcze",
-      "Dostępne w przeglądarce — bez instalacji",
+      "Dostępne w przeglądarce internetowej",
       "Opracowane przez Anetę Pakieła",
       "Kompatybilne z ITS GoBrain",
     ],
