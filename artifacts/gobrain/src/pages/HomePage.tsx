@@ -190,7 +190,7 @@ export default function HomePage() {
                 </motion.div>
                 
                 <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-3 uppercase">
-                  Poprawa koncentracji, pamięci i sukces edukacyjny Twojego dziecka.
+                  Poprawa koncentracji i pamięci słuchowej
                 </motion.h1>
 
                 <motion.p variants={fadeInUp} className="text-lg md:text-xl font-semibold text-primary mb-4">
