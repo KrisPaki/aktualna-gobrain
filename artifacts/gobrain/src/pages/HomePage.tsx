@@ -371,7 +371,6 @@ export default function HomePage() {
                   link: '/strefa-terapeuty',
                   color: 'text-foreground',
                   bg: 'bg-muted',
-                  price: '799 zł'
                 }
               ].map((prod, i) => (
                 <motion.div key={i} variants={fadeInUp} className="group relative bg-card rounded-2xl p-8 border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-300">
@@ -380,10 +379,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-1">{prod.title}</h3>
                   <p className="text-sm font-medium text-primary mb-3">{prod.subtitle}</p>
-                  <p className="text-muted-foreground mb-4 line-clamp-3">{prod.desc}</p>
-                  {'price' in prod && prod.price && (
-                    <p className="text-lg font-extrabold text-foreground mb-4">{prod.price}</p>
-                  )}
+                  <p className="text-muted-foreground mb-6 line-clamp-3">{prod.desc}</p>
                   <Link to={prod.link} className="inline-flex items-center text-sm font-semibold text-foreground group-hover:text-primary transition-colors" data-testid={`prod-link-${i}`}>
                     Dowiedz się więcej <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -1036,7 +1032,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-bold text-foreground mb-2">Terapeuta</h3>
                 <p className="text-muted-foreground mb-4 text-sm">{'Dla terapeutów: logopedów, pedagogów, psychologów, itp.'}</p>
                 <div className="flex gap-2 mb-4">
-                  <span className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full font-medium">Cena na zapytanie</span>
+                  <span className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full font-medium">799 zł</span>
                 </div>
                 <ul className="space-y-3 mb-6">
                   {["Platforma diagnostyczna", "Test 8 obszarów", "Kwestionariusze i ankiety"].map((feat, i) => (
