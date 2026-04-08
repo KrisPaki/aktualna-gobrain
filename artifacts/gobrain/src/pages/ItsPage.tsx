@@ -11,8 +11,13 @@ import {
   Monitor,
   Smartphone,
   ChevronRight,
+  Star,
+  Zap,
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import childTabletImg from "@/assets/child-tablet-fun.png";
+import parentChildImg from "@/assets/parent-child-home.png";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -257,57 +262,158 @@ export default function ItsPage() {
         </section>
 
         {/* Two stages */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
+        <section className="py-24 bg-background overflow-hidden">
+          <div className="container mx-auto px-4 max-w-6xl">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="text-center mb-16"
+              className="text-center mb-20"
             >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <Brain className="w-4 h-4" />
+                <span>Program treningowy</span>
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trening mózgu czyni mistrza</h2>
               <p className="text-xl text-muted-foreground">Program składa się z dwóch etapów dostosowanych do postępów dziecka.</p>
             </motion.div>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            >
-              <motion.div variants={fadeInUp} className="rounded-3xl border border-border bg-card p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-primary font-bold text-xl">1</span>
+            {/* Etap 1 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+                  <img src={childTabletImg} alt="Dziecko ćwiczące z programem ITS GoBrain" className="w-full object-cover" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Etap 1 — Podstawy treningu</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Pierwszy etap ITS GoBrain „Zabawy z dźwiękami" to wprowadzenie do treningu słuchowego. Program składa się z 10–25 sesji treningowych interaktywnych ćwiczeń słuchowych ćwiczących mózg dziecka. Korzystaj 2–3 razy w tygodniu.
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-5 -right-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Sesji treningowych</p>
+                    <p className="font-bold text-foreground text-sm">10–25 ćwiczeń</p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute -top-5 -left-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+                    <Star className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Rekomendowana częstotliwość</p>
+                    <p className="font-bold text-foreground text-sm">2–3 razy w tygodniu</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6">
+                  <span>ETAP 1</span>
+                </div>
+                <h3 className="text-3xl font-bold text-foreground mb-4">Podstawy treningu słuchowego</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  Pierwszy etap ITS GoBrain „Zabawy z dźwiękami" to wprowadzenie do treningu słuchowego. Program składa się z 10–25 sesji interaktywnych ćwiczeń słuchowych ćwiczących mózg dziecka. Korzystaj 2–3 razy w tygodniu.
                 </p>
-                <Button asChild className="w-full">
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Interaktywne ćwiczenia słuchowe",
+                    "Dostosowany poziom trudności",
+                    "Trening pamięci i koncentracji",
+                    "Dostępny na PC i Android",
+                  ].map((feat, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <Button size="lg" className="h-12 px-8 text-base font-semibold" asChild>
                   <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
                     Kup Etap 1
                   </a>
                 </Button>
               </motion.div>
+            </div>
 
-              <motion.div variants={fadeInUp} className="rounded-3xl border-2 border-primary bg-background p-8 relative">
-                <div className="absolute top-4 right-4 text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full font-semibold">Zaawansowany</div>
-                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-primary font-bold text-xl">2</span>
+            {/* Etap 2 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="lg:order-2 relative"
+              >
+                <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+                  <img src={parentChildImg} alt="Rodzic i dziecko przy treningu GoBrain w domu" className="w-full object-cover" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Etap 2 — Intensywny trening</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Gdy w I etapie dziecko miało problemy lub nie zakończyło wszystkich zadań — należy zastosować Etap 2. Z każdym treningiem pamięć i koncentracja będą się poprawiać. Przerwa między etapami nie jest wymagana.
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-5 -left-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Widoczna poprawa</p>
+                    <p className="font-bold text-foreground text-sm">Koncentracja i pamięć</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="lg:order-1"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-bold mb-6">
+                  <span>ETAP 2 — Zaawansowany</span>
+                </div>
+                <h3 className="text-3xl font-bold text-foreground mb-4">Intensywny trening słuchowy</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  Gdy w Etapie 1 dziecko miało trudności lub nie ukończyło wszystkich zadań — czas na Etap 2. Z każdym treningiem pamięć i koncentracja będą się systematycznie poprawiać. Przerwa między etapami nie jest wymagana.
                 </p>
-                <Button asChild variant="outline" className="w-full">
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Wyższy poziom trudności ćwiczeń",
+                    "Intensywniejszy trening mózgu",
+                    "Ciągłość bez przerwy między etapami",
+                    "Mierzalne efekty po każdej sesji",
+                  ].map((feat, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <Button size="lg" variant="outline" className="h-12 px-8 text-base font-semibold border-2" asChild>
                   <a href="https://automater.pl/rest/order-viewer/buy/918222" target="_blank" rel="noopener noreferrer">
                     Kup Etap 2
                   </a>
                 </Button>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
