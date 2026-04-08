@@ -528,7 +528,7 @@ export default function HomePage() {
                     { icon: Target, text: "Trudności z koncentracją" },
                     { icon: Headphones, text: "Wrażliwe na dźwięki" },
                     { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
-                    { icon: GraduationCap, text: "Wymaga powtarzania poleceń, co zmienia się w niepokojące zachowania" },
+                    { icon: GraduationCap, text: "Niepokojące zachowania" },
                     { icon: Heart, text: "Po usunięciu trzeciego migdałka oraz drenach" },
                   ].map((item, i) => (
                     <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
