@@ -442,6 +442,31 @@ export default function StrefaTerapeutyPage() {
                     </div>
                   </motion.div>
                 </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.4 }}
+                  className="relative mt-6"
+                >
+                  <div className="rounded-3xl overflow-hidden shadow-2xl">
+                    <img src={childSuccessImg} alt="Dziecko po udanej terapii GoBrain" className="w-full object-cover" />
+                  </div>
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute -bottom-4 -left-4 bg-background rounded-2xl border border-border shadow-xl p-3 flex items-center gap-3"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
+                      <Star className="w-4 h-4 text-indigo-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Efekty terapii</p>
+                      <p className="font-bold text-foreground text-sm">Mierzalny postęp dziecka</p>
+                    </div>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
           </div>
