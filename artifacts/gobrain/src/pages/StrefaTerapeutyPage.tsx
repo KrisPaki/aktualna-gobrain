@@ -317,67 +317,63 @@ export default function StrefaTerapeutyPage() {
                 variants={staggerContainer}
                 className="lg:col-span-3 space-y-4"
               >
-                {[
-                  {
-                    step: "01",
-                    icon: Brain,
-                    title: "Ocena lateralizacji",
-                    desc: "Platforma umożliwia ocenę preferencji stronnej słuchu, wzroku i ruchu. Badanie lateralizacji to kluczowy punkt wyjścia dla każdej terapii słuchowej.",
-                    color: "bg-blue-100 text-blue-600",
-                    border: "border-blue-200",
-                  },
-                  {
-                    step: "02",
-                    icon: GraduationCap,
-                    title: "Ocena gotowości szkolnej",
-                    desc: "Kompleksowe narzędzia pozwalają ocenić przygotowanie dziecka do nauki szkolnej — sprawdzając 8 kluczowych obszarów słuchowych: pamięć, koncentrację, rozróżnianie dźwięków i czas reakcji.",
-                    color: "bg-orange-100 text-orange-600",
-                    border: "border-orange-200",
-                  },
-                  {
-                    step: "03",
-                    icon: Target,
-                    title: "Ocena mocnych i słabych stron",
-                    desc: "Platforma pozwala precyzyjnie ocenić mocne i słabe strony dziecka, identyfikując obszary wymagające wsparcia i te, na których można budować.",
-                    color: "bg-purple-100 text-purple-600",
-                    border: "border-purple-200",
-                  },
-                  {
-                    step: "04",
-                    icon: FileText,
-                    title: "Przygotowanie planu terapii",
-                    desc: "Na podstawie wyników diagnozy platforma wspiera terapeutę w przygotowaniu indywidualnego planu działań terapeutycznych dopasowanego do potrzeb dziecka.",
-                    color: "bg-green-100 text-green-600",
-                    border: "border-green-200",
-                  },
-                  {
-                    step: "05",
-                    icon: TrendingUp,
-                    title: "Monitoring postępów — PostTest",
-                    desc: "Automatyczne porównanie PreTest z PostTest. Generuj raporty PDF dla rodziców i pokaż mierzalny postęp. Planuj kolejne skuteczne kroki terapii.",
-                    color: "bg-indigo-100 text-indigo-600",
-                    border: "border-indigo-200",
-                  },
-                ].map((step, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeInUp}
-                    whileHover={{ x: 4 }}
-                    className={`flex gap-5 p-5 rounded-2xl bg-background border ${step.border} hover:shadow-md transition-all`}
-                  >
-                    <div className={`w-12 h-12 rounded-2xl ${step.color} flex items-center justify-center shrink-0`}>
-                      <step.icon className="w-5 h-5" />
+                {/* ETAP 01 */}
+                <motion.div variants={fadeInUp} whileHover={{ x: 4 }} className="rounded-2xl bg-background border border-blue-200 hover:shadow-md transition-all overflow-hidden">
+                  <div className="flex gap-5 p-5">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                      <ClipboardList className="w-5 h-5" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP {step.step}</span>
-                        {i < 4 && <ArrowRight className="w-3 h-3 text-muted-foreground" />}
+                        <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 01</span>
+                        <ArrowRight className="w-3 h-3 text-muted-foreground" />
                       </div>
-                      <h3 className="font-bold text-foreground mb-1">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                      <h3 className="font-bold text-foreground mb-1">Diagnoza — PreTest</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">Terapeuta ma dostęp online do wyników każdego dziecka w czasie rzeczywistym. Przeprowadź kompleksową diagnozę obejmującą:</p>
+                      <ul className="space-y-2">
+                        {[
+                          { icon: Brain, label: "Ocena lateralizacji", sub: "preferencje stronne słuchu, wzroku i ruchu" },
+                          { icon: GraduationCap, label: "Ocena gotowości szkolnej", sub: "8 kluczowych obszarów słuchowych" },
+                          { icon: Target, label: "Ocena mocnych i słabych stron", sub: "identyfikacja obszarów wymagających wsparcia" },
+                        ].map((item, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm">
+                            <item.icon className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                            <span><span className="font-semibold text-foreground">{item.label}</span> <span className="text-muted-foreground">— {item.sub}</span></span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </motion.div>
-                ))}
+                  </div>
+                </motion.div>
+
+                {/* ETAP 02 */}
+                <motion.div variants={fadeInUp} whileHover={{ x: 4 }} className="flex gap-5 p-5 rounded-2xl bg-background border border-green-200 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center shrink-0">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 02</span>
+                      <ArrowRight className="w-3 h-3 text-muted-foreground" />
+                    </div>
+                    <h3 className="font-bold text-foreground mb-1">Przygotowanie planu terapii</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Na podstawie wyników diagnozy platforma wspiera terapeutę w przygotowaniu indywidualnego planu działań terapeutycznych. Dzięki precyzyjnej ocenie mocnych i słabych stron dziecka można zaplanować skuteczne, celowane działania terapeutyczne.</p>
+                  </div>
+                </motion.div>
+
+                {/* ETAP 03 */}
+                <motion.div variants={fadeInUp} whileHover={{ x: 4 }} className="flex gap-5 p-5 rounded-2xl bg-background border border-indigo-200 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 03</span>
+                    </div>
+                    <h3 className="font-bold text-foreground mb-1">Monitoring postępów — PostTest</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Automatyczne porównanie PreTest z PostTest. Terapeuta śledzi postępy online w czasie rzeczywistym. Generuj raporty PDF dla rodziców i pokaż mierzalny postęp. Planuj kolejne skuteczne kroki terapii.</p>
+                  </div>
+                </motion.div>
               </motion.div>
 
               {/* Images column */}
