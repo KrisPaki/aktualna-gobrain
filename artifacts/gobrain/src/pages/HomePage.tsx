@@ -936,9 +936,9 @@ export default function HomePage() {
                 </blockquote>
                 <div className="border-l-4 border-primary pl-4">
                   <p className="font-bold text-foreground text-lg">Prof. dr hab. Tadeusz Gałkowski</p>
-                  <p className="text-sm text-muted-foreground mt-1">{'Psycholog, naukowiec, patron merytoryczny GoBrain'}</p>
-                  <p className="text-sm text-muted-foreground">{'Przewodniczący Polskiego Komitetu Audiofonologii'}</p>
-                  <p className="text-sm text-muted-foreground">{'Kierownik Katedry Edukacji SWPS (1936–2020)'}</p>
+                  <p className="text-sm text-muted-foreground mt-1">Psycholog, naukowiec, patron merytoryczny GoBrain</p>
+                  <p className="text-sm text-muted-foreground">Przewodniczący Polskiego Komitetu Audiofonologii</p>
+                  <p className="text-sm text-muted-foreground">Założyciel i prezes Zarządu Głównego Krajowego Towarzystwa Autyzmu</p>
                 </div>
               </motion.div>
             </motion.div>
