@@ -1011,7 +1011,7 @@ export default function HomePage() {
               {/* Card 3: School */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-orange-400 shadow-lg relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
-                  Dla instytucji
+                  Grupowe
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2 mt-2">GoBrain School</h3>
                 <p className="text-muted-foreground mb-4 text-sm">Dla terapeutów, szkół, przedszkoli, poradni i instytucji</p>
@@ -1034,7 +1034,7 @@ export default function HomePage() {
               {/* Card 4: Platforma Terapeuty */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-purple-400 shadow-lg relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
-                  Dla terapeutów
+                  Narzędzia
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2 mt-2">Platforma Terapeuty</h3>
                 <p className="text-muted-foreground mb-4 text-sm">Dla terapeutów: logopedów, pedagogów, psychologów, itp.</p>
