@@ -305,42 +305,58 @@ export default function StrefaTerapeutyPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Jak działa platforma?</h2>
-              <p className="text-xl text-muted-foreground">Trzy kroki do mierzalnych wyników</p>
+              <p className="text-xl text-muted-foreground">Pięć etapów do mierzalnych wyników</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
               {/* Steps */}
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={staggerContainer}
-                className="lg:col-span-3 space-y-6"
+                className="lg:col-span-3 space-y-4"
               >
                 {[
                   {
                     step: "01",
-                    icon: ClipboardList,
-                    title: "Diagnoza — PreTest",
-                    desc: "Przeprowadź kompleksowy test 8 obszarów słuchowych: pamięć, koncentracja, rozróżnianie dźwięków, czas reakcji i więcej. Kwestionariusze i karta oceny rozwoju.",
+                    icon: Brain,
+                    title: "Ocena lateralizacji",
+                    desc: "Platforma umożliwia ocenę preferencji stronnej słuchu, wzroku i ruchu. Badanie lateralizacji to kluczowy punkt wyjścia dla każdej terapii słuchowej.",
                     color: "bg-blue-100 text-blue-600",
                     border: "border-blue-200",
                   },
                   {
                     step: "02",
-                    icon: Headphones,
-                    title: "Trening ITS GoBrain",
-                    desc: "Dziecko ćwiczy samodzielnie w domu lub w gabinecie. Platforma śledzi każdą sesję — datę, czas, rodzaj zadań i wyniki w czasie rzeczywistym.",
+                    icon: GraduationCap,
+                    title: "Ocena gotowości szkolnej",
+                    desc: "Kompleksowe narzędzia pozwalają ocenić przygotowanie dziecka do nauki szkolnej — sprawdzając 8 kluczowych obszarów słuchowych: pamięć, koncentrację, rozróżnianie dźwięków i czas reakcji.",
+                    color: "bg-orange-100 text-orange-600",
+                    border: "border-orange-200",
+                  },
+                  {
+                    step: "03",
+                    icon: Target,
+                    title: "Ocena mocnych i słabych stron",
+                    desc: "Platforma pozwala precyzyjnie ocenić mocne i słabe strony dziecka, identyfikując obszary wymagające wsparcia i te, na których można budować.",
                     color: "bg-purple-100 text-purple-600",
                     border: "border-purple-200",
                   },
                   {
-                    step: "03",
-                    icon: TrendingUp,
-                    title: "Wyniki — PostTest",
-                    desc: "Automatyczne porównanie PreTest z PostTest. Generuj raporty PDF dla rodziców. Pokaż mierzalny postęp i planuj kolejne kroki terapii.",
+                    step: "04",
+                    icon: FileText,
+                    title: "Przygotowanie planu terapii",
+                    desc: "Na podstawie wyników diagnozy platforma wspiera terapeutę w przygotowaniu indywidualnego planu działań terapeutycznych dopasowanego do potrzeb dziecka.",
                     color: "bg-green-100 text-green-600",
                     border: "border-green-200",
+                  },
+                  {
+                    step: "05",
+                    icon: TrendingUp,
+                    title: "Monitoring postępów — PostTest",
+                    desc: "Automatyczne porównanie PreTest z PostTest. Generuj raporty PDF dla rodziców i pokaż mierzalny postęp. Planuj kolejne skuteczne kroki terapii.",
+                    color: "bg-indigo-100 text-indigo-600",
+                    border: "border-indigo-200",
                   },
                 ].map((step, i) => (
                   <motion.div
@@ -349,13 +365,13 @@ export default function StrefaTerapeutyPage() {
                     whileHover={{ x: 4 }}
                     className={`flex gap-5 p-5 rounded-2xl bg-background border ${step.border} hover:shadow-md transition-all`}
                   >
-                    <div className={`w-14 h-14 rounded-2xl ${step.color} flex items-center justify-center shrink-0`}>
-                      <step.icon className="w-6 h-6" />
+                    <div className={`w-12 h-12 rounded-2xl ${step.color} flex items-center justify-center shrink-0`}>
+                      <step.icon className="w-5 h-5" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-black text-muted-foreground tracking-widest">KROK {step.step}</span>
-                        {i < 2 && <ArrowRight className="w-3 h-3 text-muted-foreground" />}
+                        <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP {step.step}</span>
+                        {i < 4 && <ArrowRight className="w-3 h-3 text-muted-foreground" />}
                       </div>
                       <h3 className="font-bold text-foreground mb-1">{step.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
@@ -364,31 +380,58 @@ export default function StrefaTerapeutyPage() {
                 ))}
               </motion.div>
 
-              {/* Office photo */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:col-span-2 relative"
-              >
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistOfficeImg} alt="Terapeuta przy biurku z platformą GoBrain" className="w-full object-cover" />
-                </div>
+              {/* Images column */}
+              <div className="lg:col-span-2 space-y-5">
                 <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-5 -left-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                  className="relative"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Eye className="w-5 h-5 text-primary" />
+                  <div className="rounded-3xl overflow-hidden shadow-2xl">
+                    <img src={therapistOfficeImg} alt="Terapeuta przy biurku z platformą GoBrain" className="w-full object-cover" />
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Monitoring w czasie rzeczywistym</p>
-                    <p className="font-bold text-foreground text-sm">Każda sesja pod kontrolą</p>
-                  </div>
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -bottom-4 -left-4 bg-background rounded-2xl border border-border shadow-xl p-3 flex items-center gap-3"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Eye className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Monitoring w czasie rzeczywistym</p>
+                      <p className="font-bold text-foreground text-sm">Każda sesja pod kontrolą</p>
+                    </div>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="relative mt-6"
+                >
+                  <div className="rounded-3xl overflow-hidden shadow-2xl">
+                    <img src={testResultsImg} alt="Wyniki testu słuchowego GoBrain" className="w-full object-cover" />
+                  </div>
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute -bottom-4 -right-4 bg-background rounded-2xl border border-border shadow-xl p-3 flex items-center gap-3"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center">
+                      <TrendingUp className="w-4 h-4 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Raport wyników</p>
+                      <p className="font-bold text-foreground text-sm">PDF dla rodziców</p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
