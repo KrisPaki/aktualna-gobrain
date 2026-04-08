@@ -344,6 +344,8 @@ export default function SzkoleniaPage() {
                 "Dostęp do Platformy TERAPEUTA na preferencyjnych warunkach",
                 "Wpis na mapę terapeutów GoBrain w całej Polsce",
                 "Indywidualny kod do zakupu kodów aktywacyjnych dla podopiecznych",
+                "Możliwość zarabiania na sprzedaży programów GoBrain swoim podopiecznym",
+                "Uprawnienia do samodzielnego przeprowadzania PreTestów i PostTestów słuchowych",
                 "Dostęp do Akademii GoBrain i materiałów szkoleniowych",
                 "Przynależność do profesjonalnej sieci specjalistów GoBrain",
                 "Dostęp do darmowych webinarów i materiałów dydaktycznych",
