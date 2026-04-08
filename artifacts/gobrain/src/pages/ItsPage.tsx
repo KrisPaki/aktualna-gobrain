@@ -41,7 +41,7 @@ export default function ItsPage() {
       <div className="pt-16">
 
         {/* ─── HERO: DLACZEGO ITS GOBRAIN ─── */}
-        <section className="py-20 md:py-28 bg-gradient-to-br from-blue-50 via-background to-background border-b border-border overflow-hidden">
+        <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 via-background to-background border-b border-border overflow-hidden">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -114,7 +114,7 @@ export default function ItsPage() {
         </section>
 
         {/* ─── KARTY ZALET ─── */}
-        <section className="py-20 md:py-28 bg-background">
+        <section className="py-12 md:py-16 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
 
             <motion.div
@@ -240,7 +240,7 @@ export default function ItsPage() {
         </section>
 
         {/* ─── SEKCJA SPRZEDAŻOWA ─── */}
-        <section className="py-20 md:py-28 bg-gradient-to-br from-blue-600 to-blue-800 text-white overflow-hidden">
+        <section className="py-12 md:py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white overflow-hidden">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
