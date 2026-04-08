@@ -224,7 +224,7 @@ export default function SzkoleniaPage() {
                   <Clock className="w-4 h-4 text-primary" /> 60 dni dostępu
                 </span>
                 <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Video className="w-4 h-4 text-primary" /> 4 moduły video
+                  <Video className="w-4 h-4 text-primary" /> 5 modułów video
                 </span>
                 <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
                   <Award className="w-4 h-4 text-primary" /> Certyfikat imienny
@@ -299,6 +299,11 @@ export default function SzkoleniaPage() {
                   module: "Moduł 4",
                   title: "Typy kliniczne i wytyczne terapeutyczne",
                   desc: "Praktyczne zastosowanie ITS GoBrain w terapii logopedycznej, pedagogicznej i psychologicznej. Wskazania i przeciwwskazania. Scenariusze pracy z dziećmi o różnych profilach trudności.",
+                },
+                {
+                  module: "Moduł 5",
+                  title: "Model biznesowy GoBrain",
+                  desc: "Jak zbudować dodatkowe źródło dochodu jako Provider GoBrain? Omawiamy możliwości sprzedaży kodów aktywacyjnych podopiecznym, odpłatne przeprowadzanie PreTestów i PostTestów słuchowych, rozszerzenie oferty gabinetu o profesjonalny trening słuchowy oraz budowanie długofalowych relacji z klientami w oparciu o system GoBrain.",
                 },
               ].map((mod, i) => (
                 <motion.div
