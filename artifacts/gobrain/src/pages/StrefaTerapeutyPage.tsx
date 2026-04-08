@@ -207,7 +207,7 @@ export default function StrefaTerapeutyPage() {
                 <span>Wyniki treningu</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Porównanie wyników: Przed i Po terapii
+                Porównanie wyników: przed i po terapii
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Platforma TERAPEUTA automatycznie generuje porównanie PreTest i PostTest. Pokaż rodzicom mierzalny postęp dziecka.
