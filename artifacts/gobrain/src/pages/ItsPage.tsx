@@ -70,61 +70,6 @@ export default function ItsPage() {
           </div>
         </section>
 
-        {/* Two stages */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trening mózgu czyni mistrza</h2>
-              <p className="text-xl text-muted-foreground">Program składa się z dwóch etapów dostosowanych do postępów dziecka.</p>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            >
-              <motion.div variants={fadeInUp} className="rounded-3xl border border-border bg-card p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-primary font-bold text-xl">1</span>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Etap 1 — Podstawy treningu</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Pierwszy etap ITS GoBrain „Zabawy z dźwiękami" to wprowadzenie do treningu słuchowego. Program składa się z 10–25 sesji treningowych interaktywnych ćwiczeń słuchowych ćwiczących mózg dziecka. Korzystaj 2–3 razy w tygodniu.
-                </p>
-                <Button asChild className="w-full">
-                  <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
-                    Kup Etap 1
-                  </a>
-                </Button>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="rounded-3xl border-2 border-primary bg-background p-8 relative">
-                <div className="absolute top-4 right-4 text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full font-semibold">Zaawansowany</div>
-                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-primary font-bold text-xl">2</span>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Etap 2 — Intensywny trening</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Gdy w I etapie dziecko miało problemy lub nie zakończyło wszystkich zadań — należy zastosować Etap 2. Z każdym treningiem pamięć i koncentracja będą się poprawiać. Przerwa między etapami nie jest wymagana.
-                </p>
-                <Button asChild variant="outline" className="w-full">
-                  <a href="https://automater.pl/rest/order-viewer/buy/918222" target="_blank" rel="noopener noreferrer">
-                    Kup Etap 2
-                  </a>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* For whom */}
         <section className="py-20 bg-card border-y border-border">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -306,6 +251,61 @@ export default function ItsPage() {
                   </div>
                   <Download className="w-4 h-4 text-muted-foreground ml-auto group-hover:text-primary transition-colors" />
                 </a>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Two stages */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trening mózgu czyni mistrza</h2>
+              <p className="text-xl text-muted-foreground">Program składa się z dwóch etapów dostosowanych do postępów dziecka.</p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            >
+              <motion.div variants={fadeInUp} className="rounded-3xl border border-border bg-card p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-primary font-bold text-xl">1</span>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Etap 1 — Podstawy treningu</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Pierwszy etap ITS GoBrain „Zabawy z dźwiękami" to wprowadzenie do treningu słuchowego. Program składa się z 10–25 sesji treningowych interaktywnych ćwiczeń słuchowych ćwiczących mózg dziecka. Korzystaj 2–3 razy w tygodniu.
+                </p>
+                <Button asChild className="w-full">
+                  <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                    Kup Etap 1
+                  </a>
+                </Button>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="rounded-3xl border-2 border-primary bg-background p-8 relative">
+                <div className="absolute top-4 right-4 text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full font-semibold">Zaawansowany</div>
+                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-primary font-bold text-xl">2</span>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Etap 2 — Intensywny trening</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Gdy w I etapie dziecko miało problemy lub nie zakończyło wszystkich zadań — należy zastosować Etap 2. Z każdym treningiem pamięć i koncentracja będą się poprawiać. Przerwa między etapami nie jest wymagana.
+                </p>
+                <Button asChild variant="outline" className="w-full">
+                  <a href="https://automater.pl/rest/order-viewer/buy/918222" target="_blank" rel="noopener noreferrer">
+                    Kup Etap 2
+                  </a>
+                </Button>
               </motion.div>
             </motion.div>
           </div>
