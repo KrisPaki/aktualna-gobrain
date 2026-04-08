@@ -180,7 +180,7 @@ export default function ItsSchoolPage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"
           >
             {[
               {
@@ -192,6 +192,11 @@ export default function ItsSchoolPage() {
                 icon: "🏫",
                 title: "Szkoły podstawowe",
                 desc: "Zajęcia wyrównawcze, świetlice, klasy integracyjne. Wspieranie uczniów ze specjalnymi potrzebami.",
+              },
+              {
+                icon: "👩‍🏫",
+                title: "Szkolni logopedzi, psycholodzy, pedagodzy",
+                desc: "Specjaliści szkolni pracujący z dziećmi ze specjalnymi potrzebami edukacyjnymi.",
               },
               {
                 icon: "🌸",
