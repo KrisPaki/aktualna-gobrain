@@ -192,6 +192,130 @@ export default function StrefaTerapeutyPage() {
           </div>
         </section>
 
+        {/* ─── JAK DZIAŁA PLATFORMA ─── */}
+        <section className="py-24 bg-gradient-to-b from-slate-50 to-background">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <Zap className="w-4 h-4" />
+                <span>Proces diagnostyczny</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Jak działa Platforma Terapeuty?
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Kompleksowe narzędzie do oceny, planowania i monitorowania terapii — wszystko w jednym miejscu.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
+              {/* Steps */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="space-y-6"
+              >
+                {[
+                  {
+                    num: "01",
+                    icon: Brain,
+                    color: "bg-blue-500",
+                    title: "Ocena lateralizacji",
+                    desc: "Platforma bada dominację oka, ucha, ręki i nogi, umożliwiając dokładną diagnozę preferencji sensorycznych dziecka — kluczową dla doboru właściwych metod terapii.",
+                  },
+                  {
+                    num: "02",
+                    icon: GraduationCap,
+                    color: "bg-purple-500",
+                    title: "Gotowość do nauki szkolnej",
+                    desc: "Narzędzia oceniają przygotowanie dziecka do podjęcia nauki: poziom koncentracji, pamięć słuchową, rozumienie poleceń i zdolności fonologiczne.",
+                  },
+                  {
+                    num: "03",
+                    icon: Target,
+                    color: "bg-orange-500",
+                    title: "Mocne i słabe strony dziecka",
+                    desc: "Platforma identyfikuje 8 kluczowych obszarów rozwoju. Dzięki temu terapeuta precyzyjnie widzi, gdzie dziecko potrzebuje wsparcia, a gdzie już osiąga dobre wyniki.",
+                  },
+                  {
+                    num: "04",
+                    icon: FileText,
+                    color: "bg-green-500",
+                    title: "Indywidualny plan terapii",
+                    desc: "Na podstawie wyników diagnostycznych platforma wspiera tworzenie spersonalizowanego planu terapeutycznego, dostosowanego do aktualnych potrzeb i możliwości dziecka.",
+                  },
+                  {
+                    num: "05",
+                    icon: TrendingUp,
+                    color: "bg-pink-500",
+                    title: "Skuteczne działanie terapeutyczne",
+                    desc: "Dzięki precyzyjnej diagnozie można zaplanować skuteczne, mierzalne działania terapeutyczne i na bieżąco monitorować postępy — aż do finalnego raportu porównawczego.",
+                  },
+                ].map((step, i) => (
+                  <motion.div key={i} variants={fadeInUp} className="flex gap-4 group">
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-2xl ${step.color} flex items-center justify-center shadow-lg`}>
+                      <step.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1 pt-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-black text-muted-foreground/50 tracking-widest">{step.num}</span>
+                        <h3 className="font-bold text-foreground text-base">{step.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Image grid */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="grid grid-cols-2 gap-4"
+              >
+                <motion.div variants={fadeInUp} className="col-span-2 rounded-3xl overflow-hidden shadow-xl h-56">
+                  <img
+                    src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800&q=80"
+                    alt="Terapeuta pracuje z dzieckiem"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden shadow-lg h-44">
+                  <img
+                    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80"
+                    alt="Dziecko w trakcie diagnozy"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden shadow-lg h-44">
+                  <img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80"
+                    alt="Analiza wyników terapii"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                <motion.div variants={fadeInUp} className="col-span-2 rounded-2xl overflow-hidden shadow-lg h-44">
+                  <img
+                    src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&q=80"
+                    alt="Dzieci podczas zajęć"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* ─── BEFORE / AFTER ─── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
