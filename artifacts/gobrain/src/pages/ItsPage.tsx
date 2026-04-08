@@ -177,7 +177,7 @@ export default function ItsPage() {
                   bullets: [
                     "Automatycznie dopasowuje poziom trudności do możliwości dziecka",
                     "Stopniowo zwiększa liczbę rozpraszaczy (dystraktorów)",
-                    "Uczy koncentracji w trudnym, „głośnym" środowisku",
+                    'Uczy koncentracji w trudnym, \u201Eg\u0142o\u015bnym\u201C \u015brodowisku',
                     "Rozwija kierunkową uwagę i przetwarzanie słuchowe",
                     "Wzmacnia uwagę słuchową (z naciskiem na prawą stronę)",
                   ],
@@ -190,7 +190,7 @@ export default function ItsPage() {
                   bullets: [
                     "System sam analizuje postępy dziecka",
                     "Dobiera zadania w czasie rzeczywistym",
-                    "Eliminuje efekt „za trudne / za łatwe"",
+                    'Eliminuje efekt \u201Eza trudne / za \u0142atwe\u201C',
                     "Dorosły wspiera — system prowadzi",
                   ],
                 },
