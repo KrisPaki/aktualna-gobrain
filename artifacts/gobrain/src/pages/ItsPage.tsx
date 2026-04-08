@@ -57,26 +57,13 @@ export default function ItsPage() {
                   <span className="text-primary">ITS GoBrain?</span>
                 </motion.h1>
 
-                <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-10 leading-relaxed">
+                <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   Program zaprojektowany tak, aby dziecko chciało pracować — i robiło realne postępy.
                 </motion.p>
 
-                <motion.div variants={staggerContainer} className="flex flex-col gap-4">
-                  {[
-                    { icon: Zap, color: "bg-blue-100 text-blue-600", label: "Adaptacja w czasie rzeczywistym" },
-                    { icon: TrendingUp, color: "bg-green-100 text-green-600", label: "Maksymalne dopasowanie — bez frustracji" },
-                    { icon: Star, color: "bg-yellow-100 text-yellow-600", label: "Trening, który dziecko chce wykonywać" },
-                    { icon: Award, color: "bg-red-100 text-red-600", label: "Skuteczny tam, gdzie inne metody zawodzą" },
-                    { icon: Ear, color: "bg-purple-100 text-purple-600", label: "Unikalne podejście słuchowe" },
-                  ].map((item, i) => (
-                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl ${item.color} flex items-center justify-center shrink-0`}>
-                        <item.icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-base font-medium text-foreground">{item.label}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
+                <motion.p variants={fadeInUp} className="text-base text-muted-foreground leading-relaxed">
+                  Poniżej znajdziesz szczegółowe informacje o tym, co wyróżnia ITS GoBrain spośród innych metod pracy z dzieckiem.
+                </motion.p>
               </motion.div>
 
               {/* RIGHT — zdjęcie */}
