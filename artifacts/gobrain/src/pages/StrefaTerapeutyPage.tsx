@@ -305,7 +305,7 @@ export default function StrefaTerapeutyPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Jak działa platforma?</h2>
-              <p className="text-xl text-muted-foreground">Pięć etapów do mierzalnych wyników</p>
+              <p className="text-xl text-muted-foreground">Cztery etapy do mierzalnych wyników</p>
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
@@ -329,12 +329,12 @@ export default function StrefaTerapeutyPage() {
                         <ArrowRight className="w-3 h-3 text-muted-foreground" />
                       </div>
                       <h3 className="font-bold text-foreground mb-1">Diagnoza — PreTest</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">PreTest składa się z ośmiu zadań testujących podstawowe funkcje słuchowe dziecka. Kompleksowa diagnoza obejmuje:</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">PreTest składa się z ośmiu zadań testujących podstawowe funkcje słuchowe dziecka. Dodatkowo terapeuta może przeprowadzać szereg specjalistycznych ankiet i testów, m.in. ocenę lateralizacji, ocenę gotowości szkolnej oraz ankietę wstępną. Wszystkie te narzędzia pozwalają zidentyfikować mocne i słabe obszary funkcjonowania dziecka.</p>
                       <ul className="space-y-2">
                         {[
                           { icon: Brain, label: "Ocena lateralizacji", sub: "preferencje stronne słuchu, wzroku i ruchu" },
-                          { icon: GraduationCap, label: "Ocena gotowości szkolnej", sub: "8 kluczowych obszarów słuchowych" },
-                          { icon: Target, label: "Ocena mocnych i słabych stron", sub: "identyfikacja obszarów wymagających wsparcia" },
+                          { icon: GraduationCap, label: "Ocena gotowości szkolnej", sub: "kluczowe obszary rozwojowe" },
+                          { icon: Target, label: "Identyfikacja mocnych i słabych stron", sub: "podstawa do planowania terapii" },
                         ].map((item, j) => (
                           <li key={j} className="flex items-start gap-2 text-sm">
                             <item.icon className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
@@ -357,21 +357,36 @@ export default function StrefaTerapeutyPage() {
                       <ArrowRight className="w-3 h-3 text-muted-foreground" />
                     </div>
                     <h3 className="font-bold text-foreground mb-1">Przygotowanie planu terapii</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Na podstawie wyników diagnozy platforma wspiera terapeutę w przygotowaniu indywidualnego planu działań terapeutycznych. Dzięki precyzyjnej ocenie mocnych i słabych stron dziecka można zaplanować skuteczne, celowane działania terapeutyczne.</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Na podstawie wyników diagnozy terapeuta, wraz z platformą, przygotowuje indywidualny plan działań terapeutycznych. Dzięki precyzyjnej ocenie mocnych i słabych stron dziecka może zaplanować skuteczne, celowe działania terapeutyczne — a program GoBrain sam dostosuje poziom trudności do potrzeb dziecka.</p>
                   </div>
                 </motion.div>
 
                 {/* ETAP 03 */}
+                <motion.div variants={fadeInUp} whileHover={{ x: 4 }} className="flex gap-5 p-5 rounded-2xl bg-background border border-purple-200 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+                    <Activity className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 03</span>
+                      <ArrowRight className="w-3 h-3 text-muted-foreground" />
+                    </div>
+                    <h3 className="font-bold text-foreground mb-1">Monitoring postępów</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Terapeuta ma dostęp do wyników każdego dziecka w czasie rzeczywistym — śledzi postępy na bieżąco, bez względu na miejsce pracy. Platforma automatycznie porównuje poszczególne zadania, wskazując obszary wymagające większej uwagi. Na podstawie wyników terapeuta może też dostosować terapię poza systemem GoBrain.</p>
+                  </div>
+                </motion.div>
+
+                {/* ETAP 04 */}
                 <motion.div variants={fadeInUp} whileHover={{ x: 4 }} className="flex gap-5 p-5 rounded-2xl bg-background border border-indigo-200 hover:shadow-md transition-all">
                   <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 03</span>
+                      <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 04</span>
                     </div>
-                    <h3 className="font-bold text-foreground mb-1">Monitoring postępów — PostTest</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Terapeuta ma dostęp online do wyników każdego dziecka w czasie rzeczywistym — śledzi postępy na bieżąco, bez względu na miejsce pracy. Automatyczne porównanie PreTest z PostTest pozwala wygenerować raport PDF dla rodziców i pokazać mierzalny postęp. Dane stanowią podstawę do planowania kolejnych skutecznych kroków terapii.</p>
+                    <h3 className="font-bold text-foreground mb-1">PostTest — mierzalny postęp</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Po zakończeniu treningu terapeuta może wykonać PostTest, który automatycznie porówna wyniki przed i po treningu. Pozwala to na precyzyjne pokazanie tego, co i jak się zmieniło w funkcjonowaniu dziecka. Rodzic otrzymuje wykresy w formie PDF prezentujące mierzalny postęp — pełny obraz efektów terapii.</p>
                   </div>
                 </motion.div>
               </motion.div>
