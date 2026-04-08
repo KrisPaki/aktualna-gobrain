@@ -120,7 +120,7 @@ export default function ItsSchoolPage() {
                 icon: BarChart3,
                 color: "bg-purple-50 text-purple-600",
                 title: "Monitoring postępów",
-                desc: "Bieżące śledzenie wyników i postępów każdego podopiecznego. Raporty i historia sesji dostępne w panelu terapeuty.",
+                desc: "Bieżące śledzenie wyników i postępów każdego podopiecznego.",
               },
               {
                 icon: Clock,
