@@ -53,7 +53,7 @@ export default function ItsSchoolPage() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Profesjonalna platforma treningu słuchowego dla gabinetów, szkół, przedszkoli i poradni. Nieograniczona liczba podopiecznych, pełna kontrola terapeuty, licencja roczna lub bezterminowa.
+              Profesjonalna platforma treningu słuchowego dla gabinetów, szkół, przedszkoli i poradni. Nieograniczona liczba podopiecznych, pełna kontrola terapeuty, licencja roczna.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -73,8 +73,6 @@ export default function ItsSchoolPage() {
             <motion.div variants={fadeInUp} className="mt-10 inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-2xl px-6 py-3">
               <span className="text-2xl font-black text-orange-500">799</span>
               <span className="text-sm text-muted-foreground">PLN / rok (brutto)</span>
-              <span className="text-muted-foreground mx-2">lub</span>
-              <span className="text-sm font-semibold text-foreground">licencja bezterminowa</span>
             </motion.div>
           </motion.div>
         </div>
