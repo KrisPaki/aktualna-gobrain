@@ -224,7 +224,7 @@ export default function SzkoleniaPage() {
                   <Clock className="w-4 h-4 text-primary" /> 60 dni dostępu
                 </span>
                 <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Video className="w-4 h-4 text-primary" /> 5 modułów video
+                  <Video className="w-4 h-4 text-primary" /> 4 moduły video
                 </span>
                 <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
                   <Award className="w-4 h-4 text-primary" /> Certyfikat imienny
@@ -288,22 +288,17 @@ export default function SzkoleniaPage() {
                 {
                   module: "Moduł 2",
                   title: "Podstawy teoretyczne treningu słuchowego",
-                  desc: "Neurobiologia słyszenia i przetwarzania słuchowego. Jak mózg przetwarza dźwięki i dlaczego trening słuchowy działa? Kolejność stosowania treningów słuchowych — Tomatis, Johansen, Farnke, ITS GoBrain — oraz porównanie ich skuteczności terapeutycznej.",
+                  desc: "Neurobiologia słyszenia i przetwarzania słuchowego. Jak mózg przetwarza dźwięki i dlaczego trening słuchowy działa? Omówienie teorii Tomatis, Johansen i różnic z ITS GoBrain.",
                 },
                 {
                   module: "Moduł 3",
                   title: "Centralne zaburzenia przetwarzania słuchowego (CAPD)",
-                  desc: "Definicja CAPD, diagnozowanie, różnicowanie z ADHD i dysleksją. Jak korzystać z platformy TERAPEUTA do diagnozy i monitorowania postępów podopiecznych.",
+                  desc: "Definicja CAPD, diagnozowanie, różnicowanie z ADHD i dysleksją. Jak stosować platformę TERAPEUTA do diagnozy i monitorowania postępów? Obsługa PreTestu i PostTestu.",
                 },
                 {
                   module: "Moduł 4",
-                  title: "Typy kliniczne i wytyczne terapeutyczne w praktyce",
-                  desc: "Praktyczne zapoznanie się ze stosowaniem ITS GoBrain w gabinecie — od pierwszej sesji po monitoring postępów. Typy kliniczne i wytyczne terapeutyczne w praktyce logopedycznej, pedagogicznej i psychologicznej. Wskazania i przeciwwskazania. Scenariusze pracy z dziećmi o różnych profilach trudności.",
-                },
-                {
-                  module: "Moduł 5",
-                  title: "Model biznesowy GoBrain",
-                  desc: "Jak jako certyfikowany Provider GoBrain możesz budować dodatkowe źródło przychodu w swojej praktyce. Omówienie zasad sprzedaży kodów aktywacyjnych podopiecznym — z własnym indywidualnym kodem partnerskim. Przeprowadzanie płatnych PreTestów i PostTestów słuchowych jako samodzielna usługa diagnostyczna. Wycena usług, współpraca z placówkami, pozyskiwanie klientów.",
+                  title: "Typy kliniczne i wytyczne terapeutyczne",
+                  desc: "Praktyczne zastosowanie ITS GoBrain w terapii logopedycznej, pedagogicznej i psychologicznej. Wskazania i przeciwwskazania. Scenariusze pracy z dziećmi o różnych profilach trudności.",
                 },
               ].map((mod, i) => (
                 <motion.div
