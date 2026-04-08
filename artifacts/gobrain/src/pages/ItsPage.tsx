@@ -23,6 +23,7 @@ import parentChildImg from "@/assets/parent-child-home.png";
 import therapistChildImg from "@/assets/therapist-child.png";
 import childrenClassroomImg from "@/assets/children-classroom.png";
 import heroChildImg from "@/assets/hero-child-new.webp";
+import heroHeadphonesImg from "@/assets/hero-child-headphones.png";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -39,60 +40,46 @@ export default function ItsPage() {
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <div className="pt-16">
 
-        {/* ─── HERO ─── */}
+        {/* ─── HERO: DLACZEGO ITS GOBRAIN ─── */}
         <section className="py-20 md:py-28 bg-gradient-to-br from-blue-50 via-background to-background border-b border-border overflow-hidden">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={staggerContainer}
-              >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* LEFT — tekst */}
+              <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
                 <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  <Ear className="w-4 h-4" />
-                  <span>Interaktywny Trening Słuchowy</span>
+                  <Zap className="w-4 h-4" />
+                  <span>Zalety programu</span>
                 </motion.div>
 
                 <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
-                  ITS GoBrain<br />
-                  <span className="text-primary">„Zabawy z dźwiękami"</span>
+                  Dlaczego<br />
+                  <span className="text-primary">ITS GoBrain?</span>
                 </motion.h1>
 
-                <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                  Interaktywny trening słuchowy GoBrain to klucz do sukcesu Twojego dziecka!
-                </motion.p>
                 <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                  Zindywidualizowany program skupia się na poprawie koncentracji, pamięci i uwagi słuchowej.
+                  Program zaprojektowany tak, aby dziecko chciało pracować — i robiło realne postępy.
                 </motion.p>
 
-                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Button size="lg" className="h-14 px-8 text-base font-semibold" asChild>
-                    <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
-                      Kup ITS GoBrain Etap 1
-                      <ChevronRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" className="h-14 px-8 text-base" asChild>
-                    <a href="https://automater.pl/rest/order-viewer/buy/918222" target="_blank" rel="noopener noreferrer">
-                      Kup ITS GoBrain Etap 2
-                    </a>
-                  </Button>
-                </motion.div>
-
-                <motion.div variants={fadeInUp} className="flex gap-6">
+                <motion.div variants={staggerContainer} className="flex flex-col gap-4">
                   {[
-                    { value: "5+", label: "lat — wiek dziecka" },
-                    { value: "2–3×", label: "w tygodniu" },
-                    { value: "do 25", label: "sesji treningowych" },
-                  ].map((stat, i) => (
-                    <div key={i} className="text-center">
-                      <p className="text-2xl font-bold text-primary">{stat.value}</p>
-                      <p className="text-xs text-muted-foreground">{stat.label}</p>
-                    </div>
+                    { icon: Zap, color: "bg-blue-100 text-blue-600", label: "Adaptacja w czasie rzeczywistym" },
+                    { icon: TrendingUp, color: "bg-green-100 text-green-600", label: "Maksymalne dopasowanie — bez frustracji" },
+                    { icon: Star, color: "bg-yellow-100 text-yellow-600", label: "Trening, który dziecko chce wykonywać" },
+                    { icon: Award, color: "bg-red-100 text-red-600", label: "Skuteczny tam, gdzie inne metody zawodzą" },
+                    { icon: Ear, color: "bg-purple-100 text-purple-600", label: "Unikalne podejście słuchowe" },
+                  ].map((item, i) => (
+                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-4">
+                      <div className={`w-10 h-10 rounded-xl ${item.color} flex items-center justify-center shrink-0`}>
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <span className="text-base font-medium text-foreground">{item.label}</span>
+                    </motion.div>
                   ))}
                 </motion.div>
               </motion.div>
 
+              {/* RIGHT — zdjęcie */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -101,12 +88,11 @@ export default function ItsPage() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
                   <img
-                    src={heroChildImg}
-                    alt="Dziecko korzystające z ITS GoBrain"
+                    src={heroHeadphonesImg}
+                    alt="Dziecko ze słuchawkami ITS GoBrain"
                     className="w-full object-cover"
-                    style={{ transform: "scale(1.1)", transformOrigin: "60% 30%" }}
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.3) 0%, transparent 50%)" }} />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.15) 0%, transparent 60%)" }} />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -135,31 +121,14 @@ export default function ItsPage() {
                   </div>
                 </motion.div>
               </motion.div>
+
             </div>
           </div>
         </section>
 
-        {/* ─── DLACZEGO ITS GOBRAIN ─── */}
+        {/* ─── KARTY ZALET ─── */}
         <section className="py-20 md:py-28 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="text-center mb-16"
-            >
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                <Zap className="w-4 h-4" />
-                <span>Zalety programu</span>
-              </motion.div>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight mb-4">
-                Dlaczego ITS GoBrain?
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Program zaprojektowany tak, aby dziecko chciało pracować — i robiło realne postępy.
-              </motion.p>
-            </motion.div>
 
             <motion.div
               initial="hidden"
@@ -280,6 +249,86 @@ export default function ItsPage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* ─── SEKCJA SPRZEDAŻOWA ─── */}
+        <section className="py-20 md:py-28 bg-gradient-to-br from-blue-600 to-blue-800 text-white overflow-hidden">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+              {/* LEFT — tekst sprzedażowy */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+              >
+                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
+                  <Ear className="w-4 h-4" />
+                  <span>Interaktywny Trening Słuchowy</span>
+                </motion.div>
+
+                <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                  ITS GoBrain<br />
+                  <span className="text-blue-200">„Zabawy z dźwiękami"</span>
+                </motion.h2>
+
+                <motion.p variants={fadeInUp} className="text-lg text-blue-100 mb-4 leading-relaxed">
+                  Interaktywny trening słuchowy GoBrain to klucz do sukcesu Twojego dziecka!
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg text-blue-100 mb-10 leading-relaxed">
+                  Zindywidualizowany program skupia się na poprawie koncentracji, pamięci i uwagi słuchowej.
+                </motion.p>
+
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Button size="lg" className="h-14 px-8 text-base font-semibold bg-white text-blue-700 hover:bg-blue-50" asChild>
+                    <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                      Kup ITS GoBrain Etap 1
+                      <ChevronRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="h-14 px-8 text-base border-white/40 text-white hover:bg-white/10" asChild>
+                    <a href="https://automater.pl/rest/order-viewer/buy/918222" target="_blank" rel="noopener noreferrer">
+                      Kup ITS GoBrain Etap 2
+                    </a>
+                  </Button>
+                </motion.div>
+
+                <motion.div variants={fadeInUp} className="flex gap-8">
+                  {[
+                    { value: "5+", label: "lat — wiek dziecka" },
+                    { value: "2–3×", label: "w tygodniu" },
+                    { value: "do 25", label: "sesji treningowych" },
+                  ].map((stat, i) => (
+                    <div key={i} className="text-center">
+                      <p className="text-3xl font-black text-white">{stat.value}</p>
+                      <p className="text-xs text-blue-200 mt-1">{stat.label}</p>
+                    </div>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* RIGHT — zdjęcie */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative hidden lg:block"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
+                  <img
+                    src={heroChildImg}
+                    alt="Dziecko korzystające z ITS GoBrain"
+                    className="w-full object-cover"
+                    style={{ transform: "scale(1.1)", transformOrigin: "60% 30%" }}
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(37,99,235,0.3) 0%, transparent 50%)" }} />
+                </div>
+              </motion.div>
+
+            </div>
           </div>
         </section>
 
