@@ -150,6 +150,18 @@ export default function ItsPage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
+              className="mb-10"
+            >
+              <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-bold text-foreground mb-1">
+                Co nas wyróżnia:
+              </motion.h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
             >
               {[
