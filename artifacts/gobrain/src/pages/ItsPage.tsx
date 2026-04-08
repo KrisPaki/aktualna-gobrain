@@ -62,7 +62,7 @@ export default function ItsPage() {
                   Interaktywny trening słuchowy GoBrain to klucz do sukcesu Twojego dziecka!
                 </motion.p>
                 <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                  Zindywidualizowany program skupia się na poprawie koncentracji, pamięci i uwagi słuchowej — dostępny w przeglądarce internetowej.
+                  Zindywidualizowany program skupia się na poprawie koncentracji, pamięci i uwagi słuchowej.
                 </motion.p>
 
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -83,7 +83,7 @@ export default function ItsPage() {
                   {[
                     { value: "5+", label: "lat — wiek dziecka" },
                     { value: "2–3×", label: "w tygodniu" },
-                    { value: "25", label: "sesji treningowych" },
+                    { value: "do 25", label: "sesji treningowych" },
                   ].map((stat, i) => (
                     <div key={i} className="text-center">
                       <p className="text-2xl font-bold text-primary">{stat.value}</p>
