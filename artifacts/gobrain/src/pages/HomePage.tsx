@@ -240,8 +240,8 @@ export default function HomePage() {
                     src={heroChildImg}
                     alt="Dziecko korzystające z programu ITS GoBrain w słuchawkach"
                     className="w-full h-full object-cover"
+                    style={{ transform: "scale(1.2)", transformOrigin: "60% 40%", filter: "brightness(1.15)" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
                 </div>
                 {/* Floating badge */}
                 <motion.div 
