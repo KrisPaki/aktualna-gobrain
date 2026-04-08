@@ -897,7 +897,7 @@ export default function HomePage() {
                       { label: 'Diagnosta CAPD', desc: 'Centralne zaburzenia przetwarzania słuchowego', color: 'bg-teal-50 border-teal-200 text-teal-700' },
                       { label: 'Integracja odruchów II st.', desc: 'Zaawansowany terapeuta', color: 'bg-orange-50 border-orange-200 text-orange-700' },
                       { label: 'Stymulacja słuchowa', desc: 'Certyfikowany specjalista terapii słuchu', color: 'bg-green-50 border-green-200 text-green-700' },
-                      { label: 'Metoda IN-SITE', desc: 'Certyfikowany terapeuta metody IN-SITE', color: 'bg-blue-50 border-blue-200 text-blue-700' },
+                      { label: 'Model INSITE', desc: 'Certyfikowany terapeuta modelu INSITE', color: 'bg-blue-50 border-blue-200 text-blue-700' },
                       { label: 'Wczesna interwencja', desc: 'Praca terapeutyczna z dziećmi', color: 'bg-pink-50 border-pink-200 text-pink-700' },
                       { label: 'Neurologopedia', desc: 'Diagnoza i terapia neurologopedyczna', color: 'bg-purple-50 border-purple-200 text-purple-700' },
                     ].map((cert, i) => (
