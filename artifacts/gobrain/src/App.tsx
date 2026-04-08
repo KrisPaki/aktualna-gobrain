@@ -18,6 +18,7 @@ import ProgramyEdukacyjnePage from "@/pages/ProgramyEdukacyjnePage";
 import ProgramPage from "@/pages/ProgramPage";
 import ItsSchoolPage from "@/pages/ItsSchoolPage";
 import KartaMowyPage from "@/pages/KartaMowyPage";
+import DarmoveWebinaryPage from "@/pages/DarmoveWebinaryPage";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ function App() {
               <Route path="/programy-edukacyjne" element={<ProgramyEdukacyjnePage />} />
               <Route path="/programy-edukacyjne/:slug" element={<ProgramPage />} />
               <Route path="/karta-mowy" element={<KartaMowyPage />} />
+              <Route path="/darmowe-webinary" element={<DarmoveWebinaryPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
