@@ -329,7 +329,7 @@ export default function StrefaTerapeutyPage() {
                         <ArrowRight className="w-3 h-3 text-muted-foreground" />
                       </div>
                       <h3 className="font-bold text-foreground mb-1">Diagnoza — PreTest</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">Terapeuta ma dostęp online do wyników każdego dziecka w czasie rzeczywistym. Przeprowadź kompleksową diagnozę obejmującą:</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">PreTest składa się z ośmiu zadań testujących podstawowe funkcje słuchowe dziecka. Kompleksowa diagnoza obejmuje:</p>
                       <ul className="space-y-2">
                         {[
                           { icon: Brain, label: "Ocena lateralizacji", sub: "preferencje stronne słuchu, wzroku i ruchu" },
@@ -371,7 +371,7 @@ export default function StrefaTerapeutyPage() {
                       <span className="text-xs font-black text-muted-foreground tracking-widest">ETAP 03</span>
                     </div>
                     <h3 className="font-bold text-foreground mb-1">Monitoring postępów — PostTest</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Automatyczne porównanie PreTest z PostTest. Terapeuta śledzi postępy online w czasie rzeczywistym. Generuj raporty PDF dla rodziców i pokaż mierzalny postęp. Planuj kolejne skuteczne kroki terapii.</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Terapeuta ma dostęp online do wyników każdego dziecka w czasie rzeczywistym — śledzi postępy na bieżąco, bez względu na miejsce pracy. Automatyczne porównanie PreTest z PostTest pozwala wygenerować raport PDF dla rodziców i pokazać mierzalny postęp. Dane stanowią podstawę do planowania kolejnych skutecznych kroków terapii.</p>
                   </div>
                 </motion.div>
               </motion.div>
