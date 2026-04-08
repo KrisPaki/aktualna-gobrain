@@ -206,7 +206,7 @@ export default function ItsSchoolPage() {
               {
                 icon: "🎓",
                 title: "Ośrodki terapeutyczne",
-                desc: "Specjalistyczne centra rehabilitacyjne, ośrodki wczesnej interwencji i terapii pedagogicznej.",
+                desc: "Specjalistyczne centra rehabilitacyjne, ośrodki wczesnej interwencji i terapii pedagogicznej. Rehabilitacja dzieci z wadą słuchu oraz ze spektrum autyzmu.",
               },
             ].map((item) => (
               <motion.div
