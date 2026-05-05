@@ -1,0 +1,948 @@
+================================================================================
+GOBRAIN.PL — KOMPLETNY ZBIÓR TEKSTÓW ZE STRONY
+Firma: GoBrain Polska / Logomedic
+Twórczyni: mgr Aneta Pakieła
+Data eksportu: maj 2026
+================================================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DANE KONTAKTOWE I INFORMACJE O FIRMIE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Strona: gobrain.pl
+Telefon: 608 650 435
+E-mail: gobrainterapeuta@gmail.com
+Facebook: facebook.com/gobrainpl | @zabawyzdzwiekami
+
+Aneta Pakieła — twórczyni metody GoBrain:
+- Neurologopeda, surdologopeda
+- Wieloletnia Przewodnicząca Zarządu Polskiego Towarzystwa Neurologopedów
+- Dyrektor Logomedic
+- Prezes Fundacji Usłysz Marzenia
+- Dyrektor Merytoryczny GoBrain Polska
+- Współpraca z prof. Tadeuszem Gałkowskim
+- Oparcie metody na Modelu INSITE
+
+Linki do zakupu (automater.pl):
+- ITS GoBrain Etap 1: https://automater.pl/rest/order-viewer/buy/918448
+- ITS GoBrain Etap 2: https://automater.pl/rest/order-viewer/buy/918222
+- Platforma Terapeuta: https://automater.pl/rest/order-viewer/buy/979413
+- Szkolenie Provider: https://automater.pl/rest/order-viewer/buy/787759
+- Karta Mowy: https://automater.pl/rest/order-viewer/buy/1073862
+- ITS Pre & School (365 dni): https://automater.pl/rest/order-viewer/buy/979412
+- PeGoBrain: https://automater.pl/rest/order-viewer/buy/776316
+
+Pliki demo do pobrania:
+- ITS GoBrain Starter PC: http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe
+- ITS GoBrain Starter Android: http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk
+- ITS Pre&School Starter PC: http://gobraintech.pl/current/Sklep_PC/ITS_School_Starter.exe
+- ITS Pre&School Starter Android: http://gobraintech.pl/current/Sklep_Android/ITS_Szkola_starter.apk
+- Karta Mowy PC: https://gobraintech.pl/current/Sklep_PC/KartaMowy.exe
+- Karta Mowy Android: https://gobraintech.pl/current/Sklep_Android/karta.apk
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA GŁÓWNA (/)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Nagłówek: ITS GoBrain
+H1: Poprawa koncentracji i pamięci słuchowej
+Podtytuł: Interaktywny Trening GoBrain dla dzieci (od 5 roku życia)
+
+Opis 1: Zauważasz, że Twoje dziecko "słyszy, ale nie słucha"? Ma problemy z czytaniem, pisaniem lub rozumieniem poleceń?
+Opis 2: GoBrain to innowacyjne narzędzie stworzone, by wspierać terapię uwagi i koncentracji słuchowej najmłodszych poprzez angażującą zabawę.
+
+Przyciski: Przejdź do sklepu | Dowiedz się więcej
+Mini statystyki: 🧠 5000+ dzieci | ⭐ 4.9/5.0 ocena | 🎵 100 ćwiczeń
+Odznaka hero: Ocena rodziców — ⭐ 4.9 / 5.0
+Odznaka hero 2: Rekomendowany przez ekspertów
+
+--- STATYSTYKI (pasek niebieski) ---
+5000+ — Dzieci skorzystało
+98% — Zadowolonych rodziców
+100 — Zadań treningowych
+4 — Poziomy trudności
+
+--- CO NAS WYRÓŻNIA ---
+H2: Co nas wyróżnia:
+
+1. Adaptacja w czasie rzeczywistym
+   Automatycznie dopasowuje poziom trudności i liczbę dystraktorów do możliwości dziecka.
+
+2. Bez frustracji
+   System sam analizuje postępy i dobiera zadania — eliminuje efekt „za trudne / za łatwe".
+
+3. Trening jak gra
+   Angażująca forma i atrakcyjna grafika budują motywację i wytrwałość dziecka.
+
+4. Skuteczny tam, gdzie inne zawodzą
+   Idealny dla dzieci unikających treningów — działa nawet przy niskiej motywacji.
+
+5. Unikalne podejście słuchowe
+   Przewaga bodźców słuchowych nad wzrokowymi ze stopniowym wycofywaniem wsparcia wizualnego.
+
+--- NASZE PROGRAMY ---
+H2: Wybierz skuteczny program dla dziecka
+Podtytuł: Cztery rozwiązania dostosowane do różnych potrzeb — dla domu, szkoły i gabinetu terapeutycznego.
+
+1. ITS GoBrain — „Zabawy z dźwiękami"
+   Dla dzieci od piątego roku życia, do stosowania w domu.
+
+2. ITS GoBrain Pre & School — Licencja dla placówek
+   Dla terapeutów, gabinetów, szkół, przedszkoli, poradni i instytucji.
+
+3. Karta Mowy — Diagnostyka logopedyczna
+   Narzędzie cyfrowe do badania, dokumentowania i utrwalania prawidłowej wymowy.
+
+4. Platforma Terapeuta — Narzędzie specjalisty
+   Dla terapeutów: logopedów, pedagogów, psychologów, itp.
+
+--- DEMO STRIP ---
+Wypróbuj demo za darmo
+Bez rejestracji i opłat — PC i Android
+[Demo PC] [Demo Android] [Wszystkie wersje demo →]
+
+--- DLA KOGO? ---
+Sekcja z obrazem rodzica/terapeuty z dzieckiem.
+Dla rodziców — Trening w domu, wspierasz dziecko w każdej chwili
+Dla terapeutów — Monitorujesz postępy i dostosowujesz plan terapeutyczny
+Dla szkół i przedszkoli — Nowoczesne narzędzie do pracy z grupami i indywidualnie
+
+Dla dzieci, które:
+• Słyszą, ale nie słuchają
+• Mają problemy z koncentracją i uwagą
+• Mają trudności z czytaniem i pisaniem
+• Wymagają powtarzania poleceń
+• Są wrażliwe na dźwięki
+• Mają zaburzenia przetwarzania słuchowego
+
+--- SYMPTOMY (bąbelki) ---
+• Nie rozumie poleceń i wymaga powtarzania
+• Niepokojące zachowania
+• Po usunięciu trzeciego migdałka oraz drenach
+
+--- SEKCJA TWÓRCZYNI i PARTNERZY ---
+Kafelki instytucji i partnerów:
+• Polskie Towarzystwo Neurologopedów
+• Prof. Tadeusz Gałkowski
+• Model INSITE
+• Fundacja Usłysz Marzenia
+• Logomedic
+• GoBrain Polska
+
+mgr Aneta Pakieła — Neurologopeda, surdologopeda, Twórczyni metody ITS GoBrain
+Tekst: [opis twórczyni i doświadczeń klinicznych]
+
+--- WYNIKI BADAŃ (sekcja z paskami postępu) ---
+H2: Wyniki po 8 tygodniach treningu
+(wizualizacja: przed → po)
+• Pamięć słuchowa: 41% → 78% (+37 pkt)
+• Koncentracja uwagi: 35% → 74% (+39 pkt)
+• Rozróżnianie dźwięków: 48% → 82% (+34 pkt)
+• Czas reakcji słuchowej: 39% → 71% (+32 pkt)
+• Odporność na rozpraszanie: 30% → 68% (+38 pkt)
+• Rozumienie poleceń: 44% → 80% (+36 pkt)
+
+--- OPINIE KLIENTÓW ---
+ReviewsCarousel — opinie rodziców i terapeutów
+
+--- SEKCJA CTA ---
+H2: Gotowy, by zacząć?
+Podtytuł: Sprawdź bezpłatne demo lub kup kod aktywacyjny — wyniki widoczne już po 4 tygodniach treningu.
+Przyciski: Przejdź do sklepu | Wypróbuj demo
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: ITS GOBRAIN (/its)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Etykieta: Zalety programu
+H1: Dlaczego ITS GoBrain?
+Podtytuł: Program zaprojektowany tak, aby dziecko chciało pracować — i robiło realne postępy.
+Opis: Poniżej znajdziesz szczegółowe informacje o tym, co wyróżnia ITS GoBrain spośród innych metod pracy z dzieckiem.
+
+Odznaka: Rekomendowany przez specjalistów i terapeutów
+Odznaka 2: Ocena rodziców 4.9 / 5.0
+
+--- PASEK EFEKTÓW (niebieski) ---
+• Przetwarzanie słuchowe
+• Wyniki w nauce
+• Wymowa i komunikacja
+• Uwaga i pamięć
+• Wrażliwość słuchowa
+
+--- CO NAS WYRÓŻNIA ---
+H2: Co nas wyróżnia:
+
+Karta 1: Adaptacja w czasie rzeczywistym
+• Automatycznie dopasowuje poziom trudności do możliwości dziecka
+• Stopniowo zwiększa liczbę rozpraszaczy (dystraktorów)
+• Uczy koncentracji w trudnym, „głośnym" środowisku
+• Rozwija kierunkową uwagę i przetwarzanie słuchowe
+• Wzmacnia uwagę słuchową (z naciskiem na prawą stronę)
+
+Karta 2: Maksymalne dopasowanie — bez frustracji
+• System sam analizuje postępy dziecka
+• Dobiera zadania w czasie rzeczywistym
+• Eliminuje efekt „za trudne / za łatwe"
+• Dorosły wspiera — system prowadzi
+
+Karta 3: Trening, który dziecko chce wykonywać
+• Forma angażującej gry
+• Atrakcyjna grafika zwiększająca motywację
+• Naturalne wciągnięcie dziecka w działanie
+• Budowanie wytrwałości i chęci podejmowania wyzwań
+
+Karta 4: Skuteczny tam, gdzie inne metody zawodzą
+• Idealny dla dzieci unikających treningów
+• Obniża opór przed wysiłkiem
+• Wprowadza dziecko w rozwój bez presji
+• Działa nawet przy niskiej motywacji
+
+Karta 5: Unikalne podejście słuchowe
+• Przewaga bodźców słuchowych nad wzrokowymi
+• Stopniowe wycofywanie wsparcia wizualnego
+• Skuteczne wsparcie trudności przetwarzania słuchowego
+
+--- SEKCJA SPRZEDAŻOWA (niebieska) ---
+Etykieta: Interaktywny Trening Słuchowy
+H2: ITS GoBrain „Zabawy z dźwiękami"
+Opis 1: Interaktywny trening słuchowy GoBrain to klucz do sukcesu Twojego dziecka!
+Opis 2: Zindywidualizowany program skupia się na poprawie koncentracji, pamięci i uwagi słuchowej.
+
+Przyciski: Kup ITS GoBrain Etap 1 | Kup ITS GoBrain Etap 2
+
+Statystyki:
+• 5+ lat — wiek dziecka
+• 2–3× w tygodniu
+• do 25 sesji treningowych
+
+--- DLA KOGO ---
+H2: Dla kogo jest program ITS GoBrain?
+Podtytuł: Program dla dzieci od piątego roku życia, u których zaobserwowano:
+
+Lista wskazań:
+• Nie rozumie poleceń i wymaga powtarzania
+• Wymaga powtarzania poleceń, co zmienia się w niepokojące zachowania
+• Brak efektów w terapii logopedycznej w codziennej mowie
+• Ma trudności z doprowadzeniem zadań do końca
+• Ma problemy z nauką czytania i pisania
+• Wykazuje nieadekwatną samoocenę
+• Jest nadwrażliwe na dźwięki (zatyka uszy)
+• Ma zaburzenia przetwarzania słuchowego (CAPD)
+• Po usunięciu trzeciego migdałka oraz drenach
+• Wykazuje objawy dysleksji
+• Ma trudności z koncentracją i uwagą słuchową
+
+Odznaka: Skuteczna pomoc dla dzieci od 5. roku życia
+
+--- TRZY FILARY SKUTECZNOŚCI ---
+H2: Trzy filary skuteczności
+Podtytuł: Na czym opiera się skuteczność programu ITS GoBrain?
+
+01. Systematyczność
+Program należy stosować 2–3 razy w tygodniu. Systematyczne ćwiczenia budują trwałe zmiany w przetwarzaniu dźwięków przez mózg.
+
+02. Intensywność
+[tekst o intensywności treningu]
+
+03. Indywidualność
+[tekst o indywidualnym podejściu]
+
+Odznaka: Automatyczne dostosowanie poziomu
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: ITS GOBRAIN PRE & SCHOOL (/its-school)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Etykieta: Bez limitu użytkowników
+H1: ITS GoBrain Pre & School
+Podtytuł: Profesjonalna platforma treningu słuchowego dla gabinetów, szkół, przedszkoli i poradni. Nieograniczona liczba podopiecznych, pełna kontrola terapeuty, licencja roczna.
+Cena: 799 PLN / rok (brutto)
+Przyciski: Zamów licencję | Strefa terapeuty
+
+--- CO ZAWIERA LICENCJA ---
+H2: Co zawiera licencja Pre & School?
+Podtytuł: Wszystkie narzędzia potrzebne do prowadzenia skutecznego treningu słuchowego w placówce.
+
+1. Nieograniczona liczba podopiecznych
+   Jedna licencja obejmuje dowolną liczbę dzieci — bez dodatkowych opłat za każdego kolejnego użytkownika.
+
+2. Terapeuta kontroluje sesje
+   Terapeuta decyduje o czasie trwania, zakresie i harmonogramie każdej sesji treningowej. Pełna elastyczność pracy.
+
+3. Monitoring postępów
+   Bieżące śledzenie wyników i postępów każdego podopiecznego.
+
+4. Brak ograniczeń dobowych
+   W odróżnieniu od licencji domowej — brak dziennych limitów czasu treningu. Sesje dopasowane do grafiku placówki.
+
+5. Dostęp do wszystkich zadań
+   Pełny dostęp do wszystkich poziomów trudności, zadań treningowych i gier bonusowych bez ograniczeń.
+
+6. Faktura VAT w cenie
+   Licencja objęta dokumentacją księgową. Faktura VAT wystawiana automatycznie po zamówieniu.
+
+--- DLA KOGO ---
+H2: Dla kogo jest licencja ITS Pre & School?
+Podtytuł: Rozwiązanie stworzone z myślą o specjalistach pracujących z grupami dzieci.
+
+🏥 Poradnie i gabinety
+Logopedyczne, psychologiczne, terapeutyczne — praca z wieloma podopiecznymi jednocześnie.
+
+🏫 Szkoły podstawowe
+Zajęcia wyrównawcze, świetlice, klasy integracyjne. Wspieranie uczniów ze specjalnymi potrzebami.
+
+👩‍🏫 Szkolni logopedzi, psycholodzy, pedagodzy
+Specjaliści szkolni pracujący z dziećmi ze specjalnymi potrzebami edukacyjnymi.
+
+🌸 Przedszkola
+Wczesna stymulacja słuchowa dla dzieci w wieku przedszkolnym. Praca z grupami i indywidualnie. Szkolni logopedzi, psycholodzy, pedagodzy.
+
+🎓 Ośrodki terapeutyczne
+Specjalistyczne centra rehabilitacyjne, ośrodki wczesnej interwencji i terapii pedagogicznej. Rehabilitacja dzieci z wadą słuchu oraz ze spektrum autyzmu.
+
+--- PROFESJONALNE NARZĘDZIE DLA TERAPEUTÓW ---
+Etykieta: Dla profesjonalistów
+H2: Profesjonalne narzędzie dla terapeutów
+Opis: ITS GoBrain Pre & School to wersja programu zaprojektowana z myślą o specjalistach. Daje terapeucie pełną kontrolę nad procesem treningowym — od planowania sesji po analizę wyników każdego dziecka.
+
+Lista funkcji:
+• Panel zarządzania podopiecznymi w jednym miejscu
+• Dostęp do PreTestów i PostTestów diagnostycznych
+• Gotowe scenariusze PDF do wydruku — obrazki i karty do tradycyjnej pracy terapeutycznej
+• Możliwość pracy stacjonarnej i zdalnej
+• Szkolenie i certyfikat Providera GoBrain w pakiecie
+• Wsparcie techniczne i merytoryczne od twórców
+
+--- PANEL TERAPEUTY ---
+Etykieta: Panel terapeuty
+H2: Pełny wgląd w postępy każdego dziecka
+Opis: Intuicyjny panel terapeuty pozwala na bieżące śledzenie wyników wszystkich podopiecznych. Raporty, statystyki sesji i historia treningów — wszystko w jednym miejscu.
+
+Statystyki:
+• 100% — Kontroli nad sesjami
+• 24/7 — Dostęp do platformy
+• ∞ — Liczba podopiecznych
+• 365 — Dni licencji / rok
+
+--- TABELA PORÓWNAWCZA ---
+H2: ITS Pre & School vs. licencja domowa
+Podtytuł: Porównaj, które rozwiązanie pasuje do Twoich potrzeb.
+
+| Funkcja                  | GoBrain Indywidualny | Pre & School  |
+|--------------------------|----------------------|---------------|
+| Liczba podopiecznych     | 1 dziecko            | Nieograniczona|
+| Ograniczenia dobowe      | Tak                  | Brak          |
+| Kontrola terapeuty       | Brak                 | Pełna         |
+| Panel monitoringu        | Rodzic               | Terapeuta + rodzic |
+| PreTest / PostTest       | Nie                  | Tak           |
+| Faktura VAT              | Tak                  | Tak           |
+| Wsparcie techniczne      | Podstawowe           | Priorytetowe  |
+| Szkolenie Providera      | Nie                  | Tak           |
+
+--- CTA ---
+H2: Zainteresowany licencją ITS Pre & School?
+Opis: Skontaktuj się z nami — dobierzemy odpowiedni plan dla Twojej placówki i odpowiemy na wszystkie pytania.
+Przyciski: Kup licencję ITS Pre & School | 📞 608 650 435
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: SKLEP (/sklep)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+H1: Wybierz program dopasowany do potrzeb
+Podtytuł: Interaktywny trening słuchowy dla dzieci od piątego roku życia. Bezpieczna płatność, natychmiastowy dostęp, faktura VAT.
+Odznaki: Bezpieczna płatność | Natychmiastowy dostęp | Faktura VAT
+
+--- PRODUKTY ---
+
+1. ITS GoBrain — „Zabawy z dźwiękami" Etap 1 [BESTSELLER]
+   Cena: 250 PLN (brutto)
+   Dla kogo: Dla dzieci od piątego roku życia — do stosowania w domu
+   Funkcje:
+   • 4 poziomy trudności
+   • 20 zadań treningowych
+   • Gry bonusowe
+   • Platforma online + aplikacja Android i PC
+   • Dostęp przez przeglądarkę internetową
+   • System automatycznego dostosowania
+   Kup: https://automater.pl/rest/order-viewer/buy/918448
+
+2. ITS GoBrain — „Zabawy z dźwiękami" Etap 2
+   Cena: 250 PLN (brutto)
+   Dla kogo: Kontynuacja po Etapie 1 — zaawansowany trening
+   Funkcje:
+   • Zaawansowane ćwiczenia słuchowe
+   • Wyższe poziomy trudności
+   • Gry i zadania motywacyjne
+   • Platforma online + aplikacja Android i PC
+   • Wsparcie terapeutyczne w zestawie
+   • Zalecany po ukończeniu Etapu 1
+   Kup: https://automater.pl/rest/order-viewer/buy/918222
+
+3. ITS GoBrain Pre & School [Licencja wielostanowiskowa]
+   Cena: 799 PLN / rok (brutto)
+   Dla kogo: Dla terapeutów, gabinetów, szkół, przedszkoli, poradni, instytucji
+   Funkcje:
+   • Nieograniczona liczba użytkowników
+   • Terapeuta kontroluje czas i zakres sesji
+   • Dostęp do wszystkich zadań i poziomów
+   • Brak dobowych ograniczeń czasowych
+   • Licencja 365 dni lub bezterminowa
+   • Faktura VAT w cenie
+   Kup: https://automater.pl/rest/order-viewer/buy/979412
+
+4. Platforma Terapeuta [Dla specjalistów]
+   Cena: 799 zł
+   Dla kogo: Dla terapeutów: logopedów, pedagogów, terapeutów SI, psychologów itp.
+   Funkcje:
+   • PreTest i PostTest (diagnoza słuchu)
+   • Monitoring postępów podopiecznych
+   • Ankiety i kwestionariusze
+   • Tytuł Providera GoBrain
+   • Dostęp do szkoleń certyfikacyjnych
+   • Wsparcie techniczne i merytoryczne
+   Kup: https://automater.pl/rest/order-viewer/buy/979413
+
+5. Karta Mowy [Narzędzie cyfrowe]
+   Cena: 299 PLN (brutto)
+   Dla kogo: Dla logopedów, pedagogów, terapeutów i rodziców
+   Funkcje:
+   • Interaktywna karta badania mowy
+   • Gry logopedyczne online
+   • Materiały do druku (PDF)
+   • Diagnoza + analiza wyników w tabelach
+   • Działa offline — dane lokalne
+   • PC (Windows) i Android
+   Kup: https://automater.pl/rest/order-viewer/buy/1073862
+
+6. Programy edukacyjne — Interaktywne gry PeGoBrain [Programy online]
+   Dostępne online
+   Dla kogo: Dla dzieci, rodziców, logopedów i nauczycieli
+   Funkcje:
+   • Zabawy logopedyczne (10 gier z głoskami)
+   • Zabawy z literkami (8 zestawów)
+   • Kreatywny brzdąc — aktywności twórcze
+   • Dostępne w przeglądarce internetowej
+   • Opracowane przez Anetę Pakieła
+   • Kompatybilne z ITS GoBrain
+
+--- DEMO ---
+H2: Sprawdź GoBrain zanim kupisz
+Opis: Pobierz bezpłatną wersję demo i przetestuj program razem z dzieckiem. Bez rejestracji i opłat.
+Cechy: Bezpłatne | Bez rejestracji | PC i Android | Kilka ćwiczeń w zestawie
+
+ITS GoBrain Starter (demo)
+Sprawdź, jak działa przed zakupem
+Pobierz bezpłatną wersję ITS GoBrain Starter i poznaj program w praktyce. Demo zawiera kilka wybranych ćwiczeń z pierwszego etapu.
+[Pobierz na PC] [Pobierz na Android]
+
+ITS GoBrain Pre & School DEMO (dla terapeutów i placówek)
+Przetestuj przed wdrożeniem w gabinecie, szkole lub poradni
+Wersja demonstracyjna ITS GoBrain Pre & School — dla terapeutów, gabinetów, szkół, przedszkoli i poradni. Sprawdź program w realnych warunkach.
+[Pobierz na PC] [Pobierz na Android]
+
+--- JAK KUPIĆ ---
+H2: Jak kupić i zacząć?
+
+1. Wybierz produkt
+   Kliknij 'Kup teraz' przy wybranym programie. Zostaniesz przekierowany na bezpieczną platformę płatności.
+
+2. Opłać i odbierz kod
+   Po opłaceniu zamówienia otrzymasz mailem unikalny kod aktywacyjny — natychmiast po zaksięgowaniu płatności.
+
+3. Zainstaluj i trenuj
+   Pobierz aplikację na Android lub PC, albo korzystaj przez przeglądarkę. Wpisz kod i zacznij trening!
+
+--- PROGRAM PROVIDER ---
+Etykieta: Program partnerski
+H2: Zostań Providerem GoBrain
+Opis: Dołącz do sieci placówek i terapeutów korzystających z GoBrain na co dzień. Uzyskaj dostęp do specjalnych warunków, wsparcia i narzędzi dla profesjonalistów.
+
+• Licencje grupowe — Pakietowy dostęp do programu dla całej placówki lub gabinetu — wygodnie, bez limitów stanowisk.
+• Preferencyjne ceny — Specjalne warunki handlowe, rabaty i pierwszeństwo dostępu do nowych modułów programu.
+• Wsparcie merytoryczne — Szkolenia, materiały dydaktyczne i bezpośredni kontakt z zespołem GoBrain dla Twoich pracowników.
+
+Zainteresowany programem Provider?
+Skontaktuj się z nami — przygotujemy ofertę dopasowaną do potrzeb Twojej placówki lub gabinetu.
+[Napisz do nas] [📞 608 650 435]
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: STREFA TERAPEUTY — PLATFORMA TERAPEUTA (/strefa-terapeuty)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Etykieta: Dla terapeutów: logopedów, pedagogów, psychologów
+H1: Platforma TERAPEUTA
+Podtytuł: Profesjonalne narzędzie do diagnozy, monitorowania postępów i porównywania wyników przed i po terapii. Zwiększ efektywność swojej pracy — dane mówią same za siebie.
+Cena: 799 zł
+Przyciski: Kup dostęp do Platformy — 799 zł | Szkolenia dla terapeutów
+
+--- STATYSTYKI ---
+100+ — Certyfikowanych Providerów
+8 — Obszarów diagnostycznych
+98% — Terapeutów poleca platformę
+100% — Skuteczność terapii
+
+--- WYNIKI TRENINGU (wykresy przed/po) ---
+H2: Porównanie wyników: przed i po terapii
+Podtytuł: Platforma TERAPEUTA automatycznie generuje porównanie PreTest i PostTest. Pokaż rodzicom mierzalny postęp dziecka.
+
+Średnie wyniki po 8 tygodniach treningu:
+• Pamięć słuchowa: przed 41% → po 78% (+37%)
+• Koncentracja uwagi: przed 35% → po 74% (+39%)
+• Rozróżnianie dźwięków: przed 48% → po 82% (+34%)
+• Czas reakcji słuchowej: przed 39% → po 71% (+32%)
+• Odporność na rozpraszanie: przed 30% → po 68% (+38%)
+• Rozumienie poleceń: przed 44% → po 80% (+36%)
+
+Średni przyrost: +35%
+Widoczny postęp już po 4 tygodniach! Potwierdzone badaniami na 5000+ dzieci.
+
+Legenda: Wynik przed terapią (PreTest) | Wynik po terapii (PostTest)
+
+--- JAK DZIAŁA PLATFORMA? ---
+H2: Jak działa platforma?
+Podtytuł: Cztery etapy do mierzalnych wyników
+
+ETAP 01 → Diagnoza — PreTest
+PreTest składa się z ośmiu zadań testujących podstawowe funkcje słuchowe dziecka. Dodatkowo terapeuta może przeprowadzać szereg specjalistycznych ankiet i testów, m.in. ocenę lateralizacji, ocenę gotowości szkolnej oraz ankietę wstępną. Wszystkie te narzędzia pozwalają zidentyfikować mocne i słabe obszary funkcjonowania dziecka.
+• Ocena lateralizacji — preferencje stronne słuchu, wzroku i ruchu
+• Ocena gotowości szkolnej — kluczowe obszary rozwojowe
+• Identyfikacja mocnych i słabych stron — podstawa do planowania terapii
+
+ETAP 02 → Przygotowanie planu terapii
+Na podstawie wyników diagnozy terapeuta, wraz z platformą, przygotowuje indywidualny plan działań terapeutycznych. Dzięki precyzyjnej ocenie mocnych i słabych stron dziecka może zaplanować skuteczne, celowe działania terapeutyczne — a program GoBrain sam dostosuje poziom trudności do potrzeb dziecka.
+
+ETAP 03 → Monitoring postępów
+Terapeuta ma dostęp do wyników każdego dziecka w czasie rzeczywistym — śledzi postępy na bieżąco, bez względu na miejsce pracy. Platforma automatycznie porównuje poszczególne zadania, wskazując obszary wymagające większej uwagi. Na podstawie wyników terapeuta może też dostosować terapię poza systemem GoBrain.
+
+ETAP 04 → PostTest — mierzalny postęp
+Po zakończeniu treningu terapeuta może wykonać PostTest, który automatycznie porówna wyniki przed i po treningu. Pozwala to na precyzyjne pokazanie tego, co i jak się zmieniło w funkcjonowaniu dziecka. Rodzic otrzymuje wykresy w formie PDF prezentujące mierzalny postęp — pełny obraz efektów terapii.
+
+Odznaka: Monitoring w czasie rzeczywistym — Każda sesja pod kontrolą
+Odznaka: Raport wyników — PDF dla rodziców
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: KARTA MOWY (/karta-mowy)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Etykieta: Narzędzie diagnostyczne
+H1: Karta Mowy
+Podtytuł: Kompleksowe narzędzie cyfrowe do badania, dokumentowania i utrwalania prawidłowej wymowy — dla logopedów, terapeutów, pedagogów i rodziców.
+Opis: Działa online i offline. Każde dziecko ma własną kartotekę. Dane zapisywane lokalnie.
+Cena: 299 PLN
+Przyciski: Kup kod aktywacyjny — 299 PLN | Pobierz wersję demo
+
+Cechy: Działa offline | Dane lokalne — pełna kontrola | Każde dziecko ma własną kartotekę
+
+--- CO ZAWIERA ---
+H2: Co zawiera Karta Mowy?
+Podtytuł: Wszystko, czego potrzebujesz w terapii logopedycznej — w jednym miejscu.
+
+1. Interaktywna karta badania mowy
+   Diagnoza w nagłosie, śródgłosie i wygłosie. Spersonalizowane ankiety i ocena narządów mowy.
+
+2. Gry logopedyczne online
+   Kolorowe karty, obrazki i interaktywne ćwiczenia wspierające wymowę. Angażujące dla dziecka.
+
+3. Materiały do druku (PDF)
+   Gotowe elementy do wycinania, karty pracy i dokumenty do tradycyjnych zajęć bez komputera.
+
+4. Diagnoza + analiza wyników
+   Czytelna analiza wyników w tabelach. Raporty i historia sesji w kartotece każdego dziecka.
+
+--- DLA KOGO ---
+H2: Skuteczne wsparcie bez chaosu i papierologii
+Opis: Karta Mowy jest stworzona dla wszystkich, którzy chcą skutecznie wspierać rozwój mowy dzieci — bez stresu, bez stosu papierów, z pełną kontrolą nad dokumentacją i wynikami.
+
+Dla kogo:
+• Logopedzi i neurologopedzi w gabinetach
+• Pedagodzy szkolni i terapeuci pedagogiczni
+• Psycholodzy pracujący z dziećmi
+• Rodzice chcący śledzić postępy wymowy dziecka
+• Poradnie i ośrodki terapeutyczne
+
+--- DOKUMENTACJA SPECJALISTY ---
+Etykieta: Dokumentacja specjalisty
+H2: Wszystko dla specjalisty
+Opis: Gotowe wzory dokumentów zaoszczędzają czas i zapewniają profesjonalną dokumentację pracy terapeutycznej.
+
+• Karta badania mowy — gotowy wzór
+• Dokument przebiegu terapii
+• Tabele norm wymowy poszczególnych głosek
+• Zgoda rodzica na badanie mowy
+• Kwestionariusz do badania mowy do wydruku
+
+--- JAK TO DZIAŁA ---
+H2: Jak to działa?
+Podtytuł: Elastyczna instalacja i prosta aktywacja — zacznij pracę od razu.
+
+01. Pobierz i zainstaluj
+Bezpłatna instalacja na PC (Windows) lub Android. Po instalacji program uruchamia się w pełnej wersji — bez ograniczeń przy pierwszym użyciu.
+
+02. Kup kod aktywacyjny
+Jednorazowy kod aktywacyjny odblokowuje program na 365 dni. Po wpisaniu kodu program działa bez ograniczeń — bez ponownego logowania.
+
+03. Pracuj i dokumentuj
+Każde dziecko ma swoją oddzielną bazę danych z wynikami i raportami. Dane zapisywane lokalnie — pełna kontrola i bezpieczeństwo.
+
+--- POBIERANIE ---
+H2: Wypróbuj bez zobowiązań
+Opis: Po instalacji program działa w pełnej wersji przy pierwszym uruchomieniu — idealna okazja, by sprawdzić możliwości w praktyce.
+
+Karta Mowy PC — Windows .exe — wersja demo
+Karta Mowy Android — Android .apk — wersja demo
+
+--- CTA ---
+H2: Zacznij już dziś
+Podtytuł: Karta Mowy czeka na Ciebie. Licencja na 365 dni od aktywacji.
+Cena: 299 PLN (brutto)
+Przyciski: Kup kod aktywacyjny | Zadaj pytanie
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: SZKOLENIA (/szkolenia-i-webinary)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Etykieta: Certyfikowany kurs online
+H1: Zostań certyfikowanym Providerem GoBrain
+Podtytuł: Kurs certyfikacyjny „Koncentracja i uwaga słuchowa ITS GoBrain Interaktywny Trening Słuchowy. Provider GoBrain" — specjalnie przygotowany dla logopedów, pedagogów i psychologów.
+
+Cechy kursu:
+• ⏰ 60 dni dostępu
+• 🎬 5 modułów video
+• 🏆 Certyfikat imienny
+• 👥 Dołączenie do sieci Providerów
+• 💰 Możliwość zarobku
+
+Przyciski: Kup kurs certyfikacyjny | Formularz zgłoszeniowy
+
+--- PROGRAM SZKOLENIA ---
+H2: Program szkolenia
+Podtytuł: Pięć modułów video omawiających kompleksowo metodę ITS GoBrain
+
+Moduł 1 — Wprowadzenie do ITS GoBrain
+Historia metody, filozofia treningu słuchowego, prezentacja autorki — Anety Pakieły, i jej doświadczeń klinicznych. Omówienie zasad systematyczności, intensywności i indywidualności programu.
+
+Moduł 2 — Podstawy teoretyczne treningu słuchowego
+Neurobiologia słyszenia i przetwarzania słuchowego. Jak mózg przetwarza dźwięki i dlaczego trening słuchowy działa? Omówienie teorii Tomatis, Johansen i różnic z ITS GoBrain.
+
+Moduł 3 — Centralne zaburzenia przetwarzania słuchowego (CAPD)
+Definicja CAPD, diagnozowanie, różnicowanie z ADHD i dysleksją. Jak stosować platformę TERAPEUTA do diagnozy i monitorowania postępów.
+
+Moduł 4 — Typy kliniczne i wytyczne terapeutyczne
+Praktyczne zastosowanie ITS GoBrain w terapii logopedycznej, pedagogicznej i psychologicznej. Wskazania i przeciwwskazania. Scenariusze pracy z dziećmi o różnych profilach trudności. Obsługa PreTestu i PostTestu — jak przeprowadzać badania diagnostyczne i interpretować wyniki.
+
+Moduł 5 — Model biznesowy GoBrain
+Jak zbudować dodatkowe źródło dochodu jako Provider GoBrain? Omawiamy możliwości sprzedaży kodów aktywacyjnych podopiecznym, odpłatne przeprowadzanie PreTestów i PostTestów słuchowych, rozszerzenie oferty gabinetu o profesjonalny trening słuchowy oraz budowanie długofalowych relacji z klientami w oparciu o system GoBrain.
+
+--- CO ZYSKUJESZ PO KURSIE ---
+H2: Co zyskujesz po kursie?
+
+• Certyfikat imienny: Provider GoBrain
+• Dostęp do Platformy TERAPEUTA na preferencyjnych warunkach
+• Wpis na mapę terapeutów GoBrain w całej Polsce
+• Indywidualny kod do zakupu kodów aktywacyjnych dla podopiecznych
+• Możliwość zarabiania na sprzedaży programów GoBrain swoim podopiecznym
+• Uprawnienia do samodzielnego przeprowadzania PreTestów i PostTestów słuchowych
+• Dostęp do Akademii GoBrain i materiałów szkoleniowych
+• Przynależność do profesjonalnej sieci specjalistów GoBrain
+• Dostęp do darmowych webinarów i materiałów dydaktycznych
+• Wsparcie merytoryczne Zespołu GoBrain
+
+--- AKADEMIA GOBRAIN ---
+Etykieta: Akademia GoBrain
+H2: Centrum wiedzy dla specjalistów
+Opis 1: Akademia GoBrain to wyjątkowe miejsce dostępu do specjalistycznej wiedzy pozwalającej poszerzyć Twoją wiedzę i umiejętności do wykorzystania w codziennej praktyce terapeutycznej. Zespół GoBrain ma na celu przekazanie specjalistycznej wiedzy w przystępny sposób przez najlepszych specjalistów.
+Opis 2: Zapraszamy do naszego Zespołu — zostań PROVIDEREM GOBRAIN. To wyjątkowa okazja, aby poszerzyć umiejętności i możliwości. Skorzystaj ze sprawdzonej w praktyce wiedzy popartej praktycznymi wskazówkami.
+
+Kafelki Akademii:
+1. Darmowe webinary — Regularne webinary prowadzone przez specjalistów GoBrain — dostępne dla wszystkich.
+2. Scenariusze i pomoce — Bogata biblioteka gotowych scenariuszy terapeutycznych i materiałów dydaktycznych.
+3. Społeczność specjalistów — Dołącz do sieci Providerów GoBrain, dziel się doświadczeniami i poszerzaj sieć kontaktów.
+4. Program afiliacyjny — Zarabiaj więcej jako Provider GoBrain — polecaj program i otrzymuj prowizję za każdą sprzedaż. Dodatkowe źródło dochodu dla Twojego gabinetu.
+
+--- CTA ---
+H2: Chcesz zostać terapeutą GoBrain?
+Opis: Zapisz się na kurs certyfikacyjny i dołącz do rosnącej sieci Providerów GoBrain w całej Polsce.
+Przyciski: Zapisz się na szkolenie | Formularz zgłoszeniowy
+
+--- FORMULARZ ZGŁOSZENIOWY (modal) ---
+Tytuł: Formularz zgłoszeniowy
+Podtytuł: Szkolenie certyfikacyjne Provider GoBrain — ITS GoBrain Interaktywny Trening Słuchowy
+
+Pola formularza:
+• Imię i nazwisko *
+• Adres e-mail *
+• Telefon (opcjonalnie)
+• Zawód / specjalizacja * (Logopeda / Pedagog / Psycholog / Neurologopeda / Surdologopeda / Terapeuta integracji sensorycznej / Inny specjalista)
+• Dodatkowe pytania / uwagi
+
+Po wysłaniu: Zgłoszenie wysłane! Dziękujemy za zainteresowanie szkoleniem. Skontaktujemy się z Tobą w ciągu 1–2 dni roboczych.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: DARMOWE WEBINARY (/darmowe-webinary)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- HERO ---
+Etykieta: Bezpłatne webinary GoBrain
+H1: Darmowe webinary o treningu słuchowym
+Podtytuł: Bezpłatne spotkania online dla logopedów, terapeutów, pedagogów i rodziców. Dowiedz się, jak metoda ITS GoBrain wspiera rozwój mowy i przetwarzanie słuchowe u dzieci.
+Przyciski: Zapisz się na webinar | 📞 608 650 435
+
+Statystyki paska:
+• 100% — Bezpłatne
+• 90 min — Czas trwania
+• Online — Forma spotkania
+• Q&A — Sesja pytań
+
+--- WEBINARY ---
+H2: Nadchodzące webinary
+Podtytuł: Zapisz się — prześlemy Ci termin i link do spotkania.
+
+Webinar 1 [dla logopedów, terapeutów, rodziców]
+Tytuł: Trening słuchowy ITS GoBrain — jak działa i komu pomaga?
+Czas: 18:00 – 19:30
+Opis: Wprowadzenie do metody ITS GoBrain. Dowiesz się, jak działa trening słuchowy, czym różni się od innych metod i jakie dzieci mogą skorzystać z programu.
+Tematy:
+• Mechanizm przetwarzania słuchowego u dzieci
+• Jak ITS GoBrain stymuluje ośrodkowy układ słuchowy
+• Wskazania do treningu: opóźniony rozwój mowy, dysleksja, ADHD
+• Wyniki badań i obserwacje Providerów
+
+Webinar 2 [dla logopedów, terapeutów]
+Tytuł: ITS GoBrain w praktyce logopedycznej — case studies
+Czas: 18:00 – 19:30
+Opis: Webinar dedykowany logopedycznym praktykom. Analizujemy realne przypadki dzieci, u których trening słuchowy wspomógł efektywność terapii logopedycznej.
+Tematy:
+• Integracja ITS GoBrain z terapią logopedyczną
+• PreTest i PostTest — jak mierzyć postępy
+• Praca zdalna z podopiecznym — platforma Providera
+• Odpowiedzi na pytania uczestników
+
+Webinar 3 [dla terapeutów, pedagogów, logopedów]
+Tytuł: GoBrain dla dzieci ze spektrum autyzmu i wadą słuchu
+Czas: 18:00 – 19:30
+Opis: Specjalistyczny webinar poświęcony pracy z dziećmi z ASD oraz niedosłuchem. Jak dostosować trening słuchowy do indywidualnych potrzeb dziecka?
+Tematy:
+• Specyfika przetwarzania słuchowego u dzieci z ASD
+• Adaptacja treningu dla dzieci z wadą słuchu
+• Współpraca z rodzicami i specjalistami
+• Przykłady z ośrodków rehabilitacyjnych
+
+Webinar 4 [dla rodziców]
+Tytuł: GoBrain dla rodziców — pierwsze kroki w domu
+Czas: 18:00 – 19:00
+Opis: Webinar skierowany do rodziców, którzy chcą samodzielnie prowadzić trening słuchowy w domu. Praktyczne wskazówki krok po kroku.
+Tematy:
+• Jak uruchomić program i skonfigurować sesje
+• Jak wygląda typowa sesja treningowa
+• Jak monitorować postępy dziecka
+• Kiedy warto skonsultować się z Providerem
+
+--- CO ZYSKUJESZ ---
+H2: Co zyskujesz, uczestnicząc w webinarze?
+Podtytuł: Każde spotkanie to praktyczna wiedza z pierwszej ręki — od twórców metody.
+
+1. Wiedza o treningu słuchowym — Zrozumiesz mechanizm działania ITS GoBrain i naukowo potwierdzone podstawy metody.
+2. Praktyczne case studies — Poznasz realne przykłady pracy z dziećmi z opóźnieniem mowy, dysleksją, ASD.
+3. Sesja Q&A z ekspertem — Zadaj pytania bezpośrednio twórcy metody — Anecie Pakieła, certyfikowanemu Providerowi.
+4. Certyfikat uczestnictwa — Każdy uczestnik otrzymuje potwierdzenie udziału w webinarze — do portfolio zawodowego.
+5. Nagranie po webinarze — Zarejestrowanym uczestnikom wysyłamy nagranie spotkania — wracaj do materiału kiedy chcesz.
+6. Zniżka na szkolenie Providera — Uczestnicy webinarów otrzymują specjalną ofertę na pełne szkolenie i certyfikat Providera GoBrain.
+
+--- CTA ---
+H2: Chcesz wiedzieć więcej o GoBrain?
+Opis: Zapisz się na webinar lub skontaktuj się bezpośrednio — opowiemy o metodzie i dobierzemy najlepsze rozwiązanie.
+Przyciski: Zapisz się bezpłatnie | gobrainterapeuta@gmail.com
+
+--- FORMULARZ REJESTRACJI (modal) ---
+Pola: Imię i nazwisko * | Adres e-mail * | Telefon | Zawód / specjalizacja *
+Zawody: Logopeda / Terapeuta pedagogiczny / Psycholog / Pedagog specjalny / Nauczyciel / Rodzic / Inne
+Po wysłaniu: Potwierdzenie z linkiem do webinaru wyślemy na Twój e-mail przed wydarzeniem.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: FAQ (/faq)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+H1: Najczęściej zadawane pytania
+Podtytuł: Znajdź odpowiedzi na najczęstsze pytania dotyczące programów ITS GoBrain, zakupu i stosowania.
+
+P: Dla kogo dedykowane są programy ITS GoBrain?
+O: ITS GoBrain jest dedykowany dla dzieci od 4 roku życia, które słyszą dobrze, ale nie słuchają, potrzebują powtarzania poleceń, mają problemy z uwagą i koncentracją. Program wskazany jest w przypadku gdy występuje nadwrażliwość słuchowa — zatykanie uszu, objawy przeciążenia układu nerwowego — nerwowość, jąkanie. Program polecany jest dla dyslektyków, dzieci z problemami z mową, komunikacją, nauką czy koncentracją.
+
+P: W jakim celu stosuje się programy ITS GoBrain?
+O: Celem ITS GoBrain jest poprawa przetwarzania informacji słuchowych, a dzięki temu poprawa mowy, pamięci, koncentracji i uwagi. Dziecko dzięki treningom lepiej rozumie, słucha, zapamiętuje i mniej się męczy.
+
+P: Jakie są efekty stosowania programów ITS GoBrain?
+O: Dziecko dzięki treningom lepiej rozumie, słucha, zapamiętuje, a przy tym mniej się męczy. ITS GoBrain to sukces w roli ucznia, zwiększenie efektywności terapii logopedycznej, pedagogicznej. Efekty obejmują: poprawę przetwarzania słuchowego, wyniki w nauce, wymowę i komunikację językową, uwagę, koncentrację i pamięć oraz normalizację wrażliwości słuchowej.
+
+P: Jak można kupić ITS GoBrain Zabawy z Dźwiękami?
+O: Zakupu można dokonać za pośrednictwem terapeuty, który jest Providerem GoBrain, lub bezpośrednio przez sklep na stronie gobrain.pl. Kod aktywacyjny jest specjalnym kluczem, który należy wpisać przy każdym uruchomieniu programu w celu uzyskania dostępu. Dzięki temu można korzystać z programu na dowolnym urządzeniu (PC lub Android) o ile posiada ono dostęp do internetu.
+
+P: Jak otrzymać fakturę po zakupie?
+O: Po dokonaniu zakupu i otrzymaniu mailem kodu aktywacyjnego należy kliknąć na przycisk 'kontakt ze sprzedawcą' i podać dane do faktury — faktura zostanie wysłana na wskazany adres e-mail.
+
+P: Co to jest i co zawiera ITS GoBrain Zabawy z Dźwiękami?
+O: ITS GoBrain Zabawy z Dźwiękami to Interaktywny Trening Słuchowy dostępny online w formie atrakcyjnych ćwiczeń zwiększających zdolność przetwarzania informacji słuchowych i kształtującym umiejętności będące podstawą osiągnięcia przez dziecko sukcesu w roli ucznia. Program składa się z 4 poziomów trudności, a każdy z nich zawiera 5 zadań głównych podzielonych na etap nauki, test i grę bonus. Z programu należy korzystać 2–3 razy w tygodniu. System automatycznie dostosowuje się do możliwości dziecka.
+
+P: Co to jest ITS Pre&SCHOOL?
+O: Wersja ITS Pre&School jest przeznaczona do stosowania w placówkach edukacyjnych. Nie ma ograniczenia ilości użytkowników. Terapeuta sam decyduje o czasie trwania sesji, ich ilości i zadaniach. Wersja szkolna nie jest podzielona na sesje i nie ma dobowych ograniczeń czasowych. Pozwala na dostęp do wszystkich zadań, gier i bonusów. Dostępna w dwóch wariantach licencyjnych: licencja 365 dni lub licencja bezterminowa.
+
+P: Na jakich urządzeniach można korzystać z programów GoBrain?
+O: Produkty ITS GoBrain można zainstalować na wybranym urządzeniu — Android (telefon, tablet) lub PC Windows (komputer, laptop, notebook). Z programu ITS GoBrain Zabawy z Dźwiękami oraz Platformy TERAPEUTA można korzystać również online przez przeglądarkę internetową.
+
+P: Ile jest wszystkich sesji treningowych w ITS GoBrain Zabawy z Dźwiękami?
+O: Program składa się z 4 poziomów trudności, a każdy z nich zawiera 5 zadań głównych podzielonych na etap nauki, test i grę bonus. Ilość sesji treningowych zależna jest od potrzeb i umiejętności słuchowych dziecka. Gdy w I etapie ITS GoBrain Zabawy z Dźwiękami dziecko miało problemy lub nie zakończyło wszystkich zadań przewidzianych w programie, należy zastosować II etap.
+
+P: Czy między etapami w treningu ITS GoBrain Zabawy z Dźwiękami konieczna jest przerwa?
+O: Przerwa między pierwszym a kolejnym etapem nie jest wymagana. Z każdym treningiem pamięć i koncentracja będą się poprawiać. Problemy występujące w trakcie zadań treningowych wskazują na konieczność kontynuowania tego typu treningu.
+
+P: Co to jest Platforma Terapeuta i jak można uzyskać do niej dostęp?
+O: Platforma Terapeuta zawiera zestaw diagnostyczny składający się z PreTestu i PostTestu do badania umiejętności słuchowych, czasu reakcji, poziomu odporności na rozpraszanie, pamięci słuchowej. Umożliwia dostęp do ankiet i kwestionariuszy, jak również daje możliwość śledzenia postępów podopiecznych w treningu ITS GoBrain. Platformę TERAPEUTA można zakupić w zakładce sklep — po zakupie otrzymują Państwo również dostęp do szkolenia, dzięki któremu otrzymacie tytuł Providera GoBrain.
+
+P: Czy ITS GoBrain zastępuje tradycyjną terapię logopedyczną?
+O: ITS GoBrain jest doskonałym uzupełnieniem tradycyjnej terapii logopedycznej, pedagogicznej i psychologicznej — nie zastępuje jej. Program jest skuteczny jako narzędzie wspierające, stosowane między sesjami terapeutycznymi. Potwierdza to opinia terapeutów — dziecko w domu ćwiczy w atrakcyjnej formie, a terapeuta może w dowolnym momencie śledzić jego postępy.
+
+Nie znalazłeś odpowiedzi? Skontaktuj się z nami — odpowiemy na wszystkie Twoje pytania.
+[Przejdź do centrum pomocy] [Napisz do nas]
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: POMOC I KONTAKT (/pomoc)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+H1: Pomoc i kontakt
+Podtytuł: Jesteśmy tu, żeby pomóc. Skontaktuj się z nami przez telefon, e-mail lub formularz kontaktowy.
+
+--- DANE KONTAKTOWE ---
+Telefon: 608 650 435
+E-mail: gobrainterapeuta@gmail.com
+Facebook: @zabawyzdzwiekami (facebook.com/zabawyzdzwiekami)
+
+Przydatne linki:
+• Często zadawane pytania (FAQ) — /faq
+• Pobierz wersję demo PC
+• Pobierz wersję demo Android
+
+--- FORMULARZ KONTAKTOWY ---
+Pola: Imię i nazwisko | Adres e-mail | Telefon (opcjonalnie) | Temat | Wiadomość
+Polityka prywatności: Twoje dane osobowe będą przetwarzane wyłącznie w celu odpowiedzi na Twoje zapytanie.
+
+--- WSPARCIE TECHNICZNE ---
+
+Wsparcie techniczne
+Problemy z instalacją lub uruchomieniem programu? Napisz do nas na gobrainterapeuta@gmail.com lub zadzwoń.
+
+Problem z kodem aktywacyjnym?
+Jeśli kod aktywacyjny nie działa, skontaktuj się ze sprzedawcą — kliknij opcję kontaktu ze sprzedawcą po zakupie.
+
+Pytania o program
+Sprawdź nasze FAQ — odpowiedzi na najczęściej zadawane pytania dotyczące programów ITS GoBrain.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRONA: ULOTKA A5 (/ulotka) — TEKST DO DRUKU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- PRZÓD (strona 1) ---
+GoBrain | INTERAKTYWNY TRENING SŁUCHOWY
+Zabawy z dźwiękami
+ITS GoBrain
+Program terapeutyczny wspierający rozwój słuchowy, mowę i koncentrację u dzieci od 5. roku życia.
+Statystyki: 5000+ dzieci | 100 ćwiczeń | 98% skuteczność
+
+Czy Twoje dziecko:
+• Słyszy, ale nie słucha
+• Wymaga powtarzania poleceń
+• Ma problemy z czytaniem
+• Ma trudności z koncentracją
+• Brak efektów terapii logopedycznej
+• Jest nadwrażliwe na dźwięki
+
+ITS GoBrain pomaga w:
+• 🎧 Treningu słuchowym lewej półkuli
+• 🧠 Poprawie pamięci słuchowej
+• 📖 Nauce czytania i pisania
+• 🎮 Ćwiczeniach jak gra
+
+gobrain.pl | Kup kod aktywacyjny online
+📞 608 650 435 | gobrainterapeuta@gmail.com
+
+--- TYŁ (strona 2) ---
+GoBrain | INTERAKTYWNY TRENING SŁUCHOWY
+
+DOSTĘPNE PROGRAMY:
+
+ITS GoBrain Indywidualny [Dla domu]
+Program do pracy z dzieckiem w domu. Do 25 sesji treningowych, adaptacyjny poziom trudności. Etap 1 | Etap 2
+
+ITS Pre & School [Dla placówek]
+Licencja dla przedszkoli, szkół i gabinetów. Bez limitu użytkowników, panel terapeuty, PreTest i PostTest.
+
+Platforma Terapeuta [Specjaliści]
+PreTest, PostTest, monitoring postępów.
+
+Program wspiera dzieci z:
+✓ Zaburzeniami przetwarzania słuchowego (CAPD)
+✓ Dysleksją i trudnościami w nauce
+✓ Opóźnionym rozwojem mowy
+✓ Wadą słuchu i po usunięciu migdałka
+✓ Spektrum autyzmu (ASD)
+✓ ADHD i trudnościami z koncentracją
+
+mgr Aneta Pakieła
+Neurologopeda · Surdologopeda
+Twórczyni metody GoBrain
+
+Kontakt:
+🌐 gobrain.pl
+✉️ gobrainterapeuta@gmail.com
+📞 608 650 435
+📘 facebook.com/gobrainpl
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NAWIGACJA (Navbar)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Logo: GoBrain | Interaktywny Trening Słuchowy
+
+Menu główne:
+• Strona główna (/)
+• ITS GoBrain (/its)
+• Sklep (/sklep)
+• Strefa terapeuty (/strefa-terapeuty)
+• Szkolenia (/szkolenia-i-webinary)
+• Blog (/blog)
+• FAQ (/faq)
+• Pomoc (/pomoc)
+
+Przycisk CTA: Kup kod aktywacyjny
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OPINIE KLIENTÓW (ReviewsCarousel — fragmenty)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Komponent ReviewsCarousel zawiera opinie rodziców i terapeutów z oceną 5/5 gwiazdek]
+Nagłówek (Sklep): Co mówią nasi klienci?
+Podtytuł (Sklep): Dołącz do ponad 5 000 rodzin i setek terapeutów, którzy już zaufali GoBrain.
+
+================================================================================
+KONIEC PLIKU — gobrain-teksty-strony.txt
+================================================================================

@@ -89,3 +89,9 @@ id = "51PSUYXlNNfD4GAXQyhgX"
 uri = "file://artifacts/gobrain/public/gobrain-logo.svg"
 type = "image"
 title = "GoBrain – logo wektorowe (SVG)"
+
+[[outputs]]
+id = "VO8A2C68vfnvGEXuA9fpy"
+uri = "file://gobrain-teksty-strony.txt"
+type = "text"
+title = "GoBrain — kompletne teksty strony"
