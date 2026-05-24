@@ -95,3 +95,9 @@ id = "VO8A2C68vfnvGEXuA9fpy"
 uri = "file://gobrain-teksty-strony.txt"
 type = "text"
 title = "GoBrain — kompletne teksty strony"
+
+[[outputs]]
+id = "cUlfQqjrxMpOY82Ml56lw"
+uri = "file://gobrain-grafiki.zip"
+type = "unspecified"
+title = "GoBrain — grafiki PNG (4 pliki)"
