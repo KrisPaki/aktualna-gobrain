@@ -101,3 +101,9 @@ id = "cUlfQqjrxMpOY82Ml56lw"
 uri = "file://gobrain-grafiki.zip"
 type = "unspecified"
 title = "GoBrain — grafiki PNG (4 pliki)"
+
+[[outputs]]
+id = "0qIpGj-Ir68cFGIqUf4QK"
+uri = "file://gobrain-fb-cover.png"
+type = "image"
+title = "GoBrain — okładka Facebook (1640×624 px)"
