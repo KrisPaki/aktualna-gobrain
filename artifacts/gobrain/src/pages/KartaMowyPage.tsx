@@ -176,6 +176,7 @@ export default function KartaMowyPage() {
                 src={therapistChildImg}
                 alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym Karta Mowy"
                 className="w-full object-cover"
+                style={{ objectPosition: "center 15%" }}
               />
             </motion.div>
 

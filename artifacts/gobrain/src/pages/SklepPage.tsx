@@ -101,6 +101,7 @@ const products = [
     priceNote: "zł",
     img: productTerapeutaImg,
     imgAlt: "Platforma Terapeuta GoBrain",
+    imgPosition: "center 15%",
     target: "Dla terapeutów: logopedów, pedagogów, terapeutów SI, psychologów itp.",
     features: [
       "PreTest i PostTest (diagnoza słuchu)",
@@ -125,6 +126,7 @@ const products = [
     priceNote: "PLN (brutto)",
     img: therapistChildImg,
     imgAlt: "Karta Mowy GoBrain — interaktywny trening słuchowy i narzędzie do diagnozy logopedycznej",
+    imgPosition: "center 15%",
     target: "Dla logopedów, pedagogów, terapeutów i rodziców",
     features: [
       "Interaktywna karta badania mowy",
@@ -234,6 +236,7 @@ export default function SklepPage() {
                     src={p.img}
                     alt={p.imgAlt}
                     className="w-full h-full object-cover"
+                    style={p.imgPosition ? { objectPosition: p.imgPosition } : undefined}
                     loading="lazy"
                   />
                 </div>
