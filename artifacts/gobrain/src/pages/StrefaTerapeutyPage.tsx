@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.png";
 import testResultsImg from "@/assets/test-results-screen.png";
 import childSuccessImg from "@/assets/child-success.png";
 import therapistOfficeImg from "@/assets/therapist-office.png";
@@ -109,7 +110,7 @@ export default function StrefaTerapeutyPage() {
         <section className="relative py-20 md:py-28 overflow-hidden bg-primary text-white">
           <div className="absolute inset-0">
             <img
-              src={therapistDashboardImg}
+              src={therapistPortraitHeroImg}
               alt="Terapeutka logopedka pracuje z platformą interaktywnego treningu słuchowego GoBrain"
               className="w-full h-full object-cover opacity-20"
             />
