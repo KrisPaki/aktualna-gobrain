@@ -21,7 +21,29 @@ export const blogArticles: BlogArticle[] = [
     categoryColor: "bg-blue-100 text-blue-700",
     author: "Aneta Pakieła",
     pdfUrl: "https://gobrain.pl/wp-content/uploads/2021/08/2021_WHY_GoBrain4-1.pdf",
-    content: `Nasza metoda oraz historia rozwoju GoBrain została opisana w czasopiśmie **Why Story nr 1/2021**.
+    content: `Nasza metoda oraz historia rozwoju GoBrain została opisana w czasopiśmie **Why Story nr 1/2021**, w artykule „Czas na nowe wyzwania z GoBrain" autorstwa Piotra Góralczyka i Beaty Sekuły. Poniżej cytujemy fragmenty publikacji.
+
+> Każdy dzień stawia przed nami nowe wyzwania. Zastanawiając się jak w obecnej sytuacji skupić się na tym, co pozytywne, możemy spróbować wykorzystać ten czas na stymulację naszych dzieci. Według szacunków specjalistów problem z nieprawidłowym przetwarzaniem słuchowym dotyczy około 15-20 proc. dzieci w wieku szkolnym, co powoduje nie tylko ograniczenie ich szans rozwojowych, ale utrudnia też kontakty z rówieśnikami. Jest to wciąż mało znana jednostka zaburzeń, która bardzo często współwystępuje u dzieci z dysleksją i zaburzeniami mowy w tym w przebiegu autyzmu.
+
+## GoBrain – nauka przez zabawę
+
+> Gobrain jest metodą należącą do treningów aktywnych, takich jak np. Warnke. Interaktywny Trening Słuchowy ITS GoBrain to niezwykle efektywny trening wpływający na prawidłowe przetwarzanie bodźców słuchowych, a tym samym na koncentrację i pamięć słuchową. Jego głównym założeniem jest aktywizacja struktur mózgowych, pobudzenie ciekawości dzieci, dzięki zastosowaniu nowoczesnych metod multimedialnych i audiowizualnych. Oferta Gobrain jest konkurencyjna w stosunku do drogich terapii słuchowych.
+
+Program GoBrain to efekt działań specjalistów z wielu dziedzin — połączenie doświadczenia i wiedzy merytorycznej poradni LogoMedic Anety Pakieły z pasją informatyczną i wiedzą o nowoczesnych technologiach firmy DGD Rafała Sadowskiego.
+
+## GoBrain a nadwrażliwość słuchowa
+
+> Co może oznaczać zatykanie przez dzieci uszu w reakcji na stosunkowo normalne dźwięki z otoczenia? Jest to objaw nadwrażliwości słuchowej. Występuje w różnym nasileniu, a w przypadku dzieci z autyzmem często utrudnia im normalne funkcjonowanie. Gobrain zawiera unikatową funkcję normalizacji nadwrażliwości słuchowej. Zastosowanie tej i innych funkcji tj. stymulacji lewej półkuli czyni z ITS Gobrain skuteczne narzędzie terapeutyczne.
+
+## Słyszy, ale nie słucha i nie pamięta
+
+> Gdy mówimy do dziecka, a ono nie odpowiada lub trzeba mu powtarzać po kilka razy polecenie, zastanawiamy się, czy ono dobrze słyszy, a przecież jednocześnie najdrobniejszy szmer potrafi je zdekoncentrować w trakcie odrabiania lekcji. Takie dziecko nie pamięta co miało zadane i co było na lekcjach. Poprawa odbioru dźwięków wpływa na odciążenie układu nerwowego, który dzięki temu sprawniej funkcjonuje, a przede wszystkim lepiej zapamiętuje, ponieważ nie zużywa tyle energii na odkodowanie odbieranych informacji.
+
+## Autorka metody
+
+Poradnią LogoMedic kieruje **Aneta Pakieła**, doktorantka Warszawskiego Uniwersytetu Medycznego, wieloletnia prezes Polskiego Towarzystwa Neurologopedów, członek zarządu Polskiego Komitetu Audiofonologii, prezes Fundacji „Usłysz marzenia", neurologopeda i surdologopeda, specjalistka w leczeniu zaburzeń mowy dzieci z wadą słuchu. Aneta Pakieła należy także do elitarnego grona Kobiet Charyzmatycznych.
+
+Fundacja „Usłysz marzenia" powstała kilkanaście lat temu, rozpoczynając działalność od zbiórki pieniędzy na zakup kosztownego aparatu słuchowego dla niemówiącego chłopca z porażeniem dziecięcym — dziś zdrowego, mówiącego młodego mężczyzny realizującego swoje marzenia. Fundacja objęła też patronat nad Ogólnopolskim Projektem Badań „Trening czyni mistrza", obejmującym szkolenie terapeutów oraz bezpłatny dostęp do treningu GoBrain dla dzieci z całej Polski.
 
 Zapraszamy do zapoznania się z pełnym artykułem — plik PDF dostępny pod poniższym linkiem.`,
   },
@@ -34,9 +56,21 @@ Zapraszamy do zapoznania się z pełnym artykułem — plik PDF dostępny pod po
     categoryColor: "bg-purple-100 text-purple-700",
     author: "Aneta Pakieła",
     externalUrl: "https://journals.indexcopernicus.com/api/file/viewByFileId/557012.pdf",
-    content: `Metoda ITS GoBrain obok innych treningów słuchowych takich jak Tomatis, Johansen jest opisana w artykule naukowym **„Centralne zaburzenia przetwarzania słuchowego – aktualne możliwości terapii dostępne w Polsce"** autorstwa Anny Kruczyńskiej-Werner z UMCS w Lublinie, Zakładu Logopedii i Językoznawstwa Stosowanego.
+    content: `Metoda ITS GoBrain obok innych treningów słuchowych takich jak Tomatis, Johansen jest opisana w artykule naukowym **„Centralne zaburzenia przetwarzania słuchowego – aktualne możliwości terapii dostępne w Polsce"** autorstwa Anny Kruczyńskiej-Werner z UMCS w Lublinie, Zakładu Logopedii i Językoznawstwa Stosowanego. Poniżej cytujemy fragment dotyczący metody GoBrain.
 
-Zachęcamy do zapoznania się z materiałem na str. 243.`,
+## GoBrain – Zabawa z dźwiękami
+
+> GoBrain Fast Learning & Fun (zabawa z dźwiękami) to także interaktywny trening słuchowy. Zalecany do pracy z dziećmi w wieku 5–12 lat. Diagnoza obejmuje wywiad z rodzicami, kwestionariusz dotyczący słyszenia, badanie lateralizacji oraz test oceniający słuch fonemowy, pamięć słuchową, przetwarzanie słuchowe (w zakresie różnicowania cech dźwięków). Ćwiczenia odbywają się minimum trzy razy w tygodniu ok. 30 minut dziennie (najlepiej ćwiczyć codziennie). Trening odbywa się w słuchawkach nausznych. Terapia, w zależności od wyników pacjenta (powtórne wykonanie testów z diagnozy), może trwać od 3 do 8 tygodni. Każdy etap to 20 sesji treningowych. Program dostosowuje poziom trudności zadań do aktualnych możliwości pacjenta. GoBrain wykorzystywany jest jako wsparcie terapii, np. logopedycznej.
+
+## Czym są centralne zaburzenia przetwarzania słuchowego (CAPD)?
+
+> Centralne zaburzenia przetwarzania słuchowego są to nieprawidłowości w przetwarzaniu słuchowym na poziomie neuronalnym. Nie wynikają one z zaburzeń poznawczych i językowych, choć często z nimi współwystępują.
+
+Autorka podkreśla istotne rozróżnienie między słyszeniem a słuchaniem: słyszenie jest procesem biernym, zależnym od stanu narządu słuchu, natomiast słuchanie to aktywna umiejętność koncentrowania się na dźwięku, interesowania się nim i świadomego jego percypowania.
+
+Wśród treningów słuchowych dostępnych obecnie w Polsce artykuł wymienia metodę Tomatisa, Indywidualną Stymulację Słuchu K. Johansena (IAS), Metodę Warnkego, SPPS (Stymulację Polimodalnej Percepcji Sensorycznej), Neuroflow oraz GoBrain — zabawę z dźwiękami.
+
+Zachęcamy do zapoznania się z pełnym materiałem na str. 243.`,
   },
   {
     slug: "czym-sa-zaburzenia-capd",

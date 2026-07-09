@@ -24,6 +24,18 @@ function renderContent(markdown: string) {
           {line.replace('# ', '')}
         </h1>
       );
+    } else if (line.startsWith('> ')) {
+      const quoteLines: string[] = [];
+      let j = i;
+      while (j < lines.length && lines[j].startsWith('> ')) {
+        quoteLines.push(lines[j].replace(/^> /, ''));
+        j++;
+      }
+      i = j - 1;
+      elements.push(
+        <blockquote key={key++} className="border-l-4 border-primary/40 pl-5 py-1 my-6 italic text-foreground/90 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: formatInline(quoteLines.join(' ')) }} />
+      );
     } else if (line.startsWith('- ')) {
       const items: string[] = [];
       let j = i;
