@@ -266,7 +266,7 @@ export default function ProgramyEdukacyjnePage() {
             >
               <img
                 src={childrenClassroomImg}
-                alt="Dzieci korzystające z programów edukacyjnych PeGoBrain"
+                alt="Dzieci korzystające z programów edukacyjnych i interaktywnego treningu słuchowego PeGoBrain"
                 className="w-full object-cover"
               />
             </motion.div>

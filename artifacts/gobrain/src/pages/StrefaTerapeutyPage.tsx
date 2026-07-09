@@ -110,7 +110,7 @@ export default function StrefaTerapeutyPage() {
           <div className="absolute inset-0">
             <img
               src={therapistDashboardImg}
-              alt="Terapeuta pracuje z platformą GoBrain"
+              alt="Terapeutka logopedka pracuje z platformą interaktywnego treningu słuchowego GoBrain"
               className="w-full h-full object-cover opacity-20"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/40" />
@@ -260,7 +260,7 @@ export default function StrefaTerapeutyPage() {
                   transition={{ duration: 0.7 }}
                   className="relative rounded-3xl overflow-hidden shadow-2xl"
                 >
-                  <img src={testResultsImg} alt="Ekran wyników testu słuchowego w platformie GoBrain" className="w-full object-cover" />
+                  <img src={testResultsImg} alt="Ekran wyników interaktywnego treningu słuchowego w platformie GoBrain" className="w-full object-cover" />
                   <motion.div
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
@@ -401,7 +401,7 @@ export default function StrefaTerapeutyPage() {
                   className="relative"
                 >
                   <div className="rounded-3xl overflow-hidden shadow-2xl">
-                    <img src={therapistOfficeImg} alt="Terapeuta przy biurku z platformą GoBrain" className="w-full object-cover" />
+                    <img src={therapistOfficeImg} alt="Terapeutka logopedka przy biurku z platformą interaktywnego treningu słuchowego GoBrain" className="w-full object-cover" />
                   </div>
                   <motion.div
                     animate={{ y: [0, -6, 0] }}

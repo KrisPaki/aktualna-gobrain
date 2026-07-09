@@ -240,7 +240,7 @@ export default function HomePage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
                   <img
                     src={heroChildImg}
-                    alt="Dziecko korzystające z programu ITS GoBrain w słuchawkach"
+                    alt="Dziecko korzystające z interaktywnego treningu słuchowego ITS GoBrain w słuchawkach"
                     className="w-full h-full object-cover"
                     style={{ transform: "scale(1.2)", transformOrigin: "60% 28%", filter: "brightness(1.15)" }}
                   />
@@ -388,7 +388,7 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="relative rounded-2xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
               >
-                <img src={childTabletImg} alt="Dziecko ćwiczy z programem ITS GoBrain na tablecie" className="w-full object-cover" />
+                <img src={childTabletImg} alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
               </motion.div>
             </div>
@@ -550,7 +550,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeuta pracuje z dzieckiem" className="w-full object-cover" />
+                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -629,7 +629,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={childrenClassroomImg} alt="Dzieci uczą się z GoBrain w klasie" className="w-full object-cover" />
+                  <img src={childrenClassroomImg} alt="Dzieci uczą się z interaktywnym treningiem słuchowym GoBrain w klasie" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}

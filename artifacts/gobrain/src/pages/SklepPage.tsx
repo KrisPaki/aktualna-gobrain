@@ -30,7 +30,7 @@ const products = [
     price: "390",
     priceNote: "PLN (brutto)",
     img: productItsImg,
-    imgAlt: "Pudełko produktu ITS GoBrain Etap 1",
+    imgAlt: "Pudełko produktu ITS GoBrain Etap 1 — interaktywny trening słuchowy",
     target: "Dla dzieci od pi\u0105tego roku \u017cycia \u2014 do stosowania w domu",
     features: [
       "4 poziomy trudności",
@@ -53,7 +53,7 @@ const products = [
     price: "390",
     priceNote: "PLN (brutto)",
     img: productItsImg,
-    imgAlt: "Pudełko produktu ITS GoBrain Etap 2",
+    imgAlt: "Pudełko produktu ITS GoBrain Etap 2 — interaktywny trening słuchowy",
     target: "Kontynuacja po Etapie 1 — zaawansowany trening",
     features: [
       "Zaawansowane ćwiczenia słuchowe",
@@ -76,7 +76,7 @@ const products = [
     price: "799",
     priceNote: "PLN / rok (brutto)",
     img: productSchoolImg,
-    imgAlt: "Program ITS GoBrain Pre & School dla terapeutów i instytucji",
+    imgAlt: "Program ITS GoBrain Pre & School — interaktywny trening słuchowy dla terapeutów i instytucji",
     target: "Dla terapeutów, gabinetów, szkół, przedszkoli, poradni, instytucji",
     features: [
       "Nieograniczona liczba użytkowników",
@@ -124,7 +124,7 @@ const products = [
     price: "389",
     priceNote: "PLN (brutto)",
     img: therapistChildImg,
-    imgAlt: "Karta Mowy GoBrain — narzędzie do diagnozy logopedycznej",
+    imgAlt: "Karta Mowy GoBrain — interaktywny trening słuchowy i narzędzie do diagnozy logopedycznej",
     target: "Dla logopedów, pedagogów, terapeutów i rodziców",
     features: [
       "Interaktywna karta badania mowy",
@@ -302,7 +302,7 @@ export default function SklepPage() {
               transition={{ duration: 0.7 }}
               className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl"
             >
-              <img src={parentChildImg} alt="Rodzic i dziecko cwicza z GoBrain" className="w-full object-cover" />
+              <img src={parentChildImg} alt="Rodzic i dziecko ćwiczą interaktywny trening słuchowy GoBrain" className="w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-md">
                 <span className="text-2xl">🎮</span>

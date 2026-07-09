@@ -174,7 +174,7 @@ export default function KartaMowyPage() {
             >
               <img
                 src={therapistChildImg}
-                alt="Terapeuta pracujący z dzieckiem z Kartą Mowy"
+                alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym Karta Mowy"
                 className="w-full object-cover"
               />
             </motion.div>

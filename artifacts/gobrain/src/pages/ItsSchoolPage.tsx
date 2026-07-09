@@ -236,7 +236,7 @@ export default function ItsSchoolPage() {
             >
               <img
                 src={childrenClassroomImg}
-                alt="Dzieci korzystające z ITS GoBrain Pre & School w placówce"
+                alt="Dzieci korzystające z interaktywnego treningu słuchowego ITS GoBrain Pre & School w placówce"
                 className="w-full object-cover"
               />
             </motion.div>

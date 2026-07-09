@@ -76,7 +76,7 @@ export default function ItsPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
                   <img
                     src={heroHeadphonesImg}
-                    alt="Dziecko ze słuchawkami ITS GoBrain"
+                    alt="Dziecko podczas interaktywnego treningu słuchowego ITS GoBrain"
                     className="w-full object-cover"
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.15) 0%, transparent 60%)" }} />
@@ -347,7 +347,7 @@ export default function ItsPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
                   <img
                     src={heroChildImg}
-                    alt="Dziecko korzystające z ITS GoBrain"
+                    alt="Dziecko korzystające z interaktywnego treningu słuchowego ITS GoBrain"
                     className="w-full object-cover"
                     style={{ transform: "scale(1.1)", transformOrigin: "60% 30%" }}
                   />
@@ -414,7 +414,7 @@ export default function ItsPage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeuta z dzieckiem podczas terapii GoBrain" className="w-full object-cover" />
+                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym ITS GoBrain" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -7, 0] }}
@@ -446,7 +446,7 @@ export default function ItsPage() {
                 className="relative lg:order-2"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={childrenClassroomImg} alt="Dzieci ćwiczące z programem GoBrain" className="w-full object-cover" />
+                  <img src={childrenClassroomImg} alt="Dzieci ćwiczące interaktywny trening słuchowy GoBrain" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -7, 0] }}
@@ -612,7 +612,7 @@ export default function ItsPage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img src={childTabletImg} alt="Dziecko ćwiczące z programem ITS GoBrain" className="w-full object-cover" />
+                  <img src={childTabletImg} alt="Dziecko ćwiczące interaktywny trening słuchowy ITS GoBrain" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -686,7 +686,7 @@ export default function ItsPage() {
                 className="lg:order-2 relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img src={parentChildImg} alt="Rodzic i dziecko przy treningu GoBrain w domu" className="w-full object-cover" />
+                  <img src={parentChildImg} alt="Rodzic i dziecko przy interaktywnym treningu słuchowym GoBrain w domu" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
