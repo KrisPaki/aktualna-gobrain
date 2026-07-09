@@ -113,7 +113,7 @@ export default function StrefaTerapeutyPage() {
               src={therapistPortraitHeroImg}
               alt="Terapeutka logopedka pracuje z platformą interaktywnego treningu słuchowego GoBrain"
               className="w-full h-full object-cover opacity-40"
-              style={{ objectPosition: "95% 15%", transform: "scale(1.5) translateX(15%)", transformOrigin: "95% 15%" }}
+              style={{ objectPosition: "100% 15%" }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-primary/20" />
           </div>
