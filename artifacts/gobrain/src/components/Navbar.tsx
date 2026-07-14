@@ -10,6 +10,8 @@ export default function Navbar() {
   const links = [
     { label: "Strona główna", href: "/" },
     { label: "ITS GoBrain", href: "/its" },
+    { label: "ITS School", href: "/its-school" },
+    { label: "Karta Mowy", href: "/karta-mowy" },
     { label: "Sklep", href: "/sklep" },
     { label: "Strefa terapeuty", href: "/strefa-terapeuty" },
     { label: "Szkolenia", href: "/szkolenia-i-webinary" },
