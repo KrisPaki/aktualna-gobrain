@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, Play, School, Building2, Users, Star, Mail } from "lucide-react";
+import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, Play, School, Building2, Users, Star, Mail, Lock } from "lucide-react";
 import parentChildImg from "@/assets/parent-child-home.png";
 import { Button } from "@/components/ui/button";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
@@ -9,6 +9,7 @@ import productSchoolImg from "@/assets/product-its-school.png";
 import productTerapeutaImg from "@/assets/product-terapeuta.png";
 import therapistChildImg from "@/assets/therapist-child.png";
 import childrenClassroomImg from "@/assets/children-classroom.png";
+import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -41,7 +42,7 @@ const products = [
       "System automatycznego dostosowania",
     ],
     cta: "Kup teraz",
-    ctaHref: "https://automater.pl/rest/order-viewer/buy/918448",
+    ctaHref: AUTOMATER_PRODUCTS.itsEtap1,
     highlight: true,
   },
   {
@@ -64,7 +65,7 @@ const products = [
       "Zalecany po ukończeniu Etapu 1",
     ],
     cta: "Kup teraz",
-    ctaHref: "https://automater.pl/rest/order-viewer/buy/918222",
+    ctaHref: AUTOMATER_PRODUCTS.itsEtap2,
     highlight: false,
   },
   {
@@ -87,7 +88,7 @@ const products = [
       "Faktura VAT w cenie",
     ],
     cta: "Zamów licencję",
-    ctaHref: "https://automater.pl/rest/order-viewer/buy/979412",
+    ctaHref: AUTOMATER_PRODUCTS.itsSchool,
     highlight: false,
     internal: false,
   },
@@ -112,7 +113,7 @@ const products = [
       "Wsparcie techniczne i merytoryczne",
     ],
     cta: "Kup teraz",
-    ctaHref: "https://automater.pl/rest/order-viewer/buy/979413",
+    ctaHref: AUTOMATER_PRODUCTS.terapeuta,
     highlight: false,
     internal: false,
   },
@@ -137,7 +138,7 @@ const products = [
       "PC (Windows) i Android",
     ],
     cta: "Kup kod aktywacyjny",
-    ctaHref: "https://automater.pl/rest/order-viewer/buy/1073862",
+    ctaHref: AUTOMATER_PRODUCTS.kartaMowy,
     highlight: false,
     internal: false,
   },
@@ -287,6 +288,12 @@ export default function SklepPage() {
                       </a>
                     )}
                   </Button>
+                  {!p.internal && (
+                    <p className="flex items-center justify-center gap-1 text-xs text-muted-foreground mt-2">
+                      <Lock className="w-3 h-3" />
+                      Bezpieczna płatność przez Automater.pl
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -522,7 +529,7 @@ export default function SklepPage() {
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="font-semibold shadow-lg shadow-primary/20 h-14 px-8 text-base" asChild>
-                <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                   <ShoppingCart className="w-5 h-5 mr-2" />
                   Kup kod aktywacyjny
                 </a>

@@ -1,3 +1,5 @@
+import { AUTOMATER_PRODUCTS } from "@/config/automater";
+
 export interface Program {
   slug: string;
   title: string;
@@ -11,7 +13,7 @@ export interface Program {
   sections: { heading: string; content: string }[];
 }
 
-const AUTOMATER = "https://automater.pl/rest/order-viewer/buy/776316";
+const AUTOMATER = AUTOMATER_PRODUCTS.programyEdukacyjne;
 
 export const programs: Program[] = [
   {

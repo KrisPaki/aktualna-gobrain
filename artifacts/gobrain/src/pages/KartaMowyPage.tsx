@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import therapistChildImg from "@/assets/therapist-child.png";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -63,12 +64,16 @@ export default function KartaMowyPage() {
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="h-14 px-8 text-base font-semibold bg-green-600 hover:bg-green-700 text-white" asChild>
-                <a href="https://automater.pl/rest/order-viewer/buy/1073862" target="_blank" rel="noopener noreferrer">
+                <a href={AUTOMATER_PRODUCTS.kartaMowy} target="_blank" rel="noopener noreferrer">
                   Kup kod aktywacyjny — 389 PLN
                   <ChevronRight className="ml-2 w-4 h-4" />
                 </a>
               </Button>
             </motion.div>
+            <motion.p variants={fadeInUp} className="mt-4 text-xs text-muted-foreground flex items-center justify-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
+              Bezpieczna płatność przez Automater.pl
+            </motion.p>
 
             <motion.div variants={fadeInUp} className="mt-10 flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               {[
@@ -343,7 +348,7 @@ export default function KartaMowyPage() {
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="h-13 px-8 text-base font-semibold bg-white text-green-700 hover:bg-white/90" asChild>
-                <a href="https://automater.pl/rest/order-viewer/buy/1073862" target="_blank" rel="noopener noreferrer">
+                <a href={AUTOMATER_PRODUCTS.kartaMowy} target="_blank" rel="noopener noreferrer">
                   Kup kod aktywacyjny
                   <ChevronRight className="ml-2 w-4 h-4" />
                 </a>
@@ -355,7 +360,11 @@ export default function KartaMowyPage() {
                 </a>
               </Button>
             </motion.div>
-            <motion.div variants={fadeInUp} className="mt-8">
+            <motion.div variants={fadeInUp} className="mt-6">
+              <p className="text-white/60 text-xs mb-4 flex items-center justify-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Bezpieczna płatność przez Automater.pl — kod dostarczany natychmiast po zaksięgowaniu
+              </p>
               <Link to="/sklep" className="text-white/70 hover:text-white text-sm underline underline-offset-4 transition-colors">
                 ← Wróć do sklepu
               </Link>
