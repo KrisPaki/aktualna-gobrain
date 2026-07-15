@@ -1,8 +1,14 @@
 /**
  * Static HTML prerender script for gobrain artifact.
- * Runs after `vite build` — reads dist/public/index.html and
- * writes route-specific copies with correct <head> metadata injected.
- * Social bots and AI crawlers receive unique metadata in the initial response.
+ * Build order: vite build (client) → vite build --ssr (server) → this script.
+ *
+ * For each public route this script:
+ *   1. Calls the SSR render() function to get full React-rendered HTML body.
+ *   2. Injects route-specific <head> metadata (title, description, OG, canonical).
+ *   3. Writes dist/public/<path>/index.html.
+ *
+ * Social bots, AI crawlers, and search engines that do not execute JS receive
+ * real page content + correct metadata in the initial HTTP response.
  */
 
 import fs from "node:fs";
@@ -10,9 +16,168 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.resolve(__dirname, "dist/public");
+const DIST_PUBLIC = path.resolve(__dirname, "dist/public");
+const DIST_SERVER = path.resolve(__dirname, "dist/server");
 const BASE = "https://gobrain.pl";
-const OG_IMAGE = `${BASE}/og-image.jpg`;
+const OG_IMAGE = `${BASE}/opengraph.jpg`;
+
+// ─── Browser globals required by React components during SSR ─────────────────
+
+const matchMediaStub = () => ({
+  matches: false,
+  media: "",
+  onchange: null,
+  addEventListener: () => {},
+  removeEventListener: () => {},
+  addListener: () => {},
+  removeListener: () => {},
+  dispatchEvent: () => true,
+});
+
+const domElementStub = () => ({
+  style: new Proxy({}, { get: () => "", set: () => true }),
+  classList: { add: () => {}, remove: () => {}, toggle: () => {}, contains: () => false, replace: () => {} },
+  setAttribute: () => {},
+  getAttribute: () => null,
+  removeAttribute: () => {},
+  appendChild: (c) => c,
+  insertBefore: (c) => c,
+  removeChild: () => {},
+  addEventListener: () => {},
+  removeEventListener: () => {},
+  dispatchEvent: () => true,
+  dataset: {},
+  children: [],
+  childNodes: [],
+  nodeType: 1,
+  querySelectorAll: () => [],
+  querySelector: () => null,
+  closest: () => null,
+  matches: () => false,
+  getBoundingClientRect: () => ({ top: 0, left: 0, right: 0, bottom: 0, width: 0, height: 0, x: 0, y: 0, toJSON: () => ({}) }),
+  tagName: "DIV",
+  nodeName: "DIV",
+  innerHTML: "",
+  textContent: "",
+});
+
+const windowStub = {
+  matchMedia: matchMediaStub,
+  addEventListener: () => {},
+  removeEventListener: () => {},
+  dispatchEvent: () => true,
+  innerWidth: 1280,
+  innerHeight: 768,
+  outerWidth: 1280,
+  outerHeight: 768,
+  scrollY: 0,
+  scrollX: 0,
+  pageXOffset: 0,
+  pageYOffset: 0,
+  scroll: () => {},
+  scrollTo: () => {},
+  scrollBy: () => {},
+  devicePixelRatio: 1,
+  requestAnimationFrame: (cb) => setTimeout(cb, 16),
+  cancelAnimationFrame: (id) => clearTimeout(id),
+  requestIdleCallback: (cb) => setTimeout(() => cb({ timeRemaining: () => 50, didTimeout: false }), 0),
+  cancelIdleCallback: (id) => clearTimeout(id),
+  performance: { now: () => Date.now(), measure: () => {}, clearMeasures: () => {}, mark: () => {}, clearMarks: () => {}, getEntriesByName: () => [], getEntriesByType: () => [] },
+  location: { pathname: "/", search: "", hash: "", origin: BASE, href: BASE, protocol: "https:", host: "gobrain.pl", hostname: "gobrain.pl", port: "" },
+  history: { pushState: () => {}, replaceState: () => {}, back: () => {}, forward: () => {}, go: () => {}, state: null, length: 1 },
+  navigator: { userAgent: "node-prerender", language: "pl", languages: ["pl", "en"], onLine: true, platform: "Win32" },
+  getComputedStyle: () => new Proxy({}, { get: (_, prop) => prop === "getPropertyValue" ? () => "" : "" }),
+  CSS: { supports: () => false },
+  CustomEvent: class extends (global.Event ?? class { constructor(t) { this.type = t; } }) {
+    constructor(type, opts = {}) { super(type); this.detail = opts.detail ?? null; }
+  },
+  clearTimeout: global.clearTimeout,
+  setTimeout: global.setTimeout,
+  clearInterval: global.clearInterval,
+  setInterval: global.setInterval,
+  fetch: global.fetch ?? (() => Promise.reject(new Error("fetch not available during SSR"))),
+  structuredClone: global.structuredClone ?? ((v) => JSON.parse(JSON.stringify(v))),
+  ResizeObserver: class { observe() {} unobserve() {} disconnect() {} },
+  IntersectionObserver: class { constructor(cb, opts) { this._cb = cb; } observe() {} unobserve() {} disconnect() { } takeRecords() { return []; } },
+  MutationObserver: class { observe() {} disconnect() {} takeRecords() { return []; } },
+  URL: global.URL,
+  URLSearchParams: global.URLSearchParams,
+  AbortController: global.AbortController,
+  AbortSignal: global.AbortSignal,
+  Promise: global.Promise,
+  console: global.console,
+  queueMicrotask: global.queueMicrotask,
+  crypto: global.crypto ?? { getRandomValues: (a) => a, randomUUID: () => Math.random().toString(36).slice(2) },
+};
+windowStub.window = windowStub;
+windowStub.self = windowStub;
+windowStub.top = windowStub;
+windowStub.parent = windowStub;
+
+const documentStub = {
+  ...domElementStub(),
+  createElement: (_tag) => domElementStub(),
+  createElementNS: (_ns, _tag) => domElementStub(),
+  createTextNode: (text) => ({ textContent: text, nodeValue: text, nodeType: 3 }),
+  createComment: (text) => ({ data: text, nodeType: 8 }),
+  createDocumentFragment: () => ({ ...domElementStub(), nodeType: 11 }),
+  documentElement: { ...domElementStub(), tagName: "HTML", lang: "pl", dir: "ltr" },
+  head: { ...domElementStub(), tagName: "HEAD", children: [] },
+  body: { ...domElementStub(), tagName: "BODY" },
+  querySelector: () => null,
+  querySelectorAll: () => [],
+  getElementById: () => null,
+  getElementsByTagName: () => ({ length: 0, item: () => null, [Symbol.iterator]: function*() {} }),
+  getElementsByClassName: () => ({ length: 0 }),
+  addEventListener: () => {},
+  removeEventListener: () => {},
+  dispatchEvent: () => true,
+  createEvent: () => ({ initEvent: () => {}, type: "" }),
+  readyState: "complete",
+  visibilityState: "visible",
+  hidden: false,
+  title: "",
+  cookie: "",
+  URL: BASE + "/",
+  baseURI: BASE + "/",
+  nodeType: 9,
+};
+windowStub.document = documentStub;
+
+function defineGlobal(name, value) {
+  try {
+    const desc = Object.getOwnPropertyDescriptor(global, name);
+    if (desc && !desc.writable && !desc.set) {
+      Object.defineProperty(global, name, { value, configurable: true, writable: true });
+    } else {
+      global[name] = value;
+    }
+  } catch (_) {
+    try { Object.defineProperty(global, name, { value, configurable: true, writable: true }); } catch (__) { /* ignore */ }
+  }
+}
+
+defineGlobal("window", windowStub);
+defineGlobal("document", documentStub);
+defineGlobal("navigator", windowStub.navigator);
+defineGlobal("location", windowStub.location);
+defineGlobal("history", windowStub.history);
+defineGlobal("requestAnimationFrame", windowStub.requestAnimationFrame);
+defineGlobal("cancelAnimationFrame", windowStub.cancelAnimationFrame);
+defineGlobal("requestIdleCallback", windowStub.requestIdleCallback);
+defineGlobal("cancelIdleCallback", windowStub.cancelIdleCallback);
+defineGlobal("IntersectionObserver", windowStub.IntersectionObserver);
+defineGlobal("ResizeObserver", windowStub.ResizeObserver);
+defineGlobal("MutationObserver", windowStub.MutationObserver);
+defineGlobal("matchMedia", windowStub.matchMedia);
+defineGlobal("getComputedStyle", windowStub.getComputedStyle);
+defineGlobal("CSS", windowStub.CSS);
+defineGlobal("localStorage", { getItem: () => null, setItem: () => {}, removeItem: () => {}, clear: () => {}, length: 0, key: () => null });
+defineGlobal("sessionStorage", { getItem: () => null, setItem: () => {}, removeItem: () => {}, clear: () => {}, length: 0, key: () => null });
+defineGlobal("CustomEvent", windowStub.CustomEvent);
+defineGlobal("screen", { width: 1280, height: 768, availWidth: 1280, availHeight: 768 });
+
+// ─── Route definitions ────────────────────────────────────────────────────────
 
 const BLOG_SLUGS = [
   { slug: "prasa-why-story-2021", title: "Przeczytajcie o nas w prasie #2", excerpt: "Nasza metoda oraz historia rozwoju GoBrain opisana w czasopismie Why Story nr 1/2021." },
@@ -52,86 +217,59 @@ const PROGRAM_SLUGS = [
 ];
 
 const STATIC_ROUTES = [
-  {
-    path: "/",
-    title: "ITS GoBrain — Trening sluchowy dla dzieci | gobrain.pl",
-    description: "GoBrain to innowacyjny trening sluchowy dla dzieci od 5 lat. Poprawia koncentracje, pamiec sluchowa i mowe. Efekty widoczne po 4-8 tygodniach. Wyprobuj!",
-  },
-  {
-    path: "/its",
-    title: "Metoda ITS GoBrain — jak dziala trening sluchowy",
-    description: "Poznaj metode ITS GoBrain — innowacyjny trening sluchowy oparty na badaniach naukowych. Dowiedz sie, jak poprawia koncentracje, pamiec i mowe dzieci.",
-  },
-  {
-    path: "/its-school",
-    title: "ITS GoBrain dla szkol — trening sluchowy w edukacji",
-    description: "Wdraz ITS GoBrain w swojej szkole. Program treningu sluchowego wspierajacy uczniow z trudnosciami w koncentracji, czytaniu i pisaniu.",
-  },
-  {
-    path: "/strefa-terapeuty",
-    title: "Strefa Terapeuty — ITS GoBrain dla specjalistow",
-    description: "ITS GoBrain w gabinecie terapeutycznym. Narzedzie dla logopedow, pedagogow i terapeutow SI. Panel zarzadzania, raporty postepu, wsparcie merytoryczne.",
-  },
-  {
-    path: "/szkolenia-i-webinary",
-    title: "Szkolenia i webinary — ITS GoBrain",
-    description: "Szkolenia i webinary dla terapeutow i pedagogow z zakresu treningu sluchowego ITS GoBrain. Zapisz sie na najblizsze wydarzenie.",
-  },
-  {
-    path: "/blog",
-    title: "Blog — artykuly o treningu sluchowym i rozwoju dzieci",
-    description: "Artykuly eksperckie o treningu sluchowym, koncentracji i rozwoju dzieci. Wiedza oparta na badaniach naukowych od tworcow ITS GoBrain.",
-  },
-  {
-    path: "/faq",
-    title: "FAQ — najczestsze pytania o ITS GoBrain",
-    description: "Odpowiedzi na najczestsze pytania dotyczace treningu sluchowego ITS GoBrain. Jak dziala, dla kogo jest, ile trwa i jakie daje efekty.",
-  },
-  {
-    path: "/pomoc",
-    title: "Pomoc i wsparcie techniczne — ITS GoBrain",
-    description: "Centrum pomocy ITS GoBrain. Instrukcje instalacji, FAQ i wsparcie techniczne dla uzytkownikow oprogramowania GoBrain.",
-  },
-  {
-    path: "/sklep",
-    title: "Sklep — kup licencje ITS GoBrain",
-    description: "Kup licencje ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoly. Trening sluchowy dla dzieci od 5 lat. Bezpieczna platnosc online.",
-  },
-  {
-    path: "/programy-edukacyjne",
-    title: "Programy edukacyjne GoBrain — gry logopedyczne i edukacyjne",
-    description: "Odkryj programy edukacyjne GoBrain: zabawy logopedyczne, nauka liter, cwiczenia koncentracji i kreatywnosci dla dzieci od 3 lat.",
-  },
-  {
-    path: "/karta-mowy",
-    title: "Karta Mowy — narzedzie diagnostyczne GoBrain",
-    description: "Karta Mowy GoBrain — sprawdz poziom rozwoju mowy swojego dziecka za pomoca bezplatnego narzedzia diagnostycznego.",
-  },
-  {
-    path: "/darmowe-webinary",
-    title: "Darmowe webinary — ITS GoBrain",
-    description: "Bezplatne webinary o treningu sluchowym, CAPD i terapii mowy. Dolacz do ekspertow GoBrain i dowiedz sie, jak pomoc swojemu dziecku.",
-  },
-  {
-    path: "/ulotka",
-    title: "Ulotka ITS GoBrain — informacje dla rodzicow i terapeutow",
-    description: "Pobierz ulotke ITS GoBrain. Krotkie informacje o metodzie treningu sluchowego dla rodzicow i specjalistow.",
-  },
+  { path: "/", title: "ITS GoBrain — Trening sluchowy dla dzieci | gobrain.pl", description: "GoBrain to innowacyjny trening sluchowy dla dzieci od 5 lat. Poprawia koncentracje, pamiec sluchowa i mowe. Efekty widoczne po 4-8 tygodniach. Wyprobuj!" },
+  { path: "/its", title: "Metoda ITS GoBrain — jak dziala trening sluchowy", description: "Poznaj metode ITS GoBrain — innowacyjny trening sluchowy oparty na badaniach naukowych. Dowiedz sie, jak poprawia koncentracje, pamiec i mowe dzieci." },
+  { path: "/its-school", title: "ITS GoBrain dla szkol — trening sluchowy w edukacji", description: "Wdraz ITS GoBrain w swojej szkole. Program treningu sluchowego wspierajacy uczniow z trudnosciami w koncentracji, czytaniu i pisaniu." },
+  { path: "/strefa-terapeuty", title: "Strefa Terapeuty — ITS GoBrain dla specjalistow", description: "ITS GoBrain w gabinecie terapeutycznym. Narzedzie dla logopedow, pedagogow i terapeutow SI. Panel zarzadzania, raporty postepu, wsparcie merytoryczne." },
+  { path: "/szkolenia-i-webinary", title: "Szkolenia i webinary — ITS GoBrain", description: "Szkolenia i webinary dla terapeutow i pedagogow z zakresu treningu sluchowego ITS GoBrain. Zapisz sie na najblizsze wydarzenie." },
+  { path: "/blog", title: "Blog — artykuly o treningu sluchowym i rozwoju dzieci", description: "Artykuly eksperckie o treningu sluchowym, koncentracji i rozwoju dzieci. Wiedza oparta na badaniach naukowych od tworcow ITS GoBrain." },
+  { path: "/faq", title: "FAQ — najczestsze pytania o ITS GoBrain", description: "Odpowiedzi na najczestsze pytania dotyczace treningu sluchowego ITS GoBrain. Jak dziala, dla kogo jest, ile trwa i jakie daje efekty." },
+  { path: "/pomoc", title: "Pomoc i wsparcie techniczne — ITS GoBrain", description: "Centrum pomocy ITS GoBrain. Instrukcje instalacji, FAQ i wsparcie techniczne dla uzytkownikow oprogramowania GoBrain." },
+  { path: "/sklep", title: "Sklep — kup licencje ITS GoBrain", description: "Kup licencje ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoly. Trening sluchowy dla dzieci od 5 lat. Bezpieczna platnosc online." },
+  { path: "/programy-edukacyjne", title: "Programy edukacyjne GoBrain — gry logopedyczne i edukacyjne", description: "Odkryj programy edukacyjne GoBrain: zabawy logopedyczne, nauka liter, cwiczenia koncentracji i kreatywnosci dla dzieci od 3 lat." },
+  { path: "/karta-mowy", title: "Karta Mowy — narzedzie diagnostyczne GoBrain", description: "Karta Mowy GoBrain — sprawdz poziom rozwoju mowy swojego dziecka za pomoca bezplatnego narzedzia diagnostycznego." },
+  { path: "/darmowe-webinary", title: "Darmowe webinary — ITS GoBrain", description: "Bezplatne webinary o treningu sluchowym, CAPD i terapii mowy. Dolacz do ekspertow GoBrain i dowiedz sie, jak pomoc swojemu dziecku." },
+  { path: "/ulotka", title: "Ulotka ITS GoBrain — informacje dla rodzicow i terapeutow", description: "Pobierz ulotke ITS GoBrain. Krotkie informacje o metodzie treningu sluchowego dla rodzicow i specjalistow." },
 ];
 
-function buildHeadBlock(title, description, canonical) {
-  const url = `${BASE}${canonical}`;
-  return `
-    <title>${title}</title>
-    <meta name="description" content="${description}" />
+const ALL_ROUTES = [
+  ...STATIC_ROUTES,
+  ...BLOG_SLUGS.map(({ slug, title, excerpt }) => ({
+    path: `/blog/${slug}`,
+    title: `${title} — Blog GoBrain`,
+    description: excerpt,
+  })),
+  ...PROGRAM_SLUGS.map(({ slug, title, subtitle }) => ({
+    path: `/programy-edukacyjne/${slug}`,
+    title: `${title} — Program edukacyjny GoBrain`,
+    description: subtitle,
+  })),
+];
+
+// ─── HTML manipulation helpers ────────────────────────────────────────────────
+
+function buildHeadBlock(title, description, routePath) {
+  const url = `${BASE}${routePath}`;
+  return `<title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}" />
     <link rel="canonical" href="${url}" />
-    <meta property="og:title" content="${title}" />
-    <meta property="og:description" content="${description}" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${OG_IMAGE}" />
-    <meta name="twitter:title" content="${title}" />
-    <meta name="twitter:description" content="${description}" />
-    <meta name="twitter:image" content="${OG_IMAGE}" />`.trim();
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta name="twitter:image" content="${OG_IMAGE}" />`;
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function stripExistingMeta(html) {
@@ -142,49 +280,87 @@ function stripExistingMeta(html) {
     .replace(/<meta property="og:title"[^>]*>/g, "")
     .replace(/<meta property="og:description"[^>]*>/g, "")
     .replace(/<meta property="og:url"[^>]*>/g, "")
-    .replace(/<meta property="og:image"[^>]*/g, (m) => (m.includes("width") || m.includes("height") || m.includes("alt") || m.includes("type") ? m : ""))
     .replace(/<meta name="twitter:title"[^>]*>/g, "")
     .replace(/<meta name="twitter:description"[^>]*>/g, "")
     .replace(/<meta name="twitter:image"[^>]*>/g, "");
 }
 
-function writeRouteHtml(routePath, title, description, templateHtml) {
+function writeRouteHtml(routePath, title, description, bodyHtml, templateHtml) {
   const head = buildHeadBlock(title, description, routePath);
-  const stripped = stripExistingMeta(templateHtml);
-  const html = stripped.replace("</head>", `  ${head}\n  </head>`);
+  let html = stripExistingMeta(templateHtml);
+  html = html.replace("</head>", `  ${head}\n  </head>`);
+  if (bodyHtml) {
+    html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
+  }
 
-  const dir = routePath === "/" ? DIST : path.join(DIST, ...routePath.split("/").filter(Boolean));
+  const segments = routePath === "/" ? [] : routePath.split("/").filter(Boolean);
+  const dir = segments.length === 0 ? DIST_PUBLIC : path.join(DIST_PUBLIC, ...segments);
   fs.mkdirSync(dir, { recursive: true });
-  const file = routePath === "/" ? path.join(DIST, "index.html") : path.join(dir, "index.html");
+  const file = segments.length === 0
+    ? path.join(DIST_PUBLIC, "index.html")
+    : path.join(dir, "index.html");
   fs.writeFileSync(file, html, "utf8");
-  console.log(`  wrote ${file}`);
+  return file;
 }
 
-function main() {
-  const templatePath = path.join(DIST, "index.html");
+// ─── Main ─────────────────────────────────────────────────────────────────────
+
+async function main() {
+  const templatePath = path.join(DIST_PUBLIC, "index.html");
   if (!fs.existsSync(templatePath)) {
     console.error(`ERROR: ${templatePath} not found — run 'vite build' first.`);
     process.exit(1);
   }
   const template = fs.readFileSync(templatePath, "utf8");
 
-  console.log("Prerendering routes...");
+  const ssrEntryPath = path.join(DIST_SERVER, "entry-server.js");
+  let renderFn = null;
 
-  for (const { path: p, title, description } of STATIC_ROUTES) {
-    writeRouteHtml(p, title, description, template);
+  if (fs.existsSync(ssrEntryPath)) {
+    try {
+      const mod = await import(ssrEntryPath);
+      renderFn = mod.render;
+      console.log("SSR bundle loaded — full body prerendering enabled.");
+    } catch (err) {
+      console.warn("WARNING: Failed to load SSR bundle:", err.message);
+      console.warn("Falling back to head-only injection.");
+    }
+  } else {
+    console.warn("WARNING: SSR bundle not found at", ssrEntryPath);
+    console.warn("Falling back to head-only injection.");
   }
 
-  for (const { slug, title, excerpt } of BLOG_SLUGS) {
-    const fullTitle = `${title} — Blog GoBrain`;
-    writeRouteHtml(`/blog/${slug}`, fullTitle, excerpt, template);
+  console.log(`Prerendering ${ALL_ROUTES.length} routes...`);
+  let ok = 0;
+  let fallback = 0;
+
+  for (const { path: routePath, title, description } of ALL_ROUTES) {
+    let bodyHtml = null;
+
+    if (renderFn) {
+      try {
+        // Update location stub so useLocation() returns the correct pathname
+        global.window.location = { ...global.window.location, pathname: routePath, href: BASE + routePath };
+        global.location = global.window.location;
+        bodyHtml = renderFn(routePath);
+      } catch (err) {
+        console.warn(`  WARN: SSR render failed for ${routePath}:`, err.message.split("\n")[0]);
+        fallback++;
+        bodyHtml = null;
+      }
+    }
+
+    const file = writeRouteHtml(routePath, title, description, bodyHtml, template);
+    const mode = bodyHtml ? "full" : "head";
+    if (!bodyHtml) fallback++;
+    else ok++;
+    console.log(`  [${mode}] ${file}`);
   }
 
-  for (const { slug, title, subtitle } of PROGRAM_SLUGS) {
-    const fullTitle = `${title} — Program edukacyjny GoBrain`;
-    writeRouteHtml(`/programy-edukacyjne/${slug}`, fullTitle, subtitle, template);
-  }
-
-  console.log("Prerender done.");
+  console.log(`\nPrerender done: ${ok} full SSR, ${fallback} head-only.`);
 }
 
-main();
+main().catch((err) => {
+  console.error("Prerender failed:", err);
+  process.exit(1);
+});
