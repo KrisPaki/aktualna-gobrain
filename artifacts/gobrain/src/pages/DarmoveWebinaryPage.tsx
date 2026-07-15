@@ -190,18 +190,10 @@ export default function DarmoveWebinaryPage() {
               Zapisz się na webinar lub skontaktuj się bezpośrednio — opowiemy o metodzie i dobierzemy najlepsze rozwiązanie.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="h-13 px-8 text-base font-semibold bg-white text-primary hover:bg-white/90"
-                onClick={() => setActiveModal("Darmowy webinar GoBrain — termin do ustalenia")}
-              >
-                <Send className="w-4 h-4 mr-2" />
-                Zapisz się bezpłatnie
-              </Button>
-              <Button size="lg" variant="outline" className="h-13 px-8 text-base font-semibold border-white text-white hover:bg-white hover:text-primary" asChild>
-                <a href="mailto:gobrainterapeuta@gmail.com">
-                  <Mail className="w-4 h-4 mr-2" />
-                  gobrainterapeuta@gmail.com
+              <Button size="lg" className="h-13 px-8 text-base font-semibold bg-white text-primary hover:bg-white/90" asChild>
+                <a href="tel:+48608650435">
+                  <Phone className="w-4 h-4 mr-2" />
+                  608 650 435
                 </a>
               </Button>
             </motion.div>
