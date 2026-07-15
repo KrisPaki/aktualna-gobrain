@@ -195,6 +195,48 @@ export default function StrefaTerapeutyPage() {
           </div>
         </section>
 
+        {/* ─── VIDEO ─── */}
+        <section className="py-16 md:py-20 bg-background">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="text-center mb-10"
+            >
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <span>▶</span>
+                <span>Zobacz platformę w działaniu</span>
+              </motion.div>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Platforma TERAPEUTA — prezentacja
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Obejrzyj jak wygląda praca z platformą — od diagnozy, przez sesje treningowe, aż po raporty wyników.
+              </motion.p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="rounded-3xl overflow-hidden shadow-2xl bg-black"
+            >
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full"
+                style={{ maxHeight: "560px" }}
+              >
+                <source src="/platforma-terapeuta.mov" type="video/mp4" />
+                Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+              </video>
+            </motion.div>
+          </div>
+        </section>
+
         {/* ─── BEFORE / AFTER ─── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
