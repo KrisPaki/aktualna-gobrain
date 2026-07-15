@@ -273,26 +273,40 @@ export default function KartaMowyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl"
+            className="rounded-3xl overflow-hidden shadow-2xl"
           >
-            <img
-              src={childTabletTogetherImg}
-              alt="Rodzic i dziecko grają razem w GoBrain na tablecie — ćwiczenie wymowy w domu"
-              className="w-full object-cover"
-              style={{ maxHeight: "460px", objectPosition: "center 30%" }}
-              loading="lazy"
-            />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)" }} />
-            <div className="absolute inset-0 flex items-center px-10 md:px-16">
-              <div className="max-w-lg">
-                <p className="text-white/80 text-sm font-medium mb-2 uppercase tracking-widest">Karta Mowy w praktyce</p>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-4">
-                  Ćwicz wymowę razem z dzieckiem — w dowolnym miejscu
-                </h2>
-                <p className="text-white/80 text-base leading-relaxed">
-                  Program działa na tablecie i komputerze. Ćwiczenia są intuicyjne — dziecko samo chce do nich wracać.
-                </p>
+            {/* Zdjęcie */}
+            <div className="relative">
+              <img
+                src={childTabletTogetherImg}
+                alt="Rodzic i dziecko grają razem w GoBrain na tablecie — ćwiczenie wymowy w domu"
+                className="w-full object-cover"
+                style={{ maxHeight: "460px", objectPosition: "center 30%" }}
+                loading="lazy"
+              />
+              {/* gradient tylko na md+ — tekst nakładka na desktop */}
+              <div className="hidden md:block absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.15) 55%, transparent 100%)" }} />
+              <div className="hidden md:flex absolute inset-0 items-center px-16">
+                <div className="max-w-lg">
+                  <p className="text-white/80 text-sm font-medium mb-2 uppercase tracking-widest">Karta Mowy w praktyce</p>
+                  <h2 className="text-3xl font-extrabold text-white leading-tight mb-4">
+                    Ćwicz wymowę razem z dzieckiem — w dowolnym miejscu
+                  </h2>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Program działa na tablecie i komputerze. Ćwiczenia są intuicyjne — dziecko samo chce do nich wracać.
+                  </p>
+                </div>
               </div>
+            </div>
+            {/* Tekst pod zdjęciem — tylko mobile */}
+            <div className="md:hidden bg-foreground px-6 py-6">
+              <p className="text-white/60 text-xs font-medium mb-1 uppercase tracking-widest">Karta Mowy w praktyce</p>
+              <h2 className="text-xl font-extrabold text-white leading-tight mb-3">
+                Ćwicz wymowę razem z dzieckiem — w dowolnym miejscu
+              </h2>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Program działa na tablecie i komputerze. Ćwiczenia są intuicyjne — dziecko samo chce do nich wracać.
+              </p>
             </div>
           </motion.div>
         </div>
