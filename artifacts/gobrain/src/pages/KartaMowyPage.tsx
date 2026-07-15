@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import therapistChildImg from "@/assets/therapist-child.png";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import kartaMowyDlaKogoImg from "@/assets/karta-mowy-dla-kogo.jpg";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 const fadeInUp: Variants = {
@@ -221,10 +222,10 @@ export default function KartaMowyPage() {
               className="rounded-3xl overflow-hidden shadow-2xl"
             >
               <img
-                src={therapistChildImg}
-                alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym Karta Mowy"
+                src={kartaMowyDlaKogoImg}
+                alt="Logopedka z dzieckiem przy tablecie — sesja z Kartą Mowy GoBrain"
                 className="w-full object-cover"
-                style={{ objectPosition: "center 15%" }}
+                style={{ objectPosition: "center 20%" }}
               />
             </motion.div>
 
