@@ -22,9 +22,6 @@ import therapistChildImg from "@/assets/therapist-child.png";
 import childrenClassroomImg from "@/assets/children-classroom.png";
 import heroChildImg from "@/assets/hero-child-new.webp";
 import heroHeadphonesImg from "@/assets/hero-child-headphones.png";
-import childTabletGame1Img from "@/assets/child-tablet-game1.jpg";
-import childTabletGame2Img from "@/assets/child-tablet-game2.jpg";
-import childTabletGoBrainImg from "@/assets/child-tablet-gobrain-screen.jpg";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -76,8 +73,8 @@ export default function ItsPage() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
                   <img
-                    src={childTabletGame1Img}
-                    alt="Dziewczynka gra w ITS GoBrain na tablecie — interaktywny trening słuchowy"
+                    src={heroHeadphonesImg}
+                    alt="Dziecko podczas interaktywnego treningu słuchowego ITS GoBrain"
                     className="w-full object-cover"
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.15) 0%, transparent 60%)" }} />
@@ -599,7 +596,7 @@ export default function ItsPage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img src={childTabletGoBrainImg} alt="Dziecko dotyka ekranu tabletu z programem GoBrain — wybór poziomu gry" className="w-full object-cover" />
+                  <img src={childTabletImg} alt="Dziecko ćwiczące interaktywny trening słuchowy ITS GoBrain" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -673,7 +670,7 @@ export default function ItsPage() {
                 className="lg:order-2 relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img src={childTabletGame2Img} alt="Dziewczynka ogląda grę GoBrain na tablecie — ćwiczenie słuchowe z półkami" className="w-full object-cover" />
+                  <img src={parentChildImg} alt="Rodzic i dziecko przy interaktywnym treningu słuchowym GoBrain w domu" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}

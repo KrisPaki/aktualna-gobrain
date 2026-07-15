@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import anetaPakielaImg from "@/assets/aneta-pakiela-new.png";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import heroChildImg from "@/assets/hero-child-new.webp";
-import childTabletTogetherImg from "@/assets/child-tablet-together.jpg";
 import childTabletImg from "@/assets/child-tablet-fun.png";
 import therapistChildImg from "@/assets/therapist-child.png";
 import childrenClassroomImg from "@/assets/children-classroom.png";
@@ -512,7 +511,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={childTabletTogetherImg} alt="Rodzic i dziecko grają razem w GoBrain na tablecie — ćwiczenie słuchowe w domu" className="w-full object-cover" />
+                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full object-cover" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}

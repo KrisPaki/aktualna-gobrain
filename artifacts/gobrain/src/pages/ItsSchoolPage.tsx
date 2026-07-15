@@ -18,7 +18,6 @@ import {
 import { Button } from "@/components/ui/button";
 import childrenClassroomImg from "@/assets/children-classroom.png";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
-import childTabletMemoImg from "@/assets/child-tablet-memo.jpg";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -299,8 +298,8 @@ export default function ItsSchoolPage() {
               className="rounded-3xl overflow-hidden shadow-2xl"
             >
               <img
-                src={childTabletMemoImg}
-                alt="Dziewczynka gra w grę Memo na tablecie z programem ITS GoBrain Pre & School"
+                src={childrenClassroomImg}
+                alt="Dzieci korzystające z interaktywnego treningu słuchowego ITS GoBrain Pre & School w placówce"
                 className="w-full object-cover"
               />
             </motion.div>
