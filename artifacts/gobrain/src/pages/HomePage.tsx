@@ -34,6 +34,7 @@ import {
   Mic,
   Award,
   Volume2,
+  Gamepad2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
@@ -528,6 +529,77 @@ export default function HomePage() {
               </motion.div>
 
             </div>
+          </div>
+        </section>
+
+        {/* SECTION - Screenshots Gallery */}
+        <section className="py-20 bg-background overflow-hidden">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-12"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <Gamepad2 className="w-4 h-4" />
+                <span>Wygląd programu</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Jak wygląda GoBrain w działaniu?</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Atrakcyjne gry, które dziecko chce wykonywać — trening słuchowy w formie zabawy.</p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
+              {[
+                {
+                  src: "/screenshots/game-screenshot-1.webp",
+                  alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy",
+                  badge: "Adaptacja w czasie rzeczywistym",
+                  badgeColor: "bg-primary text-white",
+                  caption: "Program automatycznie dopasowuje poziom trudności do możliwości dziecka",
+                },
+                {
+                  src: "/screenshots/game-screenshot-2.webp",
+                  alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci",
+                  badge: "Trening przez zabawę",
+                  badgeColor: "bg-accent text-white",
+                  caption: "Atrakcyjna grafika i nagrody motywują dziecko do systematycznego ćwiczenia",
+                },
+                {
+                  src: "/screenshots/game-screenshot-3.webp",
+                  alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami",
+                  badge: "Pamięć i koncentracja",
+                  badgeColor: "bg-green-600 text-white",
+                  caption: "Ćwiczenia rozwijają uwagę słuchową, pamięć i przetwarzanie bodźców",
+                },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp} className="group relative flex flex-col">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg border border-border group-hover:shadow-xl transition-shadow">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className={`text-xs font-bold px-3 py-1.5 rounded-full shadow ${item.badgeColor}`}>
+                        {item.badge}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm text-muted-foreground text-center leading-relaxed px-2">
+                    {item.caption}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
