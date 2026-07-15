@@ -21,6 +21,8 @@ import KartaMowyPage from "@/pages/KartaMowyPage";
 import DarmoveWebinaryPage from "@/pages/DarmoveWebinaryPage";
 import UlotkaPage from "@/pages/UlotkaPage";
 import NotFound from "@/pages/not-found";
+import PolitykaPrywatnosciPage from "@/pages/PolitykaPrywatnosciPage";
+import RegulaminPage from "@/pages/RegulaminPage";
 
 export function render(url: string): string {
   const helmetContext = {};
@@ -48,6 +50,8 @@ export function render(url: string): string {
                 <Route path="/karta-mowy" element={<KartaMowyPage />} />
                 <Route path="/darmowe-webinary" element={<DarmoveWebinaryPage />} />
                 <Route path="/ulotka" element={<UlotkaPage />} />
+                <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosciPage />} />
+                <Route path="/regulamin" element={<RegulaminPage />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

@@ -230,6 +230,8 @@ const STATIC_ROUTES = [
   { path: "/karta-mowy", title: "Karta Mowy — narzedzie diagnostyczne GoBrain", description: "Karta Mowy GoBrain — sprawdz poziom rozwoju mowy swojego dziecka za pomoca bezplatnego narzedzia diagnostycznego." },
   { path: "/darmowe-webinary", title: "Darmowe webinary — ITS GoBrain", description: "Bezplatne webinary o treningu sluchowym, CAPD i terapii mowy. Dolacz do ekspertow GoBrain i dowiedz sie, jak pomoc swojemu dziecku." },
   { path: "/ulotka", title: "Ulotka ITS GoBrain — informacje dla rodzicow i terapeutow", description: "Pobierz ulotke ITS GoBrain. Krotkie informacje o metodzie treningu sluchowego dla rodzicow i specjalistow." },
+  { path: "/polityka-prywatnosci", title: "Polityka prywatnosci — ITS GoBrain", description: "Polityka prywatnosci serwisu gobrain.pl. Jakie dane zbieramy, jak je przetwarzamy i jakie masz prawa jako uzytkownik." },
+  { path: "/regulamin", title: "Regulamin — ITS GoBrain", description: "Regulamin serwisu gobrain.pl i oprogramowania ITS GoBrain. Warunki korzystania z licencji, zamawiania i zwrotow." },
 ];
 
 const ALL_ROUTES = [
