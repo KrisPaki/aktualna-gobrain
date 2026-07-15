@@ -404,7 +404,7 @@ export default function HomePage() {
                   icon: Brain,
                   title: 'ITS GoBrain',
                   subtitle: '"Zabawy z dźwiękami"',
-                  desc: 'Dla dzieci od piątego roku życia, do stosowania w domu.',
+                  desc: 'Indywidualny trening dla dziecka, do domu — dla dzieci od piątego roku życia.',
                   link: '/its',
                   color: 'text-primary',
                   bg: 'bg-primary/10'
@@ -1065,7 +1065,7 @@ export default function HomePage() {
                   Najpopularniejszy
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2 mt-2">ITS GoBrain</h3>
-                <p className="text-muted-foreground mb-4 text-sm">{'Dla dzieci od piątego roku życia, do stosowania w domu'}</p>
+                <p className="text-muted-foreground mb-4 text-sm">{'Indywidualny trening dla dziecka, do domu — dla dzieci od piątego roku życia'}</p>
                 <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">390 PLN</span>
                 </div>
