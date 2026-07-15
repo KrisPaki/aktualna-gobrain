@@ -97,7 +97,7 @@ export default function KartaMowyPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="relative"
+              className="relative pt-6"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-green-200/50">
                 <img
