@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
+import certyfikatImg from "@/assets/certyfikat-providera.png";
 import {
   CheckCircle2,
   GraduationCap,
@@ -372,6 +373,38 @@ export default function SzkoleniaPage() {
                   <span className="text-foreground font-medium">{benefit}</span>
                 </motion.div>
               ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Certyfikat */}
+        <section className="py-16 bg-card/40 border-y border-border">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <Award className="w-4 h-4" />
+                Certyfikat imienny
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">Certyfikat Providera GoBrain</h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border"
+            >
+              <img
+                src={certyfikatImg}
+                alt="Certyfikat Providera ITS GoBrain — imienny dokument potwierdzający ukończenie szkolenia"
+                className="w-full object-cover"
+              />
             </motion.div>
           </div>
         </section>
