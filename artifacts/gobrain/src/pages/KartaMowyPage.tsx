@@ -55,7 +55,7 @@ export default function KartaMowyPage() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                Kompleksowe narzędzie cyfrowe do badania, dokumentowania i utrwalania prawidłowej wymowy — dla logopedów, terapeutów, pedagogów i rodziców.
+                Kompleksowe narzędzie cyfrowe do badania, dokumentowania i utrwalania prawidłowej wymowy — dzięki angażującym zadaniom w formie gier — dla logopedów, terapeutów, pedagogów i rodziców.
               </motion.p>
 
               <motion.p variants={fadeInUp} className="text-base text-muted-foreground mb-8">
