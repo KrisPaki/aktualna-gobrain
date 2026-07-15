@@ -401,7 +401,7 @@ export default function HomePage() {
                     icon: Zap,
                     color: "bg-blue-50 text-blue-600",
                     title: "Adaptacja w czasie rzeczywistym",
-                    desc: "System sam dopasowuje poziom trudności do dziecka — dziecko nie musi prosić rodzica o pomoc, bo zadanie zawsze jest „w sam raz". Rodzic nie musi siedzieć obok i korygować poziomu.",
+                    desc: "System sam dopasowuje poziom trudności do dziecka — dziecko nie musi prosić rodzica o pomoc, bo zadanie zawsze jest w sam raz. Rodzic nie musi siedzieć obok i korygować poziomu.",
                   },
                   {
                     icon: TrendingUp,
