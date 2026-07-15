@@ -1,4 +1,5 @@
-import { motion, type Variants, animate, useInView, AnimatePresence } from "framer-motion";
+import { motion, type Variants, animate, useInView } from "framer-motion";
+import ProblemCyclerComponent from "@/components/ProblemCycler";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import anetaPakielaImg from "@/assets/aneta-pakiela-new.png";
@@ -127,92 +128,6 @@ function RingChart({ percent, color, label, sublabel }: {
       </div>
       <p className="font-bold text-foreground text-sm text-center leading-tight">{label}</p>
       <p className="text-xs text-muted-foreground text-center">{sublabel}</p>
-    </div>
-  );
-}
-
-const PROBLEMS = [
-  { emoji: "👂", text: "Słyszy, ale nie słucha" },
-  { emoji: "🗣️", text: "Nie rozumie poleceń i wymaga powtarzania" },
-  { emoji: "📖", text: "Problemy z czytaniem i pisaniem" },
-  { emoji: "🎯", text: "Trudności z koncentracją i uwagą" },
-  { emoji: "🔊", text: "Wrażliwe na dźwięki (CAPD)" },
-  { emoji: "⚡", text: "ADHD – wspiera terapię" },
-  { emoji: "🧩", text: "Zaburzenia ze spektrum autyzmu (ASD)" },
-  { emoji: "💬", text: "Pacjenci logopedyczni (alalia, DLD, afazja)" },
-  { emoji: "🏫", text: "Dziecko zbyt głośne lub wycofane" },
-  { emoji: "🏥", text: "Po usunięciu trzeciego migdałka lub drenach" },
-  { emoji: "✍️", text: "Problemy z głoskowaniem i wymową" },
-  { emoji: "🧠", text: "Słaba pamięć słuchowa i rozumienie" },
-];
-
-function ProblemCycler() {
-  const [idx, setIdx] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (paused) return;
-    const t = setInterval(() => setIdx(i => (i + 1) % PROBLEMS.length), 2800);
-    return () => clearInterval(t);
-  }, [paused]);
-
-  return (
-    <div className="space-y-5">
-      {/* Animated main card */}
-      <div
-        className="relative h-28 rounded-2xl bg-primary/5 border border-primary/20 overflow-hidden cursor-pointer"
-        onClick={() => setIdx(i => (i + 1) % PROBLEMS.length)}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="absolute inset-0 flex items-center gap-5 px-6"
-          >
-            <span className="text-5xl shrink-0">{PROBLEMS[idx].emoji}</span>
-            <p className="text-xl font-semibold text-foreground leading-snug">{PROBLEMS[idx].text}</p>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* progress bar */}
-        <motion.div
-          key={`bar-${idx}`}
-          className="absolute bottom-0 left-0 h-0.5 bg-primary"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: paused ? 0 : 2.8, ease: "linear" }}
-        />
-      </div>
-
-      {/* Dot indicators */}
-      <div className="flex flex-wrap gap-1.5">
-        {PROBLEMS.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => { setIdx(i); setPaused(true); setTimeout(() => setPaused(false), 4000); }}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === idx ? "w-6 bg-primary" : "w-1.5 bg-primary/25 hover:bg-primary/50"}`}
-          />
-        ))}
-      </div>
-
-      {/* Static mini-list of all (faded) */}
-      <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 pt-1">
-        {PROBLEMS.map((p, i) => (
-          <button
-            key={i}
-            onClick={() => { setIdx(i); setPaused(true); setTimeout(() => setPaused(false), 4000); }}
-            className={`flex items-center gap-2 text-left text-sm transition-all duration-200 ${i === idx ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"}`}
-          >
-            <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 transition-colors ${i === idx ? "text-primary" : "text-muted-foreground/40"}`} />
-            <span className="leading-snug">{p.text}</span>
-          </button>
-        ))}
-      </div>
     </div>
   );
 }
@@ -408,7 +323,7 @@ export default function HomePage() {
                   <p className="text-xl text-muted-foreground">{'Program dla dzieci od piątego roku życia'}</p>
                 </motion.div>
 
-                <ProblemCycler />
+                <ProblemCyclerComponent />
               </div>
 
               {/* Photo side — RIGHT */}
