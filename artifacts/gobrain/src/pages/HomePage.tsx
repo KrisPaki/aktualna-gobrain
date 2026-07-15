@@ -300,7 +300,7 @@ export default function HomePage() {
               className="mx-auto max-w-4xl rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border aspect-video"
             >
               <iframe
-                src="/gobrain-video/"
+                src="/gobrain-video/?embed=1"
                 className="w-full h-full"
                 title="Film marketingowy GoBrain"
                 allow="autoplay"
