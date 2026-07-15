@@ -5,7 +5,7 @@ import parentChildImg from "@/assets/parent-child-home.png";
 import { Button } from "@/components/ui/button";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import productItsImg from "@/assets/product-its-gobrain.png";
-import productSchoolImg from "@/assets/product-its-school.png";
+import productSchoolImg from "@/assets/product-its-school-ai.png";
 import productTerapeutaImg from "@/assets/product-terapeuta.png";
 import therapistChildImg from "@/assets/therapist-child.png";
 import childrenClassroomImg from "@/assets/children-classroom.png";
