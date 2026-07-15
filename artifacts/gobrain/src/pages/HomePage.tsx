@@ -341,6 +341,7 @@ export default function HomePage() {
                     { icon: GraduationCap, text: "Niepokojące zachowania" },
                     { icon: Heart, text: "Po usunięciu trzeciego migdałka oraz drenach" },
                     { icon: GraduationCap, text: "Pacjenci logopedyczni (alalia, DLD, afazja dziecięca)" },
+                    { icon: Ear, text: "Zaburzenia słuchu fonemowego" },
                   ].map((item, i) => (
                     <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
                       <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
