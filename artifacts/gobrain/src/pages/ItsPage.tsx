@@ -7,9 +7,6 @@ import {
   Activity,
   Brain,
   Volume2,
-  Download,
-  Monitor,
-  Smartphone,
   ChevronRight,
   Star,
   Zap,
@@ -521,22 +518,24 @@ export default function ItsPage() {
           </div>
         </section>
 
-        {/* ─── DOWNLOADS ─── */}
+        {/* ─── SCREENSHOTS ─── */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-4 max-w-6xl">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeInUp}
+              variants={staggerContainer}
               className="text-center mb-12"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                <Download className="w-4 h-4" />
-                <span>Wersja demo</span>
-              </div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Pobierz i wypróbuj za darmo</h2>
-              <p className="text-lg text-muted-foreground">Sprawdź program przed zakupem — bezpłatne wersje demo dla PC i Android</p>
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <Star className="w-4 h-4" />
+                <span>Wygląd gry</span>
+              </motion.div>
+              <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-foreground mb-4">Jak wygląda gra?</motion.h2>
+              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Atrakcyjna grafika i angażujące ćwiczenia — dziecko ćwiczy, nie zdając sobie sprawy, że pracuje.
+              </motion.p>
             </motion.div>
 
             <motion.div
@@ -544,40 +543,24 @@ export default function ItsPage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+              className="grid grid-cols-1 md:grid-cols-3 gap-5"
             >
               {[
-                {
-                  href: "http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe",
-                  icon: Monitor,
-                  title: "ITS Starter PC",
-                  sub: "Windows .exe — wersja demo",
-                  color: "bg-blue-50 border-blue-200 hover:border-blue-400",
-                  iconColor: "bg-blue-100 text-blue-600",
-                },
-                {
-                  href: "http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk",
-                  icon: Smartphone,
-                  title: "ITS Starter Android",
-                  sub: "Android .apk — wersja demo",
-                  color: "bg-green-50 border-green-200 hover:border-green-400",
-                  iconColor: "bg-green-100 text-green-600",
-                },
-              ].map((dl, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <a
-                    href={dl.href}
-                    className={`flex items-center gap-4 p-6 rounded-2xl border-2 ${dl.color} transition-all group`}
-                  >
-                    <div className={`w-14 h-14 ${dl.iconColor} rounded-2xl flex items-center justify-center`}>
-                      <dl.icon className="w-7 h-7" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-bold text-foreground text-lg">{dl.title}</p>
-                      <p className="text-sm text-muted-foreground">{dl.sub}</p>
-                    </div>
-                    <Download className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </a>
+                { src: "/screenshots/game-screenshot-1.png", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy" },
+                { src: "/screenshots/game-screenshot-2.png", alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci" },
+                { src: "/screenshots/game-screenshot-3.png", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami" },
+              ].map((img, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="rounded-2xl overflow-hidden border border-border shadow-md hover:shadow-xl transition-shadow"
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full object-cover"
+                    loading="lazy"
+                  />
                 </motion.div>
               ))}
             </motion.div>
