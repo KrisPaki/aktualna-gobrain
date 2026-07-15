@@ -43,75 +43,37 @@ export default function ItsPage() {
       <div className="pt-16">
 
         {/* ─── HERO: DLACZEGO ITS GOBRAIN ─── */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 via-background to-background border-b border-border overflow-hidden">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="relative py-20 md:py-28 overflow-hidden bg-primary text-white">
+          <div className="absolute inset-0">
+            <img
+              src={heroHeadphonesImg}
+              alt="Dziecko podczas interaktywnego treningu słuchowego ITS GoBrain"
+              className="w-full h-full object-cover opacity-50"
+              style={{ objectPosition: "center 20%" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/55 to-primary/10" />
+          </div>
 
-              {/* LEFT — tekst */}
-              <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
-                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  <Zap className="w-4 h-4" />
-                  <span>Zalety programu</span>
-                </motion.div>
-
-                <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
-                  Dlaczego<br />
-                  <span className="text-primary">ITS GoBrain?</span>
-                </motion.h1>
-
-                <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Program zaprojektowany tak, aby dziecko chciało pracować — i robiło realne postępy.
-                </motion.p>
-
-                <motion.p variants={fadeInUp} className="text-base text-muted-foreground leading-relaxed">
-                  Poniżej znajdziesz szczegółowe informacje o tym, co wyróżnia ITS GoBrain spośród innych metod pracy z dzieckiem.
-                </motion.p>
+          <div className="relative z-10 container mx-auto px-4 max-w-5xl">
+            <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-2xl">
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-6 border border-white/20">
+                <Zap className="w-4 h-4" />
+                <span>Zalety programu</span>
               </motion.div>
 
-              {/* RIGHT — zdjęcie */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="relative"
-              >
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img
-                    src={heroHeadphonesImg}
-                    alt="Dziecko podczas interaktywnego treningu słuchowego ITS GoBrain"
-                    className="w-full object-cover"
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.15) 0%, transparent 60%)" }} />
-                </div>
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-5 -left-5 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-                    <Award className="w-5 h-5 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Rekomendowany przez</p>
-                    <p className="font-bold text-foreground text-sm">Specjalistów i terapeutów</p>
-                  </div>
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -top-4 -right-4 bg-background rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Star className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Ocena rodziców</p>
-                    <p className="font-bold text-foreground text-sm">4.9 / 5.0</p>
-                  </div>
-                </motion.div>
-              </motion.div>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                Dlaczego<br />
+                <span className="text-orange-300">ITS GoBrain?</span>
+              </motion.h1>
 
-            </div>
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/85 mb-6 leading-relaxed">
+                Program zaprojektowany tak, aby dziecko chciało pracować — i robiło realne postępy.
+              </motion.p>
+
+              <motion.p variants={fadeInUp} className="text-base text-white/70 leading-relaxed">
+                Poniżej znajdziesz szczegółowe informacje o tym, co wyróżnia ITS GoBrain spośród innych metod pracy z dzieckiem.
+              </motion.p>
+            </motion.div>
           </div>
         </section>
 
