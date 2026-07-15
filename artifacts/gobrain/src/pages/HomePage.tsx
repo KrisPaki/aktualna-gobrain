@@ -237,7 +237,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-[4/3]">
                   <img
                     src={heroChildImg}
                     alt="Dziecko korzystające z interaktywnego treningu słuchowego ITS GoBrain w słuchawkach"
