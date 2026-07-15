@@ -42,10 +42,10 @@ export default function KartaMowyPage() {
       <section className="relative py-20 md:py-28 overflow-hidden bg-green-900 text-white">
         <div className="absolute inset-0">
           <img
-            src={anetaPakielaImg}
-            alt="Aneta Pakiela surdologopeda, twórczyni metody GoBrain"
-            className="w-full h-full object-cover opacity-55"
-            style={{ objectPosition: "70% center" }}
+            src={therapistChildImg}
+            alt="Logopedka pracuje z dzieckiem korzystając z Karty Mowy GoBrain"
+            className="w-full h-full object-cover opacity-60"
+            style={{ objectPosition: "center 15%" }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-900/55 to-green-900/10" />
         </div>
