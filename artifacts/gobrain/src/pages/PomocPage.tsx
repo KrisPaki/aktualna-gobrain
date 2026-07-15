@@ -114,8 +114,6 @@ export default function PomocPage() {
                   <div className="space-y-3">
                     {[
                       { icon: HelpCircle, label: "Często zadawane pytania (FAQ)", href: "/faq", internal: true },
-                      { icon: Download, label: "Pobierz wersję demo PC", href: "https://gobrain.pl/archiwa/starter-pc", internal: false },
-                      { icon: Download, label: "Pobierz wersję demo Android", href: "https://gobrain.pl/archiwa/starter-android", internal: false },
                     ].map((link, i) => (
                       link.internal ? (
                         <Link key={i} to={link.href as string} className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">

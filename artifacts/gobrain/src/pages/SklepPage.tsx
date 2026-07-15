@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, Play, Monitor, Smartphone, School, Building2, Users, Star, Mail } from "lucide-react";
+import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, Play, School, Building2, Users, Star, Mail } from "lucide-react";
 import parentChildImg from "@/assets/parent-child-home.png";
 import { Button } from "@/components/ui/button";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
@@ -351,18 +351,6 @@ export default function SklepPage() {
               <p className="text-muted-foreground mb-8">
                 {'Pobierz bezpłatną wersję ITS GoBrain Starter i poznaj program w praktyce. Demo zawiera kilka wybranych ćwiczeń z pierwszego etapu.'}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-sklep-pc">
-                  <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe">
-                    <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
-                  </a>
-                </Button>
-                <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-sklep-android">
-                  <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk">
-                    <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
-                  </a>
-                </Button>
-              </div>
             </motion.div>
 
             <motion.div
@@ -380,18 +368,6 @@ export default function SklepPage() {
               <p className="text-muted-foreground mb-8">
                 {'Wersja demonstracyjna ITS GoBrain Pre & School — dla terapeutów, gabinetów, szkół, przedszkoli i poradni. Sprawdź program w realnych warunkach.'}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-sklep-pc">
-                  <a href="http://gobraintech.pl/current/Sklep_PC/ITS_School_Starter.exe">
-                    <Monitor className="w-4 h-4 mr-2" /> Pobierz na PC
-                  </a>
-                </Button>
-                <Button variant="outline" className="w-full sm:w-auto justify-start" asChild data-testid="demo-school-sklep-android">
-                  <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Szkola_starter.apk">
-                    <Smartphone className="w-4 h-4 mr-2" /> Pobierz na Android
-                  </a>
-                </Button>
-              </div>
             </motion.div>
           </div>
         </div>

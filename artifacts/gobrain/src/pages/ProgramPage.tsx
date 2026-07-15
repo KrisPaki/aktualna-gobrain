@@ -4,7 +4,6 @@ import {
   ArrowLeft,
   Monitor,
   Smartphone,
-  Play,
   ShoppingCart,
   Clock,
   Volume2,
@@ -134,25 +133,6 @@ export default function ProgramPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-4"
             >
-              {/* Demo */}
-              {program.demoUrl && (
-                <div className="bg-card border border-border rounded-2xl p-5">
-                  <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
-                    <Play className="w-4 h-4 text-primary" />
-                    Wersja demo online
-                  </h3>
-                  <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
-                    Wypróbuj program za darmo bezpośrednio w przeglądarce internetowej.
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={program.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <Play className="w-3.5 h-3.5 mr-1.5" />
-                      Zagraj w demo
-                    </a>
-                  </Button>
-                </div>
-              )}
-
               {/* Download */}
               <div className="bg-card border border-border rounded-2xl p-5">
                 <h3 className="text-sm font-bold text-foreground mb-3">Pobierz aplikacje</h3>

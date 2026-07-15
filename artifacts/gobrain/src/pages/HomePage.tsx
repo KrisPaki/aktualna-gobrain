@@ -10,7 +10,6 @@ import childrenClassroomImg from "@/assets/children-classroom.png";
 import parentChildImg from "@/assets/parent-child-home.png";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { 
-  Play, 
   CheckCircle2, 
   Brain, 
   School, 
@@ -20,8 +19,6 @@ import {
   Ear,
   Quote,
   ChevronRight,
-  Monitor,
-  Smartphone,
   Music,
   Star,
   Zap,
@@ -450,44 +447,6 @@ export default function HomePage() {
                   </Link>
                 </motion.div>
               ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SECTION 3 - Demo mini strip */}
-        <section className="py-8 bg-card/50 border-y border-border">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col md:flex-row items-center justify-between gap-5"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Play className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-bold text-foreground">Wypróbuj demo za darmo</p>
-                  <p className="text-sm text-muted-foreground">{'Bez rejestracji i opłat — PC i Android'}</p>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-3 shrink-0">
-                <Button variant="outline" size="sm" className="justify-start" asChild data-testid="demo-home-pc">
-                  <a href="http://gobraintech.pl/current/Sklep_PC/ITS_Starter.exe">
-                    <Monitor className="w-4 h-4 mr-2" /> Demo PC
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" className="justify-start" asChild data-testid="demo-home-android">
-                  <a href="http://gobraintech.pl/current/Sklep_Android/ITS_Gobrain_Starter.apk">
-                    <Smartphone className="w-4 h-4 mr-2" /> Demo Android
-                  </a>
-                </Button>
-                <Button size="sm" className="bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20" asChild>
-                  <Link to="/sklep">{'Wszystkie wersje demo →'}</Link>
-                </Button>
-              </div>
             </motion.div>
           </div>
         </section>

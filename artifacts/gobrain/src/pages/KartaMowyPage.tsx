@@ -7,8 +7,6 @@ import {
   Gamepad2,
   BarChart3,
   Download,
-  Monitor,
-  Smartphone,
   ChevronRight,
   ShieldCheck,
   Users,
@@ -68,12 +66,6 @@ export default function KartaMowyPage() {
                 <a href="https://automater.pl/rest/order-viewer/buy/1073862" target="_blank" rel="noopener noreferrer">
                   Kup kod aktywacyjny — 389 PLN
                   <ChevronRight className="ml-2 w-4 h-4" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base" asChild>
-                <a href="https://gobraintech.pl/current/Sklep_PC/KartaMowy.exe">
-                  <Download className="w-4 h-4 mr-2" />
-                  Pobierz wersję demo
                 </a>
               </Button>
             </motion.div>
@@ -327,66 +319,6 @@ export default function KartaMowyPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Downloads */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-10"
-          >
-            <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-foreground mb-3">
-              Wypróbuj bez zobowiązań
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg">
-              Po instalacji program działa w pełnej wersji przy pierwszym uruchomieniu — idealna okazja, by sprawdzić możliwości w praktyce.
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
-          >
-            <motion.div variants={fadeInUp}>
-              <a
-                href="https://gobraintech.pl/current/Sklep_PC/KartaMowy.exe"
-                className="flex items-center gap-4 p-6 rounded-2xl border border-border bg-card hover:border-green-400 hover:shadow-md transition-all group"
-              >
-                <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                  <Monitor className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Karta Mowy PC</p>
-                  <p className="text-sm text-muted-foreground">Windows .exe — wersja demo</p>
-                </div>
-                <Download className="w-4 h-4 text-muted-foreground ml-auto group-hover:text-green-600 transition-colors" />
-              </a>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <a
-                href="https://gobraintech.pl/current/Sklep_Android/karta.apk"
-                className="flex items-center gap-4 p-6 rounded-2xl border border-border bg-card hover:border-green-400 hover:shadow-md transition-all group"
-              >
-                <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                  <Smartphone className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Karta Mowy Android</p>
-                  <p className="text-sm text-muted-foreground">Android .apk — wersja demo</p>
-                </div>
-                <Download className="w-4 h-4 text-muted-foreground ml-auto group-hover:text-green-600 transition-colors" />
-              </a>
-            </motion.div>
           </motion.div>
         </div>
       </section>
