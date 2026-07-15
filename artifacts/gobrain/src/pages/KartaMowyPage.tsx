@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import therapistChildImg from "@/assets/therapist-child.png";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import childTabletTogetherImg from "@/assets/child-tablet-together.jpg";
 import kartaMowyDlaKogoImg from "@/assets/karta-mowy-dla-kogo.jpg";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
@@ -100,8 +101,8 @@ export default function KartaMowyPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-green-200/50">
                 <img
-                  src={therapistChildImg}
-                  alt="Logopedka pracuje z dzieckiem korzystając z Karty Mowy GoBrain — interaktywne narzędzie diagnostyczne"
+                  src={childTabletTogetherImg}
+                  alt="Rodzic i dziecko korzystają razem z Karty Mowy GoBrain na tablecie"
                   className="w-full object-cover"
                   style={{ objectPosition: "center 15%" }}
                 />
