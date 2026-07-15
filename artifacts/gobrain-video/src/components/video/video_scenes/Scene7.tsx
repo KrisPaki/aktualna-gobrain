@@ -15,8 +15,8 @@ export function Scene7() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1, type: "spring" }}
       >
-        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
-          <div className="w-8 h-8 rounded-full border-4 border-[var(--color-brand-primary)] border-t-transparent animate-spin" />
+        <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-2xl p-2">
+          <img src="/gobrain-video/gobrain-logo.png" alt="GoBrain logo" className="w-full h-full object-contain" />
         </div>
         <h1 className="text-[6vw] font-display font-bold text-white tracking-tight">
           ITS GoBrain
