@@ -21,6 +21,7 @@ import therapistChildImg from "@/assets/therapist-child.png";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
 import childTabletTogetherImg from "@/assets/child-tablet-together.jpg";
 import kartaMowyDlaKogoImg from "@/assets/karta-mowy-dla-kogo.jpg";
+import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 const fadeInUp: Variants = {
@@ -38,109 +39,65 @@ export default function KartaMowyPage() {
     <div className="min-h-screen bg-background font-sans pt-16">
 
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 via-white to-blue-50 border-b border-border overflow-hidden">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative py-20 md:py-28 overflow-hidden bg-green-900 text-white">
+        <div className="absolute inset-0">
+          <img
+            src={anetaPakielaImg}
+            alt="Aneta Pakiela surdologopeda, twórczyni metody GoBrain"
+            className="w-full h-full object-cover opacity-55"
+            style={{ objectPosition: "70% center" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-900/55 to-green-900/10" />
+        </div>
 
-            {/* LEFT — tekst */}
-            <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6">
-                <Mic className="w-4 h-4" />
-                Narzędzie diagnostyczne
-              </motion.div>
+        <div className="relative z-10 container mx-auto px-4 max-w-5xl">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-2xl">
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-6 border border-white/20">
+              <Mic className="w-4 h-4" />
+              Narzędzie diagnostyczne
+            </motion.div>
 
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
-                Karta{" "}
-                <span className="text-green-600">Mowy</span>
-              </motion.h1>
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+              Karta <span className="text-green-300">Mowy</span>
+            </motion.h1>
 
-              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                Kompleksowe narzędzie cyfrowe do badania, dokumentowania i utrwalania prawidłowej wymowy — dzięki angażującym zadaniom w formie gier — dla logopedów, terapeutów, pedagogów i rodziców.
-              </motion.p>
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/85 mb-4 leading-relaxed">
+              Kompleksowe narzędzie cyfrowe do badania, dokumentowania i utrwalania prawidłowej wymowy — dzięki angażującym zadaniom w formie gier — dla logopedów, terapeutów, pedagogów i rodziców.
+            </motion.p>
 
-              <motion.p variants={fadeInUp} className="text-base text-muted-foreground mb-8">
-                Działa online i offline. Każde dziecko ma własną kartotekę. Dane zapisywane lokalnie.
-              </motion.p>
+            <motion.p variants={fadeInUp} className="text-base text-white/70 mb-8">
+              Działa online i offline. Każde dziecko ma własną kartotekę. Dane zapisywane lokalnie.
+            </motion.p>
 
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Button size="lg" className="h-14 px-8 text-base font-semibold bg-green-600 hover:bg-green-700 text-white" asChild>
-                  <a href={AUTOMATER_PRODUCTS.kartaMowy} target="_blank" rel="noopener noreferrer">
-                    Kup kod aktywacyjny — 389 PLN
-                    <ChevronRight className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
-              </motion.div>
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-6">
+              <Button size="lg" className="h-14 px-8 text-base font-semibold bg-white text-green-900 hover:bg-white/90" asChild>
+                <a href={AUTOMATER_PRODUCTS.kartaMowy} target="_blank" rel="noopener noreferrer">
+                  Kup kod aktywacyjny — 389 PLN
+                  <ChevronRight className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+            </motion.div>
 
-              <motion.p variants={fadeInUp} className="text-xs text-muted-foreground flex items-center gap-1 mb-8">
-                <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
-                Bezpieczna płatność przez Automater.pl
-              </motion.p>
+            <motion.p variants={fadeInUp} className="text-xs text-white/60 flex items-center gap-1 mb-8">
+              <ShieldCheck className="w-3.5 h-3.5 text-green-300" />
+              Bezpieczna płatność przez Automater.pl
+            </motion.p>
 
-              <motion.div variants={fadeInUp} className="flex flex-col gap-3">
-                {[
-                  { icon: Wifi, label: "Działa offline — bez potrzeby internetu" },
-                  { icon: ShieldCheck, label: "Dane lokalne — pełna kontrola" },
-                  { icon: Users, label: "Każde dziecko ma własną kartotekę" },
-                ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4 text-green-600" />
-                    </div>
-                    {label}
+            <motion.div variants={fadeInUp} className="flex flex-col gap-3">
+              {[
+                { icon: Wifi, label: "Działa offline — bez potrzeby internetu" },
+                { icon: ShieldCheck, label: "Dane lokalne — pełna kontrola" },
+                { icon: Users, label: "Każde dziecko ma własną kartotekę" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-3 text-sm text-white/80">
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-4 h-4 text-green-300" />
                   </div>
-                ))}
-              </motion.div>
+                  {label}
+                </div>
+              ))}
             </motion.div>
-
-            {/* RIGHT — zdjęcie */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="relative pt-6"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-green-200/50">
-                <img
-                  src={therapistChildImg}
-                  alt="Logopedka pracuje z dzieckiem korzystając z Karty Mowy GoBrain — interaktywne narzędzie diagnostyczne"
-                  className="w-full object-cover"
-                  style={{ objectPosition: "center 15%" }}
-                />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(22,163,74,0.15) 0%, transparent 60%)" }} />
-              </div>
-
-              {/* Floating badge 1 */}
-              <motion.div
-                animate={{ y: [0, -7, 0] }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-5 -left-5 bg-white rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-                  <FileText className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Dokumentacja</p>
-                  <p className="font-bold text-foreground text-sm">Kartoteka pacjenta</p>
-                </div>
-              </motion.div>
-
-              {/* Floating badge 2 */}
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                className="absolute -top-4 -right-4 bg-white rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Analiza wyników</p>
-                  <p className="font-bold text-foreground text-sm">Przed i po terapii</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-          </div>
+          </motion.div>
         </div>
       </section>
 
