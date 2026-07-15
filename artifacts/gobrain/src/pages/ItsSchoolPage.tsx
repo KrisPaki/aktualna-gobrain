@@ -34,47 +34,110 @@ export default function ItsSchoolPage() {
     <div className="min-h-screen bg-background font-sans pt-16">
 
       {/* Hero */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-orange-50 via-white to-blue-50 border-b border-border">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="text-center"
-          >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-6">
-              <School className="w-4 h-4" />
-              Bez limitu użytkowników
+      <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 via-white to-blue-50 border-b border-border overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* LEFT — tekst */}
+            <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-6">
+                <School className="w-4 h-4" />
+                Bez limitu użytkowników
+              </motion.div>
+
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
+                ITS GoBrain{" "}
+                <span className="text-orange-500">Pre & School</span>
+              </motion.h1>
+
+              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Profesjonalna platforma treningu słuchowego dla gabinetów, szkół, przedszkoli i poradni. Nieograniczona liczba podopiecznych, pełna kontrola terapeuty, licencja roczna.
+              </motion.p>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-6">
+                <Button size="lg" className="h-14 px-8 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white" asChild>
+                  <a href="https://automater.pl/rest/order-viewer/buy/979412" target="_blank" rel="noopener noreferrer">
+                    Zamów licencję
+                    <ChevronRight className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-base" asChild>
+                  <Link to="/strefa-terapeuty">
+                    Strefa terapeuty
+                  </Link>
+                </Button>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-2xl px-6 py-3 mb-8">
+                <span className="text-2xl font-black text-orange-500">799</span>
+                <span className="text-sm text-muted-foreground">PLN / rok (brutto)</span>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="flex flex-col gap-3">
+                {[
+                  { icon: Users, label: "Nieograniczona liczba podopiecznych" },
+                  { icon: BarChart3, label: "Pełny panel terapeuty z wynikami" },
+                  { icon: Building2, label: "Dla szkół, przedszkoli i poradni" },
+                ].map(({ icon: Icon, label }) => (
+                  <div key={label} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center shrink-0">
+                      <Icon className="w-4 h-4 text-orange-500" />
+                    </div>
+                    {label}
+                  </div>
+                ))}
+              </motion.div>
             </motion.div>
 
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
-              ITS GoBrain{" "}
-              <span className="text-orange-500">Pre & School</span>
-            </motion.h1>
+            {/* RIGHT — zdjęcie */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50">
+                <img
+                  src={childrenClassroomImg}
+                  alt="Dzieci w klasie szkolnej korzystają z programu ITS GoBrain Pre & School — trening słuchowy w placówce"
+                  className="w-full object-cover"
+                  style={{ objectPosition: "center 20%" }}
+                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(249,115,22,0.15) 0%, transparent 60%)" }} />
+              </div>
 
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Profesjonalna platforma treningu słuchowego dla gabinetów, szkół, przedszkoli i poradni. Nieograniczona liczba podopiecznych, pełna kontrola terapeuty, licencja roczna.
-            </motion.p>
+              {/* Floating badge 1 */}
+              <motion.div
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-5 -left-5 bg-white rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                  <GraduationCap className="w-5 h-5 text-orange-500" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Licencja placówkowa</p>
+                  <p className="font-bold text-foreground text-sm">Bez limitu dzieci</p>
+                </div>
+              </motion.div>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="h-14 px-8 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white" asChild>
-                <a href="https://automater.pl/rest/order-viewer/buy/979412" target="_blank" rel="noopener noreferrer">
-                  Zamów licencję
-                  <ChevronRight className="ml-2 w-4 h-4" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base" asChild>
-                <Link to="/strefa-terapeuty">
-                  Strefa terapeuty
-                </Link>
-              </Button>
+              {/* Floating badge 2 */}
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 4.0, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="absolute -top-4 -right-4 bg-white rounded-2xl border border-border shadow-xl p-4 flex items-center gap-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+                  <BarChart3 className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Wyniki terapii</p>
+                  <p className="font-bold text-foreground text-sm">Raport postępów</p>
+                </div>
+              </motion.div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-10 inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-2xl px-6 py-3">
-              <span className="text-2xl font-black text-orange-500">799</span>
-              <span className="text-sm text-muted-foreground">PLN / rok (brutto)</span>
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
