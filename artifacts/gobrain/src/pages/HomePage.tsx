@@ -546,7 +546,7 @@ export default function HomePage() {
                 <Gamepad2 className="w-4 h-4" />
                 <span>Wygląd programu</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Jak wygląda GoBrain w działaniu?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Jak wygląda interaktywny trening słuchowy?</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Atrakcyjne gry, które dziecko chce wykonywać — trening słuchowy w formie zabawy.</p>
             </motion.div>
 

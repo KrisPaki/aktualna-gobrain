@@ -316,7 +316,7 @@ export default function SklepPage() {
               <span>Wygląd gry</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Jak wygląda gra?
+              Jak wygląda interaktywny trening słuchowy?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Atrakcyjna grafika i angażujące ćwiczenia — dziecko ćwiczy, nie zdając sobie sprawy, że pracuje.
