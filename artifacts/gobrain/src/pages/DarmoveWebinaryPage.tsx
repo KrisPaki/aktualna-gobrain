@@ -299,8 +299,65 @@ export default function DarmoveWebinaryPage() {
         </div>
       </section>
 
+      {/* Nagrane webinary */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-10"
+          >
+            <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-foreground mb-3">
+              Nagrane webinary
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg">
+              Obejrzyj nasze poprzednie spotkania w dowolnym czasie.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {[
+              {
+                id: "yJFP_x9ue4s",
+                title: "Jak wspierać rozwój małego dziecka?",
+                speaker: "Karolina Krahel — logopeda, pedagog specjalny",
+              },
+              {
+                id: "wTFjWacsHJw",
+                title: "Efektywność terapii logopedycznej przy wykorzystaniu wibratorów logopedycznych",
+                speaker: "Wioletta Obidzinska — logopeda, pedagog specjalny",
+              },
+            ].map((video) => (
+              <motion.div key={video.id} variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="font-semibold text-foreground mb-1">{video.title}</p>
+                  <p className="text-sm text-muted-foreground">{video.speaker}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Webinars list */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-card/40">
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div
             initial="hidden"
