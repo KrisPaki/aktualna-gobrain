@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import {
   ArrowLeft,
   Monitor,
@@ -57,6 +58,11 @@ export default function ProgramPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
+      <SEO
+        title={`${program.title} — Program edukacyjny GoBrain`}
+        description={program.subtitle}
+        canonical={`/programy-edukacyjne/${program.slug}`}
+      />
 
       {/* Back navigation */}
       <div className="border-b border-border bg-background/80 backdrop-blur-sm sticky top-16 z-10">

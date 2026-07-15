@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useParams, Navigate } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Calendar, ArrowLeft, ExternalLink, User } from "lucide-react";
 import { blogArticles } from "@/data/blogData";
 import { Button } from "@/components/ui/button";
@@ -79,6 +80,11 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
+      <SEO
+        title={`${article.title} — Blog GoBrain`}
+        description={article.excerpt}
+        canonical={`/blog/${article.slug}`}
+      />
 
       {/* Hero */}
       <section className="py-12 md:py-16 bg-card/40 border-b border-border">
