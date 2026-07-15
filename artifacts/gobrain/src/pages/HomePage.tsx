@@ -274,6 +274,42 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* VIDEO SECTION */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center mb-10"
+            >
+              <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Film</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+                Zobacz jak działa GoBrain
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                43 sekundy, które wyjaśniają wszystko.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 32, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="mx-auto max-w-4xl rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border aspect-video"
+            >
+              <iframe
+                src="/gobrain-video/"
+                className="w-full h-full"
+                title="Film marketingowy GoBrain"
+                allow="autoplay"
+                style={{ display: "block" }}
+              />
+            </motion.div>
+          </div>
+        </section>
+
         {/* STATS BAR */}
         <section className="py-12 bg-primary">
           <div className="container mx-auto px-4">
