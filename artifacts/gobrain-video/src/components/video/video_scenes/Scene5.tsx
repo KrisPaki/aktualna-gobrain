@@ -14,14 +14,14 @@ export function Scene5() {
 
   return (
     <motion.div
-      className="absolute inset-0 flex flex-col items-center justify-center bg-[#111]"
+      className="absolute inset-0 flex flex-col items-center justify-center bg-white"
       initial={{ opacity: 0, scale: 1.1 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, filter: "blur(20px)" }}
       transition={{ duration: 1.5 }}
     >
       <motion.div
-        className="text-[6vw] font-display font-bold text-white mb-8"
+        className="text-[6vw] font-display font-bold text-[var(--color-text-main)] mb-8"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -29,8 +29,7 @@ export function Scene5() {
         Działa jak gra
       </motion.div>
 
-      {/* Abstract Game UI representation */}
-      <div className="relative w-[40vw] h-[20vw] bg-white/5 rounded-3xl border border-white/10 overflow-hidden mb-12 flex items-center justify-center">
+      <div className="relative w-[40vw] h-[20vw] bg-black/5 rounded-3xl border border-black/10 overflow-hidden mb-12 flex items-center justify-center">
         {phase >= 1 && (
           <motion.div 
             className="flex gap-4"

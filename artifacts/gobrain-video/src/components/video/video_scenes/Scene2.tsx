@@ -22,7 +22,7 @@ export function Scene2() {
     >
       <div className="text-center">
         <motion.div 
-          className="mb-8 overflow-hidden rounded-2xl mx-auto w-[12vw] h-[12vw] bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center"
+          className="mb-8 overflow-hidden rounded-2xl mx-auto w-[12vw] h-[12vw] bg-black/5 border border-black/10 flex items-center justify-center"
           initial={{ opacity: 0, rotateX: 90 }}
           animate={{ opacity: 1, rotateX: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -35,7 +35,7 @@ export function Scene2() {
             <div className="w-1.5 h-8 bg-[var(--color-brand-primary)] rounded-full animate-pulse" style={{ animationDelay: '0ms' }} />
             <div className="w-1.5 h-16 bg-[var(--color-brand-accent)] rounded-full animate-pulse" style={{ animationDelay: '150ms' }} />
             <div className="w-1.5 h-10 bg-[var(--color-brand-primary)] rounded-full animate-pulse" style={{ animationDelay: '300ms' }} />
-            <div className="w-1.5 h-14 bg-white rounded-full animate-pulse" style={{ animationDelay: '450ms' }} />
+            <div className="w-1.5 h-14 bg-[#1a1a1a] rounded-full animate-pulse" style={{ animationDelay: '450ms' }} />
             <div className="w-1.5 h-6 bg-[var(--color-brand-accent)] rounded-full animate-pulse" style={{ animationDelay: '600ms' }} />
           </motion.div>
         </motion.div>
@@ -50,7 +50,7 @@ export function Scene2() {
         </motion.h2>
         
         <motion.h1 
-          className="text-[6vw] font-bold font-display tracking-tight text-white leading-none mb-6"
+          className="text-[6vw] font-bold font-display tracking-tight text-[var(--color-text-main)] leading-none mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={phase >= 2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 1, type: "spring", damping: 20 }}

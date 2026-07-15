@@ -50,8 +50,8 @@ function BenefitItem({ text, active }: { text: string; active: boolean }) {
       animate={active ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
       transition={{ duration: 0.8, type: "spring" }}
     >
-      <div className={`w-3 h-3 rounded-full ${active ? 'bg-[var(--color-brand-accent)]' : 'bg-white/20'}`} />
-      <h3 className="text-[4.5vw] font-display font-medium text-white tracking-tight">
+      <div className={`w-3 h-3 rounded-full ${active ? 'bg-[var(--color-brand-accent)]' : 'bg-black/15'}`} />
+      <h3 className="text-[4.5vw] font-display font-medium text-[var(--color-text-main)] tracking-tight">
         {text}
       </h3>
     </motion.div>

@@ -22,7 +22,7 @@ export function Scene1() {
     >
       <div className="text-center w-[80vw]">
         <motion.h1 
-          className="text-[4vw] font-light leading-tight font-display tracking-tight text-white"
+          className="text-[4vw] font-light leading-tight font-display tracking-tight text-[var(--color-text-main)]"
           initial={{ opacity: 0, y: 20 }}
           animate={phase >= 1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}

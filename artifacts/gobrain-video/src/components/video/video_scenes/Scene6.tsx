@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export function Scene6() {
   return (
     <motion.div
-      className="absolute inset-0 flex items-center justify-center bg-[var(--color-bg-dark)]"
+      className="absolute inset-0 flex items-center justify-center bg-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -29,7 +29,7 @@ export function Scene6() {
         </motion.div>
         
         <motion.h2 
-          className="text-[4vw] font-display font-bold text-white mt-2"
+          className="text-[4vw] font-display font-bold text-[var(--color-text-main)] mt-2"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
@@ -38,11 +38,10 @@ export function Scene6() {
         </motion.h2>
       </div>
 
-      {/* Background radial glow */}
       <motion.div
-        className="absolute w-[80vw] h-[80vw] bg-[var(--color-brand-primary)] rounded-full opacity-20 blur-[100px] pointer-events-none"
+        className="absolute w-[60vw] h-[60vw] bg-[var(--color-brand-primary)] rounded-full opacity-5 blur-[80px] pointer-events-none"
         initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.2 }}
+        animate={{ scale: 1, opacity: 0.07 }}
         transition={{ duration: 2, delay: 1 }}
       />
     </motion.div>

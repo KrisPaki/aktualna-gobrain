@@ -48,21 +48,21 @@ export default function VideoTemplate({
   const SceneComponent = SCENE_COMPONENTS[baseSceneKey];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[var(--color-bg-dark)]">
-      <div className="absolute inset-0 pointer-events-none opacity-20">
+    <div className="relative w-full h-screen overflow-hidden bg-white">
+      <div className="absolute inset-0 pointer-events-none opacity-15">
         <motion.div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full border-[1px] border-[var(--color-brand-primary)]"
-          animate={{ scale: [1, 2], opacity: [0.8, 0] }}
+          animate={{ scale: [1, 2], opacity: [0.6, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full border-[1px] border-[var(--color-brand-primary)]"
-          animate={{ scale: [1, 2], opacity: [0.6, 0] }}
+          animate={{ scale: [1, 2], opacity: [0.4, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'linear', delay: 2 }}
         />
         <motion.div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full border-[1px] border-[var(--color-brand-accent)]"
-          animate={{ scale: [1, 2], opacity: [0.4, 0] }}
+          animate={{ scale: [1, 2], opacity: [0.3, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'linear', delay: 4 }}
         />
       </div>
