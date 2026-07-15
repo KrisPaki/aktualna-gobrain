@@ -28,7 +28,7 @@ import therapistDashboardImg from "@/assets/therapist-dashboard.png";
 import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.png";
 import testResultsImg from "@/assets/test-results-screen.png";
 import dashboardPrePostImg from "@/assets/dashboard-pretest-posttest.webp";
-import childSuccessImg from "@/assets/child-success.png";
+import childSuccessImg from "@/assets/DSC01020.jpg";
 import therapistOfficeImg from "@/assets/therapist-office.png";
 
 const fadeInUp: Variants = {
