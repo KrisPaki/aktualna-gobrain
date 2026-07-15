@@ -246,11 +246,11 @@ export default function ItsPage() {
                   icon: Ear,
                   color: "bg-purple-50 text-purple-600",
                   border: "border-purple-100",
-                  title: "Unikalne podejście słuchowe",
+                  title: "Unikalne podejście",
                   bullets: [
-                    "Przewaga bodźców słuchowych nad wzrokowymi",
-                    "Stopniowe wycofywanie wsparcia wizualnego",
-                    "Skuteczne wsparcie trudności przetwarzania słuchowego",
+                    "Dzieci naturalnie unikają tego, co jest dla nich trudne — a trening słuchu bywa trudny.",
+                    "Zaczynamy od tego, co łatwiejsze — patrzenia — i łączymy to ze słuchaniem.",
+                    "Z każdym etapem podpowiedzi wzrokowe znikają, aż dziecko trenuje słuch samodzielnie.",
                   ],
                 },
               ].map((card, i) => (
