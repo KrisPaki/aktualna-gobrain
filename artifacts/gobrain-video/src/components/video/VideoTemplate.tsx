@@ -10,13 +10,13 @@ import { Scene6 } from './video_scenes/Scene6';
 import { Scene7 } from './video_scenes/Scene7';
 
 export const SCENE_DURATIONS: Record<string, number> = {
-  intro: 6000,
-  product: 5000,
-  target: 4000,
-  benefits: 8000,
-  game: 7000,
-  timeline: 6000,
-  outro: 7000,
+  intro: 4500,
+  product: 3750,
+  target: 3000,
+  benefits: 6000,
+  game: 5250,
+  timeline: 4500,
+  outro: 5250,
 };
 
 const SCENE_COMPONENTS: Record<string, React.ComponentType> = {
