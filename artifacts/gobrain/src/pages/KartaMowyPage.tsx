@@ -101,8 +101,8 @@ export default function KartaMowyPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-green-200/50">
                 <img
-                  src={childTabletTogetherImg}
-                  alt="Rodzic i dziecko korzystają razem z Karty Mowy GoBrain na tablecie"
+                  src={therapistChildImg}
+                  alt="Logopedka pracuje z dzieckiem korzystając z Karty Mowy GoBrain — interaktywne narzędzie diagnostyczne"
                   className="w-full object-cover"
                   style={{ objectPosition: "center 15%" }}
                 />
@@ -262,6 +262,39 @@ export default function KartaMowyPage() {
               </motion.ul>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Child playing section */}
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src={childTabletTogetherImg}
+              alt="Rodzic i dziecko grają razem w GoBrain na tablecie — ćwiczenie wymowy w domu"
+              className="w-full object-cover"
+              style={{ maxHeight: "460px", objectPosition: "center 30%" }}
+              loading="lazy"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)" }} />
+            <div className="absolute inset-0 flex items-center px-10 md:px-16">
+              <div className="max-w-lg">
+                <p className="text-white/80 text-sm font-medium mb-2 uppercase tracking-widest">Karta Mowy w praktyce</p>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-4">
+                  Ćwicz wymowę razem z dzieckiem — w dowolnym miejscu
+                </h2>
+                <p className="text-white/80 text-base leading-relaxed">
+                  Program działa na tablecie i komputerze. Ćwiczenia są intuicyjne — dziecko samo chce do nich wracać.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
