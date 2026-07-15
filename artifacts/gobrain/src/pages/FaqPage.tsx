@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { HelpCircle } from "lucide-react";
@@ -71,6 +72,16 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function FaqPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
@@ -79,6 +90,9 @@ export default function FaqPage() {
         description="Odpowiedzi na najczęstsze pytania dotyczące treningu słuchowego ITS GoBrain. Jak działa, dla kogo jest, ile trwa i jakie daje efekty."
         canonical="/faq"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <div className="pt-16">
 
         {/* Hero */}

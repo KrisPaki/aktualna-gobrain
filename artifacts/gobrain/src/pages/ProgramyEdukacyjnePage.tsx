@@ -1,4 +1,6 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import {
   Gamepad2,
@@ -13,7 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import childrenClassroomImg from "@/assets/children-classroom.png";
-import { programsByCategory } from "@/data/programyData";
+import { programsByCategory, programs } from "@/data/programyData";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -87,8 +89,34 @@ function CategorySection({
 }
 
 export default function ProgramyEdukacyjnePage() {
+  const programsSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Programy edukacyjne GoBrain",
+    description: "Interaktywne gry edukacyjne i logopedyczne dla dzieci od 5 lat.",
+    url: "https://gobrain.pl/programy-edukacyjne",
+    publisher: { "@id": "https://gobrain.pl/#organization" },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: programs.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `https://gobrain.pl/programy-edukacyjne/${p.slug}`,
+        name: p.title,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
+      <SEO
+        title="Programy edukacyjne ITS GoBrain — gry logopedyczne i edukacyjne"
+        description="Ponad 19 interaktywnych gier edukacyjnych i logopedycznych dla dzieci od 5 lat. Zabawy logopedyczne, zabawy z literkami i gry dla brzdaca."
+        canonical="/programy-edukacyjne"
+      />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(programsSchema)}</script>
+      </Helmet>
 
       {/* Hero */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-purple-50 via-white to-blue-50 border-b border-border">

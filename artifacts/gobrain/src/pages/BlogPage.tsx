@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "lucide-react";
@@ -15,6 +16,24 @@ const staggerContainer: Variants = {
 };
 
 export default function BlogPage() {
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Blog GoBrain",
+    description: "Artykuly eksperckie o treningu sluchowym, koncentracji i rozwoju dzieci.",
+    url: "https://gobrain.pl/blog",
+    publisher: { "@id": "https://gobrain.pl/#organization" },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: blogArticles.map((article, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `https://gobrain.pl/blog/${article.slug}`,
+        name: article.title,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <SEO
@@ -22,6 +41,9 @@ export default function BlogPage() {
         description="Artykuły eksperckie o treningu słuchowym, koncentracji i rozwoju dzieci. Wiedza oparta na badaniach naukowych od twórców ITS GoBrain."
         canonical="/blog"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
+      </Helmet>
       <div className="pt-16">
 
         {/* Hero */}

@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import {
   ArrowLeft,
@@ -56,6 +57,24 @@ export default function ProgramPage() {
   const cat = categoryConfig[program.category] ?? categoryConfig["Zabawy logopedyczne"];
   const CatIcon = cat.Icon;
 
+  const programSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: program.title,
+    description: program.subtitle,
+    applicationCategory: program.category,
+    operatingSystem: "Windows, Android, Web",
+    url: `https://gobrain.pl/programy-edukacyjne/${program.slug}`,
+    publisher: { "@id": "https://gobrain.pl/#organization" },
+    offers: {
+      "@type": "Offer",
+      url: program.automaterUrl,
+      priceCurrency: "PLN",
+      availability: "https://schema.org/InStock",
+    },
+    inLanguage: "pl",
+  };
+
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
       <SEO
@@ -63,6 +82,9 @@ export default function ProgramPage() {
         description={program.subtitle}
         canonical={`/programy-edukacyjne/${program.slug}`}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(programSchema)}</script>
+      </Helmet>
 
       {/* Back navigation */}
       <div className="border-b border-border bg-background/80 backdrop-blur-sm sticky top-16 z-10">

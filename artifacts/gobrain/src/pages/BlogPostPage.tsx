@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Calendar, ArrowLeft, ExternalLink, User } from "lucide-react";
@@ -78,6 +79,19 @@ export default function BlogPostPage() {
 
   if (!article) return <Navigate to="/blog" replace />;
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.excerpt,
+    author: { "@type": "Person", name: article.author },
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    url: `https://gobrain.pl/blog/${article.slug}`,
+    publisher: { "@id": "https://gobrain.pl/#organization" },
+    inLanguage: "pl",
+  };
+
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
       <SEO
@@ -85,6 +99,9 @@ export default function BlogPostPage() {
         description={article.excerpt}
         canonical={`/blog/${article.slug}`}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      </Helmet>
 
       {/* Hero */}
       <section className="py-12 md:py-16 bg-card/40 border-b border-border">

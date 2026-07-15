@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, School, Building2, Users, Star, Mail, Lock } from "lucide-react";
@@ -171,6 +172,35 @@ const products = [
 
 
 export default function SklepPage() {
+  const sklepSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Sklep ITS GoBrain",
+    description: "Kupuj licencje ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoly.",
+    url: "https://gobrain.pl/sklep",
+    publisher: { "@id": "https://gobrain.pl/#organization" },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: products
+        .filter((p) => p.price)
+        .map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Product",
+            name: `${p.title} — ${p.subtitle}`,
+            description: p.target,
+            offers: {
+              "@type": "Offer",
+              price: p.price,
+              priceCurrency: "PLN",
+              availability: "https://schema.org/InStock",
+            },
+          },
+        })),
+    },
+  };
+
   return (
     <div className="bg-background font-sans pt-16">
       <SEO
@@ -178,6 +208,9 @@ export default function SklepPage() {
         description="Kup licencję ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoły. Trening słuchowy dla dzieci od 5 lat. Bezpieczna płatność online."
         canonical="/sklep"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(sklepSchema)}</script>
+      </Helmet>
 
       {/* Hero */}
       <section className="py-16 md:py-24 bg-card/30 border-b border-border">
