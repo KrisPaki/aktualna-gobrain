@@ -313,7 +313,7 @@ export default function SklepPage() {
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               <ChevronRight className="w-4 h-4" />
-              <span>Wygląd gry</span>
+              <span>Wygląd sesji treningowej</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Jak wygląda interaktywny trening słuchowy?
