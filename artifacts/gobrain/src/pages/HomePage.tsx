@@ -327,27 +327,21 @@ export default function HomePage() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={staggerContainer}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                  className="space-y-3"
                 >
                   {[
-                    { icon: Ear, text: "Słyszy, ale nie słucha" },
-                    { icon: Brain, text: "Nie rozumie poleceń i wymaga powtarzania" },
-                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
-                    { icon: Target, text: "Trudności z koncentracją" },
-                    { icon: Headphones, text: "Wrażliwe na dźwięki" },
-                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
-                    { icon: Zap, text: "ADHD – wspiera terapię" },
-                    { icon: Heart, text: "Zaburzenia ze spektrum autyzmu (ASD)" },
-                    { icon: GraduationCap, text: "Dziecko zbyt głośne lub wycofane" },
-                    { icon: Heart, text: "Po usunięciu trzeciego migdałka oraz drenach" },
-                    { icon: GraduationCap, text: "Pacjenci logopedyczni (alalia, DLD, afazja dziecięca)" },
-                    { icon: Ear, text: "Dzieci z problemami w głoskowaniu" },
-                  ].map((item, i) => (
-                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
-                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                        <item.icon className="w-4 h-4 text-accent" />
-                      </div>
-                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                    "Słyszy, ale nie słucha",
+                    "Nie rozumie poleceń i wymaga powtarzania",
+                    "Problemy z czytaniem i pisaniem",
+                    "Trudności z koncentracją i uwagą",
+                    "Wrażliwe na dźwięki (CAPD)",
+                    "ADHD lub zaburzenia ze spektrum autyzmu (ASD)",
+                    "Pacjenci logopedyczni (alalia, DLD, afazja)",
+                    "Po usunięciu trzeciego migdałka lub drenach",
+                  ].map((text, i) => (
+                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
+                      <span className="text-foreground text-base">{text}</span>
                     </motion.div>
                   ))}
                 </motion.div>
