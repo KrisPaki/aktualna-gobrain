@@ -63,9 +63,7 @@ export function Scene2() {
           initial={{ opacity: 0 }}
           animate={phase >= 2 ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-        >
-          Profesjonalny trening słuchowy
-        </motion.p>
+        >interaktywny trening słuchowy</motion.p>
       </div>
     </motion.div>
   );
