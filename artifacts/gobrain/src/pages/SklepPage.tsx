@@ -2,14 +2,14 @@ import { motion, type Variants } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, School, Building2, Users, Star, Mail, Lock } from "lucide-react";
-import parentChildImg from "@/assets/parent-child-home.png";
+import parentChildImg from "@/assets/parent-child-home.webp";
 import { Button } from "@/components/ui/button";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import productItsImg from "@/assets/product-its-gobrain.png";
-import productSchoolImg from "@/assets/product-its-school-ai.png";
-import productTerapeutaImg from "@/assets/product-terapeuta.png";
-import therapistChildImg from "@/assets/therapist-child.png";
-import childrenClassroomImg from "@/assets/children-classroom.png";
+import productSchoolImg from "@/assets/product-its-school-ai.webp";
+import productTerapeutaImg from "@/assets/product-terapeuta.webp";
+import therapistChildImg from "@/assets/therapist-child.webp";
+import childrenClassroomImg from "@/assets/children-classroom.webp";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 const fadeInUp: Variants = {
@@ -245,6 +245,7 @@ export default function SklepPage() {
                     className="w-full h-full object-cover"
                     style={p.imgPosition ? { objectPosition: p.imgPosition } : undefined}
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
 

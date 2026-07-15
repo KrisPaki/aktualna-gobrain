@@ -6,10 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import anetaPakielaImg from "@/assets/aneta-pakiela-new.png";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import heroChildImg from "@/assets/hero-child-new.webp";
-import childTabletImg from "@/assets/child-tablet-fun.png";
-import therapistChildImg from "@/assets/therapist-child.png";
-import childrenClassroomImg from "@/assets/children-classroom.png";
-import parentChildImg from "@/assets/parent-child-home.png";
+import childTabletImg from "@/assets/child-tablet-fun.webp";
+import therapistChildImg from "@/assets/therapist-child.webp";
+import childrenClassroomImg from "@/assets/children-classroom.webp";
+import parentChildImg from "@/assets/parent-child-home.webp";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { 
   CheckCircle2, 
@@ -375,7 +375,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full object-cover" />
+                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -483,7 +483,7 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="relative rounded-2xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
               >
-                <img src={childTabletImg} alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" />
+                <img src={childTabletImg} alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
               </motion.div>
             </div>
@@ -679,7 +679,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={childrenClassroomImg} alt="Dzieci uczą się z interaktywnym treningiem słuchowym GoBrain w klasie" className="w-full object-cover" />
+                  <img src={childrenClassroomImg} alt="Dzieci uczą się z interaktywnym treningiem słuchowym GoBrain w klasie" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}

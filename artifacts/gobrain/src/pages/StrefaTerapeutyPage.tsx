@@ -25,9 +25,9 @@ import {
   Headphones,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import therapistDashboardImg from "@/assets/therapist-dashboard.png";
-import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.png";
-import testResultsImg from "@/assets/test-results-screen.png";
+import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
+import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.webp";
+import testResultsImg from "@/assets/test-results-screen.webp";
 import dashboardPrePostImg from "@/assets/dashboard-pretest-posttest.webp";
 import childSuccessImg from "@/assets/DSC01020.jpg";
 import therapistOfficeImg from "@/assets/therapist-office.png";
@@ -311,7 +311,7 @@ export default function StrefaTerapeutyPage() {
                   transition={{ duration: 0.7 }}
                   className="relative rounded-3xl overflow-hidden shadow-2xl"
                 >
-                  <img src={testResultsImg} alt="Ekran wyników interaktywnego treningu słuchowego w platformie GoBrain" className="w-full object-cover" />
+                  <img src={testResultsImg} alt="Ekran wyników interaktywnego treningu słuchowego w platformie GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                   <motion.div
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
@@ -332,7 +332,7 @@ export default function StrefaTerapeutyPage() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="relative rounded-2xl overflow-hidden shadow-lg"
                 >
-                  <img src={childSuccessImg} alt="Dziecko świętuje sukces z terapeutą" className="w-full object-cover max-h-52" />
+                  <img src={childSuccessImg} alt="Dziecko świętuje sukces z terapeutą" className="w-full object-cover max-h-52" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-green-900/70 to-transparent flex items-end p-5">
                     <div>
                       <p className="text-white font-bold text-lg">Widoczny postęp już po 4 tygodniach!</p>

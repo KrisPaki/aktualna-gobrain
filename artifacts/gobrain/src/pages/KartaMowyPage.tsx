@@ -17,8 +17,8 @@ import {
   Database,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import therapistChildImg from "@/assets/therapist-child.png";
-import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import therapistChildImg from "@/assets/therapist-child.webp";
+import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import childTabletTogetherImg from "@/assets/child-tablet-together.jpg";
 import kartaMowyDlaKogoImg from "@/assets/karta-mowy-dla-kogo.jpg";
 import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
@@ -316,6 +316,8 @@ export default function KartaMowyPage() {
                 src={therapistDashboardImg}
                 alt="Panel Karta Mowy — dokumentacja i raporty"
                 className="w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>

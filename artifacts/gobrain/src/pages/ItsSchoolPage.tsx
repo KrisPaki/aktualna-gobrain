@@ -16,8 +16,8 @@ import {
   Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import childrenClassroomImg from "@/assets/children-classroom.png";
-import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import childrenClassroomImg from "@/assets/children-classroom.webp";
+import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import childTabletGame1Img from "@/assets/child-tablet-game1.jpg";
 
 const fadeInUp: Variants = {
@@ -302,6 +302,8 @@ export default function ItsSchoolPage() {
                 src={childrenClassroomImg}
                 alt="Dzieci korzystające z interaktywnego treningu słuchowego ITS GoBrain Pre & School w placówce"
                 className="w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
 
@@ -432,6 +434,8 @@ export default function ItsSchoolPage() {
                 src={therapistDashboardImg}
                 alt="Panel terapeuty ITS GoBrain Pre & School"
                 className="w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>

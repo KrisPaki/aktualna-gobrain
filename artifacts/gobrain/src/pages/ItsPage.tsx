@@ -22,12 +22,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
-import childTabletImg from "@/assets/child-tablet-fun.png";
-import parentChildImg from "@/assets/parent-child-home.png";
-import therapistChildImg from "@/assets/therapist-child.png";
-import childrenClassroomImg from "@/assets/children-classroom.png";
+import childTabletImg from "@/assets/child-tablet-fun.webp";
+import parentChildImg from "@/assets/parent-child-home.webp";
+import therapistChildImg from "@/assets/therapist-child.webp";
+import childrenClassroomImg from "@/assets/children-classroom.webp";
 import heroChildImg from "@/assets/hero-child-new.webp";
-import heroHeadphonesImg from "@/assets/hero-child-headphones.png";
+import heroHeadphonesImg from "@/assets/hero-child-headphones.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -358,7 +358,7 @@ export default function ItsPage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym ITS GoBrain" className="w-full object-cover" />
+                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym ITS GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -7, 0] }}
@@ -390,7 +390,7 @@ export default function ItsPage() {
                 className="relative lg:order-2"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={childrenClassroomImg} alt="Dzieci ćwiczące interaktywny trening słuchowy GoBrain" className="w-full object-cover" />
+                  <img src={childrenClassroomImg} alt="Dzieci ćwiczące interaktywny trening słuchowy GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -7, 0] }}
@@ -542,7 +542,7 @@ export default function ItsPage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img src={childTabletImg} alt="Dziecko ćwiczące interaktywny trening słuchowy ITS GoBrain" className="w-full object-cover" />
+                  <img src={childTabletImg} alt="Dziecko ćwiczące interaktywny trening słuchowy ITS GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -616,7 +616,7 @@ export default function ItsPage() {
                 className="lg:order-2 relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                  <img src={parentChildImg} alt="Rodzic i dziecko przy interaktywnym treningu słuchowym GoBrain w domu" className="w-full object-cover" />
+                  <img src={parentChildImg} alt="Rodzic i dziecko przy interaktywnym treningu słuchowym GoBrain w domu" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
