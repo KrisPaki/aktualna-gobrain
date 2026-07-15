@@ -362,23 +362,23 @@ export default function ItsSchoolPage() {
               <div className="hidden md:block absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.15) 55%, transparent 100%)" }} />
               <div className="hidden md:flex absolute inset-0 items-center px-16">
                 <div className="max-w-lg">
-                  <p className="text-white/80 text-sm font-medium mb-2 uppercase tracking-widest">ITS GoBrain Pre & School</p>
+                  <p className="text-white/80 text-sm font-medium mb-2 uppercase tracking-widest">Dla przedszkoli i szkół</p>
                   <h2 className="text-3xl font-extrabold text-white leading-tight mb-4">
-                    Dziecko samo sięga po tablet — trening wciąga jak gra
+                    Trening słuchowy już od przedszkola — w formie zabawy
                   </h2>
                   <p className="text-white/80 text-base leading-relaxed">
-                    Atrakcyjna forma ćwiczeń sprawia, że podopieczni chętnie wracają do sesji. Mniej oporu — więcej efektów.
+                    Kolorowe gry i animacje angażują nawet najmłodszych. Program dopasowuje poziom do każdego dziecka — bez frustracji, bez nudy.
                   </p>
                 </div>
               </div>
             </div>
             <div className="md:hidden bg-foreground px-6 py-6">
-              <p className="text-white/60 text-xs font-medium mb-1 uppercase tracking-widest">ITS GoBrain Pre & School</p>
+              <p className="text-white/60 text-xs font-medium mb-1 uppercase tracking-widest">Dla przedszkoli i szkół</p>
               <h2 className="text-xl font-extrabold text-white leading-tight mb-3">
-                Dziecko samo sięga po tablet — trening wciąga jak gra
+                Trening słuchowy już od przedszkola — w formie zabawy
               </h2>
               <p className="text-white/70 text-sm leading-relaxed">
-                Atrakcyjna forma ćwiczeń sprawia, że podopieczni chętnie wracają do sesji. Mniej oporu — więcej efektów.
+                Kolorowe gry i animacje angażują nawet najmłodszych. Program dopasowuje poziom do każdego dziecka — bez frustracji, bez nudy.
               </p>
             </div>
           </motion.div>
