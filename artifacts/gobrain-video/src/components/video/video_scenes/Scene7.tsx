@@ -22,18 +22,14 @@ export function Scene7() {
           ITS GoBrain
         </h1>
       </motion.div>
-
       <motion.div
         className="bg-white px-12 py-6 rounded-full shadow-2xl shadow-black/20"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5, type: "spring" }}
       >
-        <p className="text-[3vw] font-display font-semibold text-[var(--color-brand-primary)]">
-          gobrain.pl
-        </p>
+        <p className="text-[3vw] font-display font-semibold text-[var(--color-brand-primary)]">interaktywny trening słuchowy</p>
       </motion.div>
-
       <motion.p
         className="absolute bottom-12 text-[1.5vw] font-light text-white/60"
         initial={{ opacity: 0 }}
