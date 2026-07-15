@@ -13,6 +13,10 @@ import {
   TrendingUp,
   Users,
   Award,
+  BookOpen,
+  Target,
+  Headphones,
+  Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AUTOMATER_PRODUCTS } from "@/config/automater";
@@ -382,23 +386,24 @@ export default function ItsPage() {
                   className="grid grid-cols-1 gap-3"
                 >
                   {[
-                    "Nie rozumie poleceń i wymaga powtarzania",
-                    "Wymaga powtarzania poleceń, co zmienia się w niepokojące zachowania",
-                    "Brak efektów w terapii logopedycznej w codziennej mowie",
-                    "Ma trudności z doprowadzeniem zadań do końca",
-                    "Ma problemy z nauką czytania i pisania",
-                    "Wykazuje nieadekwatną samoocenę",
-                    "Jest nadwrażliwe na dźwięki (zatyka uszy)",
-                    "Ma zaburzenia przetwarzania słuchowego (CAPD)",
-                    "Po usunięciu trzeciego migdałka oraz drenach.",
-                    "Wykazuje objawy dysleksji",
-                    "Ma trudności z koncentracją i uwagą słuchową",
+                    { icon: Ear, text: "Słyszy, ale nie słucha" },
+                    { icon: Brain, text: "Nie rozumie poleceń i wymaga powtarzania" },
+                    { icon: BookOpen, text: "Problemy z czytaniem i pisaniem" },
+                    { icon: Target, text: "Trudności z koncentracją" },
+                    { icon: Headphones, text: "Wrażliwe na dźwięki" },
+                    { icon: Activity, text: "Zaburzenia przetwarzania (CAPD)" },
+                    { icon: Zap, text: "ADHD – wspiera terapię" },
+                    { icon: Heart, text: "Zaburzenia ze spektrum autyzmu (ASD)" },
+                    { icon: GraduationCap, text: "Dziecko zbyt głośne lub wycofane" },
+                    { icon: Heart, text: "Po usunięciu trzeciego migdałka oraz drenach" },
+                    { icon: GraduationCap, text: "Pacjenci logopedyczni (alalia, DLD, afazja dziecięca)" },
+                    { icon: Ear, text: "Dzieci z problemami w głoskowaniu" },
                   ].map((item, i) => (
-                    <motion.div key={i} variants={fadeInUp} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                    <motion.div key={i} variants={fadeInUp} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all">
+                      <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                        <item.icon className="w-4 h-4 text-accent" />
                       </div>
-                      <span className="text-foreground font-medium text-sm">{item}</span>
+                      <span className="text-foreground font-medium text-sm">{item.text}</span>
                     </motion.div>
                   ))}
                 </motion.div>
