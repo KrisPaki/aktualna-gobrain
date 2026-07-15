@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "lucide-react";
 import { blogArticles } from "@/data/blogData";
@@ -16,7 +17,11 @@ const staggerContainer: Variants = {
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-
+      <SEO
+        title="Blog – artykuły o treningu słuchowym i rozwoju dzieci"
+        description="Artykuły eksperckie o treningu słuchowym, koncentracji i rozwoju dzieci. Wiedza oparta na badaniach naukowych od twórców ITS GoBrain."
+        canonical="/blog"
+      />
       <div className="pt-16">
 
         {/* Hero */}

@@ -1,4 +1,5 @@
 import { motion, type Variants, useInView } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import {
@@ -105,6 +106,11 @@ function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
 export default function StrefaTerapeutyPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
+      <SEO
+        title="Strefa Terapeuty – ITS GoBrain dla specjalistów"
+        description="ITS GoBrain w gabinecie terapeutycznym. Narzędzie dla logopedów, pedagogów i terapeutów SI. Panel zarządzania, raporty postępów, wsparcie merytoryczne."
+        canonical="/strefa-terapeuty"
+      />
       <div className="pt-16">
 
         {/* ─── HERO ─── */}

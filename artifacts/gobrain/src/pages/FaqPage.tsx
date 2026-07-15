@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { HelpCircle } from "lucide-react";
 import {
@@ -73,8 +74,11 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-
-
+      <SEO
+        title="FAQ – najczęstsze pytania o ITS GoBrain"
+        description="Odpowiedzi na najczęstsze pytania dotyczące treningu słuchowego ITS GoBrain. Jak działa, dla kogo jest, ile trwa i jakie daje efekty."
+        canonical="/faq"
+      />
       <div className="pt-16">
 
         {/* Hero */}

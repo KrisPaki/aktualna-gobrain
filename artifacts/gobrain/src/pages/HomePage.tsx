@@ -1,4 +1,5 @@
 import { motion, type Variants, animate, useInView } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import ProblemCyclerComponent from "@/components/ProblemCycler";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -148,8 +149,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-
-      
+      <SEO
+        title="ITS GoBrain – Trening słuchowy dla dzieci"
+        description="GoBrain to innowacyjny trening słuchowy dla dzieci od 5 lat. Poprawia koncentrację, pamięć słuchową i mowę. Efekty widoczne po 4–8 tygodniach. Wypróbuj!"
+        canonical="/"
+      />
       <div className="pt-16">
         
         {/* SECTION 1 - Hero */}

@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, School, Building2, Users, Star, Mail, Lock } from "lucide-react";
 import parentChildImg from "@/assets/parent-child-home.png";
@@ -172,6 +173,11 @@ const products = [
 export default function SklepPage() {
   return (
     <div className="bg-background font-sans pt-16">
+      <SEO
+        title="Sklep – kup licencję ITS GoBrain"
+        description="Kup licencję ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoły. Trening słuchowy dla dzieci od 5 lat. Bezpieczna płatność online."
+        canonical="/sklep"
+      />
 
       {/* Hero */}
       <section className="py-16 md:py-24 bg-card/30 border-b border-border">

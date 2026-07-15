@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import ProblemCycler from "@/components/ProblemCycler";
 import { Link } from "react-router-dom";
 import {
@@ -41,6 +42,11 @@ const staggerContainer: Variants = {
 export default function ItsPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
+      <SEO
+        title="Metoda ITS GoBrain – jak działa trening słuchowy"
+        description="Poznaj metodę ITS GoBrain – innowacyjny trening słuchowy oparty na badaniach naukowych. Dowiedz się, jak poprawia koncentrację, pamięć i mowę dzieci."
+        canonical="/its"
+      />
       <div className="pt-16">
 
         {/* ─── HERO: DLACZEGO ITS GOBRAIN ─── */}
