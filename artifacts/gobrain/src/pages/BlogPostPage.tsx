@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { Calendar, ArrowLeft, ExternalLink, User } from "lucide-react";
 import { blogArticles } from "@/data/blogData";
 import { Button } from "@/components/ui/button";
+import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 function renderContent(markdown: string) {
   const lines = markdown.split('\n');
@@ -167,7 +168,7 @@ export default function BlogPostPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild className="bg-white text-primary hover:bg-white/90 font-semibold">
-                <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                   Kup kod aktywacyjny
                 </a>
               </Button>

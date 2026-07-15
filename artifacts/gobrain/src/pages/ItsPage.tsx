@@ -15,6 +15,7 @@ import {
   Award,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AUTOMATER_PRODUCTS } from "@/config/automater";
 import childTabletImg from "@/assets/child-tablet-fun.png";
 import parentChildImg from "@/assets/parent-child-home.png";
 import therapistChildImg from "@/assets/therapist-child.png";
@@ -307,13 +308,13 @@ export default function ItsPage() {
 
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-10">
                   <Button size="lg" className="h-14 px-8 text-base font-semibold bg-white text-blue-700 hover:bg-blue-50" asChild>
-                    <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                    <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                       Kup ITS GoBrain Etap 1
                       <ChevronRight className="ml-2 w-4 h-4" />
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="h-14 px-8 text-base border-white/40 text-white hover:bg-white/10" asChild>
-                    <a href="https://automater.pl/rest/order-viewer/buy/918222" target="_blank" rel="noopener noreferrer">
+                    <a href={AUTOMATER_PRODUCTS.itsEtap2} target="_blank" rel="noopener noreferrer">
                       Kup ITS GoBrain Etap 2
                     </a>
                   </Button>
@@ -652,7 +653,7 @@ export default function ItsPage() {
                   ))}
                 </ul>
                 <Button size="lg" className="h-12 px-8 text-base font-semibold" asChild>
-                  <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                  <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                     Kup Etap 1
                   </a>
                 </Button>
@@ -737,7 +738,7 @@ export default function ItsPage() {
               <p className="text-white/80 mb-10 text-lg">Zacznij trening słuchowy już dziś. Program dla dzieci od piątego roku życia.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90 font-semibold" asChild>
-                  <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                  <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                     Kup kod aktywacyjny
                   </a>
                 </Button>

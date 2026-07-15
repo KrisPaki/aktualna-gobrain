@@ -36,6 +36,7 @@ import {
   Volume2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AUTOMATER_PRODUCTS } from "@/config/automater";
 
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [value, setValue] = useState(0);
@@ -1005,7 +1006,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Button className="w-full h-11 text-sm font-semibold" asChild data-testid="pricing-main-btn">
-                  <a href="https://automater.pl/rest/order-viewer/buy/918448" target="_blank" rel="noopener noreferrer">
+                  <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                     Kup kod aktywacyjny
                   </a>
                 </Button>
