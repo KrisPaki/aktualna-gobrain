@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
+import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
 import {
   CheckCircle2,
   GraduationCap,
@@ -203,43 +204,50 @@ export default function SzkoleniaPage() {
       <div className="pt-16">
 
         {/* Hero */}
-        <section className="py-20 md:py-28 bg-card/40 border-b border-border">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+        <section className="relative py-20 md:py-28 overflow-hidden bg-primary text-white">
+          <div className="absolute inset-0">
+            <img
+              src={anetaPakielaImg}
+              alt="Aneta Pakiela surdologopeda, twórczyni metody GoBrain"
+              className="w-full h-full object-cover opacity-55"
+              style={{ objectPosition: "70% center" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/55 to-primary/10" />
+          </div>
+
+          <div className="relative z-10 container mx-auto px-4 max-w-5xl">
+            <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-2xl">
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-6 border border-white/20">
                 <GraduationCap className="w-4 h-4" />
                 <span>Certyfikowany kurs online</span>
               </motion.div>
 
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
                 Zostań certyfikowanym<br />
-                <span className="text-primary">Providerem GoBrain</span>
+                <span className="text-orange-300">Providerem GoBrain</span>
               </motion.h1>
 
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
-                Kurs certyfikacyjny „Koncentracja i uwaga słuchowa ITS GoBrain Interaktywny Trening Słuchowy. Provider GoBrain" — specjalnie przygotowany dla logopedów, pedagogów i psychologów.
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/85 mb-6 max-w-2xl leading-relaxed">
+                Kurs certyfikacyjny dla logopedów, pedagogów i psychologów — zdobądź uprawnienia do prowadzenia Interaktywnego Treningu Słuchowego ITS GoBrain.
               </motion.p>
 
-              <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 mb-10 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Clock className="w-4 h-4 text-primary" /> 60 dni dostępu
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 mb-10 text-sm">
+                <span className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-white">
+                  <Clock className="w-4 h-4 text-orange-300" /> 60 dni dostępu
                 </span>
-                <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Video className="w-4 h-4 text-primary" /> 5 modułów video
+                <span className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-white">
+                  <Video className="w-4 h-4 text-orange-300" /> 5 modułów video
                 </span>
-                <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Award className="w-4 h-4 text-primary" /> Certyfikat imienny
+                <span className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-white">
+                  <Award className="w-4 h-4 text-orange-300" /> Certyfikat imienny
                 </span>
-                <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Users className="w-4 h-4 text-primary" /> Dołączenie do sieci Providerów
-                </span>
-                <span className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full">
-                  <Award className="w-4 h-4 text-green-500" /> Możliwość zarobku
+                <span className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-white">
+                  <Users className="w-4 h-4 text-orange-300" /> Siec Providerów
                 </span>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="h-14 px-8 text-base font-semibold" asChild>
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="h-14 px-8 text-base font-semibold bg-white text-primary hover:bg-white/90" asChild>
                   <a href="https://automater.pl/rest/order-viewer/buy/787759" target="_blank" rel="noopener noreferrer">
                     Kup kurs certyfikacyjny
                     <ExternalLink className="ml-2 w-4 h-4" />
@@ -247,8 +255,7 @@ export default function SzkoleniaPage() {
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="h-14 px-8 text-base"
+                  className="h-14 px-8 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white border-0"
                   onClick={() => setShowModal(true)}
                   data-testid="btn-formularz"
                 >
