@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
 import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.png";
 import testResultsImg from "@/assets/test-results-screen.png";
+import dashboardPrePostImg from "@/assets/dashboard-pretest-posttest.webp";
 import childSuccessImg from "@/assets/child-success.png";
 import therapistOfficeImg from "@/assets/therapist-office.png";
 
@@ -427,8 +428,8 @@ export default function StrefaTerapeutyPage() {
                   transition={{ duration: 0.7, delay: 0.2 }}
                   className="relative mt-6"
                 >
-                  <div className="rounded-3xl overflow-hidden shadow-2xl">
-                    <img src={testResultsImg} alt="Wyniki testu słuchowego GoBrain" className="w-full object-cover" />
+                  <div className="rounded-3xl overflow-hidden shadow-xl bg-muted">
+                    <img src={dashboardPrePostImg} alt="Porównanie wyników PreTest i PostTest w platformie GoBrain — wykresy przed i po terapii słuchowej" className="w-full object-contain p-2" />
                   </div>
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
@@ -439,8 +440,8 @@ export default function StrefaTerapeutyPage() {
                       <TrendingUp className="w-4 h-4 text-green-600" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Raport wyników</p>
-                      <p className="font-bold text-foreground text-sm">PDF dla rodziców</p>
+                      <p className="text-xs text-muted-foreground">PreTest vs PostTest</p>
+                      <p className="font-bold text-foreground text-sm">Mierzalny wynik terapii</p>
                     </div>
                   </motion.div>
                 </motion.div>
