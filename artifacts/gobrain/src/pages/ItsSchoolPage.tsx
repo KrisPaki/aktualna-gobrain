@@ -18,6 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import childrenClassroomImg from "@/assets/children-classroom.png";
 import therapistDashboardImg from "@/assets/therapist-dashboard.png";
+import childTabletGame1Img from "@/assets/child-tablet-game1.jpg";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -337,6 +338,50 @@ export default function ItsSchoolPage() {
               </motion.ul>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Child playing section */}
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <div className="relative">
+              <img
+                src={childTabletGame1Img}
+                alt="Dziewczynka gra w ITS GoBrain Pre & School na tablecie — interaktywny trening słuchowy w placówce"
+                className="w-full object-cover"
+                style={{ maxHeight: "460px", objectPosition: "center 25%" }}
+                loading="lazy"
+              />
+              <div className="hidden md:block absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.15) 55%, transparent 100%)" }} />
+              <div className="hidden md:flex absolute inset-0 items-center px-16">
+                <div className="max-w-lg">
+                  <p className="text-white/80 text-sm font-medium mb-2 uppercase tracking-widest">ITS GoBrain Pre & School</p>
+                  <h2 className="text-3xl font-extrabold text-white leading-tight mb-4">
+                    Dziecko samo sięga po tablet — trening wciąga jak gra
+                  </h2>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Atrakcyjna forma ćwiczeń sprawia, że podopieczni chętnie wracają do sesji. Mniej oporu — więcej efektów.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="md:hidden bg-foreground px-6 py-6">
+              <p className="text-white/60 text-xs font-medium mb-1 uppercase tracking-widest">ITS GoBrain Pre & School</p>
+              <h2 className="text-xl font-extrabold text-white leading-tight mb-3">
+                Dziecko samo sięga po tablet — trening wciąga jak gra
+              </h2>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Atrakcyjna forma ćwiczeń sprawia, że podopieczni chętnie wracają do sesji. Mniej oporu — więcej efektów.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
