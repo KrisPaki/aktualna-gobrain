@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
+import { Link } from "react-router-dom";
 import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
 import certyfikatImg from "@/assets/certyfikat-providera.png";
 import {
@@ -432,10 +433,10 @@ export default function SzkoleniaPage() {
                   Zapraszamy do naszego Zespołu — zostań <strong>PROVIDEREM GOBRAIN</strong>. To wyjątkowa okazja, aby poszerzyć umiejętności i możliwości. Skorzystaj ze sprawdzonej w praktyce wiedzy popartej praktycznymi wskazówkami.
                 </p>
                 <Button asChild>
-                  <a href="https://gobrain.pl/darmowe-webinary" target="_blank" rel="noopener noreferrer">
+                  <Link to="/darmowe-webinary">
                     Darmowe webinary
                     <ExternalLink className="ml-2 w-4 h-4" />
-                  </a>
+                  </Link>
                 </Button>
               </motion.div>
 

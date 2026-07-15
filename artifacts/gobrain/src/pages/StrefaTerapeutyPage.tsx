@@ -228,7 +228,7 @@ export default function StrefaTerapeutyPage() {
                 playsInline
                 preload="metadata"
                 className="w-full"
-                style={{ maxHeight: "560px" }}
+                style={{ maxHeight: "560px", transform: "scale(1.08)", transformOrigin: "center center" }}
               >
                 <source src="/platforma-terapeuta.mov" type="video/mp4" />
                 Twoja przeglądarka nie obsługuje odtwarzacza wideo.
