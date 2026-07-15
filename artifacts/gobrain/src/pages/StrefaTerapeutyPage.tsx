@@ -591,7 +591,7 @@ export default function StrefaTerapeutyPage() {
           </div>
         </section>
 
-        {/* ─── DOWNLOADS ─── */}
+        {/* ─── SYSTEM REQUIREMENTS ─── */}
         <section className="py-20 bg-card border-y border-border">
           <div className="container mx-auto px-4 max-w-3xl">
             <motion.div
@@ -601,8 +601,8 @@ export default function StrefaTerapeutyPage() {
               variants={fadeInUp}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-foreground mb-4">Pobierz aplikację</h2>
-              <p className="text-lg text-muted-foreground">Platforma dostępna na Windows (PC) i Android</p>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Wymagania systemowe</h2>
+              <p className="text-lg text-muted-foreground">Platforma Terapeuta działa na Windows (PC) i Android</p>
             </motion.div>
 
             <motion.div
@@ -610,61 +610,55 @@ export default function StrefaTerapeutyPage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
             >
-              {[
-                {
-                  href: "https://gobraintech.pl/current/Sklep_PC/TERAPEUTA.exe",
-                  icon: Monitor,
-                  title: "Platforma TERAPEUTA (PC)",
-                  sub: "Windows — plik instalacyjny .exe",
-                },
-                {
-                  href: "https://gobraintech.pl/current/Sklep_Android/terapeuta.apk",
-                  icon: Smartphone,
-                  title: "Platforma TERAPEUTA (Android)",
-                  sub: "Android — plik instalacyjny .apk",
-                },
-              ].map((dl, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <a href={dl.href}
-                     className="flex items-center gap-4 p-6 rounded-2xl border border-border bg-background hover:border-primary hover:shadow-md transition-all group">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <dl.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-foreground">{dl.title}</p>
-                      <p className="text-sm text-muted-foreground">{dl.sub}</p>
-                    </div>
-                    <Download className="w-4 h-4 text-muted-foreground ml-auto group-hover:text-primary transition-colors" />
-                  </a>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="bg-background rounded-2xl border border-border p-6"
-            >
-              <h3 className="font-bold text-foreground mb-4">Wymagania systemowe (Windows PC)</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  "System: Windows 8 / 10 / 11",
-                  "Procesor: 2-rdzeniowy 1.8 GHz",
-                  "Pamięć RAM: min. 4 GB",
-                  "Karta graficzna: DirectX 11",
-                  "Wolne miejsce: min. 1 GB",
-                  "Rozdzielczość: 1280 \u00d7 720",
-                ].map((req, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                    {req}
+              <motion.div variants={fadeInUp} className="bg-background rounded-2xl border border-border p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Monitor className="w-5 h-5 text-primary" />
                   </div>
-                ))}
-              </div>
+                  <h3 className="font-bold text-foreground">Windows PC</h3>
+                </div>
+                <ul className="space-y-2">
+                  {[
+                    "System: Windows 8 / 10 / 11",
+                    "Procesor: 2-rdzeniowy 1.8 GHz",
+                    "Pamięć RAM: min. 4 GB",
+                    "Karta graficzna: DirectX 11",
+                    "Wolne miejsce: min. 1 GB",
+                    "Rozdzielczość: 1280 × 720",
+                  ].map((req, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
+                      {req}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="bg-background rounded-2xl border border-border p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                    <Smartphone className="w-5 h-5 text-green-600" />
+                  </div>
+                  <h3 className="font-bold text-foreground">Android</h3>
+                </div>
+                <ul className="space-y-2">
+                  {[
+                    "System: Android 7.0 lub nowszy",
+                    "Procesor: 4-rdzeniowy 1.5 GHz",
+                    "Pamięć RAM: min. 2 GB",
+                    "Wolne miejsce: min. 500 MB",
+                    "Rozdzielczość: min. 1280 × 720",
+                    "Słuchawki nauszne (zalecane)",
+                  ].map((req, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
+                      {req}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </motion.div>
           </div>
         </section>

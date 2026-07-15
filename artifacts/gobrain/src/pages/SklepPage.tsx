@@ -331,9 +331,9 @@ export default function SklepPage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-5"
           >
             {[
-              { src: "/screenshots/game-screenshot-1.png", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy" },
-              { src: "/screenshots/game-screenshot-2.png", alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci" },
-              { src: "/screenshots/game-screenshot-3.png", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami" },
+              { src: "/screenshots/game-screenshot-1.webp", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy" },
+              { src: "/screenshots/game-screenshot-2.webp", alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci" },
+              { src: "/screenshots/game-screenshot-3.webp", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami" },
             ].map((img, i) => (
               <motion.div
                 key={i}
