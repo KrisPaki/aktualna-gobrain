@@ -23,9 +23,8 @@ export function Scene3() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, type: "spring" }}
-        >
-          od 5 lat
-        </motion.div>
+        >od 5 roku życia
+</motion.div>
       </div>
     </motion.div>
   );
