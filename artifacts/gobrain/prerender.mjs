@@ -180,15 +180,15 @@ defineGlobal("screen", { width: 1280, height: 768, availWidth: 1280, availHeight
 // ─── Route definitions ────────────────────────────────────────────────────────
 
 const BLOG_SLUGS = [
-  { slug: "prasa-why-story-2021", title: "Przeczytajcie o nas w prasie #2", excerpt: "Nasza metoda oraz historia rozwoju GoBrain została opisana w czasopiśmie Why Story nr 1/2021." },
-  { slug: "prasa-artykul-naukowy", title: "Przeczytajcie o nas w prasie #1", excerpt: "Metoda ITS GoBrain obok innych treningów słuchowych takich jak Tomatis, Johansen jest opisana w artykule naukowym o centralnych zaburzeniach przetwarzania słuchowego." },
-  { slug: "czym-sa-zaburzenia-capd", title: "Czym są zaburzenia przetwarzania słuchowego na poziomie centralnym (CAPD)?", excerpt: "Czy dziecko, które słyszy najdrobniejszy szmer może mieć zaburzenia przetwarzania słuchowego? Z różnych przyczyn proces nauki słuchania nie przebiega prawidłowo — mózg skupia się na nieistotnych bodźcach." },
-  { slug: "capd-dobrze-slyszy-zle-przetwarza", title: "Centralne zaburzenia przetwarzania słuchowego (CAPD) — dobrze słyszy, ale źle przetwarza dźwięki", excerpt: "Ale jak to? — zapyta większość z nas. Zazwyczaj, gdy mamy podejrzenia problemów ze słuchem, od razu myślimy, że coś niedobrego dzieje się z uchem. Tymczasem CAPD to problem zupełnie innej natury." },
-  { slug: "szkola-podstawowa-z-gobrain", title: "Przez szkołę podstawową z GoBrain!", excerpt: "Wiek, kiedy twoje dziecko idzie do szkoły jest bardzo wyjątkowym momentem w jego życiu. Wtedy właśnie zaczyna się uczyć wielu nowych rzeczy, nie tylko tych szkolnych." },
-  { slug: "pomysly-na-zabawy-z-dzieckiem", title: "4 pomysły na rozwijające zabawy z dzieckiem", excerpt: "W życiu dziecka zabawa odgrywa bardzo ważną rolę. Dzięki niej uczymy się relacji z rówieśnikami, nowych pojęć czy mechanizmów. Warto zadbać, aby zabawy dzieci niosły ze sobą wartości edukacyjne." },
-  { slug: "dysleksja-i-gobrain", title: "Twoje dziecko ma dysleksję? Trening GoBrain to świetne rozwiązanie!", excerpt: "Czy wiesz, że aż 15% dzieci w Polsce ma dysleksję? Czym jest dysleksja i jak można sobie z nią poradzić? Trening słuchowy ITS GoBrain może być skutecznym wsparciem w terapii dysleksji." },
-  { slug: "przedszkole-z-gobrain", title: "Do przedszkola z GoBrain", excerpt: "Gdy dziecko wchodzi w wiek przedszkolny, każdy z rodziców zastanawia się, w jaki sposób przygotować je na nowe wyzwania związane z tym okresem. Rozwój maluchów w wieku 4–6 lat to kluczowy etap." },
-  { slug: "czym-jest-adhd", title: "Czym jest ADHD?", excerpt: "ADHD to nadpobudliwość psychoruchowa z deficytem uwagi i impulsywnością. Jeśli wszystkie trzy objawy występują u dziecka przez co najmniej kilka miesięcy niezależnie od środowiska, może to wskazywać na ADHD." },
+  { slug: "prasa-why-story-2021", title: "Przeczytajcie o nas w prasie #2", excerpt: "Nasza metoda oraz historia rozwoju GoBrain została opisana w czasopiśmie Why Story nr 1/2021.", author: "Aneta Pakieła", publishedAt: "2023-07-10" },
+  { slug: "prasa-artykul-naukowy", title: "Przeczytajcie o nas w prasie #1", excerpt: "Metoda ITS GoBrain obok innych treningów słuchowych takich jak Tomatis, Johansen jest opisana w artykule naukowym o centralnych zaburzeniach przetwarzania słuchowego.", author: "Aneta Pakieła", publishedAt: "2023-07-10" },
+  { slug: "czym-sa-zaburzenia-capd", title: "Czym są zaburzenia przetwarzania słuchowego na poziomie centralnym (CAPD)?", excerpt: "Czy dziecko, które słyszy najdrobniejszy szmer może mieć zaburzenia przetwarzania słuchowego? Z różnych przyczyn proces nauki słuchania nie przebiega prawidłowo — mózg skupia się na nieistotnych bodźcach.", author: "Aneta Pakieła", publishedAt: "2023-07-10" },
+  { slug: "capd-dobrze-slyszy-zle-przetwarza", title: "Centralne zaburzenia przetwarzania słuchowego (CAPD) — dobrze słyszy, ale źle przetwarza dźwięki", excerpt: "Ale jak to? — zapyta większość z nas. Zazwyczaj, gdy mamy podejrzenia problemów ze słuchem, od razu myślimy, że coś niedobrego dzieje się z uchem. Tymczasem CAPD to problem zupełnie innej natury.", author: "Aneta Pakieła", publishedAt: "2020-11-26" },
+  { slug: "szkola-podstawowa-z-gobrain", title: "Przez szkołę podstawową z GoBrain!", excerpt: "Wiek, kiedy twoje dziecko idzie do szkoły jest bardzo wyjątkowym momentem w jego życiu. Wtedy właśnie zaczyna się uczyć wielu nowych rzeczy, nie tylko tych szkolnych.", author: "Aneta Pakieła", publishedAt: "2020-11-26" },
+  { slug: "pomysly-na-zabawy-z-dzieckiem", title: "4 pomysły na rozwijające zabawy z dzieckiem", excerpt: "W życiu dziecka zabawa odgrywa bardzo ważną rolę. Dzięki niej uczymy się relacji z rówieśnikami, nowych pojęć czy mechanizmów. Warto zadbać, aby zabawy dzieci niosły ze sobą wartości edukacyjne.", author: "Aneta Pakieła", publishedAt: "2020-11-26" },
+  { slug: "dysleksja-i-gobrain", title: "Twoje dziecko ma dysleksję? Trening GoBrain to świetne rozwiązanie!", excerpt: "Czy wiesz, że aż 15% dzieci w Polsce ma dysleksję? Czym jest dysleksja i jak można sobie z nią poradzić? Trening słuchowy ITS GoBrain może być skutecznym wsparciem w terapii dysleksji.", author: "Aneta Pakieła", publishedAt: "2020-11-26" },
+  { slug: "przedszkole-z-gobrain", title: "Do przedszkola z GoBrain", excerpt: "Gdy dziecko wchodzi w wiek przedszkolny, każdy z rodziców zastanawia się, w jaki sposób przygotować je na nowe wyzwania związane z tym okresem. Rozwój maluchów w wieku 4–6 lat to kluczowy etap.", author: "Aneta Pakieła", publishedAt: "2020-11-26" },
+  { slug: "czym-jest-adhd", title: "Czym jest ADHD?", excerpt: "ADHD to nadpobudliwość psychoruchowa z deficytem uwagi i impulsywnością. Jeśli wszystkie trzy objawy występują u dziecka przez co najmniej kilka miesięcy niezależnie od środowiska, może to wskazywać na ADHD.", author: "Aneta Pakieła", publishedAt: "2020-11-26" },
 ];
 
 const PROGRAM_SLUGS = [
@@ -216,18 +216,163 @@ const PROGRAM_SLUGS = [
   { slug: "mala-matematyka-01", title: "Mała matematyka — zestaw I", subtitle: "Nauka dodawania, odejmowania i mnożenia w formie zabawy — dla dzieci od 5 lat." },
 ];
 
+// ─── FAQ structured data (FAQPage schema) ─────────────────────────────────────
+
+const FAQ_ITEMS = [
+  { q: "Dla kogo dedykowane są programy ITS GoBrain?", a: "ITS GoBrain jest dedykowany dla dzieci od 4 roku życia, które słyszą dobrze, ale nie słuchają, potrzebują powtarzania poleceń, mają problemy z uwagą i koncentracją. Program wskazany jest w przypadku gdy występuje nadwrażliwość słuchowa — zatykanie uszu, objawy przeciążenia układu nerwowego — nerwowość, jąkanie. Program polecany jest dla dyslektyków, dzieci z problemami z mową, komunikacją, nauką czy koncentracją." },
+  { q: "W jakim celu stosuje się programy ITS GoBrain?", a: "Celem ITS GoBrain jest poprawa przetwarzania informacji słuchowych, a dzięki temu poprawa mowy, pamięci, koncentracji i uwagi. Dziecko dzięki treningom lepiej rozumie, słucha, zapamiętuje i mniej się męczy." },
+  { q: "Jakie są efekty stosowania programów ITS GoBrain?", a: "Dziecko dzięki treningom lepiej rozumie, słucha, zapamiętuje, a przy tym mniej się męczy. ITS GoBrain to sukces w roli ucznia, zwiększenie efektywności terapii logopedycznej, pedagogicznej. Efekty obejmują: poprawę przetwarzania słuchowego, wyniki w nauce, wymowę i komunikację językową, uwagę, koncentrację i pamięć oraz normalizację wrażliwości słuchowej." },
+  { q: "Jak można kupić ITS GoBrain Zabawy z Dźwiękami?", a: "Zakupu można dokonać za pośrednictwem terapeuty, który jest Providerem GoBrain, lub bezpośrednio przez sklep na stronie gobrain.pl. Kod aktywacyjny jest specjalnym kluczem, który należy wpisać przy każdym uruchomieniu programu w celu uzyskania dostępu. Dzięki temu można korzystać z programu na dowolnym urządzeniu (PC lub Android) o ile posiada ono dostęp do internetu." },
+  { q: "Jak otrzymać fakturę po zakupie?", a: "Po dokonaniu zakupu i otrzymaniu mailem kodu aktywacyjnego należy kliknąć na przycisk 'kontakt ze sprzedawcą' i podać dane do faktury — faktura zostanie wysłana na wskazany adres e-mail." },
+  { q: "Co to jest i co zawiera ITS GoBrain Zabawy z Dźwiękami?", a: "ITS GoBrain Zabawy z Dźwiękami to Interaktywny Trening Słuchowy dostępny online w formie atrakcyjnych ćwiczeń zwiększających zdolność przetwarzania informacji słuchowych i kształtującym umiejętności będące podstawą osiągnięcia przez dziecko sukcesu w roli ucznia. Program składa się z 4 poziomów trudności, a każdy z nich zawiera 5 zadań głównych podzielonych na etap nauki, test i grę bonus. Z programu należy korzystać 2–3 razy w tygodniu. System automatycznie dostosowuje się do możliwości dziecka." },
+  { q: "Co to jest ITS Pre&SCHOOL?", a: "Wersja ITS Pre&School jest przeznaczona do stosowania w placówkach edukacyjnych. Nie ma ograniczenia ilości użytkowników. Terapeuta sam decyduje o czasie trwania sesji, ich ilości i zadaniach. Wersja szkolna nie jest podzielona na sesje i nie ma dobowych ograniczeń czasowych. Pozwala na dostęp do wszystkich zadań, gier i bonusów. Dostępna w dwóch wariantach licencyjnych: licencja 365 dni lub licencja bezterminowa." },
+  { q: "Na jakich urządzeniach można korzystać z programów GoBrain?", a: "Produkty ITS GoBrain można zainstalować na wybranym urządzeniu — Android (telefon, tablet) lub PC Windows (komputer, laptop, notebook). Z programu ITS GoBrain Zabawy z Dźwiękami oraz Platformy TERAPEUTA można korzystać również online przez przeglądarkę internetową." },
+  { q: "Ile jest wszystkich sesji treningowych w ITS GoBrain Zabawy z Dźwiękami?", a: "Program składa się z 4 poziomów trudności, a każdy z nich zawiera 5 zadań głównych podzielonych na etap nauki, test i grę bonus. Ilość sesji treningowych zależna jest od potrzeb i umiejętności słuchowych dziecka. Gdy w I etapie ITS GoBrain Zabawy z Dźwiękami dziecko miało problemy lub nie zakończyło wszystkich zadań przewidzianych w programie, należy zastosować II etap." },
+  { q: "Czy między etapami w treningu ITS GoBrain Zabawy z Dźwiękami konieczna jest przerwa?", a: "Przerwa między pierwszym a kolejnym etapem nie jest wymagana. Z każdym treningiem pamięć i koncentracja będą się poprawiać. Problemy występujące w trakcie zadań treningowych wskazują na konieczność kontynuowania tego typu treningu." },
+  { q: "Co to jest Platforma Terapeuta i jak można uzyskać do niej dostęp?", a: "Platforma Terapeuta zawiera zestaw diagnostyczny składający się z PreTestu i PostTestu do badania umiejętności słuchowych, czasu reakcji, poziomu odporności na rozpraszanie, pamięci słuchowej. Umożliwia dostęp do ankiet i kwestionariuszy, jak również daje możliwość śledzenia postępów podopiecznych w treningu ITS GoBrain. Platformę TERAPEUTA można zakupić w zakładce sklep — po zakupie otrzymują Państwo również dostęp do szkolenia, dzięki któremu otrzymacie tytuł Providera GoBrain." },
+  { q: "Czy ITS GoBrain zastępuje tradycyjną terapię logopedyczną?", a: "ITS GoBrain jest doskonałym uzupełnieniem tradycyjnej terapii logopedycznej, pedagogicznej i psychologicznej — nie zastępuje jej. Program jest skuteczny jako narzędzie wspierające, stosowane między sesjami terapeutycznymi. Potwierdza to opinia terapeutów — dziecko w domu ćwiczy w atrakcyjnej formie, a terapeuta może w dowolnym momencie śledzić jego postępy." },
+];
+
+const FAQ_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+});
+
+// ─── Per-page structured data for fallback head injection ─────────────────────
+
+const ITS_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ITS GoBrain — Interaktywny Trening Sluchowy",
+  "alternateName": "ITS GoBrain",
+  "url": `${BASE}/its`,
+  "description": "Innowacyjny trening sluchowy dla dzieci od 5 lat oparty na badaniach naukowych. Poprawia koncentracje, pamiec sluchowa i mowe.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+  "inLanguage": "pl",
+  "availableOnDevice": "Desktop, Mobile, Tablet",
+  "offers": [
+    { "@type": "Offer", "name": "ITS GoBrain Etap 1", "url": `${BASE}/its`, "priceCurrency": "PLN", "availability": "https://schema.org/InStock", "seller": { "@id": `${BASE}/#organization` } },
+    { "@type": "Offer", "name": "ITS GoBrain Etap 2", "url": `${BASE}/its`, "priceCurrency": "PLN", "availability": "https://schema.org/InStock", "seller": { "@id": `${BASE}/#organization` } },
+  ],
+  "publisher": { "@id": `${BASE}/#organization` },
+  "brand": { "@id": `${BASE}/#organization` },
+  "audience": { "@type": "Audience", "audienceType": "Dzieci od 5 lat, rodzice, logopedzi, pedagodzy" },
+});
+
+const ITS_SCHOOL_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ITS GoBrain Pre & School",
+  "url": `${BASE}/its-school`,
+  "description": "Program treningu sluchowego dla szkol i przedszkoli — bez limitu uzytkownikow. Wspiera uczniow z trudnosciami w koncentracji, czytaniu i pisaniu.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+  "inLanguage": "pl",
+  "availableOnDevice": "Desktop, Mobile, Tablet",
+  "offers": { "@type": "Offer", "name": "Licencja szkolna ITS GoBrain Pre & School", "url": `${BASE}/its-school`, "price": "799", "priceCurrency": "PLN", "availability": "https://schema.org/InStock", "seller": { "@id": `${BASE}/#organization` } },
+  "publisher": { "@id": `${BASE}/#organization` },
+  "brand": { "@id": `${BASE}/#organization` },
+});
+
+const STREFA_TERAPEUTY_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Platforma TERAPEUTA — ITS GoBrain",
+  "url": `${BASE}/strefa-terapeuty`,
+  "description": "Profesjonalna platforma terapeutyczna ITS GoBrain dla logopedow, pedagogow i terapeutow SI. Panel zarzadzania pacjentami, raporty postepu, testy diagnostyczne.",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+  "inLanguage": "pl",
+  "availableOnDevice": "Desktop, Mobile, Tablet",
+  "offers": { "@type": "Offer", "name": "Licencja terapeutyczna Platforma TERAPEUTA", "url": `${BASE}/strefa-terapeuty`, "price": "799", "priceCurrency": "PLN", "availability": "https://schema.org/InStock", "seller": { "@id": `${BASE}/#organization` } },
+  "publisher": { "@id": `${BASE}/#organization` },
+  "brand": { "@id": `${BASE}/#organization` },
+});
+
+const KARTA_MOWY_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Karta Mowy GoBrain",
+  "url": `${BASE}/karta-mowy`,
+  "description": "Interaktywne narzedzie diagnostyczne do oceny rozwoju mowy dziecka. Pozwala logopedzie i rodzicowi sprawdzic poziom rozwoju mowy i monitorowac postep.",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+  "inLanguage": "pl",
+  "availableOnDevice": "Desktop, Mobile, Tablet",
+  "offers": { "@type": "Offer", "name": "Karta Mowy GoBrain — licencja", "url": `${BASE}/karta-mowy`, "price": "389", "priceCurrency": "PLN", "availability": "https://schema.org/InStock", "seller": { "@id": `${BASE}/#organization` } },
+  "publisher": { "@id": `${BASE}/#organization` },
+  "brand": { "@id": `${BASE}/#organization` },
+});
+
+const BLOG_INDEX_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog GoBrain",
+  "description": "Artykuly eksperckie o treningu sluchowym, koncentracji i rozwoju dzieci.",
+  "url": `${BASE}/blog`,
+  "publisher": { "@id": `${BASE}/#organization` },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": BLOG_SLUGS.map(({ slug, title }, i) => ({
+      "@type": "ListItem", "position": i + 1, "url": `${BASE}/blog/${slug}`, "name": title,
+    })),
+  },
+});
+
+const SKLEP_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Sklep ITS GoBrain",
+  "description": "Kupuj licencje ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoly.",
+  "url": `${BASE}/sklep`,
+  "publisher": { "@id": `${BASE}/#organization` },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "ITS GoBrain — Zabawy z dźwiękami Etap 1", "offers": { "@type": "Offer", "price": "390", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" } } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "ITS GoBrain — Zabawy z dźwiękami Etap 2", "offers": { "@type": "Offer", "price": "390", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" } } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "ITS GoBrain Pre & School — Dla placówek, gabinetów i szkół", "offers": { "@type": "Offer", "price": "799", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" } } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Platforma Terapeuta — Narzędzie diagnostyczne i terapeutyczne", "offers": { "@type": "Offer", "price": "799", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" } } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Product", "name": "Karta Mowy — Diagnostyka i terapia logopedyczna", "offers": { "@type": "Offer", "price": "389", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" } } },
+    ],
+  },
+});
+
+const PROGRAMY_INDEX_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Programy edukacyjne GoBrain",
+  "description": "Interaktywne gry edukacyjne i logopedyczne dla dzieci od 5 lat.",
+  "url": `${BASE}/programy-edukacyjne`,
+  "publisher": { "@id": `${BASE}/#organization` },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": PROGRAM_SLUGS.map(({ slug, title }, i) => ({
+      "@type": "ListItem", "position": i + 1, "url": `${BASE}/programy-edukacyjne/${slug}`, "name": title,
+    })),
+  },
+});
+
+// ─── Route definitions ────────────────────────────────────────────────────────
+
 const STATIC_ROUTES = [
   { path: "/", title: "ITS GoBrain — Trening sluchowy dla dzieci | gobrain.pl", description: "GoBrain to innowacyjny trening sluchowy dla dzieci od 5 lat. Poprawia koncentracje, pamiec sluchowa i mowe. Efekty widoczne po 4-8 tygodniach. Wyprobuj!" },
-  { path: "/its", title: "Metoda ITS GoBrain — jak dziala trening sluchowy", description: "Poznaj metode ITS GoBrain — innowacyjny trening sluchowy oparty na badaniach naukowych. Dowiedz sie, jak poprawia koncentracje, pamiec i mowe dzieci." },
-  { path: "/its-school", title: "ITS GoBrain dla szkol — trening sluchowy w edukacji", description: "Wdraz ITS GoBrain w swojej szkole. Program treningu sluchowego wspierajacy uczniow z trudnosciami w koncentracji, czytaniu i pisaniu." },
-  { path: "/strefa-terapeuty", title: "Strefa Terapeuty — ITS GoBrain dla specjalistow", description: "ITS GoBrain w gabinecie terapeutycznym. Narzedzie dla logopedow, pedagogow i terapeutow SI. Panel zarzadzania, raporty postepu, wsparcie merytoryczne." },
+  { path: "/its", title: "Metoda ITS GoBrain — jak dziala trening sluchowy", description: "Poznaj metode ITS GoBrain — innowacyjny trening sluchowy oparty na badaniach naukowych. Dowiedz sie, jak poprawia koncentracje, pamiec i mowe dzieci.", jsonLd: ITS_SCHEMA },
+  { path: "/its-school", title: "ITS GoBrain dla szkol — trening sluchowy w edukacji", description: "Wdraz ITS GoBrain w swojej szkole. Program treningu sluchowego wspierajacy uczniow z trudnosciami w koncentracji, czytaniu i pisaniu.", jsonLd: ITS_SCHOOL_SCHEMA },
+  { path: "/strefa-terapeuty", title: "Strefa Terapeuty — ITS GoBrain dla specjalistow", description: "ITS GoBrain w gabinecie terapeutycznym. Narzedzie dla logopedow, pedagogow i terapeutow SI. Panel zarzadzania, raporty postepu, wsparcie merytoryczne.", jsonLd: STREFA_TERAPEUTY_SCHEMA },
   { path: "/szkolenia-i-webinary", title: "Szkolenia i webinary — ITS GoBrain", description: "Szkolenia i webinary dla terapeutow i pedagogow z zakresu treningu sluchowego ITS GoBrain. Zapisz sie na najblizsze wydarzenie." },
-  { path: "/blog", title: "Blog — artykuly o treningu sluchowym i rozwoju dzieci", description: "Artykuly eksperckie o treningu sluchowym, koncentracji i rozwoju dzieci. Wiedza oparta na badaniach naukowych od tworcow ITS GoBrain." },
-  { path: "/faq", title: "FAQ — najczestsze pytania o ITS GoBrain", description: "Odpowiedzi na najczestsze pytania dotyczace treningu sluchowego ITS GoBrain. Jak dziala, dla kogo jest, ile trwa i jakie daje efekty." },
+  { path: "/blog", title: "Blog — artykuly o treningu sluchowym i rozwoju dzieci", description: "Artykuly eksperckie o treningu sluchowym, koncentracji i rozwoju dzieci. Wiedza oparta na badaniach naukowych od tworcow ITS GoBrain.", jsonLd: BLOG_INDEX_SCHEMA },
+  { path: "/faq", title: "FAQ — najczestsze pytania o ITS GoBrain", description: "Odpowiedzi na najczestsze pytania dotyczace treningu sluchowego ITS GoBrain. Jak dziala, dla kogo jest, ile trwa i jakie daje efekty.", jsonLd: FAQ_SCHEMA },
   { path: "/pomoc", title: "Pomoc i wsparcie techniczne — ITS GoBrain", description: "Centrum pomocy ITS GoBrain. Instrukcje instalacji, FAQ i wsparcie techniczne dla uzytkownikow oprogramowania GoBrain." },
-  { path: "/sklep", title: "Sklep — kup licencje ITS GoBrain", description: "Kup licencje ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoly. Trening sluchowy dla dzieci od 5 lat. Bezpieczna platnosc online." },
-  { path: "/programy-edukacyjne", title: "Programy edukacyjne GoBrain — gry logopedyczne i edukacyjne", description: "Odkryj programy edukacyjne GoBrain: zabawy logopedyczne, nauka liter, cwiczenia koncentracji i kreatywnosci dla dzieci od 3 lat." },
-  { path: "/karta-mowy", title: "Karta Mowy — narzedzie diagnostyczne GoBrain", description: "Karta Mowy GoBrain — sprawdz poziom rozwoju mowy swojego dziecka za pomoca bezplatnego narzedzia diagnostycznego." },
+  { path: "/sklep", title: "Sklep — kup licencje ITS GoBrain", description: "Kup licencje ITS GoBrain dla domu, gabinetu terapeutycznego lub szkoly. Trening sluchowy dla dzieci od 5 lat. Bezpieczna platnosc online.", jsonLd: SKLEP_SCHEMA },
+  { path: "/programy-edukacyjne", title: "Programy edukacyjne GoBrain — gry logopedyczne i edukacyjne", description: "Odkryj programy edukacyjne GoBrain: zabawy logopedyczne, nauka liter, cwiczenia koncentracji i kreatywnosci dla dzieci od 3 lat.", jsonLd: PROGRAMY_INDEX_SCHEMA },
+  { path: "/karta-mowy", title: "Karta Mowy — narzedzie diagnostyczne GoBrain", description: "Karta Mowy GoBrain — sprawdz poziom rozwoju mowy swojego dziecka za pomoca bezplatnego narzedzia diagnostycznego.", jsonLd: KARTA_MOWY_SCHEMA },
   { path: "/darmowe-webinary", title: "Darmowe webinary — ITS GoBrain", description: "Bezplatne webinary o treningu sluchowym, CAPD i terapii mowy. Dolacz do ekspertow GoBrain i dowiedz sie, jak pomoc swojemu dziecku." },
   { path: "/ulotka", title: "Ulotka ITS GoBrain — informacje dla rodziców i terapeutów", description: "Pobierz ulotkę ITS GoBrain. Krótkie informacje o metodzie treningu słuchowego dla rodziców i specjalistów.", noindex: true },
   { path: "/polityka-prywatnosci", title: "Polityka prywatnosci — ITS GoBrain", description: "Polityka prywatnosci serwisu gobrain.pl. Jakie dane zbieramy, jak je przetwarzamy i jakie masz prawa jako uzytkownik." },
@@ -237,35 +382,63 @@ const STATIC_ROUTES = [
 
 const ALL_ROUTES = [
   ...STATIC_ROUTES,
-  ...BLOG_SLUGS.map(({ slug, title, excerpt }) => ({
+  ...BLOG_SLUGS.map(({ slug, title, excerpt, author, publishedAt }) => ({
     path: `/blog/${slug}`,
     title: `${title} — Blog GoBrain | gobrain.pl`,
     description: excerpt,
+    jsonLd: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: title,
+      description: excerpt,
+      author: { "@type": "Person", name: author },
+      datePublished: publishedAt,
+      url: `${BASE}/blog/${slug}`,
+      publisher: { "@id": `${BASE}/#organization` },
+      inLanguage: "pl",
+    }),
   })),
   ...PROGRAM_SLUGS.map(({ slug, title, subtitle }) => ({
     path: `/programy-edukacyjne/${slug}`,
     title: `${title} — Program edukacyjny GoBrain | gobrain.pl`,
     description: subtitle,
+    jsonLd: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: title,
+      description: subtitle,
+      applicationCategory: "EducationalApplication",
+      operatingSystem: "Windows, Android, Web",
+      url: `${BASE}/programy-edukacyjne/${slug}`,
+      publisher: { "@id": `${BASE}/#organization` },
+      offers: { "@type": "Offer", "url": "https://automater.pl/rest/order-viewer/buy/776316", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" },
+      inLanguage: "pl",
+    }),
   })),
 ];
 
 // ─── HTML manipulation helpers ────────────────────────────────────────────────
 
-function buildHeadBlock(title, description, routePath, noindex = false) {
+function buildHeadBlock(title, description, routePath, noindex = false, jsonLd = null) {
   const url = `${BASE}${routePath}`;
   const robotsTag = noindex ? `\n    <meta name="robots" content="noindex, nofollow" />` : "";
+  const jsonLdTag = jsonLd ? `\n    <script type="application/ld+json">${jsonLd}</script>` : "";
   return `<title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />${robotsTag}
     <link rel="canonical" href="${url}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="ITS GoBrain" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${OG_IMAGE}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
-    <meta name="twitter:image" content="${OG_IMAGE}" />`;
+    <meta name="twitter:image" content="${OG_IMAGE}" />${jsonLdTag}`;
 }
 
 function escapeHtml(str) {
@@ -277,9 +450,10 @@ function escapeHtml(str) {
 }
 
 /**
- * Strip route-specific meta tags that Helmet will replace.
- * Deliberately keeps: charset, viewport, og:image:alt, favicon, preconnect,
- * fonts, and the global Organization+WebSite JSON-LD from the template.
+ * Strip route-specific meta tags from a block of HTML (used on both the
+ * template head and the SSR body). Deliberately keeps: charset, viewport,
+ * og:image:alt, favicon, preconnect, fonts, and the global
+ * Organization+WebSite JSON-LD from the template.
  */
 function stripRouteMeta(html) {
   return html
@@ -300,7 +474,24 @@ function stripRouteMeta(html) {
     .replace(/<meta name="twitter:image"[^>]*>/g, "");
 }
 
-function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, helmetHead, templateHtml, noindex = false) {
+/**
+ * Strip any title/meta/JSON-LD script tags that react-helmet-async may have
+ * inlined at the top of the SSR body output when helmetContext is not
+ * populated. Only cleans the leading portion of the HTML (before the first
+ * block element) to avoid accidentally removing legitimate in-body content.
+ */
+function stripBodyMeta(html) {
+  const blockStart = html.search(/<(div|section|main|article|header|nav|footer|aside|h[1-6]|p\b|ul|ol|figure)[^>]*>/i);
+  if (blockStart === -1) return html;
+  const leading = html.slice(0, blockStart)
+    .replace(/<title>[^<]*<\/title>/g, "")
+    .replace(/<meta[^>]*>/g, "")
+    .replace(/<link rel="canonical"[^>]*>/g, "")
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "");
+  return leading + html.slice(blockStart);
+}
+
+function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, helmetHead, templateHtml, noindex = false, jsonLd = null) {
   let html = stripRouteMeta(templateHtml);
 
   if (helmetHead) {
@@ -308,12 +499,16 @@ function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, hel
     html = html.replace("</head>", `  ${helmetHead}\n  </head>`);
   } else {
     // Fallback: static metadata when SSR head is unavailable
-    const head = buildHeadBlock(staticTitle, staticDescription, routePath, noindex);
+    const head = buildHeadBlock(staticTitle, staticDescription, routePath, noindex, jsonLd);
     html = html.replace("</head>", `  ${head}\n  </head>`);
   }
 
   if (bodyHtml) {
-    html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
+    // Strip any inline meta tags the SSR renderer may have placed in the body
+    // (react-helmet-async sometimes serialises tags into the render output
+    // when helmetContext is not correctly populated).
+    const cleanBody = stripBodyMeta(bodyHtml);
+    html = html.replace('<div id="root"></div>', `<div id="root">${cleanBody}</div>`);
   }
 
   const segments = routePath === "/" ? [] : routePath.split("/").filter(Boolean);
@@ -357,7 +552,7 @@ async function main() {
   let ok = 0;
   let fallback = 0;
 
-  for (const { path: routePath, title, description, noindex } of ALL_ROUTES) {
+  for (const { path: routePath, title, description, noindex, jsonLd } of ALL_ROUTES) {
     let bodyHtml = null;
     let helmetHead = "";
 
@@ -376,7 +571,7 @@ async function main() {
       }
     }
 
-    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetHead, template, noindex);
+    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetHead, template, noindex, jsonLd);
     const mode = bodyHtml ? "full" : "head";
     if (!bodyHtml) fallback++;
     else ok++;

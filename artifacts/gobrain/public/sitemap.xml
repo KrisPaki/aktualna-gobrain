@@ -86,6 +86,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://gobrain.pl/regulamin-aplikacji</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
   <!-- /ulotka is intentionally excluded — page carries noindex directive -->
 

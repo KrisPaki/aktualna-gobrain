@@ -1,4 +1,4 @@
-import { renderToStaticMarkup } from "react-dom/server";
+import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -36,7 +36,7 @@ export function render(url: string): RenderResult {
   const helmetContext: { helmet?: HelmetServerState } = {};
   const queryClient = new QueryClient();
 
-  const html = renderToStaticMarkup(
+  const html = renderToString(
     <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
