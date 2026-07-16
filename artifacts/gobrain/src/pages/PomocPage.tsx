@@ -107,7 +107,7 @@ export default function PomocPage() {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-0.5">Facebook</p>
-                      <p className="font-semibold text-foreground">@gobrain.pl</p>
+                      <p className="font-semibold text-foreground">@gobrainpl</p>
                     </div>
                   </a>
                 </div>
