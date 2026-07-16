@@ -1,4 +1,5 @@
 import { motion, type Variants, useInView } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
@@ -115,6 +116,35 @@ export default function StrefaTerapeutyPage() {
         description="ITS GoBrain w gabinecie terapeutycznym. Narzędzie dla logopedów, pedagogów i terapeutów SI. Panel zarządzania, raporty postępów, wsparcie merytoryczne."
         canonical="/strefa-terapeuty"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Platforma TERAPEUTA — ITS GoBrain",
+          "url": "https://gobrain.pl/strefa-terapeuty",
+          "description": "Profesjonalna platforma terapeutyczna ITS GoBrain dla logopedow, pedagogow i terapeutow SI. Panel zarzadzania pacjentami, raporty postepu, testy diagnostyczne.",
+          "applicationCategory": "MedicalApplication",
+          "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+          "inLanguage": "pl",
+          "availableOnDevice": "Desktop, Mobile, Tablet",
+          "featureList": "Panel terapeuty, Raporty postepu, Zarzadzanie profilami pacjentow, Testy diagnostyczne pre i post",
+          "offers": {
+            "@type": "Offer",
+            "name": "Licencja terapeutyczna Platforma TERAPEUTA",
+            "url": "https://gobrain.pl/strefa-terapeuty",
+            "price": "799",
+            "priceCurrency": "PLN",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://gobrain.pl/#organization" }
+          },
+          "publisher": { "@id": "https://gobrain.pl/#organization" },
+          "brand": { "@id": "https://gobrain.pl/#organization" },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Logopedzi, pedagodzy, terapeuci SI, specjalisci z zakresu przetwarzania sluchowego"
+          }
+        })}</script>
+      </Helmet>
       <div className="pt-16">
 
         {/* ─── HERO ─── */}

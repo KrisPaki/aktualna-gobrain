@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import ProblemCycler from "@/components/ProblemCycler";
 import { Link } from "react-router-dom";
@@ -49,6 +50,44 @@ export default function ItsPage() {
         description="Poznaj metodę ITS GoBrain – innowacyjny trening słuchowy oparty na badaniach naukowych. Dowiedz się, jak poprawia koncentrację, pamięć i mowę dzieci."
         canonical="/its"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "ITS GoBrain — Interaktywny Trening Sluchowy",
+          "alternateName": "ITS GoBrain",
+          "url": "https://gobrain.pl/its",
+          "description": "Innowacyjny trening sluchowy dla dzieci od 5 lat oparty na badaniach naukowych. Poprawia koncentracje, pamiec sluchowa i mowe. Program sklada sie z dwoch etapow: Etap 1 i Etap 2.",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+          "inLanguage": "pl",
+          "availableOnDevice": "Desktop, Mobile, Tablet",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "ITS GoBrain Etap 1",
+              "url": "https://gobrain.pl/its",
+              "priceCurrency": "PLN",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@id": "https://gobrain.pl/#organization" }
+            },
+            {
+              "@type": "Offer",
+              "name": "ITS GoBrain Etap 2",
+              "url": "https://gobrain.pl/its",
+              "priceCurrency": "PLN",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@id": "https://gobrain.pl/#organization" }
+            }
+          ],
+          "publisher": { "@id": "https://gobrain.pl/#organization" },
+          "brand": { "@id": "https://gobrain.pl/#organization" },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Dzieci od 5 lat, rodzice, logopedzi, pedagogowie"
+          }
+        })}</script>
+      </Helmet>
       <div className="pt-16">
 
         {/* ─── HERO: DLACZEGO ITS GOBRAIN ─── */}

@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import {
@@ -41,6 +42,40 @@ export default function ItsSchoolPage() {
         description="Wdraż ITS GoBrain w swojej szkole. Program treningu słuchowego wspierający uczniów z trudnościami w koncentracji, czytaniu i pisaniu."
         canonical="/its-school"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "ITS GoBrain Pre & School",
+          "url": "https://gobrain.pl/its-school",
+          "description": "Program treningu sluchowego dla szkol i przedszkoli — bez limitu uzytkownikow. Wspiera uczniow z trudnosciami w koncentracji, czytaniu i pisaniu.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+          "inLanguage": "pl",
+          "availableOnDevice": "Desktop, Mobile, Tablet",
+          "offers": {
+            "@type": "Offer",
+            "name": "Licencja szkolna ITS GoBrain Pre & School",
+            "url": "https://gobrain.pl/its-school",
+            "price": "799",
+            "priceCurrency": "PLN",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "799",
+              "priceCurrency": "PLN",
+              "unitText": "rok"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://gobrain.pl/#organization" }
+          },
+          "publisher": { "@id": "https://gobrain.pl/#organization" },
+          "brand": { "@id": "https://gobrain.pl/#organization" },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Szkoly podstawowe, przedszkola, poradnie psychologiczno-pedagogiczne"
+          }
+        })}</script>
+      </Helmet>
 
       {/* Hero */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 via-white to-blue-50 border-b border-border overflow-hidden">

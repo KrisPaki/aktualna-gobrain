@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import {
@@ -45,6 +46,35 @@ export default function KartaMowyPage() {
         description="Karta Mowy GoBrain – sprawdź poziom rozwoju mowy swojego dziecka za pomocą bezpłatnego narzędzia diagnostycznego."
         canonical="/karta-mowy"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Karta Mowy GoBrain",
+          "url": "https://gobrain.pl/karta-mowy",
+          "description": "Interaktywne narzedzie diagnostyczne do oceny rozwoju mowy dziecka. Pozwala logopedzie i rodzicowi sprawdzic poziom rozwoju mowy, identyfikowac opoznienia i monitorowac postep.",
+          "applicationCategory": "MedicalApplication",
+          "operatingSystem": "Windows, macOS, ChromeOS, Android, iOS",
+          "inLanguage": "pl",
+          "availableOnDevice": "Desktop, Mobile, Tablet",
+          "featureList": "Diagnostyka mowy, Raporty PDF, Monitorowanie postepu, Baza norm rozwojowych",
+          "offers": {
+            "@type": "Offer",
+            "name": "Karta Mowy GoBrain — licencja",
+            "url": "https://gobrain.pl/karta-mowy",
+            "price": "389",
+            "priceCurrency": "PLN",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://gobrain.pl/#organization" }
+          },
+          "publisher": { "@id": "https://gobrain.pl/#organization" },
+          "brand": { "@id": "https://gobrain.pl/#organization" },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Logopedzi, pedagodzy, rodzice dzieci z opoznieniem mowy"
+          }
+        })}</script>
+      </Helmet>
 
       {/* Hero */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-green-900 text-white">

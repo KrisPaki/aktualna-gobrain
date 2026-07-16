@@ -288,10 +288,13 @@ function stripExistingMeta(html) {
     .replace(/<meta name="twitter:image"[^>]*>/g, "");
 }
 
-function writeRouteHtml(routePath, title, description, bodyHtml, templateHtml) {
+function writeRouteHtml(routePath, title, description, bodyHtml, helmetScripts, templateHtml) {
   const head = buildHeadBlock(title, description, routePath);
   let html = stripExistingMeta(templateHtml);
   html = html.replace("</head>", `  ${head}\n  </head>`);
+  if (helmetScripts) {
+    html = html.replace("</head>", `  ${helmetScripts}\n  </head>`);
+  }
   if (bodyHtml) {
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
   }
@@ -339,13 +342,16 @@ async function main() {
 
   for (const { path: routePath, title, description } of ALL_ROUTES) {
     let bodyHtml = null;
+    let helmetScripts = "";
 
     if (renderFn) {
       try {
         // Update location stub so useLocation() returns the correct pathname
         global.window.location = { ...global.window.location, pathname: routePath, href: BASE + routePath };
         global.location = global.window.location;
-        bodyHtml = renderFn(routePath);
+        const result = renderFn(routePath);
+        bodyHtml = result.html ?? result;
+        helmetScripts = result.scripts ?? "";
       } catch (err) {
         console.warn(`  WARN: SSR render failed for ${routePath}:`, err.message.split("\n")[0]);
         fallback++;
@@ -353,7 +359,7 @@ async function main() {
       }
     }
 
-    const file = writeRouteHtml(routePath, title, description, bodyHtml, template);
+    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetScripts, template);
     const mode = bodyHtml ? "full" : "head";
     if (!bodyHtml) fallback++;
     else ok++;

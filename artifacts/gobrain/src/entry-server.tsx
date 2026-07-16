@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { HelmetProvider } from "react-helmet-async";
+import type { HelmetServerState } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import HomePage from "@/pages/HomePage";
 import ItsPage from "@/pages/ItsPage";
@@ -23,9 +24,15 @@ import UlotkaPage from "@/pages/UlotkaPage";
 import NotFound from "@/pages/not-found";
 import PolitykaPrywatnosciPage from "@/pages/PolitykaPrywatnosciPage";
 import RegulaminPage from "@/pages/RegulaminPage";
+import RegulaminAplikacjiPage from "@/pages/RegulaminAplikacjiPage";
 
-export function render(url: string): string {
-  const helmetContext = {};
+export interface RenderResult {
+  html: string;
+  scripts: string;
+}
+
+export function render(url: string): RenderResult {
+  const helmetContext: { helmet?: HelmetServerState } = {};
   const queryClient = new QueryClient();
 
   const html = renderToStaticMarkup(
@@ -52,6 +59,7 @@ export function render(url: string): string {
                 <Route path="/ulotka" element={<UlotkaPage />} />
                 <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosciPage />} />
                 <Route path="/regulamin" element={<RegulaminPage />} />
+                <Route path="/regulamin-aplikacji" element={<RegulaminAplikacjiPage />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
@@ -61,5 +69,8 @@ export function render(url: string): string {
     </HelmetProvider>
   );
 
-  return html;
+  const helmet = helmetContext.helmet;
+  const scripts = helmet?.script?.toString() ?? "";
+
+  return { html, scripts };
 }
