@@ -82,6 +82,18 @@ export default function PomocPage() {
                       <p className="font-semibold text-foreground text-lg">608 650 435</p>
                     </div>
                   </a>
+                  <a
+                    href="tel:+48572557326"
+                    className="flex items-center gap-4 p-5 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all group"
+                  >
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-0.5">Telefon</p>
+                      <p className="font-semibold text-foreground text-lg">572 557 326</p>
+                    </div>
+                  </a>
 
                   <a
                     href="mailto:gobrainterapeuta@gmail.com"

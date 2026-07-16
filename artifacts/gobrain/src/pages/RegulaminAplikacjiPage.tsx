@@ -64,6 +64,9 @@ export default function RegulaminAplikacjiPage() {
                 <a href="tel:+48608650435" className="text-primary hover:underline">
                   608 650 435
                 </a>
+                {" "}/ <a href="tel:+48572557326" className="text-primary hover:underline">
+                  572 557 326
+                </a>
                 .
               </p>
               <p>
@@ -261,6 +264,10 @@ export default function RegulaminAplikacjiPage() {
                   <strong>Telefon:</strong>{" "}
                   <a href="tel:+48608650435" className="text-primary hover:underline">
                     608 650 435
+                  </a>{" "}
+                  /{" "}
+                  <a href="tel:+48572557326" className="text-primary hover:underline">
+                    572 557 326
                   </a>{" "}
                   — pn.-pt., godz. 9:00–17:00.
                 </li>

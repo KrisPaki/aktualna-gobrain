@@ -20,6 +20,10 @@ export default function Footer() {
                 <Phone className="w-4 h-4 shrink-0" />
                 608 650 435
               </a>
+              <a href="tel:+48572557326" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Phone className="w-4 h-4 shrink-0" />
+                572 557 326
+              </a>
               <a href="mailto:gobrainterapeuta@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-email">
                 <Mail className="w-4 h-4 shrink-0" />
                 gobrainterapeuta@gmail.com

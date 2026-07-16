@@ -582,6 +582,12 @@ export default function ItsSchoolPage() {
                   608 650 435
                 </a>
               </Button>
+              <Button size="lg" variant="outline" className="h-13 px-8 text-base font-semibold border-white text-white hover:bg-white hover:text-orange-600" asChild>
+                <a href="tel:+48572557326">
+                  <Phone className="w-4 h-4 mr-2" />
+                  572 557 326
+                </a>
+              </Button>
             </motion.div>
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap justify-center gap-4">
               <Link to="/sklep" className="text-white/70 hover:text-white text-sm underline underline-offset-4 transition-colors">

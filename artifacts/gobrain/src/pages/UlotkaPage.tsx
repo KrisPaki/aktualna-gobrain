@@ -154,7 +154,7 @@ export default function UlotkaPage() {
                   <p className="text-blue-100" style={{ fontSize: "7.5px", marginTop: "1px" }}>Kup kod aktywacyjny online</p>
                 </div>
                 <div className="bg-orange-500 rounded-xl px-3 py-2 text-center">
-                  <p className="text-white font-bold" style={{ fontSize: "8px" }}>📞 608 650 435</p>
+                  <p className="text-white font-bold" style={{ fontSize: "8px" }}>📞 608 650 435 / 572 557 326</p>
                   <p className="text-orange-100" style={{ fontSize: "7px" }}>gobrainterapeuta@gmail.com</p>
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function UlotkaPage() {
                     {[
                       { icon: "🌐", t: "gobrain.pl" },
                       { icon: "✉️", t: "gobrainterapeuta@gmail.com" },
-                      { icon: "📞", t: "608 650 435" },
+                      { icon: "📞", t: "608 650 435 / 572 557 326" },
                       { icon: "📘", t: "facebook.com/gobrainpl" },
                     ].map(({ icon, t }) => (
                       <div key={t} className="flex items-center gap-1.5" style={{ fontSize: "7.5px" }}>

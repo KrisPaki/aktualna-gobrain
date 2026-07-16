@@ -56,7 +56,7 @@ export default function RegulaminPage() {
               </p>
               <p>
                 Kontakt: <a href="mailto:gobrainterapeuta@gmail.com" className="text-primary hover:underline">gobrainterapeuta@gmail.com</a>,
-                telefon: <a href="tel:+48608650435" className="text-primary hover:underline">608 650 435</a>.
+                telefon: <a href="tel:+48608650435" className="text-primary hover:underline">608 650 435</a>, <a href="tel:+48572557326" className="text-primary hover:underline">572 557 326</a>.
               </p>
               <p>
                 Korzystanie z serwisu oznacza akceptację niniejszego Regulaminu.

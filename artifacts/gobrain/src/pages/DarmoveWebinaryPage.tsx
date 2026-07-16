@@ -56,6 +56,12 @@ export default function DarmoveWebinaryPage() {
                   608 650 435
                 </a>
               </Button>
+              <Button size="lg" variant="outline" className="h-13 px-8 text-base font-semibold" asChild>
+                <a href="tel:+48572557326">
+                  <Phone className="w-4 h-4 mr-2" />
+                  572 557 326
+                </a>
+              </Button>
             </motion.div>
           </motion.div>
         </div>
@@ -220,6 +226,12 @@ export default function DarmoveWebinaryPage() {
                 <a href="tel:+48608650435">
                   <Phone className="w-4 h-4 mr-2" />
                   608 650 435
+                </a>
+              </Button>
+              <Button size="lg" className="h-13 px-8 text-base font-semibold bg-white text-primary hover:bg-white/90" asChild>
+                <a href="tel:+48572557326">
+                  <Phone className="w-4 h-4 mr-2" />
+                  572 557 326
                 </a>
               </Button>
             </motion.div>
