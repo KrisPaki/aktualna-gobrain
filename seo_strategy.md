@@ -5,9 +5,10 @@
 - Product and feature pages (`/`, `/its`, `/its-school`, `/strefa-terapeuty`, `/karta-mowy`, `/sklep`)
 - Informational and support pages (`/szkolenia-i-webinary`, `/darmowe-webinary`, `/blog`, `/blog/:slug`, `/faq`, `/pomoc`)
 - Educational catalog pages (`/programy-edukacyjne`, `/programy-edukacyjne/:slug`)
+- Public printable/flyer route (`/ulotka`) when the source code exposes crawl or indexing signals for it
 
 ## Out of scope
-- Authenticated product experiences hosted outside this SPA
+- Authenticated product experiences hosted outside this app
 - Third-party checkout and download destinations linked from the marketing site
 - Live production behavior that cannot be verified from source code alone
 
@@ -24,8 +25,10 @@
 - programy edukacyjne dla dzieci
 
 ## Notes
-- The app is a pure React + Vite SPA with React Router and no SSR or prerender layer.
-- All route-level SEO conclusions must be derived from the static shell in `artifacts/gobrain/index.html` plus source templates.
+- The app is React + Vite with an SSR build plus `prerender.mjs`; public routes are emitted as static HTML and then hydrated on the client.
+- Route metadata is split between `src/components/SEO.tsx` / `react-helmet-async` and hard-coded route arrays in `prerender.mjs`, so route-level SEO conclusions should be checked against the shipped prerendered HTML, not only the JSX source.
+- `robots.txt`, `sitemap.xml`, and `llms.txt` exist in `artifacts/gobrain/public/`.
+- `/ulotka` currently signals `noindex` in source via `<SEO noindex />`, so crawlability checks should keep its sitemap, prerendered HTML, and route intent aligned.
 
 ## Dismissed categories
 - (None yet)
