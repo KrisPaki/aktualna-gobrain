@@ -20,7 +20,6 @@ import ProgramPage from "@/pages/ProgramPage";
 import ItsSchoolPage from "@/pages/ItsSchoolPage";
 import KartaMowyPage from "@/pages/KartaMowyPage";
 import DarmoveWebinaryPage from "@/pages/DarmoveWebinaryPage";
-import UlotkaPage from "@/pages/UlotkaPage";
 import NotFound from "@/pages/not-found";
 import PolitykaPrywatnosciPage from "@/pages/PolitykaPrywatnosciPage";
 import RegulaminPage from "@/pages/RegulaminPage";
@@ -57,7 +56,6 @@ export function render(url: string): RenderResult {
                 <Route path="/programy-edukacyjne/:slug" element={<ProgramPage />} />
                 <Route path="/karta-mowy" element={<KartaMowyPage />} />
                 <Route path="/darmowe-webinary" element={<DarmoveWebinaryPage />} />
-                <Route path="/ulotka" element={<UlotkaPage />} />
                 <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosciPage />} />
                 <Route path="/regulamin" element={<RegulaminPage />} />
                 <Route path="/regulamin-aplikacji" element={<RegulaminAplikacjiPage />} />
