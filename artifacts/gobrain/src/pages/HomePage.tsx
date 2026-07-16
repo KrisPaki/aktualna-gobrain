@@ -627,24 +627,45 @@ export default function HomePage() {
               {[
                 {
                   src: "/screenshots/game-screenshot-1.webp",
-                  alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy",
+                  alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptakami na półkach",
                   badge: "Adaptacja w czasie rzeczywistym",
                   badgeColor: "bg-primary text-white",
                   caption: "Program automatycznie dopasowuje poziom trudności do możliwości dziecka",
                 },
                 {
                   src: "/screenshots/game-screenshot-2.webp",
-                  alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci",
+                  alt: "GoBrain interaktywny trening słuchowy — zadanie z domkami i chłopcem",
                   badge: "Trening przez zabawę",
                   badgeColor: "bg-accent text-white",
                   caption: "Atrakcyjna grafika i nagrody motywują dziecko do systematycznego ćwiczenia",
                 },
                 {
                   src: "/screenshots/game-screenshot-3.webp",
-                  alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami",
+                  alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą",
                   badge: "Pamięć i koncentracja",
                   badgeColor: "bg-green-600 text-white",
                   caption: "Ćwiczenia rozwijają uwagę słuchową, pamięć i przetwarzanie bodźców",
+                },
+                {
+                  src: "/screenshots/game-screenshot-4.webp",
+                  alt: "GoBrain interaktywny trening słuchowy — zadanie z kulami na półkach w cyrku",
+                  badge: "Dyskryminacja dźwięków",
+                  badgeColor: "bg-blue-600 text-white",
+                  caption: "Zadania z lokalizacją dźwięku uczą precyzyjnego rozróżniania bodźców słuchowych",
+                },
+                {
+                  src: "/screenshots/game-screenshot-5.webp",
+                  alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptaszkiem przy zamkach",
+                  badge: "Uwaga kierunkowa",
+                  badgeColor: "bg-orange-500 text-white",
+                  caption: "Dziecko uczy się skupiać uwagę słuchową w wybranym kierunku — kluczowa umiejętność szkolna",
+                },
+                {
+                  src: "/screenshots/game-screenshot-6.webp",
+                  alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu",
+                  badge: "Śledzenie postępów",
+                  badgeColor: "bg-purple-600 text-white",
+                  caption: "Hall of Fame i statystyki motywują dziecko i pokazują realne postępy treningowe",
                 },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp} className="group relative flex flex-col">

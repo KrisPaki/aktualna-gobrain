@@ -363,32 +363,40 @@ export default function SklepPage() {
             </motion.p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-5"
-          >
-            {[
-              { src: "/screenshots/game-screenshot-1.webp", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy" },
-              { src: "/screenshots/game-screenshot-2.webp", alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci" },
-              { src: "/screenshots/game-screenshot-3.webp", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami" },
-            ].map((img, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="rounded-2xl overflow-hidden border border-border shadow-md hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="overflow-hidden -mx-4">
+            <motion.div
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+              className="flex gap-4 w-max"
+            >
+              {[
+                { src: "/screenshots/game-screenshot-1.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptakami na półkach" },
+                { src: "/screenshots/game-screenshot-2.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z domkami i chłopcem" },
+                { src: "/screenshots/game-screenshot-3.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą" },
+                { src: "/screenshots/game-screenshot-4.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z kulami na półkach w cyrku" },
+                { src: "/screenshots/game-screenshot-5.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptaszkiem przy zamkach" },
+                { src: "/screenshots/game-screenshot-6.webp", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
+                { src: "/screenshots/game-screenshot-1.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptakami na półkach" },
+                { src: "/screenshots/game-screenshot-2.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z domkami i chłopcem" },
+                { src: "/screenshots/game-screenshot-3.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą" },
+                { src: "/screenshots/game-screenshot-4.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z kulami na półkach w cyrku" },
+                { src: "/screenshots/game-screenshot-5.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptaszkiem przy zamkach" },
+                { src: "/screenshots/game-screenshot-6.webp", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
+              ].map((img, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 w-72 rounded-2xl overflow-hidden border border-border shadow-md"
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-44 object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
