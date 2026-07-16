@@ -626,8 +626,11 @@ export default function ItsPage() {
                   <span>ETAP 1</span>
                 </div>
                 <h3 className="text-3xl font-bold text-foreground mb-4">Podstawy treningu słuchowego</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Pierwszy etap ITS GoBrain „Zabawy z dźwiękami" to wprowadzenie do treningu słuchowego. Program składa się z 10–25 sesji interaktywnych ćwiczeń słuchowych ćwiczących mózg dziecka. Korzystaj 2–3 razy w tygodniu.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                  Dziecko ćwiczy samodzielnie i otrzymuje natychmiastową informację zwrotną, dzięki czemu szybko robi postępy. Rodzic angażuje się minimalnie, a terapeuta może na bieżąco monitorować postępy.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
