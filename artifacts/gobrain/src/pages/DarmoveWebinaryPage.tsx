@@ -108,18 +108,18 @@ export default function DarmoveWebinaryPage() {
             {[
               {
                 id: "yJFP_x9ue4s",
-                title: "Jak wspiera\u0107 rozw\u00f3j ma\u0142ego dziecka?",
-                speaker: "Karolina Krahel \u2014 logopeda, pedagog specjalny",
-              },
-              {
-                id: "wTFjWacsHJw",
                 title: "Efektywno\u015b\u0107 terapii logopedycznej przy wykorzystaniu wibrator\u00f3w logopedycznych",
                 speaker: "Wioletta Obidziska \u2014 logopeda, pedagog specjalny",
               },
               {
-                id: "KHe2StnPHHU",
+                id: "wTFjWacsHJw",
                 title: "Prosta droga do wywo\u0142ania g\u0142osek szeregu szumi\u0105cego sz, \u017c, cz, d\u017c. Utrwalanie g\u0142oski L.",
                 speaker: "Lidia Wasik \u2014 surdopedagog, nauczyciel edukacji wczesnoszkolnej, oligofonepedag, logopeda, terapeuta r\u0119ki",
+              },
+              {
+                id: "KHe2StnPHHU",
+                title: "Jak wspiera\u0107 rozw\u00f3j ma\u0142ego dziecka?",
+                speaker: "Karolina Krahel \u2014 logopeda, pedagog specjalny",
               },
               {
                 id: "sZyO8Lv1-eg",
