@@ -14,7 +14,6 @@ export default function Navbar() {
     { label: "ITS School", href: "/its-school" },
     { label: "Karta Mowy", href: "/karta-mowy" },
     { label: "Sklep", href: "/sklep" },
-    { label: "Programy edukacyjne", href: "/programy-edukacyjne" },
     { label: "Strefa terapeuty", href: "/strefa-terapeuty" },
     { label: "Szkolenia", href: "/szkolenia-i-webinary" },
     { label: "Blog", href: "/blog" },
