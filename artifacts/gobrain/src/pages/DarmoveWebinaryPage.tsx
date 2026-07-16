@@ -103,7 +103,7 @@ export default function DarmoveWebinaryPage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="flex flex-col gap-10"
           >
             {[
               {
@@ -132,19 +132,23 @@ export default function DarmoveWebinaryPage() {
                 speaker: "Edyta Walaszek \u2014 logopeda, oligofrenopedagog, pedagog specjalny, terapeuta r\u0119ki",
               },
             ].map((video) => (
-              <motion.div key={video.id} variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full"
-                  />
+              <motion.div key={video.id} variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                {/* Video — lewa strona */}
+                <div className="w-full sm:w-[55%] shrink-0">
+                  <div className="relative w-full rounded-2xl overflow-hidden shadow-md" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
                 </div>
-                <div className="p-5">
-                  <p className="font-semibold text-foreground mb-1">{video.title}</p>
+                {/* Opis — prawa strona */}
+                <div className="sm:text-right flex flex-col justify-center sm:pt-4">
+                  <p className="font-bold text-lg text-foreground mb-2 leading-snug">{video.title}</p>
                   <p className="text-sm text-muted-foreground">{video.speaker}</p>
                 </div>
               </motion.div>
