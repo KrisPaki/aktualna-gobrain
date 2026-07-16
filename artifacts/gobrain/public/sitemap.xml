@@ -87,6 +87,8 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- /ulotka is intentionally excluded — page carries noindex directive -->
+
   <!-- ─── Artykuły blogowe ─── -->
   <url>
     <loc>https://gobrain.pl/blog/czym-sa-zaburzenia-capd</loc>

@@ -180,40 +180,40 @@ defineGlobal("screen", { width: 1280, height: 768, availWidth: 1280, availHeight
 // ─── Route definitions ────────────────────────────────────────────────────────
 
 const BLOG_SLUGS = [
-  { slug: "prasa-why-story-2021", title: "Przeczytajcie o nas w prasie #2", excerpt: "Nasza metoda oraz historia rozwoju GoBrain opisana w czasopismie Why Story nr 1/2021." },
-  { slug: "prasa-artykul-naukowy", title: "Przeczytajcie o nas w prasie #1", excerpt: "Metoda ITS GoBrain opisana w artykule naukowym o centralnych zaburzeniach przetwarzania sluchowego." },
-  { slug: "czym-sa-zaburzenia-capd", title: "Czym sa zaburzenia CAPD?", excerpt: "Poznaj centralne zaburzenia przetwarzania sluchowego (CAPD) — objawy, przyczyny i mozliwosci terapii." },
-  { slug: "capd-dobrze-slyszy-zle-przetwarza", title: "Dobrze slyszy, ale zle przetwarza — CAPD w praktyce", excerpt: "Dziecko dobrze slyszy, ale nie rozumie polecen? Poznaj CAPD i jak pomaga trening sluchowy GoBrain." },
-  { slug: "szkola-podstawowa-z-gobrain", title: "GoBrain w szkole podstawowej", excerpt: "Jak ITS GoBrain wspiera uczniow szkoly podstawowej w koncentracji, czytaniu i pisaniu." },
-  { slug: "pomysly-na-zabawy-z-dzieckiem", title: "Pomysly na zabawy z dzieckiem wspierajace sluch", excerpt: "Praktyczne zabawy rozwijajace uwage sluchowa i koncentracje u dzieci w domu." },
-  { slug: "dysleksja-i-gobrain", title: "Dysleksja a trening sluchowy GoBrain", excerpt: "Czy ITS GoBrain moze pomoc dzieciom z dysleksja? Sprawdz, jak trening sluchowy wspiera nauke czytania." },
-  { slug: "przedszkole-z-gobrain", title: "GoBrain w przedszkolu", excerpt: "Jak ITS GoBrain wspiera rozwoj mowy i koncentracji u dzieci w wieku przedszkolnym." },
-  { slug: "czym-jest-adhd", title: "Czym jest ADHD i jak moze pomoc trening sluchowy?", excerpt: "ADHD a przetwarzanie sluchowe — zwiazki, objawy i rola treningu GoBrain w terapii." },
+  { slug: "prasa-why-story-2021", title: "Przeczytajcie o nas w prasie #2", excerpt: "Nasza metoda oraz historia rozwoju GoBrain została opisana w czasopiśmie Why Story nr 1/2021." },
+  { slug: "prasa-artykul-naukowy", title: "Przeczytajcie o nas w prasie #1", excerpt: "Metoda ITS GoBrain obok innych treningów słuchowych takich jak Tomatis, Johansen jest opisana w artykule naukowym o centralnych zaburzeniach przetwarzania słuchowego." },
+  { slug: "czym-sa-zaburzenia-capd", title: "Czym są zaburzenia przetwarzania słuchowego na poziomie centralnym (CAPD)?", excerpt: "Czy dziecko, które słyszy najdrobniejszy szmer może mieć zaburzenia przetwarzania słuchowego? Z różnych przyczyn proces nauki słuchania nie przebiega prawidłowo — mózg skupia się na nieistotnych bodźcach." },
+  { slug: "capd-dobrze-slyszy-zle-przetwarza", title: "Centralne zaburzenia przetwarzania słuchowego (CAPD) — dobrze słyszy, ale źle przetwarza dźwięki", excerpt: "Ale jak to? — zapyta większość z nas. Zazwyczaj, gdy mamy podejrzenia problemów ze słuchem, od razu myślimy, że coś niedobrego dzieje się z uchem. Tymczasem CAPD to problem zupełnie innej natury." },
+  { slug: "szkola-podstawowa-z-gobrain", title: "Przez szkołę podstawową z GoBrain!", excerpt: "Wiek, kiedy twoje dziecko idzie do szkoły jest bardzo wyjątkowym momentem w jego życiu. Wtedy właśnie zaczyna się uczyć wielu nowych rzeczy, nie tylko tych szkolnych." },
+  { slug: "pomysly-na-zabawy-z-dzieckiem", title: "4 pomysły na rozwijające zabawy z dzieckiem", excerpt: "W życiu dziecka zabawa odgrywa bardzo ważną rolę. Dzięki niej uczymy się relacji z rówieśnikami, nowych pojęć czy mechanizmów. Warto zadbać, aby zabawy dzieci niosły ze sobą wartości edukacyjne." },
+  { slug: "dysleksja-i-gobrain", title: "Twoje dziecko ma dysleksję? Trening GoBrain to świetne rozwiązanie!", excerpt: "Czy wiesz, że aż 15% dzieci w Polsce ma dysleksję? Czym jest dysleksja i jak można sobie z nią poradzić? Trening słuchowy ITS GoBrain może być skutecznym wsparciem w terapii dysleksji." },
+  { slug: "przedszkole-z-gobrain", title: "Do przedszkola z GoBrain", excerpt: "Gdy dziecko wchodzi w wiek przedszkolny, każdy z rodziców zastanawia się, w jaki sposób przygotować je na nowe wyzwania związane z tym okresem. Rozwój maluchów w wieku 4–6 lat to kluczowy etap." },
+  { slug: "czym-jest-adhd", title: "Czym jest ADHD?", excerpt: "ADHD to nadpobudliwość psychoruchowa z deficytem uwagi i impulsywnością. Jeśli wszystkie trzy objawy występują u dziecka przez co najmniej kilka miesięcy niezależnie od środowiska, może to wskazywać na ADHD." },
 ];
 
 const PROGRAM_SLUGS = [
-  { slug: "zabawy-logopedyczne-01", title: "Zabawy logopedyczne 01", subtitle: "Gry logopedyczne wspierajace mowe, pamiec wzrokowa i sluchowa." },
-  { slug: "gloski-ciszace-01", title: "Gloski ciszace — zestaw I", subtitle: "Cwiczenia glosek si, zi, ci, dzi dla dzieci od 3 lat." },
-  { slug: "gloski-ciszace-02", title: "Gloski ciszace — zestaw II", subtitle: "Dalsze cwiczenia glosek ciszacych dla dzieci." },
-  { slug: "gloski-kr-gr", title: "Gloski kr, gr", subtitle: "Cwiczenia wymowy glosek kr i gr — program logopedyczny GoBrain." },
-  { slug: "gloski-pr-br", title: "Gloski pr, br", subtitle: "Cwiczenia wymowy glosek pr i br — program logopedyczny GoBrain." },
-  { slug: "gloski-tr-dr", title: "Gloski tr, dr", subtitle: "Cwiczenia wymowy glosek tr i dr — program logopedyczny GoBrain." },
-  { slug: "gloski-miekkie", title: "Gloski miekkie", subtitle: "Cwiczenia glosek miekkch — program logopedyczny GoBrain dla dzieci." },
-  { slug: "szereg-szumiacy-sz", title: "Szereg szumiacy — sz", subtitle: "Cwiczenia gloski sz — program logopedyczny GoBrain." },
-  { slug: "szereg-szumiacy-cz", title: "Szereg szumiacy — cz", subtitle: "Cwiczenia gloski cz — program logopedyczny GoBrain." },
-  { slug: "szereg-szumiacy-rz", title: "Szereg szumiacy — rz", subtitle: "Cwiczenia gloski rz — program logopedyczny GoBrain." },
-  { slug: "literki-a-o-e-u-i-y", title: "Literki a, o, e, u, i, y", subtitle: "Nauka samoglosek — program edukacyjny GoBrain dla dzieci." },
-  { slug: "literki-t-d", title: "Literki t, d", subtitle: "Nauka liter t i d — program edukacyjny GoBrain." },
-  { slug: "literki-p-b", title: "Literki p, b", subtitle: "Nauka liter p i b — program edukacyjny GoBrain." },
-  { slug: "literki-m-n", title: "Literki m, n", subtitle: "Nauka liter m i n — program edukacyjny GoBrain." },
-  { slug: "literki-k-g-h", title: "Literki k, g, h", subtitle: "Nauka liter k, g i h — program edukacyjny GoBrain." },
-  { slug: "literki-l-r-j", title: "Literki l, r, j", subtitle: "Nauka liter l, r i j — program edukacyjny GoBrain." },
-  { slug: "literki-w-f", title: "Literki w, f", subtitle: "Nauka liter w i f — program edukacyjny GoBrain." },
-  { slug: "literki-c-s-z", title: "Literki c, s, z", subtitle: "Nauka liter c, s i z — program edukacyjny GoBrain." },
-  { slug: "kreatywny-brzdac-01", title: "Kreatywny Brzdac 01", subtitle: "Zabawy rozwijajace kreatywnosc i wyobraznie — program GoBrain." },
-  { slug: "kreatywny-brzdac-02", title: "Kreatywny Brzdac 02", subtitle: "Kontynuacja zabaw kreatywnych dla dzieci — program GoBrain." },
-  { slug: "pamiec-i-koncentracja-01", title: "Pamiec i koncentracja 01", subtitle: "Cwiczenia pamieci i koncentracji dla dzieci — program GoBrain." },
-  { slug: "mala-matematyka-01", title: "Mala matematyka 01", subtitle: "Zabawy matematyczne dla najmniejszych — program edukacyjny GoBrain." },
+  { slug: "zabawy-logopedyczne-01", title: "Zabawy logopedyczne 01", subtitle: "Zestaw gier logopedycznych — ćwiczenia wspierające rozwój mowy, pamięci wzrokowej i słuchowej." },
+  { slug: "gloski-ciszace-01", title: "Zabawy logopedyczne. Głoski ciszące — zestaw I", subtitle: "Ćwiczenia głosek si, zi, ci, dzi — wsparcie terapii mowy dla dzieci od 3 lat." },
+  { slug: "gloski-ciszace-02", title: "Zabawy logopedyczne. Zestaw 02", subtitle: "Zestaw gier logopedycznych rozwijających pamięć i koncentrację — dla dzieci od 3 lat." },
+  { slug: "gloski-kr-gr", title: "Zabawy logopedyczne. Głoski KR i GR", subtitle: "Ćwiczenia głosek zwartych tylnojęzykowych i głoski drżącej — wsparcie terapii logopedycznej." },
+  { slug: "gloski-pr-br", title: "Zabawy logopedyczne. Głoski PR i BR", subtitle: "Ćwiczenia głosek zwartych P, B z głoską drżącą R — dla dzieci od 3 lat." },
+  { slug: "gloski-tr-dr", title: "Zabawy logopedyczne. Głoski TR i DR", subtitle: "Nowoczesna aplikacja wspierająca prawidłową wymowę głosek T, D i R." },
+  { slug: "gloski-miekkie", title: "Zabawy logopedyczne. Głoski miękkie", subtitle: "Ćwiczenia głosek SI, CI, ZI, DZI oraz S i SZ — dla dzieci od 3 lat." },
+  { slug: "szereg-szumiacy-sz", title: "Zabawy logopedyczne. Szereg szumiący — głoska SZ", subtitle: "Ćwiczenia szeregu szumiącego SZA, SZE, SZO, SZU, SZY na etapie sylab, wyrazów i zdań." },
+  { slug: "szereg-szumiacy-cz", title: "Zabawy logopedyczne. Szereg szumiący — głoska CZ", subtitle: "Ćwiczenia szeregu szumiącego CZA, CZE, CZO, CZU, CZY na etapie sylab, wyrazów i zdań." },
+  { slug: "szereg-szumiacy-rz", title: "Zabawy logopedyczne. Szereg szumiący — głoska RZ/Ż", subtitle: "Ćwiczenia szeregu szumiącego RZA, RZE, RZO, RZU, RZY na etapie sylab, wyrazów i zdań." },
+  { slug: "literki-a-o-e-u-i-y", title: "Zabawy z literkami. Samogłoski A O E U I Y", subtitle: "Nauka alfabetu z ilustracjami — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-t-d", title: "Zabawy z literkami. Spółgłoski T i D", subtitle: "Nauka spółgłosek przedniojęzykowo-przyzębowych T i D — gry literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-p-b", title: "Zabawy z literkami. Spółgłoski P i B", subtitle: "Nauka spółgłosek P i B — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-m-n", title: "Zabawy z literkami. Literki M i N", subtitle: "Nauka spółgłosek M i N — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-k-g-h", title: "Zabawy z literkami. Literki K, G, H", subtitle: "Nauka spółgłosek K, G i H — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-l-r-j", title: "Zabawy z literkami. Literki L, R, J", subtitle: "Nauka spółgłosek L, R i J — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-w-f", title: "Zabawy z literkami. Literki W i F", subtitle: "Nauka spółgłosek W i F — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "literki-c-s-z", title: "Zabawy z literkami. Literki C, S, Z", subtitle: "Nauka spółgłosek C, S i Z — gry i zabawy literowe dla dzieci od 3 do 7 lat." },
+  { slug: "kreatywny-brzdac-01", title: "Kreatywny brzdąc — zestaw I", subtitle: "Zestaw gier logicznych rozwijających pamięć i koncentrację — dla dzieci od 3 do 7 lat." },
+  { slug: "kreatywny-brzdac-02", title: "Kreatywny brzdąc — zestaw II", subtitle: "Gry logiczne z nauką kolorów, zegara i klasyfikacji — dla dzieci od 3 do 7 lat." },
+  { slug: "pamiec-i-koncentracja-01", title: "Pamięć i koncentracja — zestaw I", subtitle: "Gry rozwijające pamięć sekwencyjną, logiczne myślenie i koncentrację — od 3 lat." },
+  { slug: "mala-matematyka-01", title: "Mała matematyka — zestaw I", subtitle: "Nauka dodawania, odejmowania i mnożenia w formie zabawy — dla dzieci od 5 lat." },
 ];
 
 const STATIC_ROUTES = [
@@ -229,7 +229,7 @@ const STATIC_ROUTES = [
   { path: "/programy-edukacyjne", title: "Programy edukacyjne GoBrain — gry logopedyczne i edukacyjne", description: "Odkryj programy edukacyjne GoBrain: zabawy logopedyczne, nauka liter, cwiczenia koncentracji i kreatywnosci dla dzieci od 3 lat." },
   { path: "/karta-mowy", title: "Karta Mowy — narzedzie diagnostyczne GoBrain", description: "Karta Mowy GoBrain — sprawdz poziom rozwoju mowy swojego dziecka za pomoca bezplatnego narzedzia diagnostycznego." },
   { path: "/darmowe-webinary", title: "Darmowe webinary — ITS GoBrain", description: "Bezplatne webinary o treningu sluchowym, CAPD i terapii mowy. Dolacz do ekspertow GoBrain i dowiedz sie, jak pomoc swojemu dziecku." },
-  { path: "/ulotka", title: "Ulotka ITS GoBrain — informacje dla rodzicow i terapeutow", description: "Pobierz ulotke ITS GoBrain. Krotkie informacje o metodzie treningu sluchowego dla rodzicow i specjalistow." },
+  { path: "/ulotka", title: "Ulotka ITS GoBrain — informacje dla rodziców i terapeutów", description: "Pobierz ulotkę ITS GoBrain. Krótkie informacje o metodzie treningu słuchowego dla rodziców i specjalistów.", noindex: true },
   { path: "/polityka-prywatnosci", title: "Polityka prywatnosci — ITS GoBrain", description: "Polityka prywatnosci serwisu gobrain.pl. Jakie dane zbieramy, jak je przetwarzamy i jakie masz prawa jako uzytkownik." },
   { path: "/regulamin", title: "Regulamin — ITS GoBrain", description: "Regulamin serwisu gobrain.pl i oprogramowania ITS GoBrain. Warunki korzystania z licencji, zamawiania i zwrotow." },
   { path: "/regulamin-aplikacji", title: "Regulamin korzystania z aplikacji — ITS GoBrain", description: "Zasady korzystania z oprogramowania ITS GoBrain. Wymagania techniczne, zasady logowania, ochrona danych i prawa uzytkownika." },
@@ -239,22 +239,23 @@ const ALL_ROUTES = [
   ...STATIC_ROUTES,
   ...BLOG_SLUGS.map(({ slug, title, excerpt }) => ({
     path: `/blog/${slug}`,
-    title: `${title} — Blog GoBrain`,
+    title: `${title} — Blog GoBrain | gobrain.pl`,
     description: excerpt,
   })),
   ...PROGRAM_SLUGS.map(({ slug, title, subtitle }) => ({
     path: `/programy-edukacyjne/${slug}`,
-    title: `${title} — Program edukacyjny GoBrain`,
+    title: `${title} — Program edukacyjny GoBrain | gobrain.pl`,
     description: subtitle,
   })),
 ];
 
 // ─── HTML manipulation helpers ────────────────────────────────────────────────
 
-function buildHeadBlock(title, description, routePath) {
+function buildHeadBlock(title, description, routePath, noindex = false) {
   const url = `${BASE}${routePath}`;
+  const robotsTag = noindex ? `\n    <meta name="robots" content="noindex, nofollow" />` : "";
   return `<title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="description" content="${escapeHtml(description)}" />${robotsTag}
     <link rel="canonical" href="${url}" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
@@ -299,7 +300,7 @@ function stripRouteMeta(html) {
     .replace(/<meta name="twitter:image"[^>]*>/g, "");
 }
 
-function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, helmetHead, templateHtml) {
+function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, helmetHead, templateHtml, noindex = false) {
   let html = stripRouteMeta(templateHtml);
 
   if (helmetHead) {
@@ -307,7 +308,7 @@ function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, hel
     html = html.replace("</head>", `  ${helmetHead}\n  </head>`);
   } else {
     // Fallback: static metadata when SSR head is unavailable
-    const head = buildHeadBlock(staticTitle, staticDescription, routePath);
+    const head = buildHeadBlock(staticTitle, staticDescription, routePath, noindex);
     html = html.replace("</head>", `  ${head}\n  </head>`);
   }
 
@@ -356,7 +357,7 @@ async function main() {
   let ok = 0;
   let fallback = 0;
 
-  for (const { path: routePath, title, description } of ALL_ROUTES) {
+  for (const { path: routePath, title, description, noindex } of ALL_ROUTES) {
     let bodyHtml = null;
     let helmetHead = "";
 
@@ -375,7 +376,7 @@ async function main() {
       }
     }
 
-    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetHead, template);
+    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetHead, template, noindex);
     const mode = bodyHtml ? "full" : "head";
     if (!bodyHtml) fallback++;
     else ok++;
