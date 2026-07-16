@@ -546,6 +546,24 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-8 flex justify-center"
+            >
+              <Link
+                to="/programy-edukacyjne"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors border border-primary/20 hover:border-primary/40 px-6 py-3 rounded-full bg-primary/5 hover:bg-primary/10"
+                data-testid="link-programy-edukacyjne"
+              >
+                <BookOpen className="w-4 h-4" />
+                Zobacz też: Programy edukacyjne — gry logopedyczne i ćwiczenia dla dzieci
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
           </div>
         </section>
 

@@ -35,6 +35,7 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Produkty</h3>
             <ul className="space-y-3">
               <li><Link to="/sklep" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-sklep">Sklep</Link></li>
+              <li><Link to="/programy-edukacyjne" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-programy">Programy edukacyjne</Link></li>
               <li><Link to="/its" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-its">ITS GoBrain</Link></li>
               <li><Link to="/its-school" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-its-school">ITS GoBrain Pre & School</Link></li>
               <li><Link to="/strefa-terapeuty" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-terapeuta">Platforma Terapeuta</Link></li>
