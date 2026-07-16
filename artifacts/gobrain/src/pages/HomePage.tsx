@@ -1126,10 +1126,10 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-center"
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch"
             >
               {/* Card 1: ITS GoBrain (Most Popular) */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-primary shadow-xl relative xl:col-span-1">
+              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-primary shadow-xl relative xl:col-span-1 flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
                   Najpopularniejszy
                 </div>
@@ -1146,7 +1146,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full h-11 text-sm font-semibold" asChild data-testid="pricing-main-btn">
+                <Button className="w-full h-11 text-sm font-semibold mt-auto" asChild data-testid="pricing-main-btn">
                   <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
                     Kup kod aktywacyjny
                   </a>
@@ -1154,7 +1154,7 @@ export default function HomePage() {
               </motion.div>
 
               {/* Card 2: Karta Mowy */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-green-400 shadow-lg relative">
+              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-green-400 shadow-lg relative flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
                   Nowość
                 </div>
@@ -1171,13 +1171,13 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full h-11 text-sm font-semibold bg-green-600 hover:bg-green-700 text-white" asChild data-testid="pricing-karta-btn">
+                <Button className="w-full h-11 text-sm font-semibold bg-green-600 hover:bg-green-700 text-white mt-auto" asChild data-testid="pricing-karta-btn">
                   <Link to="/karta-mowy">Dowiedz się więcej</Link>
                 </Button>
               </motion.div>
 
               {/* Card 3: School */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-orange-400 shadow-lg relative">
+              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-orange-400 shadow-lg relative flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
                   Grupowe
                 </div>
@@ -1194,13 +1194,13 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full h-11 text-sm border-orange-400 text-orange-600 hover:bg-orange-50" asChild data-testid="pricing-school-btn">
+                <Button variant="outline" className="w-full h-11 text-sm border-orange-400 text-orange-600 hover:bg-orange-50 mt-auto" asChild data-testid="pricing-school-btn">
                   <Link to="/its-school">Zamów licencję</Link>
                 </Button>
               </motion.div>
 
               {/* Card 4: Platforma Terapeuty */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-purple-400 shadow-lg relative">
+              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-purple-400 shadow-lg relative flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
                   Narzędzia
                 </div>
@@ -1217,7 +1217,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full h-11 text-sm border-purple-400 text-purple-700 hover:bg-purple-50" asChild data-testid="pricing-therapist-btn">
+                <Button variant="outline" className="w-full h-11 text-sm border-purple-400 text-purple-700 hover:bg-purple-50 mt-auto" asChild data-testid="pricing-therapist-btn">
                   <Link to="/strefa-terapeuty">Dowiedz się więcej</Link>
                 </Button>
               </motion.div>
