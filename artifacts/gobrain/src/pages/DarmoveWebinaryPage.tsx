@@ -108,13 +108,28 @@ export default function DarmoveWebinaryPage() {
             {[
               {
                 id: "yJFP_x9ue4s",
-                title: "Jak wspierać rozwój małego dziecka?",
-                speaker: "Karolina Krahel — logopeda, pedagog specjalny",
+                title: "Jak wspiera\u0107 rozw\u00f3j ma\u0142ego dziecka?",
+                speaker: "Karolina Krahel \u2014 logopeda, pedagog specjalny",
               },
               {
                 id: "wTFjWacsHJw",
-                title: "Efektywność terapii logopedycznej przy wykorzystaniu wibratorów logopedycznych",
-                speaker: "Wioletta Obidzinska — logopeda, pedagog specjalny",
+                title: "Efektywno\u015b\u0107 terapii logopedycznej przy wykorzystaniu wibrator\u00f3w logopedycznych",
+                speaker: "Wioletta Obidziska \u2014 logopeda, pedagog specjalny",
+              },
+              {
+                id: "KHe2StnPHHU",
+                title: "Prosta droga do wywo\u0142ania g\u0142osek szeregu szumi\u0105cego sz, \u017c, cz, d\u017c. Utrwalanie g\u0142oski L.",
+                speaker: "Lidia Wasik \u2014 surdopedagog, nauczyciel edukacji wczesnoszkolnej, oligofonepedag, logopeda, terapeuta r\u0119ki",
+              },
+              {
+                id: "sZyO8Lv1-eg",
+                title: "Czy moje dziecko oddycha prawid\u0142owo?",
+                speaker: "Lucyna Wilczy\u0144ska \u2014 logopeda, terapeuta r\u0119ki",
+              },
+              {
+                id: "MescvrFWZDk",
+                title: "Masa\u017c logopedyczny w codziennej praktyce zawodowej",
+                speaker: "Edyta Walaszek \u2014 logopeda, oligofrenopedagog, pedagog specjalny, terapeuta r\u0119ki",
               },
             ].map((video) => (
               <motion.div key={video.id} variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">

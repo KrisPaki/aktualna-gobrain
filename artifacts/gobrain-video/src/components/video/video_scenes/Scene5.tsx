@@ -28,7 +28,7 @@ export function Scene5() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Metoda
+        Model
       </motion.p>
 
       <motion.h1
