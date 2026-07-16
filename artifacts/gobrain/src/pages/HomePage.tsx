@@ -308,6 +308,7 @@ export default function HomePage() {
                 className="w-full h-full"
                 title="Film marketingowy GoBrain"
                 allow="autoplay"
+                loading="lazy"
                 style={{ display: "block" }}
               />
             </motion.div>
