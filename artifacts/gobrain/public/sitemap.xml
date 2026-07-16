@@ -75,12 +75,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gobrain.pl/ulotka</loc>
-    <lastmod>2026-07-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://gobrain.pl/polityka-prywatnosci</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>

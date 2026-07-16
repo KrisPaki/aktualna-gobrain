@@ -28,6 +28,7 @@ import RegulaminAplikacjiPage from "@/pages/RegulaminAplikacjiPage";
 
 export interface RenderResult {
   html: string;
+  head: string;
   scripts: string;
 }
 
@@ -70,7 +71,14 @@ export function render(url: string): RenderResult {
   );
 
   const helmet = helmetContext.helmet;
+  const headParts = [
+    helmet?.title?.toString() ?? "",
+    helmet?.meta?.toString() ?? "",
+    helmet?.link?.toString() ?? "",
+    helmet?.script?.toString() ?? "",
+  ].filter((s) => s.trim() !== "");
+  const head = headParts.join("\n    ");
   const scripts = helmet?.script?.toString() ?? "";
 
-  return { html, scripts };
+  return { html, head, scripts };
 }

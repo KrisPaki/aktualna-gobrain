@@ -275,26 +275,42 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
-function stripExistingMeta(html) {
+/**
+ * Strip route-specific meta tags that Helmet will replace.
+ * Deliberately keeps: charset, viewport, og:image:alt, favicon, preconnect,
+ * fonts, and the global Organization+WebSite JSON-LD from the template.
+ */
+function stripRouteMeta(html) {
   return html
     .replace(/<title>[^<]*<\/title>/g, "")
     .replace(/<meta name="description"[^>]*>/g, "")
+    .replace(/<meta name="robots"[^>]*>/g, "")
     .replace(/<link rel="canonical"[^>]*>/g, "")
+    .replace(/<meta property="og:type"[^>]*>/g, "")
+    .replace(/<meta property="og:locale"[^>]*>/g, "")
+    .replace(/<meta property="og:site_name"[^>]*>/g, "")
     .replace(/<meta property="og:title"[^>]*>/g, "")
     .replace(/<meta property="og:description"[^>]*>/g, "")
     .replace(/<meta property="og:url"[^>]*>/g, "")
+    .replace(/<meta property="og:image(?::[^"]*)?"\s[^>]*>/g, "")
+    .replace(/<meta name="twitter:card"[^>]*>/g, "")
     .replace(/<meta name="twitter:title"[^>]*>/g, "")
     .replace(/<meta name="twitter:description"[^>]*>/g, "")
     .replace(/<meta name="twitter:image"[^>]*>/g, "");
 }
 
-function writeRouteHtml(routePath, title, description, bodyHtml, helmetScripts, templateHtml) {
-  const head = buildHeadBlock(title, description, routePath);
-  let html = stripExistingMeta(templateHtml);
-  html = html.replace("</head>", `  ${head}\n  </head>`);
-  if (helmetScripts) {
-    html = html.replace("</head>", `  ${helmetScripts}\n  </head>`);
+function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, helmetHead, templateHtml) {
+  let html = stripRouteMeta(templateHtml);
+
+  if (helmetHead) {
+    // Authoritative: use Helmet SSR head (title, meta, canonical, robots, OG, Twitter, JSON-LD)
+    html = html.replace("</head>", `  ${helmetHead}\n  </head>`);
+  } else {
+    // Fallback: static metadata when SSR head is unavailable
+    const head = buildHeadBlock(staticTitle, staticDescription, routePath);
+    html = html.replace("</head>", `  ${head}\n  </head>`);
   }
+
   if (bodyHtml) {
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
   }
@@ -342,7 +358,7 @@ async function main() {
 
   for (const { path: routePath, title, description } of ALL_ROUTES) {
     let bodyHtml = null;
-    let helmetScripts = "";
+    let helmetHead = "";
 
     if (renderFn) {
       try {
@@ -351,7 +367,7 @@ async function main() {
         global.location = global.window.location;
         const result = renderFn(routePath);
         bodyHtml = result.html ?? result;
-        helmetScripts = result.scripts ?? "";
+        helmetHead = result.head ?? result.scripts ?? "";
       } catch (err) {
         console.warn(`  WARN: SSR render failed for ${routePath}:`, err.message.split("\n")[0]);
         fallback++;
@@ -359,7 +375,7 @@ async function main() {
       }
     }
 
-    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetScripts, template);
+    const file = writeRouteHtml(routePath, title, description, bodyHtml, helmetHead, template);
     const mode = bodyHtml ? "full" : "head";
     if (!bodyHtml) fallback++;
     else ok++;
