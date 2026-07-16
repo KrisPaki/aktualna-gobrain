@@ -267,9 +267,10 @@ export default function StrefaTerapeutyPage() {
               className="rounded-3xl overflow-hidden shadow-2xl bg-black"
             >
               <video
-                controls
+                autoPlay
+                loop
+                muted
                 playsInline
-                preload="metadata"
                 className="w-full"
                 style={{ maxHeight: "560px", transform: "scale(1.08)", transformOrigin: "center center" }}
               >
