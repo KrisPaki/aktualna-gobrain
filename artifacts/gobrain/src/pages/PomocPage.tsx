@@ -97,7 +97,7 @@ export default function PomocPage() {
                   </a>
 
                   <a
-                    href="https://www.facebook.com/zabawyzdzwiekami"
+                    href="https://www.facebook.com/gobrainpl"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-5 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all group"
