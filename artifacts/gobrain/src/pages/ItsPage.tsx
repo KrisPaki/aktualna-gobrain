@@ -28,6 +28,8 @@ import therapistChildImg from "@/assets/therapist-child.webp";
 import childrenClassroomImg from "@/assets/children-classroom.webp";
 import heroChildImg from "@/assets/hero-child-new.webp";
 import heroHeadphonesImg from "@/assets/hero-child-headphones.webp";
+import heroHeadphones640Img from "@/assets/hero-child-headphones-640w.webp";
+import heroHeadphones1280Img from "@/assets/hero-child-headphones-1280w.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -54,9 +56,12 @@ export default function ItsPage() {
           <div className="absolute inset-0">
             <img
               src={heroHeadphonesImg}
+              srcSet={`${heroHeadphones640Img} 640w, ${heroHeadphones1280Img} 1280w, ${heroHeadphonesImg} 1920w`}
+              sizes="100vw"
               alt="Dziecko podczas interaktywnego treningu słuchowego ITS GoBrain"
               className="w-full h-full object-cover opacity-50"
               style={{ objectPosition: "center 20%" }}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/55 to-primary/10" />
           </div>

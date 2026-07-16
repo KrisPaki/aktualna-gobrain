@@ -14,7 +14,7 @@ import {
   Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import childrenClassroomImg from "@/assets/children-classroom.png";
+import childrenClassroomImg from "@/assets/children-classroom.webp";
 import { programsByCategory, programs } from "@/data/programyData";
 
 const fadeInUp: Variants = {

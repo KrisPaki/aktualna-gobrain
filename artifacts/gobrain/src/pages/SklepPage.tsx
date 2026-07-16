@@ -6,7 +6,7 @@ import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, Sc
 import parentChildImg from "@/assets/parent-child-home.webp";
 import { Button } from "@/components/ui/button";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
-import productItsImg from "@/assets/product-its-gobrain.png";
+import productItsImg from "@/assets/product-its-gobrain.webp";
 import productSchoolImg from "@/assets/product-its-school-ai.webp";
 import productTerapeutaImg from "@/assets/product-terapeuta.webp";
 import therapistChildImg from "@/assets/therapist-child.webp";

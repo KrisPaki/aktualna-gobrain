@@ -27,10 +27,14 @@ import {
 import { Button } from "@/components/ui/button";
 import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.webp";
+import therapistPortraitHero640Img from "@/assets/therapist-portrait-hero-640w.webp";
+import therapistPortraitHero1280Img from "@/assets/therapist-portrait-hero-1280w.webp";
 import testResultsImg from "@/assets/test-results-screen.webp";
 import dashboardPrePostImg from "@/assets/dashboard-pretest-posttest.webp";
 import childSuccessImg from "@/assets/DSC01020.jpg";
-import therapistOfficeImg from "@/assets/therapist-office.png";
+import therapistOfficeImg from "@/assets/therapist-office.webp";
+import therapistOffice640Img from "@/assets/therapist-office-640w.webp";
+import therapistOffice1280Img from "@/assets/therapist-office-1280w.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -118,9 +122,12 @@ export default function StrefaTerapeutyPage() {
           <div className="absolute inset-0">
             <img
               src={therapistPortraitHeroImg}
+              srcSet={`${therapistPortraitHero640Img} 640w, ${therapistPortraitHero1280Img} 1280w, ${therapistPortraitHeroImg} 1920w`}
+              sizes="100vw"
               alt="Terapeutka logopedka pracuje z platformą interaktywnego treningu słuchowego GoBrain"
               className="w-full h-full object-cover opacity-60"
               style={{ objectPosition: "100% 15%" }}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/40 to-primary/10" />
           </div>
@@ -452,7 +459,15 @@ export default function StrefaTerapeutyPage() {
                   className="relative"
                 >
                   <div className="rounded-3xl overflow-hidden shadow-2xl">
-                    <img src={therapistOfficeImg} alt="Terapeutka logopedka przy biurku z platformą interaktywnego treningu słuchowego GoBrain" className="w-full object-cover" />
+                    <img
+                      src={therapistOfficeImg}
+                      srcSet={`${therapistOffice640Img} 640w, ${therapistOffice1280Img} 1280w, ${therapistOfficeImg} 1920w`}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      alt="Terapeutka logopedka przy biurku z platformą interaktywnego treningu słuchowego GoBrain"
+                      className="w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
@@ -477,7 +492,7 @@ export default function StrefaTerapeutyPage() {
                   className="relative mt-6"
                 >
                   <div className="rounded-3xl overflow-hidden shadow-xl bg-muted">
-                    <img src={dashboardPrePostImg} alt="Porównanie wyników PreTest i PostTest w platformie GoBrain — wykresy przed i po terapii słuchowej" className="w-full object-contain p-2" />
+                    <img src={dashboardPrePostImg} alt="Porównanie wyników PreTest i PostTest w platformie GoBrain — wykresy przed i po terapii słuchowej" className="w-full object-contain p-2" loading="lazy" decoding="async" />
                   </div>
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
@@ -502,7 +517,7 @@ export default function StrefaTerapeutyPage() {
                   className="relative mt-6"
                 >
                   <div className="rounded-3xl overflow-hidden shadow-2xl">
-                    <img src={childSuccessImg} alt="Dziecko po udanej terapii GoBrain" className="w-full object-cover" />
+                    <img src={childSuccessImg} alt="Dziecko po udanej terapii GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                   </div>
                   <motion.div
                     animate={{ y: [0, -6, 0] }}

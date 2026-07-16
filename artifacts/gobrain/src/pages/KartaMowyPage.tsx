@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import therapistChildImg from "@/assets/therapist-child.webp";
+import therapistChild640Img from "@/assets/therapist-child-640w.webp";
+import therapistChild1280Img from "@/assets/therapist-child-1280w.webp";
 import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import childTabletTogetherImg from "@/assets/child-tablet-together.jpg";
 import kartaMowyDlaKogoImg from "@/assets/karta-mowy-dla-kogo.jpg";
@@ -43,9 +45,12 @@ export default function KartaMowyPage() {
         <div className="absolute inset-0">
           <img
             src={therapistChildImg}
+            srcSet={`${therapistChild640Img} 640w, ${therapistChild1280Img} 1280w, ${therapistChildImg} 1920w`}
+            sizes="100vw"
             alt="Logopedka pracuje z dzieckiem korzystając z Karty Mowy GoBrain"
             className="w-full h-full object-cover opacity-60"
             style={{ objectPosition: "center 15%" }}
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-900/55 to-green-900/10" />
         </div>

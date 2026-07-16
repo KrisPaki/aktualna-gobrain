@@ -3,7 +3,7 @@ import { SEO } from "@/components/SEO";
 import ProblemCyclerComponent from "@/components/ProblemCycler";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import anetaPakielaImg from "@/assets/aneta-pakiela-new.png";
+import anetaPakielaImg from "@/assets/aneta-pakiela-new.webp";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import heroChildImg from "@/assets/hero-child-new.webp";
 import childTabletImg from "@/assets/child-tablet-fun.webp";
@@ -878,6 +878,8 @@ export default function HomePage() {
                       alt="Aneta Pakieła – twórczyni metody GoBrain"
                       className="w-full h-full object-cover"
                       style={{ objectPosition: "50% 15%", transform: "scale(1.25)", transformOrigin: "50% 15%" }}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <motion.div

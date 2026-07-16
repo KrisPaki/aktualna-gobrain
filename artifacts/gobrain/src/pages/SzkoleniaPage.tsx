@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
-import certyfikatImg from "@/assets/certyfikat-providera.png";
+import certyfikatImg from "@/assets/certyfikat-providera.webp";
 import {
   CheckCircle2,
   GraduationCap,
