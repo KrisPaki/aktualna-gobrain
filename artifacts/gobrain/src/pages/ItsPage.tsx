@@ -537,9 +537,12 @@ export default function ItsPage() {
               className="grid grid-cols-1 md:grid-cols-3 gap-5"
             >
               {[
-                { src: "/screenshots/game-screenshot-1.webp", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z ptakami na półkach, interaktywny trening słuchowy" },
-                { src: "/screenshots/game-screenshot-2.webp", alt: "Screenshot z gry ITS GoBrain — zadanie z domkami i chłopcem, trening słuchu dla dzieci" },
-                { src: "/screenshots/game-screenshot-3.webp", alt: "Screenshot z gry ITS GoBrain — ćwiczenie z krową i owcą, zabawa z dźwiękami" },
+                { src: "/screenshots/game-screenshot-1.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptakami na półkach" },
+                { src: "/screenshots/game-screenshot-2.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z domkami i chłopcem" },
+                { src: "/screenshots/game-screenshot-3.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą" },
+                { src: "/screenshots/game-screenshot-4.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z kulami na półkach w cyrku" },
+                { src: "/screenshots/game-screenshot-5.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptaszkiem przy zamkach" },
+                { src: "/screenshots/game-screenshot-6.webp", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
               ].map((img, i) => (
                 <motion.div
                   key={i}
