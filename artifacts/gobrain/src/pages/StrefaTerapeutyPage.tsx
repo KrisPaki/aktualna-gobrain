@@ -273,7 +273,7 @@ export default function StrefaTerapeutyPage() {
                 className="w-full"
                 style={{ maxHeight: "560px", transform: "scale(1.08)", transformOrigin: "center center" }}
               >
-                <source src="/platforma-terapeuta.mov" type="video/mp4" />
+                <source src="/platforma-terapeuta.mp4" type="video/mp4" />
                 Twoja przeglądarka nie obsługuje odtwarzacza wideo.
               </video>
             </motion.div>
