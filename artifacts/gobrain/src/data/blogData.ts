@@ -4,6 +4,7 @@ export interface BlogArticle {
   excerpt: string;
   date: string;
   publishedAt: string;
+  modifiedAt?: string;
   category: string;
   categoryColor: string;
   author: string;

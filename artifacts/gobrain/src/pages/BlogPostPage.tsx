@@ -86,7 +86,7 @@ export default function BlogPostPage() {
     description: article.excerpt,
     author: { "@type": "Person", name: article.author },
     datePublished: article.publishedAt,
-    dateModified: article.publishedAt,
+    dateModified: article.modifiedAt ?? article.publishedAt,
     url: `https://gobrain.pl/blog/${article.slug}`,
     publisher: { "@id": "https://gobrain.pl/#organization" },
     inLanguage: "pl",
