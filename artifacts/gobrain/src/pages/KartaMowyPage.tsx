@@ -181,26 +181,26 @@ export default function KartaMowyPage() {
               {
                 icon: Mic,
                 color: "bg-green-50 text-green-600",
-                title: "Badanie mowy \u2013 krok po kroku",
-                desc: "Diagnoza w nag\u0142osie, \u015br\u00f3dg\u0142osie i wyg\u0142osie. Spersonalizowane ankiety i ocena narz\u0105d\u00f3w mowy. Czytelna analiza wynik\u00f3w w tabelach.",
+                title: "Badanie mowy – krok po kroku",
+                desc: "Diagnoza w nagłosie, śródgłosie i wygłosie. Spersonalizowane ankiety i ocena narządów mowy. Czytelna analiza wyników w tabelach.",
               },
               {
                 icon: Gamepad2,
                 color: "bg-blue-50 text-blue-600",
-                title: "M\u00f3wisz i grasz!",
-                desc: "Gry wspieraj\u0105ce wymow\u0119. Kolorowe karty, obrazki, elementy do wycinania. Mo\u017cliwo\u015b\u0107 prowadzenia zaj\u0119\u0107 bez u\u017cycia komputera. Program dzia\u0142a r\u00f3wnie\u017c offline \u2014 jedynie drukowanie materia\u0142\u00f3w i dokument\u00f3w wymaga internetu.",
+                title: "Mówisz i grasz!",
+                desc: "Gry wspierające wymowę. Kolorowe karty, obrazki, elementy do wycinania. Możliwość prowadzenia zajęć bez użycia komputera. Program działa również offline — jedynie drukowanie materiałów i dokumentów wymaga internetu.",
               },
               {
                 icon: Printer,
                 color: "bg-purple-50 text-purple-600",
-                title: "Materia\u0142y do druku (PDF)",
-                desc: "Gotowe elementy do wycinania, karty pracy i dokumenty do tradycyjnych zaj\u0119\u0107 bez komputera.",
+                title: "Materiały do druku (PDF)",
+                desc: "Gotowe elementy do wycinania, karty pracy i dokumenty do tradycyjnych zajęć bez komputera.",
               },
               {
                 icon: BarChart3,
                 color: "bg-orange-50 text-orange-600",
-                title: "Diagnoza + analiza wynik\u00f3w",
-                desc: "Czytelna analiza wynik\u00f3w w tabelach. Raporty i historia sesji w kartotece ka\u017cdego dziecka.",
+                title: "Diagnoza + analiza wyników",
+                desc: "Czytelna analiza wyników w tabelach. Raporty i historia sesji w kartotece każdego dziecka.",
               },
 
             ].map((item) => (
@@ -345,9 +345,9 @@ export default function KartaMowyPage() {
                 {[
                   "karta badania mowy",
                   "przebieg terapii",
-                  "tabele norm wymowy poszczeg\u00f3lnych g\u0142osek",
+                  "tabele norm wymowy poszczególnych głosek",
                   "zgoda rodzica na badanie mowy",
-                  "kwestionariusz do badania mowy do wydruku i wykorzystania w tradycyjny spos\u00f3b",
+                  "kwestionariusz do badania mowy do wydruku i wykorzystania w tradycyjny sposób",
                 ].map((item) => (
                   <motion.li key={item} variants={fadeInUp} className="flex items-center gap-3 text-sm text-foreground">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
@@ -407,7 +407,7 @@ export default function KartaMowyPage() {
                 icon: Download,
                 color: "bg-green-50 text-green-600",
                 title: "Pobierz i zainstaluj",
-                desc: "Po instalacji \u2014 jednorazowy, bezp\u0142atny dost\u0119p do pe\u0142nej wersji. Przy kolejnym uruchomieniu wymagane jest wprowadzenie zakupionego kodu aktywacyjnego.",
+                desc: "Po instalacji — jednorazowy, bezpłatny dostęp do pełnej wersji. Przy kolejnym uruchomieniu wymagane jest wprowadzenie zakupionego kodu aktywacyjnego.",
                 links: [
                   { label: "Pobierz na Windows PC", href: "https://gobraintech.pl/current/Sklep_PC/KartaMowy.exe" },
                   { label: "Pobierz na Android", href: "https://gobraintech.pl/current/Sklep_Android/karta.apk" },
@@ -467,7 +467,7 @@ export default function KartaMowyPage() {
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Zacznij ju\u017c dzi\u015b \u2013 Karta Mowy czeka na Ciebie
+              Zacznij już dziś – Karta Mowy czeka na Ciebie
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-white/80 text-lg mb-3">
               Licencja na 365 dni od aktywacji.
