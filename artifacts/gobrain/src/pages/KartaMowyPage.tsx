@@ -144,7 +144,7 @@ export default function KartaMowyPage() {
 
       {/* What's included */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -152,22 +152,12 @@ export default function KartaMowyPage() {
             variants={staggerContainer}
             className="text-center mb-12"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Co zawiera Karta Mowy?
             </motion.h2>
-            <motion.ul variants={staggerContainer} className="inline-flex flex-col gap-2 text-left mb-6">
-              {[
-                "Interaktywna karta badania mowy",
-                "Gry logopedyczne online",
-                "Materiały do druku (PDF)",
-                "Diagnoza + analiza wyników",
-              ].map((item) => (
-                <motion.li key={item} variants={fadeInUp} className="flex items-center gap-2 text-base text-foreground font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
-                  {item}
-                </motion.li>
-              ))}
-            </motion.ul>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg">
+              Cztery moduły, które zastępują stos papierów i segregatorów.
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -175,45 +165,74 @@ export default function KartaMowyPage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {[
               {
                 icon: Mic,
                 color: "bg-green-50 text-green-600",
+                border: "border-green-100",
                 title: "Badanie mowy – krok po kroku",
-                desc: "Diagnoza w nagłosie, śródgłosie i wygłosie. Spersonalizowane ankiety i ocena narządów mowy. Czytelna analiza wyników w tabelach.",
+                points: [
+                  "Diagnoza w nagłosie, śródgłosie i wygłosie",
+                  "Spersonalizowane ankiety i ocena narządów mowy",
+                  "Czytelna analiza wyników w tabelach",
+                ],
               },
               {
                 icon: Gamepad2,
                 color: "bg-blue-50 text-blue-600",
+                border: "border-blue-100",
                 title: "Mówisz i grasz!",
-                desc: "Gry wspierające wymowę. Kolorowe karty, obrazki, elementy do wycinania. Możliwość prowadzenia zajęć bez użycia komputera. Program działa również offline — jedynie drukowanie materiałów i dokumentów wymaga internetu.",
+                points: [
+                  "Gry wspierające wymowę",
+                  "Kolorowe karty, obrazki, elementy do wycinania",
+                  "Możliwość zajęć bez komputera",
+                  "Program działa offline — internet potrzebny tylko do drukowania",
+                ],
               },
               {
                 icon: Printer,
                 color: "bg-purple-50 text-purple-600",
+                border: "border-purple-100",
                 title: "Materiały do druku (PDF)",
-                desc: "Gotowe elementy do wycinania, karty pracy i dokumenty do tradycyjnych zajęć bez komputera.",
+                points: [
+                  "Gotowe elementy do wycinania i karty pracy",
+                  "Dokumenty do tradycyjnych zajęć bez komputera",
+                  "Wydruki dostępne z poziomu programu",
+                ],
               },
               {
                 icon: BarChart3,
                 color: "bg-orange-50 text-orange-600",
+                border: "border-orange-100",
                 title: "Diagnoza + analiza wyników",
-                desc: "Czytelna analiza wyników w tabelach. Raporty i historia sesji w kartotece każdego dziecka.",
+                points: [
+                  "Czytelna analiza wyników w tabelach",
+                  "Raporty i historia sesji",
+                  "Kartoteka każdego dziecka z pełną dokumentacją",
+                ],
               },
-
             ].map((item) => (
               <motion.div
                 key={item.title}
                 variants={fadeInUp}
-                className="bg-card border border-border rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
+                className={`bg-card border ${item.border} rounded-2xl p-6 hover:shadow-md transition-shadow`}
               >
-                <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mx-auto mb-4`}>
-                  <item.icon className="w-7 h-7" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-11 h-11 rounded-xl ${item.color} flex items-center justify-center shrink-0`}>
+                    <item.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-foreground text-base">{item.title}</h3>
                 </div>
-                <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                <ul className="space-y-2">
+                  {item.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </motion.div>
