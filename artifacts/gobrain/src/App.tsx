@@ -22,6 +22,7 @@ import DarmoveWebinaryPage from "@/pages/DarmoveWebinaryPage";
 import UlotkaPage from "@/pages/UlotkaPage";
 import PolitykaPrywatnosciPage from "@/pages/PolitykaPrywatnosciPage";
 import RegulaminPage from "@/pages/RegulaminPage";
+import RegulaminAplikacjiPage from "@/pages/RegulaminAplikacjiPage";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ function App() {
               <Route path="/ulotka" element={<UlotkaPage />} />
               <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosciPage />} />
               <Route path="/regulamin" element={<RegulaminPage />} />
+              <Route path="/regulamin-aplikacji" element={<RegulaminAplikacjiPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

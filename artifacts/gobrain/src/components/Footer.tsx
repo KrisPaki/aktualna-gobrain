@@ -59,6 +59,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <Link to="/polityka-prywatnosci" className="hover:text-primary transition-colors" data-testid="link-footer-privacy">Polityka prywatności</Link>
             <Link to="/regulamin" className="hover:text-primary transition-colors" data-testid="link-footer-terms">Regulamin</Link>
+            <Link to="/regulamin-aplikacji" className="hover:text-primary transition-colors" data-testid="link-footer-terms-app">Regulamin aplikacji</Link>
           </div>
         </div>
       </div>

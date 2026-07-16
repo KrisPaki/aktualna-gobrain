@@ -232,6 +232,7 @@ const STATIC_ROUTES = [
   { path: "/ulotka", title: "Ulotka ITS GoBrain — informacje dla rodzicow i terapeutow", description: "Pobierz ulotke ITS GoBrain. Krotkie informacje o metodzie treningu sluchowego dla rodzicow i specjalistow." },
   { path: "/polityka-prywatnosci", title: "Polityka prywatnosci — ITS GoBrain", description: "Polityka prywatnosci serwisu gobrain.pl. Jakie dane zbieramy, jak je przetwarzamy i jakie masz prawa jako uzytkownik." },
   { path: "/regulamin", title: "Regulamin — ITS GoBrain", description: "Regulamin serwisu gobrain.pl i oprogramowania ITS GoBrain. Warunki korzystania z licencji, zamawiania i zwrotow." },
+  { path: "/regulamin-aplikacji", title: "Regulamin korzystania z aplikacji — ITS GoBrain", description: "Zasady korzystania z oprogramowania ITS GoBrain. Wymagania techniczne, zasady logowania, ochrona danych i prawa uzytkownika." },
 ];
 
 const ALL_ROUTES = [
