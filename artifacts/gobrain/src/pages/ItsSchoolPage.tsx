@@ -377,6 +377,9 @@ export default function ItsSchoolPage() {
                   "Możliwość pracy stacjonarnej i zdalnej",
                   "Szkolenie i certyfikat Providera GoBrain w pakiecie",
                   "Wsparcie techniczne i merytoryczne od twórców",
+                  "Pełna automatyzacja procesu treningowego oraz bieżące monitorowanie postępów po każdym zadaniu, dzięki czemu dziecko szybciej się uczy",
+                  "Unikatowa funkcja wspierania uwagi słuchowej kierunkowej — dźwięk zakłócający w tle zmienia głośność w zależności od poprawności wykonywanego zadania",
+                  "Ćwiczenie funkcji słuchowych z wykorzystaniem wsparcia wizualnego w postaci obrazków",
                 ].map((item) => (
                   <motion.li key={item} variants={fadeInUp} className="flex items-center gap-3 text-sm text-foreground">
                     <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
@@ -451,8 +454,11 @@ export default function ItsSchoolPage() {
               <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-foreground mb-4">
                 Pełny wgląd w postępy każdego dziecka
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed mb-6">
+              <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed mb-3">
                 Intuicyjny panel terapeuty pozwala na bieżące śledzenie wyników wszystkich podopiecznych. Raporty, statystyki sesji i historia treningów — wszystko w jednym miejscu.
+              </motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed mb-6">
+                Terapeuta ma pełną kontrolę nad treningiem prowadzonym w domu — może sprawdzić, kiedy trening został wykonany, ile trwał oraz jakie dziecko osiągnęło wyniki.
               </motion.p>
               <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-4">
                 {[
