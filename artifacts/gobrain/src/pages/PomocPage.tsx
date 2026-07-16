@@ -32,7 +32,6 @@ export default function PomocPage() {
         description="Centrum pomocy ITS GoBrain. Instrukcje instalacji, FAQ i wsparcie techniczne dla użytkowników oprogramowania GoBrain."
         canonical="/pomoc"
       />
-
       <div className="pt-16">
 
         {/* Hero */}
@@ -108,7 +107,7 @@ export default function PomocPage() {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-0.5">Facebook</p>
-                      <p className="font-semibold text-foreground">@zabawyzdzwiekami</p>
+                      <p className="font-semibold text-foreground">@gobrain.pl</p>
                     </div>
                   </a>
                 </div>
@@ -223,8 +222,6 @@ export default function PomocPage() {
         </section>
 
       </div>
-
-
     </div>
   );
 }
