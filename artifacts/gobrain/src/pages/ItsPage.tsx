@@ -632,6 +632,7 @@ export default function ItsPage() {
                 <ul className="space-y-3 mb-8">
                   {[
                     "Interaktywne ćwiczenia słuchowe",
+                    "Ze wsparciem wzrokowym",
                     "Dostosowany poziom trudności",
                     "Trening pamięci i koncentracji",
                     "Dostępny na PC i Android",
