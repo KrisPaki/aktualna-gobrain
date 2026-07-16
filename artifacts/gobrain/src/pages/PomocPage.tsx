@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import {
   Phone,
@@ -26,7 +27,11 @@ const staggerContainer: Variants = {
 export default function PomocPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-
+      <SEO
+        title="Pomoc i wsparcie techniczne – ITS GoBrain"
+        description="Centrum pomocy ITS GoBrain. Instrukcje instalacji, FAQ i wsparcie techniczne dla użytkowników oprogramowania GoBrain."
+        canonical="/pomoc"
+      />
 
       <div className="pt-16">
 

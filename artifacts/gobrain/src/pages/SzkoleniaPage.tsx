@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import anetaPakielaImg from "@/assets/aneta-pakiela.jpg";
 import certyfikatImg from "@/assets/certyfikat-providera.webp";
@@ -200,6 +201,11 @@ export default function SzkoleniaPage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
+      <SEO
+        title="Szkolenia i webinary – ITS GoBrain"
+        description="Szkolenia i webinary dla terapeutów i pedagogów z zakresu treningu słuchowego ITS GoBrain. Zapisz się na najbliższe wydarzenie."
+        canonical="/szkolenia-i-webinary"
+      />
 
       {showModal && <RegistrationModal onClose={() => setShowModal(false)} />}
 

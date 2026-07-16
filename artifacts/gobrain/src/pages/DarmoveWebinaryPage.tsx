@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import {
   Video,
   Users,
@@ -23,6 +24,11 @@ const staggerContainer: Variants = {
 export default function DarmoveWebinaryPage() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Darmowe webinary – ITS GoBrain"
+        description="Bezpłatne webinary o treningu słuchowym, CAPD i terapii mowy. Dołącz do ekspertów GoBrain i dowiedz się, jak pomóc swojemu dziecku."
+        canonical="/darmowe-webinary"
+      />
 
       {/* Hero */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-b from-primary/5 to-background">

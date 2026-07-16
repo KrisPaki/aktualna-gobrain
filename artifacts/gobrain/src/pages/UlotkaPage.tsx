@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import logoImg from "@/assets/gobrain-logo-new.png";
 import childHeadphones from "@/assets/hero-child-headphones.webp";
 import childTablet from "@/assets/child-tablet-fun.webp";
@@ -9,6 +10,12 @@ import productTerapeuta from "@/assets/product-terapeuta.png";
 export default function UlotkaPage() {
   return (
     <div className="min-h-screen bg-gray-200 py-8 px-4">
+      <SEO
+        title="Ulotka ITS GoBrain – informacje dla rodziców i terapeutów"
+        description="Pobierz ulotkę ITS GoBrain. Krótkie informacje o metodzie treningu słuchowego dla rodziców i specjalistów."
+        canonical="/ulotka"
+        noindex
+      />
       {/* Screen controls */}
       <div className="max-w-2xl mx-auto mb-6 flex items-center justify-between print:hidden">
         <div>

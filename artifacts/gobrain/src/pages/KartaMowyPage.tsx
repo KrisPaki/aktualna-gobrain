@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import {
   CheckCircle2,
@@ -39,6 +40,11 @@ const staggerContainer: Variants = {
 export default function KartaMowyPage() {
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
+      <SEO
+        title="Karta Mowy – narzędzie diagnostyczne GoBrain"
+        description="Karta Mowy GoBrain – sprawdź poziom rozwoju mowy swojego dziecka za pomocą bezpłatnego narzędzia diagnostycznego."
+        canonical="/karta-mowy"
+      />
 
       {/* Hero */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-green-900 text-white">

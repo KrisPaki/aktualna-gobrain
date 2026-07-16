@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import {
   CheckCircle2,
@@ -35,6 +36,11 @@ const staggerContainer: Variants = {
 export default function ItsSchoolPage() {
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
+      <SEO
+        title="ITS GoBrain dla szkół – trening słuchowy w edukacji"
+        description="Wdraż ITS GoBrain w swojej szkole. Program treningu słuchowego wspierający uczniów z trudnościami w koncentracji, czytaniu i pisaniu."
+        canonical="/its-school"
+      />
 
       {/* Hero */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 via-white to-blue-50 border-b border-border overflow-hidden">
