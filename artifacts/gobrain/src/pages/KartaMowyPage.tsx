@@ -155,9 +155,19 @@ export default function KartaMowyPage() {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Co zawiera Karta Mowy?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Wszystko, czego potrzebujesz w terapii logopedycznej — w jednym miejscu.
-            </motion.p>
+            <motion.ul variants={staggerContainer} className="inline-flex flex-col gap-2 text-left mb-6">
+              {[
+                "Interaktywna karta badania mowy",
+                "Gry logopedyczne online",
+                "Materiały do druku (PDF)",
+                "Diagnoza + analiza wyników",
+              ].map((item) => (
+                <motion.li key={item} variants={fadeInUp} className="flex items-center gap-2 text-base text-foreground font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
+                  {item}
+                </motion.li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           <motion.div
@@ -171,27 +181,28 @@ export default function KartaMowyPage() {
               {
                 icon: Mic,
                 color: "bg-green-50 text-green-600",
-                title: "Interaktywna karta badania mowy",
-                desc: "Diagnoza w nagłosie, śródgłosie i wygłosie. Spersonalizowane ankiety i ocena narządów mowy.",
+                title: "Badanie mowy \u2013 krok po kroku",
+                desc: "Diagnoza w nag\u0142osie, \u015br\u00f3dg\u0142osie i wyg\u0142osie. Spersonalizowane ankiety i ocena narz\u0105d\u00f3w mowy. Czytelna analiza wynik\u00f3w w tabelach.",
               },
               {
                 icon: Gamepad2,
                 color: "bg-blue-50 text-blue-600",
-                title: "Gry logopedyczne online",
-                desc: "Kolorowe karty, obrazki i interaktywne ćwiczenia wspierające wymowę. Angażujące dla dziecka.",
+                title: "M\u00f3wisz i grasz!",
+                desc: "Gry wspieraj\u0105ce wymow\u0119. Kolorowe karty, obrazki, elementy do wycinania. Mo\u017cliwo\u015b\u0107 prowadzenia zaj\u0119\u0107 bez u\u017cycia komputera. Program dzia\u0142a r\u00f3wnie\u017c offline \u2014 jedynie drukowanie materia\u0142\u00f3w i dokument\u00f3w wymaga internetu.",
               },
               {
                 icon: Printer,
                 color: "bg-purple-50 text-purple-600",
-                title: "Materiały do druku (PDF)",
-                desc: "Gotowe elementy do wycinania, karty pracy i dokumenty do tradycyjnych zajęć bez komputera.",
+                title: "Materia\u0142y do druku (PDF)",
+                desc: "Gotowe elementy do wycinania, karty pracy i dokumenty do tradycyjnych zaj\u0119\u0107 bez komputera.",
               },
               {
                 icon: BarChart3,
                 color: "bg-orange-50 text-orange-600",
-                title: "Diagnoza + analiza wyników",
-                desc: "Czytelna analiza wyników w tabelach. Raporty i historia sesji w kartotece każdego dziecka.",
+                title: "Diagnoza + analiza wynik\u00f3w",
+                desc: "Czytelna analiza wynik\u00f3w w tabelach. Raporty i historia sesji w kartotece ka\u017cdego dziecka.",
               },
+
             ].map((item) => (
               <motion.div
                 key={item.title}
@@ -332,11 +343,11 @@ export default function KartaMowyPage() {
               </motion.p>
               <motion.ul variants={staggerContainer} className="space-y-3">
                 {[
-                  "Karta badania mowy — gotowy wzór",
-                  "Dokument przebiegu terapii",
-                  "Tabele norm wymowy poszczególnych głosek",
-                  "Zgoda rodzica na badanie mowy",
-                  "Kwestionariusz do badania mowy do wydruku",
+                  "karta badania mowy",
+                  "przebieg terapii",
+                  "tabele norm wymowy poszczeg\u00f3lnych g\u0142osek",
+                  "zgoda rodzica na badanie mowy",
+                  "kwestionariusz do badania mowy do wydruku i wykorzystania w tradycyjny spos\u00f3b",
                 ].map((item) => (
                   <motion.li key={item} variants={fadeInUp} className="flex items-center gap-3 text-sm text-foreground">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
@@ -396,7 +407,7 @@ export default function KartaMowyPage() {
                 icon: Download,
                 color: "bg-green-50 text-green-600",
                 title: "Pobierz i zainstaluj",
-                desc: "Bezpłatna instalacja na PC (Windows) lub Android. Po instalacji program uruchamia się w pełnej wersji — bez ograniczeń przy pierwszym użyciu.",
+                desc: "Po instalacji \u2014 jednorazowy, bezp\u0142atny dost\u0119p do pe\u0142nej wersji. Przy kolejnym uruchomieniu wymagane jest wprowadzenie zakupionego kodu aktywacyjnego.",
                 links: [
                   { label: "Pobierz na Windows PC", href: "https://gobraintech.pl/current/Sklep_PC/KartaMowy.exe" },
                   { label: "Pobierz na Android", href: "https://gobraintech.pl/current/Sklep_Android/karta.apk" },
@@ -456,10 +467,10 @@ export default function KartaMowyPage() {
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Zacznij już dziś
+              Zacznij ju\u017c dzi\u015b \u2013 Karta Mowy czeka na Ciebie
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-white/80 text-lg mb-3">
-              Karta Mowy czeka na Ciebie. Licencja na 365 dni od aktywacji.
+              Licencja na 365 dni od aktywacji.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-white font-bold text-2xl mb-8">
               389 PLN (brutto)
