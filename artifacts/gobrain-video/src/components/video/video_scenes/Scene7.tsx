@@ -30,14 +30,6 @@ export function Scene7() {
       >
         <p className="text-[3vw] font-display font-semibold text-[var(--color-brand-primary)]">interaktywny trening słuchowy</p>
       </motion.div>
-      <motion.p
-        className="absolute bottom-12 text-[1.5vw] font-light text-white/60"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2.5 }}
-      >
-        Trening słuchowy by Aneta Pakieła
-      </motion.p>
     </motion.div>
   );
 }
