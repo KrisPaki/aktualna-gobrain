@@ -460,7 +460,7 @@ export default function StrefaTerapeutyPage() {
                       <ArrowRight className="w-3 h-3 text-muted-foreground" />
                     </div>
                     <h3 className="font-bold text-foreground mb-1">Monitoring postępów</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Terapeuta ma dostęp do wyników każdego dziecka w czasie rzeczywistym — śledzi postępy na bieżąco, bez względu na miejsce pracy. Platforma automatycznie porównuje poszczególne zadania, wskazując obszary wymagające większej uwagi. Na podstawie wyników terapeuta może też dostosować terapię poza systemem GoBrain.</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Terapeuta ma pełną kontrolę nad treningiem prowadzonym w domu — może sprawdzić, kiedy trening został wykonany, ile trwał oraz jakie dziecko osiągnęło wyniki. Platforma automatycznie porównuje poszczególne zadania, wskazując obszary wymagające większej uwagi. Na podstawie wyników terapeuta może też dostosować terapię poza systemem GoBrain.</p>
                   </div>
                 </motion.div>
 
