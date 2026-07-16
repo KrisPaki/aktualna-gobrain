@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import childrenClassroomImg from "@/assets/children-classroom.webp";
 import childrenClassroom640Img from "@/assets/children-classroom-640w.webp";
 import childrenClassroom1280Img from "@/assets/children-classroom-1280w.webp";
+import itsSchoolBoyTabletImg from "@/assets/its-school-boy-tablet.webp";
 import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import childTabletGame1Img from "@/assets/child-tablet-game1.jpg";
 
@@ -345,8 +346,8 @@ export default function ItsSchoolPage() {
               className="rounded-3xl overflow-hidden shadow-2xl"
             >
               <img
-                src={childrenClassroomImg}
-                alt="Dzieci korzystające z interaktywnego treningu słuchowego ITS GoBrain Pre & School w placówce"
+                src={itsSchoolBoyTabletImg}
+                alt="Chlopiec cwiczacy interaktywny trening sluchowy GoBrain na tablecie"
                 className="w-full object-cover"
                 loading="lazy"
                 decoding="async"
