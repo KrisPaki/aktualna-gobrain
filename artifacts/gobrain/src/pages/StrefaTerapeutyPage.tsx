@@ -24,18 +24,15 @@ import {
   FileText,
   Eye,
   Headphones,
+  Play,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.webp";
-import therapistPortraitHero640Img from "@/assets/therapist-portrait-hero-640w.webp";
-import therapistPortraitHero1280Img from "@/assets/therapist-portrait-hero-1280w.webp";
 import testResultsImg from "@/assets/test-results-screen.webp";
 import dashboardPrePostImg from "@/assets/dashboard-pretest-posttest.webp";
 import childSuccessImg from "@/assets/DSC01020.jpg";
 import therapistOfficeImg from "@/assets/therapist-office.webp";
-import therapistOffice640Img from "@/assets/therapist-office-640w.webp";
-import therapistOffice1280Img from "@/assets/therapist-office-1280w.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -109,6 +106,7 @@ function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 export default function StrefaTerapeutyPage() {
+  const [videoOpen, setVideoOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <SEO
@@ -117,6 +115,13 @@ export default function StrefaTerapeutyPage() {
         canonical="/strefa-terapeuty"
       />
       <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/img/therapist-portrait-hero-1280w.webp"
+          imageSrcSet="/img/therapist-portrait-hero-640w.webp 640w, /img/therapist-portrait-hero-1280w.webp 1280w"
+          imageSizes="100vw"
+        />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
@@ -152,11 +157,12 @@ export default function StrefaTerapeutyPage() {
           <div className="absolute inset-0">
             <img
               src={therapistPortraitHeroImg}
-              srcSet={`${therapistPortraitHero640Img} 640w, ${therapistPortraitHero1280Img} 1280w, ${therapistPortraitHeroImg} 1920w`}
+              srcSet="/img/therapist-portrait-hero-640w.webp 640w, /img/therapist-portrait-hero-1280w.webp 1280w"
               sizes="100vw"
               alt="Terapeutka logopedka pracuje z platformą interaktywnego treningu słuchowego GoBrain"
               className="w-full h-full object-cover opacity-60"
               style={{ objectPosition: "100% 15%" }}
+              fetchPriority="high"
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/40 to-primary/10" />
@@ -266,17 +272,43 @@ export default function StrefaTerapeutyPage() {
               transition={{ duration: 0.7 }}
               className="rounded-3xl overflow-hidden shadow-2xl bg-black"
             >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full"
-                style={{ maxHeight: "560px", transform: "scale(1.08)", transformOrigin: "center center" }}
-              >
-                <source src="/platforma-terapeuta.mp4" type="video/mp4" />
-                Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-              </video>
+              {videoOpen ? (
+                <video
+                  controls
+                  autoPlay
+                  playsInline
+                  preload="none"
+                  className="w-full"
+                  style={{ maxHeight: "560px" }}
+                >
+                  <source src="/platforma-terapeuta.mp4" type="video/mp4" />
+                  Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+                </video>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setVideoOpen(true)}
+                  className="relative w-full flex items-center justify-center bg-gray-900 cursor-pointer group focus:outline-none"
+                  style={{ minHeight: "360px" }}
+                  aria-label="Odtwórz prezentację platformy terapeutycznej GoBrain"
+                >
+                  <img
+                    src={therapistDashboardImg}
+                    srcSet="/img/therapist-dashboard-640w.webp 640w, /img/therapist-dashboard-1280w.webp 1280w"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    alt="Podgląd platformy terapeutycznej GoBrain — panel zarządzania pacjentami"
+                    className="w-full object-cover"
+                    style={{ maxHeight: "560px" }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 shadow-2xl">
+                      <Play className="w-10 h-10 text-white fill-white ml-1" />
+                    </div>
+                  </div>
+                </button>
+              )}
             </motion.div>
           </div>
         </section>
@@ -492,7 +524,7 @@ export default function StrefaTerapeutyPage() {
                   <div className="rounded-3xl overflow-hidden shadow-2xl">
                     <img
                       src={therapistOfficeImg}
-                      srcSet={`${therapistOffice640Img} 640w, ${therapistOffice1280Img} 1280w, ${therapistOfficeImg} 1920w`}
+                      srcSet="/img/therapist-office-640w.webp 640w, /img/therapist-office-1280w.webp 1280w"
                       sizes="(max-width: 768px) 100vw, 50vw"
                       alt="Terapeutka logopedka przy biurku z platformą interaktywnego treningu słuchowego GoBrain"
                       className="w-full object-cover"

@@ -80,6 +80,7 @@ const products = [
     priceNote: "PLN / rok (brutto)",
     img: productSchoolImg,
     imgAlt: "Program ITS GoBrain Pre & School — interaktywny trening słuchowy dla terapeutów i instytucji",
+    imgSrcSet: "/img/product-its-school-ai-640w.webp 640w, /img/product-its-school-ai-1280w.webp 1280w",
     target: "Dla terapeutów, gabinetów, szkół, przedszkoli, poradni, instytucji",
     features: [
       "Nieograniczona liczba użytkowników",
@@ -105,6 +106,7 @@ const products = [
     img: productTerapeutaImg,
     imgAlt: "Platforma Terapeuta GoBrain",
     imgPosition: "center 15%",
+    imgSrcSet: "/img/product-terapeuta-640w.webp 640w, /img/product-terapeuta-1280w.webp 1280w",
     target: "Dla terapeutów: logopedów, pedagogów, terapeutów SI, psychologów itp.",
     features: [
       "PreTest i PostTest (diagnoza słuchu)",
@@ -130,6 +132,7 @@ const products = [
     img: therapistChildImg,
     imgAlt: "Karta Mowy GoBrain — interaktywny trening słuchowy i narzędzie do diagnozy logopedycznej",
     imgPosition: "center 15%",
+    imgSrcSet: "/img/therapist-child-640w.webp 640w, /img/therapist-child-1280w.webp 1280w",
     target: "Dla logopedów, pedagogów, terapeutów i rodziców",
     features: [
       "Interaktywna karta badania mowy",
@@ -154,6 +157,7 @@ const products = [
     priceNote: "Dostępne online",
     img: childrenClassroomImg,
     imgAlt: "Programy edukacyjne PeGoBrain — gry logopedyczne i literki",
+    imgSrcSet: "/img/children-classroom-640w.webp 640w, /img/children-classroom-1280w.webp 1280w",
     target: "Dla dzieci, rodziców, logopedów i nauczycieli",
     features: [
       "Zabawy logopedyczne (10 gier z głoskami)",
@@ -274,6 +278,8 @@ export default function SklepPage() {
                 <div className="relative overflow-hidden bg-muted h-48">
                   <img
                     src={p.img}
+                    srcSet={(p as { imgSrcSet?: string }).imgSrcSet}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     alt={p.imgAlt}
                     className="w-full h-full object-cover"
                     style={p.imgPosition ? { objectPosition: p.imgPosition } : undefined}

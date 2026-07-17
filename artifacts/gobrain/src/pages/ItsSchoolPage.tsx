@@ -19,8 +19,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import childrenClassroomImg from "@/assets/children-classroom.webp";
-import childrenClassroom640Img from "@/assets/children-classroom-640w.webp";
-import childrenClassroom1280Img from "@/assets/children-classroom-1280w.webp";
 import itsSchoolBoyTabletImg from "@/assets/its-school-boy-tablet.webp";
 import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
 import childTabletGame1Img from "@/assets/child-tablet-game1.jpg";
@@ -44,6 +42,13 @@ export default function ItsSchoolPage() {
         canonical="/its-school"
       />
       <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/img/children-classroom-1280w.webp"
+          imageSrcSet="/img/children-classroom-640w.webp 640w, /img/children-classroom-1280w.webp 1280w"
+          imageSizes="(max-width: 1024px) 100vw, 50vw"
+        />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
@@ -144,11 +149,12 @@ export default function ItsSchoolPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50">
                 <img
                   src={childrenClassroomImg}
-                  srcSet={`${childrenClassroom640Img} 640w, ${childrenClassroom1280Img} 1280w, ${childrenClassroomImg} 1920w`}
+                  srcSet="/img/children-classroom-640w.webp 640w, /img/children-classroom-1280w.webp 1280w"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   alt="Dzieci w klasie szkolnej korzystają z programu ITS GoBrain Pre & School — trening słuchowy w placówce"
                   className="w-full object-cover"
                   style={{ objectPosition: "center 20%" }}
+                  fetchPriority="high"
                   decoding="async"
                 />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(249,115,22,0.15) 0%, transparent 60%)" }} />

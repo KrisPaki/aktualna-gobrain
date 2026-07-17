@@ -406,7 +406,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={therapistChildImg} alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
+                  <img src={therapistChildImg} srcSet="/img/therapist-child-640w.webp 640w, /img/therapist-child-1280w.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -514,7 +514,7 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="relative rounded-2xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
               >
-                <img src={childTabletImg} alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" loading="lazy" decoding="async" />
+                <img src={childTabletImg} srcSet="/img/child-tablet-fun-640w.webp 640w, /img/child-tablet-fun-1280w.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
               </motion.div>
             </div>
@@ -749,7 +749,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={childrenClassroomImg} alt="Dzieci uczą się z interaktywnym treningiem słuchowym GoBrain w klasie" className="w-full object-cover" loading="lazy" decoding="async" />
+                  <img src={childrenClassroomImg} srcSet="/img/children-classroom-640w.webp 640w, /img/children-classroom-1280w.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Dzieci uczą się z interaktywnym treningiem słuchowym GoBrain w klasie" className="w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
