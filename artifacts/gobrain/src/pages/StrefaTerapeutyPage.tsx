@@ -106,7 +106,13 @@ function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 export default function StrefaTerapeutyPage() {
-  const [videoOpen, setVideoOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <SEO
@@ -272,43 +278,17 @@ export default function StrefaTerapeutyPage() {
               transition={{ duration: 0.7 }}
               className="rounded-3xl overflow-hidden shadow-2xl bg-black"
             >
-              {videoOpen ? (
-                <video
-                  controls
-                  autoPlay
-                  playsInline
-                  preload="none"
-                  className="w-full"
-                  style={{ maxHeight: "560px" }}
-                >
-                  <source src="/platforma-terapeuta.mp4" type="video/mp4" />
-                  Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-                </video>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setVideoOpen(true)}
-                  className="relative w-full flex items-center justify-center bg-gray-900 cursor-pointer group focus:outline-none"
-                  style={{ minHeight: "360px" }}
-                  aria-label="Odtwórz prezentację platformy terapeutycznej GoBrain"
-                >
-                  <img
-                    src={therapistDashboardImg}
-                    srcSet="/img/therapist-dashboard-640w.webp 640w, /img/therapist-dashboard-1280w.webp 1280w"
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    alt="Podgląd platformy terapeutycznej GoBrain — panel zarządzania pacjentami"
-                    className="w-full object-cover"
-                    style={{ maxHeight: "560px" }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 shadow-2xl">
-                      <Play className="w-10 h-10 text-white fill-white ml-1" />
-                    </div>
-                  </div>
-                </button>
-              )}
+              <video
+                ref={videoRef}
+                loop
+                playsInline
+                autoPlay
+                className="w-full"
+                style={{ maxHeight: "560px", transform: "scale(1.08)", transformOrigin: "center center" }}
+              >
+                <source src="/platforma-terapeuta.mp4" type="video/mp4" />
+                Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+              </video>
             </motion.div>
           </div>
         </section>
