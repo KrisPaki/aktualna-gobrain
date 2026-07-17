@@ -500,6 +500,13 @@ function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, hel
   if (helmetHead) {
     // Authoritative: use Helmet SSR head (title, meta, canonical, robots, OG, Twitter, JSON-LD)
     html = html.replace("</head>", `  ${helmetHead}\n  </head>`);
+    // If the Helmet head did not include a JSON-LD block but the route defines one,
+    // inject it now so crawlers always receive the structured data.
+    // Check helmetHead directly — not the full html — because the template already
+    // carries a global Organization/WebSite JSON-LD that would mask this check.
+    if (jsonLd && !helmetHead.includes('type="application/ld+json"')) {
+      html = html.replace("</head>", `  <script type="application/ld+json">${jsonLd}</script>\n  </head>`);
+    }
   } else {
     // Fallback: static metadata when SSR head is unavailable
     const head = buildHeadBlock(staticTitle, staticDescription, routePath, noindex, jsonLd);
