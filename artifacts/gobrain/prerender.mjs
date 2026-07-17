@@ -475,20 +475,23 @@ function stripRouteMeta(html) {
 }
 
 /**
- * Strip any title/meta/JSON-LD script tags that react-helmet-async may have
- * inlined at the top of the SSR body output when helmetContext is not
- * populated. Only cleans the leading portion of the HTML (before the first
- * block element) to avoid accidentally removing legitimate in-body content.
+ * Strip any SEO-related tags that react-helmet-async may have inlined into
+ * the SSR body output. <title>, <meta>, and <link rel="canonical"> are never
+ * valid in an HTML body, so they are stripped globally. JSON-LD <script> tags
+ * are only stripped from the leading portion (before the first block element)
+ * to preserve any legitimate in-body structured-data scripts.
  */
 function stripBodyMeta(html) {
-  const blockStart = html.search(/<(div|section|main|article|header|nav|footer|aside|h[1-6]|p\b|ul|ol|figure)[^>]*>/i);
-  if (blockStart === -1) return html;
-  const leading = html.slice(0, blockStart)
-    .replace(/<title>[^<]*<\/title>/g, "")
-    .replace(/<meta[^>]*>/g, "")
-    .replace(/<link rel="canonical"[^>]*>/g, "")
+  let cleaned = html
+    .replace(/<title[^>]*>[\s\S]*?<\/title>/g, "")
+    .replace(/<meta\s[^>]*\/?>/g, "")
+    .replace(/<link\s+rel="canonical"[^>]*\/?>/g, "");
+
+  const blockStart = cleaned.search(/<(div|section|main|article|header|nav|footer|aside|h[1-6]|p\b|ul|ol|figure)[^>]*>/i);
+  if (blockStart === -1) return cleaned;
+  const leading = cleaned.slice(0, blockStart)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "");
-  return leading + html.slice(blockStart);
+  return leading + cleaned.slice(blockStart);
 }
 
 function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, helmetHead, templateHtml, noindex = false, jsonLd = null) {
@@ -503,10 +506,18 @@ function writeRouteHtml(routePath, staticTitle, staticDescription, bodyHtml, hel
     html = html.replace("</head>", `  ${head}\n  </head>`);
   }
 
+  // Always enforce the noindex directive from the route definition.
+  // The Helmet head path may not carry it (e.g. if the page component does
+  // not set noindex={true} on its <SEO> element), so we inject it here as
+  // the authoritative crawl signal when the route marks noindex: true.
+  if (noindex && !html.includes('name="robots"')) {
+    html = html.replace("</head>", `  <meta name="robots" content="noindex, nofollow" />\n  </head>`);
+  }
+
   if (bodyHtml) {
-    // Strip any inline meta tags the SSR renderer may have placed in the body
-    // (react-helmet-async sometimes serialises tags into the render output
-    // when helmetContext is not correctly populated).
+    // Strip any inline meta/title tags the SSR renderer may have placed in
+    // the body (react-helmet-async inlines them when helmetContext is not
+    // correctly populated during renderToString).
     const cleanBody = stripBodyMeta(bodyHtml);
     html = html.replace('<div id="root"></div>', `<div id="root">${cleanBody}</div>`);
   }
