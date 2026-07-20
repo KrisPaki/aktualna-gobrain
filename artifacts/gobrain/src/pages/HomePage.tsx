@@ -1124,7 +1124,7 @@ export default function HomePage() {
                   {'"Chciałbym powiedzieć jako przewodniczący Polskiego Komitetu Audiofonologii, że program Zabawy z dźwiękami to jest pomysł wspaniały dostosowany do potrzeb rozwojowych dzieci mających dość często duże kłopoty z przetwarzaniem bodźców słuchowych. Program GoBrain z czystym sumieniem mogę polecić i zachęcić do stosowania zarówno w domu jak i ośrodkach logopedycznych — program ten ćwiczy uwagę i pamięć słuchową. GoBrain przyczynia się do postępów szkolnych dzieci, zwłaszcza jeśli chodzi o czytanie i pisanie."'}
                 </blockquote>
                 <div className="border-l-4 border-primary pl-4">
-                  <p className="font-bold text-foreground text-lg">Prof. dr hab. Tadeusz Gałkowski</p>
+                  <p className="font-bold text-foreground text-lg">Prof. dr hab. Tadeusz Gałkowski (1983-2020)</p>
                   <p className="text-sm text-muted-foreground mt-1">Psycholog, naukowiec, patron merytoryczny GoBrain</p>
                   <p className="text-sm text-muted-foreground">Przewodniczący Polskiego Komitetu Audiofonologii</p>
                   <p className="text-sm text-muted-foreground">Założyciel i prezes Zarządu Głównego Krajowego Towarzystwa Autyzmu</p>
@@ -1289,8 +1289,6 @@ export default function HomePage() {
 
 
       </div>
-      
-
     </div>
   );
 }
