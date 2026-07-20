@@ -128,7 +128,7 @@ export default function ProgramyEdukacyjnePage() {
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
               <Gamepad2 className="w-4 h-4" />
-              Platforma PeGoBrain
+              Platforma GoBrain
             </motion.div>
 
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
@@ -287,7 +287,7 @@ export default function ProgramyEdukacyjnePage() {
             >
               <img
                 src={childrenClassroomImg}
-                alt="Dzieci korzystające z programów edukacyjnych i interaktywnego treningu słuchowego PeGoBrain"
+                alt="Dzieci korzystające z programów edukacyjnych i interaktywnego treningu słuchowego GoBrain"
                 className="w-full object-cover"
               />
             </motion.div>
@@ -300,13 +300,13 @@ export default function ProgramyEdukacyjnePage() {
             >
               <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4">
                 <Sparkles className="w-4 h-4" />
-                Dlaczego PeGoBrain?
+                Dlaczego GoBrain?
               </motion.div>
               <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-foreground mb-4">
                 Nauka przez zabawę — najskuteczniejsza metoda
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed mb-6">
-                Programy PeGoBrain łączą skuteczność terapii logopedycznej z angażującą formą zabawy. Dziecko ćwiczy wymowę, rozpoznaje litery i rozwija kreatywność — nieświadomie, bo jest pochłonięte zabawą.
+                Programy GoBrain łączą skuteczność terapii logopedycznej z angażującą formą zabawy. Dziecko ćwiczy wymowę, rozpoznaje litery i rozwija kreatywność — nieświadomie, bo jest pochłonięte zabawą.
               </motion.p>
               <motion.ul variants={staggerContainer} className="space-y-3">
                 {[
