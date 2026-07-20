@@ -469,7 +469,7 @@ export default function HomePage() {
                     icon: Ear,
                     color: "bg-purple-50 text-purple-600",
                     title: "Unikalne podejście",
-                    desc: "Dzieci naturalnie unikają tego, co jest dla nich trudne. Zaczynamy od tego, co łatwiejsze patrzenia i łączymy to ze słuchaniem. Z każdym etapem podpowiedzi wzrokowych jest mniej aż znikają.",
+                    desc: "Dzieci naturalnie unikają tego, co jest dla nich trudne. Zaczynamy od tego, co łatwiejsze patrzenia — łączymy to ze słuchaniem. Z każdym etapem podpowiedzi wzrokowych jest mniej aż znikają.",
                   },
                 ].map((item, i) => (
                   <motion.div
