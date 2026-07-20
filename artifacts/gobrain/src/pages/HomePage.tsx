@@ -1138,7 +1138,7 @@ export default function HomePage() {
         <section className="py-24 bg-card border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiednią licencję</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiednie rozwiązanie</h2>
               <p className="text-xl text-muted-foreground">Rozwiązania dopasowane do Twoich potrzeb</p>
             </div>
 
@@ -1147,7 +1147,7 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch"
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 items-stretch"
             >
               {/* Card 1: ITS GoBrain (Most Popular) */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-primary shadow-xl relative xl:col-span-1 flex flex-col">
@@ -1240,6 +1240,29 @@ export default function HomePage() {
                 </ul>
                 <Button variant="outline" className="w-full h-11 text-sm border-purple-400 text-purple-700 hover:bg-purple-50 mt-auto" asChild data-testid="pricing-therapist-btn">
                   <Link to="/strefa-terapeuty">Dowiedz się więcej</Link>
+                </Button>
+              </motion.div>
+
+              {/* Card 5: Szkolenia */}
+              <motion.div variants={fadeInUp} className="bg-background rounded-3xl p-8 border-2 border-teal-400 shadow-lg relative flex flex-col">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-teal-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full whitespace-nowrap">
+                  Kursy
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2 mt-2">Szkolenia</h3>
+                <p className="text-muted-foreground mb-4 text-sm">Kursy i webinary dla terapeutów, logopedów i pedagogów</p>
+                <div className="flex gap-2 mb-4">
+                  <span className="text-xs bg-teal-50 text-teal-700 px-2 py-1 rounded-full font-medium">Online</span>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  {["Kursy dla specjalistów", "Webinary i nagrania", "Certyfikat GoBrain"].map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-teal-500 shrink-0 mt-0.5" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <Button variant="outline" className="w-full h-11 text-sm border-teal-400 text-teal-700 hover:bg-teal-50 mt-auto" asChild data-testid="pricing-training-btn">
+                  <Link to="/szkolenia">Zobacz szkolenia</Link>
                 </Button>
               </motion.div>
 
