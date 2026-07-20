@@ -451,7 +451,7 @@ export default function HomePage() {
                     icon: TrendingUp,
                     color: "bg-green-50 text-green-600",
                     title: "Bez frustracji",
-                    desc: "Program sam widzi, kiedy dziecku jest za trudno lub za łatwo, i dostosowuje zadania na bieżąco. Dziecko nie musi wołać rodzica — radzi sobie samo.",
+                    desc: "Program sam rozpoznaje, kiedy dziecku jest za trudno lub za łatwo, i dostosowuje zadania na bieżąco. Dziecko nie musi wołać rodzica — radzi sobie samo.",
                   },
                   {
                     icon: Star,
