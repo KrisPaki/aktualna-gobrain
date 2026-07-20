@@ -661,7 +661,7 @@ export default function HomePage() {
                   caption: "Dziecko uczy się skupiać uwagę słuchową w wybranym kierunku — kluczowa umiejętność szkolna",
                 },
                 {
-                  src: "/screenshots/game-screenshot-6.webp",
+                  src: "/screenshots/game-screenshot-6.png",
                   alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu",
                   badge: "Śledzenie postępów",
                   badgeColor: "bg-purple-600 text-white",

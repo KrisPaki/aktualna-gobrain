@@ -547,13 +547,13 @@ export default function ItsPage() {
                   { src: "/screenshots/game-screenshot-3.png", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą" },
                   { src: "/screenshots/game-screenshot-4.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z kulami na półkach w cyrku" },
                   { src: "/screenshots/game-screenshot-5.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptaszkiem przy zamkach" },
-                  { src: "/screenshots/game-screenshot-6.webp", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
+                  { src: "/screenshots/game-screenshot-6.png", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
                   { src: "/screenshots/game-screenshot-1.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptakami na półkach" },
                   { src: "/screenshots/game-screenshot-2.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z domkami i chłopcem" },
                   { src: "/screenshots/game-screenshot-3.png", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą" },
                   { src: "/screenshots/game-screenshot-4.webp", alt: "GoBrain interaktywny trening słuchowy — zadanie z kulami na półkach w cyrku" },
                   { src: "/screenshots/game-screenshot-5.webp", alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z ptaszkiem przy zamkach" },
-                  { src: "/screenshots/game-screenshot-6.webp", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
+                  { src: "/screenshots/game-screenshot-6.png", alt: "GoBrain interaktywny trening słuchowy — wyniki Hall of Fame po treningu" },
                 ].map((img, i) => (
                   <div
                     key={i}
