@@ -117,7 +117,6 @@ export default function ProgramyEdukacyjnePage() {
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(programsSchema)}</script>
       </Helmet>
-
       {/* Hero */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-purple-50 via-white to-blue-50 border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -156,7 +155,6 @@ export default function ProgramyEdukacyjnePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Stats bar */}
       <section className="py-8 bg-purple-600">
         <div className="container mx-auto px-4">
@@ -181,7 +179,6 @@ export default function ProgramyEdukacyjnePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Games catalog */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -224,7 +221,6 @@ export default function ProgramyEdukacyjnePage() {
           />
         </div>
       </section>
-
       {/* How to use */}
       <section className="py-16 bg-card/40 border-y border-border">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -238,9 +234,7 @@ export default function ProgramyEdukacyjnePage() {
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-foreground mb-3">
               Jak korzystać z programów?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Programy PeGoBrain są dostępne online — wystarczy przeglądarka internetowa.
-            </motion.p>
+            <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-xl mx-auto">Programy Edukacyjne GoBrain są dostępne online — wystarczy przeglądarka internetowa.</motion.p>
           </motion.div>
 
           <motion.div
@@ -280,7 +274,6 @@ export default function ProgramyEdukacyjnePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Image + description */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -335,7 +328,6 @@ export default function ProgramyEdukacyjnePage() {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-16 md:py-20 bg-purple-600">
         <div className="container mx-auto px-4 max-w-3xl text-center">
@@ -379,7 +371,6 @@ export default function ProgramyEdukacyjnePage() {
           </motion.div>
         </div>
       </section>
-
     </div>
   );
 }
