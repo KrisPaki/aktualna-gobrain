@@ -1262,7 +1262,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Button variant="outline" className="w-full h-11 text-sm border-teal-400 text-teal-700 hover:bg-teal-50 mt-auto" asChild data-testid="pricing-training-btn">
-                  <Link to="/szkolenia">Zobacz szkolenia</Link>
+                  <Link to="/szkolenia-i-webinary">Zobacz szkolenia</Link>
                 </Button>
               </motion.div>
 
