@@ -640,7 +640,7 @@ export default function HomePage() {
                   caption: "Atrakcyjna grafika i nagrody motywują dziecko do systematycznego ćwiczenia",
                 },
                 {
-                  src: "/screenshots/game-screenshot-3.webp",
+                  src: "/screenshots/game-screenshot-3.png",
                   alt: "GoBrain interaktywny trening słuchowy — ćwiczenie z krową i owcą",
                   badge: "Pamięć i koncentracja",
                   badgeColor: "bg-green-600 text-white",
