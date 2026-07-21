@@ -48,6 +48,12 @@ export default defineConfig({
       strict: true,
       deny: ["**/.*"],
     },
+    proxy: {
+      "/gobrain-video": {
+        target: "http://localhost:5174",
+        changeOrigin: true,
+      },
+    },
   },
   preview: {
     port,
