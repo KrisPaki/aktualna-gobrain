@@ -43,21 +43,11 @@ walkDir(DIST_PUBLIC, (filePath) => {
   let modified = false;
 
   // Replace absolute paths to files in the public directory
-  // We match things like "/img/", "/screenshots/", "/platforma-terapeuta.mp4", "/favicon.svg", etc.
-  // Note: we must avoid double-prefixing if the script is run multiple times
+  // We match things like "/img/", "/screenshots/", etc. when preceded by a quote, comma, space, backtick, or string start.
+  // Note: we use $1 to preserve the preceding character, and $2 for the matching asset folder or file.
   const regexes = [
-    { search: /"\/img\//g, replace: `"${prefix}/img/` },
-    { search: /'\/img\//g, replace: `'${prefix}/img/` },
-    { search: /"\/screenshots\//g, replace: `"${prefix}/screenshots/` },
-    { search: /'\/screenshots\//g, replace: `'${prefix}/screenshots/` },
-    { search: /"\/platforma-terapeuta\.mp4"/g, replace: `"${prefix}/platforma-terapeuta.mp4"` },
-    { search: /'\/platforma-terapeuta\.mp4'/g, replace: `'${prefix}/platforma-terapeuta.mp4'` },
-    { search: /"\/favicon\.svg"/g, replace: `"${prefix}/favicon.svg"` },
-    { search: /'\/favicon\.svg'/g, replace: `'${prefix}/favicon.svg'` },
-    { search: /"\/gobrain-logo\.svg"/g, replace: `"${prefix}/gobrain-logo.svg"` },
-    { search: /'\/gobrain-logo\.svg'/g, replace: `'${prefix}/gobrain-logo.svg'` },
-    { search: /"\/opengraph\.jpg"/g, replace: `"${prefix}/opengraph.jpg"` },
-    { search: /'\/opengraph\.jpg'/g, replace: `'${prefix}/opengraph.jpg'` }
+    { search: /(["',`\s]|^)\/(img|screenshots|attached_assets|assets)\//g, replace: `$1${prefix}/$2/` },
+    { search: /(["',`\s]|^)\/(platforma-terapeuta\.mp4|favicon\.svg|gobrain-logo\.svg|opengraph\.jpg)(?=["',`\s]|$)/g, replace: `$1${prefix}/$2` }
   ];
 
   for (const { search, replace } of regexes) {
