@@ -43,10 +43,10 @@ walkDir(DIST_PUBLIC, (filePath) => {
   let modified = false;
 
   // Replace absolute paths to files in the public directory
-  // We match things like "/img/", "/screenshots/", etc. when preceded by a quote, comma, space, backtick, or string start.
-  // Note: we use $1 to preserve the preceding character, and $2 for the matching asset folder or file.
+  // We match folders and files, handling trailing slashes, query parameters, or string end conditions.
   const regexes = [
-    { search: /(["',`\s]|^)\/(img|screenshots|attached_assets|assets|gobrain-video)\//g, replace: `$1${prefix}/$2/` },
+    { search: /(["',`\s]|^)\/(img|screenshots|attached_assets|assets)\//g, replace: `$1${prefix}/$2/` },
+    { search: /(["',`\s]|^)\/gobrain-video(?=\/|\?|"|'|`|$)/g, replace: `$1${prefix}/gobrain-video` },
     { search: /(["',`\s]|^)\/(platforma-terapeuta\.mp4|favicon\.svg|gobrain-logo\.svg|opengraph\.jpg)(?=["',`\s]|$)/g, replace: `$1${prefix}/$2` }
   ];
 
