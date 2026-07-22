@@ -398,7 +398,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 8 - Pricing (Merged with Products) */}
-        <section className="py-24 bg-muted/40 border-t border-border">
+        <section className="py-24 bg-[#fafafa] border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
             {/* Header with girl image */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
