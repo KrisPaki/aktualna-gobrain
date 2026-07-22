@@ -196,25 +196,32 @@ export default function HomePage() {
         canonical="/"
       />
       <div className="pt-16">
-        
         {/* SECTION 1 - Hero */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
-          <AuroraBackground className="absolute inset-0" showRadialGradient={true}>
-            <span />
-          </AuroraBackground>
+        <section className="relative py-24 md:py-36 overflow-hidden bg-primary text-white">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={heroChildImg}
+              alt="Dziecko korzystające z interaktywnego treningu słuchowego ITS GoBrain w słuchawkach"
+              className="w-full h-full object-cover opacity-60"
+              style={{ objectPosition: "80% center", filter: "brightness(1.05)" }}
+              fetchPriority="high"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/75 to-primary/10 lg:from-primary/90 lg:via-primary/60 lg:to-primary/5" />
+          </div>
 
           {/* Floating animated icons */}
           {[
-            { icon: Music, x: "8%", y: "15%", color: "text-blue-400", delay: 0, size: "w-8 h-8" },
-            { icon: Star, x: "85%", y: "20%", color: "text-yellow-400", delay: 0.5, size: "w-6 h-6" },
-            { icon: Headphones, x: "90%", y: "70%", color: "text-purple-400", delay: 1, size: "w-7 h-7" },
-            { icon: Heart, x: "5%", y: "75%", color: "text-pink-400", delay: 0.8, size: "w-6 h-6" },
-            { icon: Zap, x: "15%", y: "45%", color: "text-orange-400", delay: 1.2, size: "w-5 h-5" },
-            { icon: Smile, x: "78%", y: "45%", color: "text-green-400", delay: 0.3, size: "w-7 h-7" },
+            { icon: Music, x: "8%", y: "15%", color: "text-blue-200/40", delay: 0, size: "w-8 h-8" },
+            { icon: Star, x: "85%", y: "20%", color: "text-yellow-200/40", delay: 0.5, size: "w-6 h-6" },
+            { icon: Headphones, x: "90%", y: "70%", color: "text-purple-200/40", delay: 1, size: "w-7 h-7" },
+            { icon: Heart, x: "5%", y: "75%", color: "text-pink-200/40", delay: 0.8, size: "w-6 h-6" },
+            { icon: Zap, x: "15%", y: "45%", color: "text-orange-200/40", delay: 1.2, size: "w-5 h-5" },
+            { icon: Smile, x: "78%", y: "45%", color: "text-green-200/40", delay: 0.3, size: "w-7 h-7" },
           ].map((item, i) => (
             <motion.div
               key={i}
-              className={`absolute ${item.color} opacity-60 pointer-events-none hidden lg:block`}
+              className={`absolute ${item.color} pointer-events-none hidden lg:block`}
               style={{ left: item.x, top: item.y }}
               animate={{ y: [0, -12, 0], rotate: [0, 8, -8, 0] }}
               transition={{ duration: 3 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: item.delay }}
@@ -224,39 +231,39 @@ export default function HomePage() {
           ))}
 
           <div className="relative z-10 container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl">
               {/* Text */}
               <motion.div 
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
               >
-                <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full mb-6 font-black text-base uppercase tracking-widest" style={{ background: "linear-gradient(90deg, #0066cc, #7c3aed, #ea580c)", color: "#fff", letterSpacing: "0.12em" }}>
+                <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full mb-6 font-black text-base uppercase tracking-widest border border-white/20 shadow-md" style={{ background: "linear-gradient(90deg, #0066cc, #7c3aed, #ea580c)", color: "#fff", letterSpacing: "0.12em" }}>
                   <Brain className="w-5 h-5 shrink-0" />
                   <span>ITS GoBrain</span>
                 </motion.div>
                 
-                <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-tight mb-3 uppercase">
+                <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 uppercase">
                   Poprawa koncentracji i pamięci słuchowej
                 </motion.h1>
 
-                <motion.p variants={fadeInUp} className="text-lg md:text-xl font-semibold text-primary mb-4">
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl font-semibold text-orange-300 mb-6">
                   Interaktywny Trening GoBrain dla dzieci (od 5 roku życia)
                 </motion.p>
 
-                <motion.p variants={fadeInUp} className="text-base text-muted-foreground mb-3 leading-relaxed">
+                <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/90 mb-4 leading-relaxed max-w-xl">
                   Zauważasz, że Twoje dziecko "słyszy, ale nie słucha"? Ma problemy z czytaniem, pisaniem lub rozumieniem poleceń?
                 </motion.p>
 
-                <motion.p variants={fadeInUp} className="text-base text-muted-foreground mb-8 leading-relaxed">
+                <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/80 mb-10 leading-relaxed max-w-xl">
                   GoBrain to innowacyjne narzędzie stworzone, by wspierać terapię uwagi i koncentracji słuchowej najmłodszych poprzez angażującą zabawę.
                 </motion.p>
                 
-                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Button size="lg" className="text-base h-14 px-8 shadow-lg shadow-primary/20" asChild data-testid="hero-buy-btn">
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Button size="lg" className="text-base h-14 px-8 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/10" asChild data-testid="hero-buy-btn">
                     <Link to="/sklep">Przejdź do sklepu</Link>
                   </Button>
-                  <Button size="lg" variant="outline" className="text-base h-14 px-8 bg-background" asChild data-testid="hero-learn-btn">
+                  <Button size="lg" variant="outline" className="text-base h-14 px-8 border-white/30 text-white hover:bg-white/10 bg-transparent" asChild data-testid="hero-learn-btn">
                     <Link to="/its">Dowiedz się więcej</Link>
                   </Button>
                 </motion.div>
@@ -268,51 +275,10 @@ export default function HomePage() {
                     { icon: "⭐", label: "4.9/5.0 ocena" },
                     { icon: "🎵", label: "100 ćwiczeń" },
                   ].map((s, i) => (
-                    <div key={i} className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-background border border-border shadow-sm text-sm font-medium text-foreground">
+                    <div key={i} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 border border-white/20 shadow-sm text-sm font-medium text-white backdrop-blur-sm">
                       <span>{s.icon}</span>{s.label}
                     </div>
                   ))}
-                </motion.div>
-              </motion.div>
-
-              {/* Images — hero + secondary */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="relative"
-              >
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-[4/3]">
-                  <img
-                    src={heroChildImg}
-                    alt="Dziecko korzystające z interaktywnego treningu słuchowego ITS GoBrain w słuchawkach"
-                    className="w-full h-full object-cover"
-                    style={{ transform: "scale(1.2)", transformOrigin: "60% 28%", filter: "brightness(1.15)" }}
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.1) 40%, transparent 70%)" }} />
-                </div>
-                {/* Floating badge */}
-                <motion.div 
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-4 -left-4 bg-background rounded-2xl border border-border shadow-lg px-5 py-3 flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Ocena rodziców</p>
-                    <p className="font-bold text-foreground text-sm">⭐ 4.9 / 5.0</p>
-                  </div>
-                </motion.div>
-                {/* Second floating badge top-right */}
-                <motion.div 
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -top-4 -right-4 bg-background rounded-2xl border border-border shadow-lg px-4 py-3 flex items-center gap-2"
-                >
-                  <Trophy className="w-5 h-5 text-yellow-500" />
-                  <p className="font-bold text-foreground text-sm">Rekomendowany przez ekspertów</p>
                 </motion.div>
               </motion.div>
             </div>
