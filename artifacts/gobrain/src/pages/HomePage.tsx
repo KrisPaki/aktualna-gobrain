@@ -419,8 +419,8 @@ export default function HomePage() {
                 <div className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Najpopularniejszy
                 </div>
-                <div className="h-32 w-full overflow-hidden relative">
-                  <img src={productItsImg} alt="ITS GoBrain" className="w-full h-full object-cover" loading="lazy" />
+                <div className="aspect-[16/10] w-full overflow-hidden relative">
+                  <img src={productItsImg} alt="ITS GoBrain" className="w-full h-full object-cover object-center" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -450,8 +450,8 @@ export default function HomePage() {
                 <div className="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Nowość
                 </div>
-                <div className="h-32 w-full overflow-hidden relative">
-                  <img src={therapistChildImg} alt="Karta Mowy" className="w-full h-full object-cover" loading="lazy" />
+                <div className="aspect-[16/10] w-full overflow-hidden relative">
+                  <img src={therapistChildImg} alt="Karta Mowy" className="w-full h-full object-cover object-[center_15%]" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -479,8 +479,8 @@ export default function HomePage() {
                 <div className="absolute top-3 left-3 z-10 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Grupowe
                 </div>
-                <div className="h-32 w-full overflow-hidden relative">
-                  <img src={productSchoolImg} alt="ITS GoBrain Pre & School" className="w-full h-full object-cover" loading="lazy" />
+                <div className="aspect-[16/10] w-full overflow-hidden relative">
+                  <img src={productSchoolImg} alt="ITS GoBrain Pre & School" className="w-full h-full object-cover object-center" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -508,8 +508,8 @@ export default function HomePage() {
                 <div className="absolute top-3 left-3 z-10 bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Narzędzia
                 </div>
-                <div className="h-32 w-full overflow-hidden relative">
-                  <img src={productTerapeutaImg} alt="Platforma Terapeuty" className="w-full h-full object-cover" loading="lazy" />
+                <div className="aspect-[16/10] w-full overflow-hidden relative">
+                  <img src={productTerapeutaImg} alt="Platforma Terapeuty" className="w-full h-full object-cover object-[center_10%]" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -537,8 +537,8 @@ export default function HomePage() {
                 <div className="absolute top-3 left-3 z-10 bg-teal-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Kursy
                 </div>
-                <div className="h-32 w-full overflow-hidden relative">
-                  <img src={szkoleniaHeaderImg} alt="Szkolenia" className="w-full h-full object-cover" loading="lazy" />
+                <div className="aspect-[16/10] w-full overflow-hidden relative">
+                  <img src={szkoleniaHeaderImg} alt="Szkolenia" className="w-full h-full object-cover object-[center_10%]" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
