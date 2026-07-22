@@ -398,7 +398,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 8 - Pricing (Merged with Products) */}
-        <section className="py-24 bg-card border-t border-border">
+        <section className="py-24 bg-muted/40 border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
             {/* Header with girl image */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
@@ -407,23 +407,24 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                  <Brain className="w-4 h-4" />
-                  <span>Programy i ceny</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz skuteczny program dla dziecka</h2>
-                <p className="text-xl text-muted-foreground">Rozwiązania dostosowane do różnych potrzeb — dla domu, szkoły i gabinetu terapeutycznego.</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="relative rounded-3xl overflow-hidden shadow-xl max-h-64 lg:max-h-none"
+                className="relative rounded-3xl overflow-hidden shadow-xl max-h-64 lg:max-h-none order-2 lg:order-1"
               >
                 <img src={childTabletImg} srcSet="/img/child-tablet-fun-640w.webp 640w, /img/child-tablet-fun-1280w.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="order-1 lg:order-2"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Brain className="w-4 h-4" />
+                  <span>Rozwiązania i cennik</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiednie rozwiązanie GoBrain</h2>
+                <p className="text-xl text-muted-foreground font-light leading-relaxed">Programy treningowe, narzędzia diagnostyczne oraz szkolenia dopasowane do Twoich potrzeb — dla domu, szkoły i gabinetu terapeutycznego.</p>
               </motion.div>
             </div>
 
