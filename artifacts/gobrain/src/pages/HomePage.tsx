@@ -398,35 +398,43 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 8 - Pricing (Merged with Products) */}
-        <section className="py-24 bg-[#fafafa] border-t border-border">
+        <section className="py-24 bg-[#f3f4f6] border-t border-border">
           <div className="container mx-auto px-4 max-w-6xl">
-            {/* Header with girl image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="relative rounded-3xl overflow-hidden shadow-xl max-h-64 lg:max-h-none order-2 lg:order-1"
-              >
-                <img src={childTabletImg} srcSet="/img/child-tablet-fun-640w.webp 640w, /img/child-tablet-fun-1280w.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" className="w-full object-cover" loading="lazy" decoding="async" />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent lg:hidden" />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="order-1 lg:order-2"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                  <Brain className="w-4 h-4" />
+            {/* Header banner with girl image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative overflow-hidden rounded-[32px] bg-background border border-border/80 shadow-xl mb-16 grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[320px]"
+            >
+              {/* Left side: Image of the girl */}
+              <div className="lg:col-span-5 relative min-h-[240px] lg:min-h-auto">
+                <img 
+                  src={childTabletImg} 
+                  srcSet="/img/child-tablet-fun-640w.webp 640w, /img/child-tablet-fun-1280w.webp 1280w" 
+                  sizes="(max-width: 1024px) 100vw, 35vw" 
+                  alt="Dziecko ćwiczy interaktywny trening słuchowy ITS GoBrain na tablecie" 
+                  className="absolute inset-0 w-full h-full object-cover" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
+              
+              {/* Right side: Text details */}
+              <div className="lg:col-span-7 p-8 lg:p-12 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 w-fit">
+                  <Brain className="w-3.5 h-3.5" />
                   <span>Rozwiązania i cennik</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Wybierz odpowiednie rozwiązanie GoBrain</h2>
-                <p className="text-xl text-muted-foreground font-light leading-relaxed">Programy treningowe, narzędzia diagnostyczne oraz szkolenia dopasowane do Twoich potrzeb — dla domu, szkoły i gabinetu terapeutycznego.</p>
-              </motion.div>
-            </div>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground mb-4 tracking-tight">
+                  Wybierz odpowiednie rozwiązanie GoBrain
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-xl">
+                  Programy treningowe, narzędzia diagnostyczne oraz szkolenia dopasowane do Twoich potrzeb — dla domu, szkoły i gabinetu terapeutycznego.
+                </p>
+              </div>
+            </motion.div>
 
             {/* Pricing cards */}
             <motion.div 
