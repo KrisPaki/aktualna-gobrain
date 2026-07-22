@@ -1,91 +1,130 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const PROBLEMS = [
-  { emoji: "👂", text: "Słyszy, ale nie słucha" },
-  { emoji: "🗣️", text: "Nie rozumie poleceń i wymaga powtarzania" },
-  { emoji: "📖", text: "Problemy z czytaniem i pisaniem" },
-  { emoji: "🎯", text: "Trudności z koncentracją i uwagą" },
-  { emoji: "🔊", text: "Wrażliwe na dźwięki (CAPD)" },
-  { emoji: "⚡", text: "ADHD – wspiera terapię" },
-  { emoji: "🧩", text: "Zaburzenia ze spektrum autyzmu (ASD)" },
-  { emoji: "💬", text: "Pacjenci logopedyczni (alalia, DLD, afazja)" },
-  { emoji: "🏫", text: "Dziecko zbyt głośne lub wycofane" },
-  { emoji: "🏥", text: "Po usunięciu trzeciego migdałka lub drenach" },
-  { emoji: "✍️", text: "Problemy z głoskowaniem i wymową" },
-  { emoji: "🧠", text: "Słaba pamięć słuchowa i rozumienie" },
+  { 
+    emoji: "👂", 
+    text: "Słyszy, ale nie słucha",
+    desc: "Ułatwia filtrowanie hałasu tła i skupienie na głosie nauczyciela.",
+    bgClass: "bg-blue-50 text-blue-600 border-blue-100",
+  },
+  { 
+    emoji: "🗣️", 
+    text: "Nie rozumie poleceń", 
+    desc: "Przyspiesza przetwarzanie informacji i eliminuje ciągłe powtórzenia.",
+    bgClass: "bg-purple-50 text-purple-600 border-purple-100",
+  },
+  { 
+    emoji: "📖", 
+    text: "Problemy z czytaniem i pisaniem", 
+    desc: "Wspiera rozróżnianie podobnych głosek – kluczowe przy dysleksji.",
+    bgClass: "bg-indigo-50 text-indigo-600 border-indigo-100",
+  },
+  { 
+    emoji: "🎯", 
+    text: "Trudności z koncentracją", 
+    desc: "Wydłuża czas skupienia uwagi i redukuje podatność na bodźce.",
+    bgClass: "bg-red-50 text-red-600 border-red-100",
+  },
+  { 
+    emoji: "🔊", 
+    text: "Wrażliwe na dźwięki (CAPD)", 
+    desc: "Pomaga w terapii centralnych zaburzeń przetwarzania słuchowego.",
+    bgClass: "bg-amber-50 text-amber-600 border-amber-100",
+  },
+  { 
+    emoji: "⚡", 
+    text: "ADHD – wspiera terapię", 
+    desc: "Wycisza przebodźcowany układ nerwowy przez regulację dźwięku.",
+    bgClass: "bg-orange-50 text-orange-600 border-orange-100",
+  },
+  { 
+    emoji: "🧩", 
+    text: "Spektrum autyzmu (ASD)", 
+    desc: "Pomaga w integracji sensorycznej bodźców słuchowych dziecka.",
+    bgClass: "bg-teal-50 text-teal-600 border-teal-100",
+  },
+  { 
+    emoji: "💬", 
+    text: "Pacjenci logopedyczni", 
+    desc: "Przyspiesza korekcję wad wymowy, opóźnień mowy i afazji.",
+    bgClass: "bg-emerald-50 text-emerald-600 border-emerald-100",
+  },
+  { 
+    emoji: "🏫", 
+    text: "Dziecko zbyt głośne/wycofane", 
+    desc: "Wspiera samoregulację głośności głosu i buduje pewność siebie.",
+    bgClass: "bg-sky-50 text-sky-600 border-sky-100",
+  },
+  { 
+    emoji: "🏥", 
+    text: "Po usunięciu migdałka/drenach", 
+    desc: "Rehabilituje słuch fizyczny i uczy mózg na nowo słuchania.",
+    bgClass: "bg-rose-50 text-rose-600 border-rose-100",
+  },
+  { 
+    emoji: "✍️", 
+    text: "Problemy z wymową", 
+    desc: "Poprawia autokontrolę słuchową własnej wymowy i głosek.",
+    bgClass: "bg-cyan-50 text-cyan-600 border-cyan-100",
+  },
+  { 
+    emoji: "🧠", 
+    text: "Słaba pamięć słuchowa", 
+    desc: "Ćwiczy pamięć roboczą i ułatwia zapamiętywanie instrukcji.",
+    bgClass: "bg-violet-50 text-violet-600 border-violet-100",
+  },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function ProblemCycler() {
-  const [idx, setIdx] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (paused) return;
-    const t = setInterval(() => setIdx(i => (i + 1) % PROBLEMS.length), 2800);
-    return () => clearInterval(t);
-  }, [paused]);
-
-  const go = (i: number) => {
-    setIdx(i);
-    setPaused(true);
-    setTimeout(() => setPaused(false), 4000);
-  };
-
   return (
-    <div className="space-y-5">
-      <div
-        className="relative h-28 rounded-2xl bg-primary/5 border border-primary/20 overflow-hidden cursor-pointer select-none"
-        onClick={() => setIdx(i => (i + 1) % PROBLEMS.length)}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="absolute inset-0 flex items-center gap-5 px-6"
-          >
-            <span className="text-5xl shrink-0">{PROBLEMS[idx].emoji}</span>
-            <p className="text-xl font-semibold text-foreground leading-snug">{PROBLEMS[idx].text}</p>
-          </motion.div>
-        </AnimatePresence>
-
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+    >
+      {PROBLEMS.map((p, i) => (
         <motion.div
-          key={`bar-${idx}`}
-          className="absolute bottom-0 left-0 h-0.5 bg-primary"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: paused ? 0 : 2.8, ease: "linear" }}
-        />
-      </div>
-
-      <div className="flex flex-wrap gap-1.5">
-        {PROBLEMS.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => go(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === idx ? "w-6 bg-primary" : "w-1.5 bg-primary/25 hover:bg-primary/50"}`}
-          />
-        ))}
-      </div>
-
-      <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 pt-1">
-        {PROBLEMS.map((p, i) => (
-          <button
-            key={i}
-            onClick={() => go(i)}
-            className={`flex items-center gap-2 text-left text-sm transition-all duration-200 ${i === idx ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"}`}
-          >
-            <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 transition-colors ${i === idx ? "text-primary" : "text-muted-foreground/40"}`} />
-            <span className="leading-snug">{p.text}</span>
-          </button>
-        ))}
-      </div>
-    </div>
+          key={i}
+          variants={itemVariants}
+          className="bg-card border border-border/80 rounded-2xl p-3.5 flex items-start gap-3 hover:shadow-md hover:border-primary/45 hover:bg-primary/[0.01] transition-all duration-300 group cursor-default"
+        >
+          <div className={`flex items-center justify-center w-9 h-9 rounded-xl ${p.bgClass} border shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300`}>
+            <span className="text-lg leading-none">{p.emoji}</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <h4 className="text-sm font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200">
+              {p.text}
+            </h4>
+            <p className="text-xs text-muted-foreground leading-relaxed mt-1 font-medium">
+              {p.desc}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 }
