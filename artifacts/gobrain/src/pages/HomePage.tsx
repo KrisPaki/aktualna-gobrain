@@ -10,9 +10,10 @@ import childTabletImg from "@/assets/child-tablet-fun.webp";
 import therapistChildImg from "@/assets/therapist-child.webp";
 import childrenClassroomImg from "@/assets/children-classroom.webp";
 import parentChildImg from "@/assets/parent-child-home.webp";
-import kartaMowyImg from "@/assets/karta-mowy-dla-kogo.jpg";
-import therapistDashboardImg from "@/assets/therapist-dashboard.webp";
-import therapistPortraitHeroImg from "@/assets/therapist-portrait-hero.webp";
+import productItsImg from "@/assets/product-its-gobrain.webp";
+import productSchoolImg from "@/assets/product-its-school-ai.webp";
+import productTerapeutaImg from "@/assets/product-terapeuta.webp";
+import szkoleniaHeaderImg from "@/assets/aneta-pakiela.jpg";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { 
   CheckCircle2, 
@@ -453,7 +454,7 @@ export default function HomePage() {
                   Najpopularniejszy
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
-                  <img src={parentChildImg} alt="ITS GoBrain" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={productItsImg} alt="ITS GoBrain" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -484,7 +485,7 @@ export default function HomePage() {
                   Nowość
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
-                  <img src={kartaMowyImg} alt="Karta Mowy" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={therapistChildImg} alt="Karta Mowy" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -513,7 +514,7 @@ export default function HomePage() {
                   Grupowe
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
-                  <img src={childrenClassroomImg} alt="ITS GoBrain Pre & School" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={productSchoolImg} alt="ITS GoBrain Pre & School" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -542,7 +543,7 @@ export default function HomePage() {
                   Narzędzia
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
-                  <img src={therapistDashboardImg} alt="Platforma Terapeuty" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={productTerapeutaImg} alt="Platforma Terapeuty" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
@@ -571,7 +572,7 @@ export default function HomePage() {
                   Kursy
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
-                  <img src={therapistPortraitHeroImg} alt="Szkolenia" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={szkoleniaHeaderImg} alt="Szkolenia" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
