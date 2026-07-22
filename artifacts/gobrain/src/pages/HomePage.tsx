@@ -534,64 +534,78 @@ export default function HomePage() {
         </section>
 
         {/* CO NAS WYRÓZNIA */}
-        <section className="py-14 bg-background border-b border-border">
+        <section className="py-20 bg-background border-b border-border">
           <div className="container mx-auto px-4 max-w-6xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-                Co nas wyróżnia:
-              </motion.h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              
+              {/* Left Column — Title & Subtitle */}
+              <div className="lg:col-span-4 lg:sticky lg:top-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Star className="w-4 h-4 text-yellow-500" />
+                  <span>Nasz unikalny system</span>
+                </div>
+                <h2 className="text-3xl font-bold text-foreground mb-4 leading-tight">
+                  Co wyróżnia program GoBrain?
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Tradycyjne programy logopedyczne i treningi słuchowe często wymagają stałej obecności i kontroli rodzica, co bywa frustrujące dla dziecka. Nasza technologia eliminuje te problemy, pozwalając dziecku na pełną samodzielność i czerpanie radości z nauki.
+                </p>
+              </div>
+
+              {/* Right Column — Features List */}
+              <div className="lg:col-span-8 space-y-6">
                 {[
                   {
                     icon: Zap,
-                    color: "bg-blue-50 text-blue-600",
+                    color: "bg-blue-50 text-blue-600 border-blue-100",
                     title: "Adaptacja w czasie rzeczywistym",
                     desc: "System sam dopasowuje poziom trudności do dziecka — dziecko nie musi prosić rodzica o pomoc, bo zadanie zawsze jest w sam raz. Rodzic nie musi siedzieć obok i korygować poziomu.",
                   },
                   {
                     icon: TrendingUp,
-                    color: "bg-green-50 text-green-600",
+                    color: "bg-green-50 text-green-600 border-green-100",
                     title: "Bez frustracji",
                     desc: "Program sam rozpoznaje, kiedy dziecku jest za trudno lub za łatwo, i dostosowuje zadania na bieżąco. Dziecko nie musi wołać rodzica — radzi sobie samo.",
                   },
                   {
                     icon: Star,
-                    color: "bg-yellow-50 text-yellow-600",
+                    color: "bg-yellow-50 text-yellow-600 border-yellow-100",
                     title: "Trening jak gra",
                     desc: "Grafika i forma zabawy same przyciągają uwagę dziecka — nie trzeba nikogo namawiać ani pilnować, żeby ćwiczyło. Dziecko chętnie wraca do treningu samo.",
                   },
                   {
                     icon: Award,
-                    color: "bg-red-50 text-red-600",
+                    color: "bg-red-50 text-red-600 border-red-100",
                     title: "Skuteczny tam, gdzie inne zawodzą",
                     desc: "Działa nawet, gdy dziecku trudno się zmotywować — i nie wymaga, żeby rodzic siedział obok i zaznaczał odpowiedzi za dziecko. Dziecko obsługuje trening samodzielnie.",
                   },
                   {
                     icon: Ear,
-                    color: "bg-purple-50 text-purple-600",
+                    color: "bg-purple-50 text-purple-600 border-purple-100",
                     title: "Unikalne podejście",
-                    desc: "Dzieci naturalnie unikają tego, co jest dla nich trudne. Zaczynamy od tego, co łatwiejsze — patrzenia i łączymy to ze słuchaniem. Z każdym etapem podpowiedzi wzrokowych jest mniej aż znikają.",
+                    desc: "Dzieci naturalnie unikają tego, co jest dla nich trudne. Zaczynamy od tego, co łatwiejsze — patrzenia i łączymy to ze słuchaniem. Z każdym etapem podpowiedzi wzrokowych jest mniej, aż całkowicie znikają.",
                   },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
-                    variants={fadeInUp}
-                    className="flex flex-col gap-3 p-5 rounded-2xl border border-border hover:shadow-md transition-shadow bg-background"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="flex flex-col sm:flex-row gap-5 p-6 rounded-2xl border border-border hover:shadow-md transition-shadow bg-background"
                   >
-                    <div className={`w-10 h-10 rounded-xl ${item.color} flex items-center justify-center shrink-0`}>
-                      <item.icon className="w-5 h-5" />
+                    <div className={`w-12 h-12 rounded-xl ${item.color} border flex items-center justify-center shrink-0`}>
+                      <item.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-bold text-foreground text-sm leading-snug">{item.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-foreground text-base mb-1">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+
+            </div>
           </div>
         </section>
 
