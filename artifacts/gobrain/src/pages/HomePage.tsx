@@ -450,7 +450,7 @@ export default function HomePage() {
             >
               {/* Card 1: ITS GoBrain (Most Popular) */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-primary shadow-xl relative xl:col-span-1 flex flex-col overflow-hidden">
-                <div className="absolute top-3 right-3 z-10 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                <div className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Najpopularniejszy
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
@@ -481,7 +481,7 @@ export default function HomePage() {
 
               {/* Card 2: Karta Mowy */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-green-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 right-3 z-10 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                <div className="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Nowość
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
@@ -510,7 +510,7 @@ export default function HomePage() {
 
               {/* Card 3: School */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-orange-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 right-3 z-10 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                <div className="absolute top-3 left-3 z-10 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Grupowe
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
@@ -539,7 +539,7 @@ export default function HomePage() {
 
               {/* Card 4: Platforma Terapeuty */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-purple-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 right-3 z-10 bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                <div className="absolute top-3 left-3 z-10 bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Narzędzia
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
@@ -568,7 +568,7 @@ export default function HomePage() {
 
               {/* Card 5: Szkolenia */}
               <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-teal-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 right-3 z-10 bg-teal-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                <div className="absolute top-3 left-3 z-10 bg-teal-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
                   Kursy
                 </div>
                 <div className="h-32 w-full overflow-hidden relative">
