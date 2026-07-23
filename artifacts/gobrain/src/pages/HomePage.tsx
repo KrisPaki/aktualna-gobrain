@@ -777,7 +777,7 @@ export default function HomePage() {
                             ✓
                           </div>
                           <div>
-                            <div className="text-[11px] font-bold text-foreground">Poziom 1: Kosmiczny Słuch</div>
+                            <div className="text-[11px] font-bold text-foreground">Gra: Zwierzęta (Słuch)</div>
                             <div className="text-[9px] text-muted-foreground">Ukończono • +120 XP</div>
                           </div>
                         </div>
@@ -787,7 +787,7 @@ export default function HomePage() {
                             🎮
                           </div>
                           <div>
-                            <div className="text-[11px] font-bold text-foreground">Poziom 2: Łowca Dźwięków</div>
+                            <div className="text-[11px] font-bold text-foreground">Gra: Gdzie jest obrazek? (Memo)</div>
                             <div className="text-[9px] text-primary font-semibold">Aktualna gra • W toku</div>
                           </div>
                         </div>
@@ -797,7 +797,7 @@ export default function HomePage() {
                             🔒
                           </div>
                           <div>
-                            <div className="text-[11px] font-bold text-muted-foreground">Poziom 3: Mistrz Koncentracji</div>
+                            <div className="text-[11px] font-bold text-muted-foreground">Gra: Ile razy?</div>
                             <div className="text-[9px] text-muted-foreground">Zablokowane</div>
                           </div>
                         </div>
