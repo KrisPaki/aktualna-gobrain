@@ -761,7 +761,7 @@ export default function HomePage() {
                   <CardContent className="grid h-full pt-8 pb-8 sm:grid-cols-2 items-center">
                     <div className="relative z-10 flex flex-col justify-between h-full space-y-12 lg:space-y-6">
                       <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
-                        <Users className="m-auto size-6 text-primary" strokeWidth={1.5} />
+                        <Gamepad2 className="m-auto size-6 text-primary" strokeWidth={1.5} />
                       </div>
                       <div className="space-y-2">
                         <h3 className="text-lg font-bold text-foreground transition">Trening jak gra</h3>
@@ -771,18 +771,35 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="relative mt-6 sm:-my-8 sm:-mr-8 h-full flex flex-col justify-center bg-gray-50/50 p-6 py-6 sm:ml-6 border-l">
-                      <div className="relative flex h-full flex-col justify-center space-y-6 py-6">
-                        <div className="relative flex w-[calc(50%+1.2rem)] items-center justify-end gap-2">
-                          <span className="block h-fit rounded border border-border bg-background px-2 py-1 text-[11px] font-bold shadow-sm">Mama Kasia</span>
-                          <div className="ring-background size-8 ring-4 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center font-bold text-primary text-xs shadow-md">MK</div>
+                      <div className="relative flex h-full flex-col justify-center space-y-3 py-6">
+                        <div className="relative flex items-center gap-3 bg-background border border-border/60 rounded-2xl p-2.5 shadow-sm transform hover:scale-[1.02] transition-transform duration-300">
+                          <div className="size-8 rounded-xl bg-green-100 dark:bg-green-950/40 flex items-center justify-center text-green-600 font-bold text-xs">
+                            ✓
+                          </div>
+                          <div>
+                            <div className="text-[11px] font-bold text-foreground">Poziom 1: Kosmiczny Słuch</div>
+                            <div className="text-[9px] text-muted-foreground">Ukończono • +120 XP</div>
+                          </div>
                         </div>
-                        <div className="relative ml-[calc(50%-1.2rem)] flex items-center gap-2">
-                          <div className="ring-background size-10 ring-4 rounded-full overflow-hidden bg-purple-100 flex items-center justify-center font-bold text-purple-700 text-sm shadow-md">AP</div>
-                          <span className="block h-fit rounded border border-border bg-background px-2 py-1 text-[11px] font-bold shadow-sm">Aneta P.</span>
+
+                        <div className="relative flex items-center gap-3 bg-background border border-border/60 rounded-2xl p-2.5 shadow-sm transform hover:scale-[1.02] transition-transform duration-300">
+                          <div className="size-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xs animate-pulse">
+                            🎮
+                          </div>
+                          <div>
+                            <div className="text-[11px] font-bold text-foreground">Poziom 2: Łowca Dźwięków</div>
+                            <div className="text-[9px] text-primary font-semibold">Aktualna gra • W toku</div>
+                          </div>
                         </div>
-                        <div className="relative flex w-[calc(50%+1.2rem)] items-center justify-end gap-2">
-                          <span className="block h-fit rounded border border-border bg-background px-2 py-1 text-[11px] font-bold shadow-sm">Olek (6 lat)</span>
-                          <div className="ring-background size-8 ring-4 rounded-full overflow-hidden bg-green-100 flex items-center justify-center font-bold text-green-700 text-xs shadow-md">O</div>
+
+                        <div className="relative flex items-center gap-3 bg-background border border-border/60 rounded-2xl p-2.5 shadow-sm opacity-60">
+                          <div className="size-8 rounded-xl bg-gray-100 dark:bg-zinc-800 flex items-center justify-center text-gray-400 font-bold text-xs">
+                            🔒
+                          </div>
+                          <div>
+                            <div className="text-[11px] font-bold text-muted-foreground">Poziom 3: Mistrz Koncentracji</div>
+                            <div className="text-[9px] text-muted-foreground">Zablokowane</div>
+                          </div>
                         </div>
                       </div>
                     </div>
