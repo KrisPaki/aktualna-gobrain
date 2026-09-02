@@ -1,6 +1,7 @@
 import { motion, type Variants, animate, useInView } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import ProblemCyclerComponent from "@/components/ProblemCycler";
+import ProblemMindMapComponent from "@/components/ProblemMindMap";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import anetaPakielaImg from "@/assets/aneta-pakiela-new.webp";
@@ -13,6 +14,7 @@ import parentChildImg from "@/assets/parent-child-home.webp";
 import productItsImg from "@/assets/product-its-gobrain.webp";
 import productSchoolImg from "@/assets/product-its-school-ai.webp";
 import productTerapeutaImg from "@/assets/product-terapeuta.webp";
+import heroGobrainVideo from "@/assets/hero-gobrain.mp4";
 import szkoleniaHeaderImg from "@/assets/aneta-pakiela.jpg";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { 
@@ -21,6 +23,8 @@ import {
   School, 
   Stethoscope, 
   GraduationCap, 
+  Home,
+  Sparkles,
   Activity, 
   Ear,
   Quote,
@@ -41,6 +45,7 @@ import {
   Mic,
   Award,
   Volume2,
+  VolumeX,
   Gamepad2,
   Play,
 } from "lucide-react";
@@ -177,6 +182,8 @@ function RingChart({ percent, color, label, sublabel }: {
 }
 
 export default function HomePage() {
+  const [pricingTab, setPricingTab] = useState<"all" | "home" | "school" | "therapist">("all");
+
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -189,6 +196,43 @@ export default function HomePage() {
       transition: { staggerChildren: 0.1 }
     }
   };
+
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [heroVideoMuted, setHeroVideoMuted] = useState(true);
+
+  const toggleHeroVideoSound = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (!heroVideoRef.current) return;
+    const newMuted = !heroVideoRef.current.muted;
+    heroVideoRef.current.muted = newMuted;
+    if (!newMuted) {
+      heroVideoRef.current.volume = 1;
+      heroVideoRef.current.play().catch(() => {});
+    }
+    setHeroVideoMuted(newMuted);
+  };
+
+  useEffect(() => {
+    // Automatyczne odblokowanie dźwięku przy pierwszej interakcji na stronie (zgodnie z polityką przeglądarek)
+    const handleFirstInteraction = () => {
+      if (heroVideoRef.current) {
+        heroVideoRef.current.muted = false;
+        heroVideoRef.current.volume = 1;
+        heroVideoRef.current.play().catch(() => {});
+        setHeroVideoMuted(false);
+      }
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
+    };
+
+    window.addEventListener("click", handleFirstInteraction, { once: true });
+    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
@@ -205,7 +249,7 @@ export default function HomePage() {
               src={heroChildImg}
               alt="Dziecko korzystające z interaktywnego treningu słuchowego ITS GoBrain w słuchawkach"
               className="w-full h-full object-cover opacity-60"
-              style={{ objectPosition: "80% center", filter: "brightness(1.05)" }}
+              style={{ objectPosition: "80% top", filter: "brightness(1.05)" }}
               fetchPriority="high"
               decoding="async"
             />
@@ -232,57 +276,91 @@ export default function HomePage() {
             </motion.div>
           ))}
 
-          <div className="relative z-10 container mx-auto px-4">
-            <div className="max-w-2xl">
-              {/* Text */}
-              <motion.div 
+          <div className="relative z-10 container mx-auto px-4 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Tekst 'Poprawa koncentracji' — LEWA STRONA */}
+              <div className="lg:col-span-5 order-1">
+                <motion.div 
+                  initial="hidden"
+                  animate="visible"
+                  variants={staggerContainer}
+                >
+                  <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full mb-6 font-black text-base uppercase tracking-widest border border-white/20 shadow-md" style={{ background: "linear-gradient(90deg, #0066cc, #7c3aed, #ea580c)", color: "#fff", letterSpacing: "0.12em" }}>
+                    <Brain className="w-5 h-5 shrink-0" />
+                    <span>ITS GoBrain</span>
+                  </motion.div>
+                  
+                  <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4 uppercase">
+                    Poprawa koncentracji i pamięci słuchowej
+                  </motion.h1>
+
+                  <motion.p variants={fadeInUp} className="text-lg md:text-xl font-semibold text-orange-300 mb-6">
+                    Interaktywny Trening GoBrain dla dzieci (od 5 roku życia)
+                  </motion.p>
+
+                  <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/90 mb-4 leading-relaxed">
+                    Zauważasz, że Twoje dziecko "słyszy, ale nie słucha"? Ma problemy z czytaniem, pisaniem lub rozumieniem poleceń?
+                  </motion.p>
+
+                  <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/80 mb-8 leading-relaxed">
+                    GoBrain to innowacyjne narzędzie stworzone, by wspierać terapię uwagi i koncentracji słuchowej najmłodszych poprzez angażującą zabawę.
+                  </motion.p>
+                  
+                  <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-4">
+                    <Button size="lg" className="text-base h-14 px-8 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/10" asChild data-testid="hero-buy-btn">
+                      <Link to="/sklep">Przejdź do sklepu</Link>
+                    </Button>
+                    <Button size="lg" variant="outline" className="text-base h-14 px-8 border-white/30 text-white hover:bg-white/10 bg-transparent" asChild data-testid="hero-learn-btn">
+                      <Link to="/its">Dowiedz się więcej</Link>
+                    </Button>
+                  </motion.div>
+
+                </motion.div>
+              </div>
+
+              {/* Natywne Wideo MP4 — PRAWA STRONA (PEŁNY EKRAN BEZ OBCINANIA NAPISÓW, ZERO IKON YOUTUBE) */}
+              <motion.div
                 initial="hidden"
                 animate="visible"
-                variants={staggerContainer}
+                variants={fadeInUp}
+                className="lg:col-span-7 order-2 w-full"
               >
-                <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full mb-6 font-black text-base uppercase tracking-widest border border-white/20 shadow-md" style={{ background: "linear-gradient(90deg, #0066cc, #7c3aed, #ea580c)", color: "#fff", letterSpacing: "0.12em" }}>
-                  <Brain className="w-5 h-5 shrink-0" />
-                  <span>ITS GoBrain</span>
-                </motion.div>
-                
-                <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 uppercase">
-                  Poprawa koncentracji i pamięci słuchowej
-                </motion.h1>
+                <div 
+                  onClick={toggleHeroVideoSound}
+                  className="cursor-pointer relative rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border-2 border-white/25 bg-black group ring-1 ring-white/10 aspect-video flex items-center justify-center"
+                >
+                  <video
+                    ref={heroVideoRef}
+                    src={heroGobrainVideo}
+                    autoPlay
+                    loop
+                    muted={heroVideoMuted}
+                    playsInline
+                    className="w-full h-full object-contain bg-black"
+                  />
 
-                <motion.p variants={fadeInUp} className="text-lg md:text-xl font-semibold text-orange-300 mb-6">
-                  Interaktywny Trening GoBrain dla dzieci (od 5 roku życia)
-                </motion.p>
-
-                <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/90 mb-4 leading-relaxed max-w-xl">
-                  Zauważasz, że Twoje dziecko "słyszy, ale nie słucha"? Ma problemy z czytaniem, pisaniem lub rozumieniem poleceń?
-                </motion.p>
-
-                <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/80 mb-10 leading-relaxed max-w-xl">
-                  GoBrain to innowacyjne narzędzie stworzone, by wspierać terapię uwagi i koncentracji słuchowej najmłodszych poprzez angażującą zabawę.
-                </motion.p>
-                
-                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Button size="lg" className="text-base h-14 px-8 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/10" asChild data-testid="hero-buy-btn">
-                    <Link to="/sklep">Przejdź do sklepu</Link>
-                  </Button>
-                  <Button size="lg" variant="outline" className="text-base h-14 px-8 border-white/30 text-white hover:bg-white/10 bg-transparent" asChild data-testid="hero-learn-btn">
-                    <Link to="/its">Dowiedz się więcej</Link>
-                  </Button>
-                </motion.div>
-
-                {/* Mini stat pills */}
-                <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-                  {[
-                    { icon: "🧠", label: "5000+ dzieci" },
-                    { icon: "⭐", label: "4.9/5.0 ocena" },
-                    { icon: "🎵", label: "100 ćwiczeń" },
-                  ].map((s, i) => (
-                    <div key={i} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 border border-white/20 shadow-sm text-sm font-medium text-white backdrop-blur-sm">
-                      <span>{s.icon}</span>{s.label}
-                    </div>
-                  ))}
-                </motion.div>
+                  {/* Przycisk kontroli dźwięku */}
+                  <button
+                    type="button"
+                    onClick={toggleHeroVideoSound}
+                    className="absolute bottom-4 right-4 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-black/85 hover:bg-black text-white text-xs font-bold border border-white/30 shadow-2xl backdrop-blur-md transition-all hover:scale-105 active:scale-95"
+                  >
+                    {heroVideoMuted ? (
+                      <>
+                        <VolumeX className="w-4 h-4 text-orange-400 animate-pulse" />
+                        <span>Włącz dźwięk 🔊</span>
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="w-4 h-4 text-emerald-400" />
+                        <span>Dźwięk włączony</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </motion.div>
+
             </div>
           </div>
         </section>
@@ -299,9 +377,9 @@ export default function HomePage() {
             >
               {[
                 { target: 5000, suffix: "+", label: "Dzieci skorzystało" },
-                { target: 98, suffix: "%", label: "Zadowolonych rodziców" },
-                { target: 100, suffix: "", label: "Zadań treningowych" },
-                { target: 4, suffix: "", label: "Poziomy trudności" },
+                { target: 98,   suffix: "%", label: "Zadowolonych rodziców" },
+                { target: 750,  suffix: "+", label: "Zdań treningowych" },
+                { target: 4,    suffix: "",  label: "Poziomy trudności" },
               ].map((stat, i) => (
                 <motion.div key={i} variants={fadeInUp} className="flex flex-col items-center gap-1">
                   <span className="text-4xl md:text-5xl font-black">
@@ -317,29 +395,33 @@ export default function HomePage() {
         {/* SECTION - For whom? */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-              {/* Text side — LEFT */}
+              {/* Lewa strona */}
               <div>
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
-                  className="mb-10"
+                  className="mb-8"
                 >
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                     <Users className="w-4 h-4" />
                     <span>Dla kogo?</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dla kogo jest program ITS GoBrain?</h2>
-                  <p className="text-xl text-muted-foreground">{'Program dla dzieci od piątego roku życia'}</p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Dla kogo jest program ITS GoBrain?
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    Program dla dzieci od piątego roku życia
+                  </p>
                 </motion.div>
 
                 <ProblemCyclerComponent />
               </div>
 
-              {/* Photo side — RIGHT */}
+              {/* Prawa strona — zdjęcie */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -348,7 +430,15 @@ export default function HomePage() {
                 className="relative h-full min-h-[350px]"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
-                  <img src={therapistChildImg} srcSet="/img/therapist-child-640w.webp 640w, /img/therapist-child-1280w.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                  <img
+                    src={therapistChildImg}
+                    srcSet="/img/therapist-child-640w.webp 640w, /img/therapist-child-1280w.webp 1280w"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    alt="Terapeutka logopedka pracuje z dzieckiem z interaktywnym treningiem słuchowym GoBrain"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
@@ -368,6 +458,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+
+
 
         {/* SECTION 8 - Pricing (Merged with Products) */}
         <section className="py-24 bg-[#f7f9fc] border-t border-border">
@@ -408,162 +501,284 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Pricing cards */}
+            {/* Category Filter Tabs */}
             <motion.div 
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 items-stretch"
+              transition={{ duration: 0.5 }}
+              className="flex flex-wrap items-center justify-center gap-2 mb-12"
             >
-              {/* Card 1: ITS GoBrain (Most Popular) */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-primary shadow-xl relative xl:col-span-1 flex flex-col overflow-hidden">
-                <div className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
-                  Najpopularniejszy
-                </div>
-                <div className="aspect-[16/10] w-full overflow-hidden relative">
-                  <img src={productItsImg} alt="ITS GoBrain" className="w-full h-full object-cover object-center" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-base font-bold text-foreground mb-1">ITS GoBrain</h3>
-                  <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[48px]">Indywidualny trening dla dziecka, do domu — dla dzieci od piątego roku życia</p>
-                  <div className="flex gap-2 mb-4 flex-wrap">
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">390 PLN</span>
-                  </div>
-                  <ul className="space-y-2 mb-6 flex-1">
-                    {["Pełny trening słuchowy (2 etapy)", "Zabawy z dźwiękami", "PC (Windows) i Android"].map((feat, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-[11px] font-medium text-foreground/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full h-10 text-xs font-semibold mt-auto" asChild data-testid="pricing-main-btn">
-                    <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
-                      Kup kod aktywacyjny
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-
-              {/* Card 2: Karta Mowy */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-green-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
-                  Nowość
-                </div>
-                <div className="aspect-[16/10] w-full overflow-hidden relative">
-                  <img src={therapistChildImg} alt="Karta Mowy" className="w-full h-full object-cover object-[center_15%]" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-base font-bold text-foreground mb-1">Karta Mowy</h3>
-                  <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[48px]">Cyfrowe narzędzie diagnostyczne dla logopedów i terapeutów</p>
-                  <div className="flex gap-2 mb-4 flex-wrap">
-                    <span className="text-xs bg-green-50 text-green-700 px-2 py-1 rounded-full font-medium">389 PLN</span>
-                  </div>
-                  <ul className="space-y-2 mb-6 flex-1">
-                    {["Karta badania mowy", "Gry logopedyczne online", "Materiały PDF do druku"].map((feat, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-[11px] font-medium text-foreground/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-green-500 shrink-0 mt-0.5" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full h-10 text-xs font-semibold bg-green-600 hover:bg-green-700 text-white mt-auto" asChild data-testid="pricing-karta-btn">
-                    <Link to="/karta-mowy">Dowiedz się więcej</Link>
-                  </Button>
-                </div>
-              </motion.div>
-
-              {/* Card 3: School */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-orange-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 left-3 z-10 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
-                  Grupowe
-                </div>
-                <div className="aspect-[16/10] w-full overflow-hidden relative">
-                  <img src={productSchoolImg} alt="ITS GoBrain Pre & School" className="w-full h-full object-cover object-center" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-base font-bold text-foreground mb-1">ITS GoBrain Pre & School</h3>
-                  <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[48px]">Dla terapeutów, szkół, przedszkoli, poradni i instytucji</p>
-                  <div className="flex gap-2 mb-4">
-                    <span className="text-xs bg-orange-50 text-orange-600 px-2 py-1 rounded-full font-medium">799 PLN / rok</span>
-                  </div>
-                  <ul className="space-y-2 mb-6 flex-1">
-                    {["Wieloużytkownikowy dostęp", "Panel terapeuty", "Monitoring postępu"].map((feat, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-[11px] font-medium text-foreground/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-orange-500 shrink-0 mt-0.5" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="outline" className="w-full h-10 text-xs border-orange-400 text-orange-600 hover:bg-orange-50 mt-auto" asChild data-testid="pricing-school-btn">
-                    <Link to="/its-school">Zamów licencję</Link>
-                  </Button>
-                </div>
-              </motion.div>
-
-              {/* Card 4: Platforma Terapeuty */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-purple-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 left-3 z-10 bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
-                  Narzędzia
-                </div>
-                <div className="aspect-[16/10] w-full overflow-hidden relative">
-                  <img src={productTerapeutaImg} alt="Platforma Terapeuty" className="w-full h-full object-cover object-[center_10%]" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-base font-bold text-foreground mb-1">Platforma Terapeuty</h3>
-                  <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[48px]">Dla terapeutów: logopedów, pedagogów, psychologów, itp.</p>
-                  <div className="flex gap-2 mb-4">
-                    <span className="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-full font-medium">799 zł</span>
-                  </div>
-                  <ul className="space-y-2 mb-6 flex-1">
-                    {["Platforma diagnostyczna", "Test 8 obszarów", "Kwestionariusze i ankiety"].map((feat, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-[11px] font-medium text-foreground/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-purple-500 shrink-0 mt-0.5" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="outline" className="w-full h-10 text-xs border-purple-400 text-purple-700 hover:bg-purple-50 mt-auto" asChild data-testid="pricing-therapist-btn">
-                    <Link to="/strefa-terapeuty">Dowiedz się więcej</Link>
-                  </Button>
-                </div>
-              </motion.div>
-
-              {/* Card 5: Szkolenia */}
-              <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-teal-400 shadow-lg relative flex flex-col overflow-hidden">
-                <div className="absolute top-3 left-3 z-10 bg-teal-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
-                  Kursy
-                </div>
-                <div className="aspect-[16/10] w-full overflow-hidden relative">
-                  <img src={szkoleniaHeaderImg} alt="Szkolenia" className="w-full h-full object-cover object-[center_10%]" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-base font-bold text-foreground mb-1">Szkolenia</h3>
-                  <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[48px]">Kursy i webinary dla terapeutów, logopedów i pedagogów</p>
-                  <div className="flex gap-2 mb-4">
-                    <span className="text-xs bg-teal-50 text-teal-700 px-2 py-1 rounded-full font-medium">Online</span>
-                  </div>
-                  <ul className="space-y-2 mb-6 flex-1">
-                    {["Kursy dla specjalistów", "Webinary i nagrania", "Certyfikat GoBrain"].map((feat, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-[11px] font-medium text-foreground/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="outline" className="w-full h-10 text-xs border-teal-400 text-teal-700 hover:bg-teal-50 mt-auto" asChild data-testid="pricing-training-btn">
-                    <Link to="/szkolenia-i-webinary">Zobacz szkolenia</Link>
-                  </Button>
-                </div>
-              </motion.div>
-
+              {[
+                { id: "all", label: "Wszystkie kategorie", count: 5, icon: Sparkles },
+                { id: "home", label: "Do zastosowania w domu", count: 1, icon: Home },
+                { id: "school", label: "Dla Szkół, Przedszkoli, Poradni, Gabinetów", count: 1, icon: School },
+                { id: "therapist", label: "Dla Terapeuty, Psychologa, Logopedy", count: 3, icon: Stethoscope },
+              ].map((tab) => {
+                const Icon = tab.icon;
+                const isActive = pricingTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setPricingTab(tab.id as any)}
+                    className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 ${
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-md shadow-primary/20 scale-[1.02]"
+                        : "bg-background text-foreground/80 hover:bg-accent border border-border/80 hover:border-primary/40"
+                    }`}
+                  >
+                    <Icon className={`w-4 h-4 ${isActive ? "text-primary-foreground" : "text-primary"}`} />
+                    <span>{tab.label}</span>
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                      isActive ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                    }`}>
+                      {tab.count}
+                    </span>
+                  </button>
+                );
+              })}
             </motion.div>
+
+            {/* CATEGORY 1 & 2: DO DOMU & DLA SZKÓŁ */}
+            {(pricingTab === "all" || pricingTab === "home" || pricingTab === "school") && (
+              <div className={`mb-14 ${
+                pricingTab === "all" 
+                  ? "grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch" 
+                  : "max-w-xl mx-auto"
+              }`}>
+                
+                {/* Category 1: Do zastosowania w domu */}
+                {(pricingTab === "all" || pricingTab === "home") && (
+                  <div className="flex flex-col">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 shadow-sm border border-primary/20">
+                        <Home className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-0.5">
+                          Do zastosowania w domu
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">Dla dzieci i rodziców</h3>
+                      </div>
+                    </div>
+
+                    <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-primary shadow-xl relative flex flex-col overflow-hidden h-full">
+                      <div className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                        Najpopularniejszy
+                      </div>
+                      <div className="aspect-[16/10] w-full overflow-hidden relative">
+                        <img src={productItsImg} alt="ITS GoBrain" className="w-full h-full object-cover object-center" loading="lazy" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                      </div>
+                      <div className="p-6 flex-1 flex flex-col">
+                        <div className="flex items-center justify-between mb-1">
+                          <h4 className="text-lg font-bold text-foreground">ITS GoBrain</h4>
+                          <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                            Do domu
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[36px]">Indywidualny trening dla dziecka, do domu — dla dzieci od piątego roku życia</p>
+                        <div className="flex gap-2 mb-4 flex-wrap">
+                          <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-bold">390 PLN</span>
+                        </div>
+                        <ul className="space-y-2 mb-6 flex-1">
+                          {["Interaktywny trening słuchowy (1 z 2 etapów)", "Zabawy z dźwiękami", "PC (Windows) i Android"].map((feat, i) => (
+                            <li key={i} className="flex items-start gap-2 text-xs font-medium text-foreground/90">
+                              <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                              {feat}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button className="w-full h-11 text-xs font-semibold mt-auto" asChild data-testid="pricing-main-btn">
+                          <a href={AUTOMATER_PRODUCTS.itsEtap1} target="_blank" rel="noopener noreferrer">
+                            Kup kod aktywacyjny
+                          </a>
+                        </Button>
+                      </div>
+                    </motion.div>
+                  </div>
+                )}
+
+                {/* Category 2: Dla Szkół, Przedszkoli, Poradni, Gabinetów */}
+                {(pricingTab === "all" || pricingTab === "school") && (
+                  <div className="flex flex-col">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-700 shrink-0 shadow-sm border border-teal-200">
+                        <School className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 text-[11px] font-bold uppercase tracking-wider mb-0.5 border border-teal-200/60">
+                          Dla Szkół, Przedszkoli, Poradni, Gabinetów
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">Dla instytucji i placówek</h3>
+                      </div>
+                    </div>
+
+                    <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-teal-500 shadow-xl relative flex flex-col overflow-hidden h-full">
+                      <div className="absolute top-3 left-3 z-10 bg-gradient-to-r from-teal-600 to-emerald-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                        Grupowe
+                      </div>
+                      <div className="aspect-[16/10] w-full overflow-hidden relative">
+                        <img src={productSchoolImg} alt="ITS GoBrain Pre & School" className="w-full h-full object-cover object-center" loading="lazy" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                      </div>
+                      <div className="p-6 flex-1 flex flex-col">
+                        <div className="flex items-center justify-between mb-1">
+                          <h4 className="text-lg font-bold text-foreground">ITS GoBrain Pre & School</h4>
+                          <span className="text-xs font-semibold text-teal-800 bg-teal-50 border border-teal-200/70 px-2.5 py-1 rounded-full">
+                            Placówki
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[36px]">Dla terapeutów, szkół, przedszkoli, poradni i instytucji</p>
+                        <div className="flex gap-2 mb-4">
+                          <span className="text-xs bg-teal-50 text-teal-700 border border-teal-200/80 px-3 py-1 rounded-full font-bold">1499 PLN / rok</span>
+                        </div>
+                        <ul className="space-y-2 mb-6 flex-1">
+                          {["Wieloużytkownikowy dostęp", "Panel terapeuty", "Monitoring postępu"].map((feat, i) => (
+                            <li key={i} className="flex items-start gap-2 text-xs font-medium text-foreground/90">
+                              <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                              {feat}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button variant="outline" className="w-full h-11 text-xs font-bold border-teal-500 text-teal-700 hover:bg-teal-50 hover:border-teal-600 mt-auto" asChild data-testid="pricing-school-btn">
+                          <Link to="/its-school">Zamów licencję</Link>
+                        </Button>
+                      </div>
+                    </motion.div>
+                  </div>
+                )}
+
+              </div>
+            )}
+
+            {/* CATEGORY 3: DLA TERAPEUTY, PSYCHOLOGA, LOGOPEDY */}
+            {(pricingTab === "all" || pricingTab === "therapist") && (
+              <div>
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-700 shrink-0 shadow-sm border border-purple-200">
+                    <Stethoscope className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-[11px] font-bold uppercase tracking-wider mb-0.5">
+                      Dla Terapeuty, Psychologa, Logopedy
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">Narzędzia diagnostyczne, gabinetowe i szkolenia</h3>
+                  </div>
+                </div>
+
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch"
+                >
+                  {/* Card 1: Platforma Terapeuty */}
+                  <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-purple-400 shadow-lg relative flex flex-col overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                      Narzędzia
+                    </div>
+                    <div className="aspect-[16/10] w-full overflow-hidden relative">
+                      <img src={productTerapeutaImg} alt="Platforma Terapeuty" className="w-full h-full object-cover object-[center_10%]" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-center justify-between mb-1">
+                        <h4 className="text-base font-bold text-foreground">Platforma Terapeuty</h4>
+                        <span className="text-xs font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full">
+                          Gabinet
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[36px]">Dla terapeutów: logopedów, pedagogów, psychologów, itp.</p>
+                      <div className="flex gap-2 mb-4">
+                        <span className="text-xs bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-bold">799 zł</span>
+                      </div>
+                      <ul className="space-y-2 mb-6 flex-1">
+                        {["Platforma diagnostyczna", "Test 8 obszarów", "Kwestionariusze i ankiety"].map((feat, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs font-medium text-foreground/90">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-purple-500 shrink-0 mt-0.5" />
+                            {feat}
+                          </li>
+                        ))}
+                      </ul>
+                      <Button variant="outline" className="w-full h-10 text-xs border-purple-400 text-purple-700 hover:bg-purple-50 mt-auto" asChild data-testid="pricing-therapist-btn">
+                        <Link to="/strefa-terapeuty">Dowiedz się więcej</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 2: Szkolenia */}
+                  <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-teal-400 shadow-lg relative flex flex-col overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-teal-600 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                      Kursy
+                    </div>
+                    <div className="aspect-[16/10] w-full overflow-hidden relative">
+                      <img src={szkoleniaHeaderImg} alt="Szkolenia" className="w-full h-full object-cover object-[center_10%]" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-center justify-between mb-1">
+                        <h4 className="text-base font-bold text-foreground">Szkolenia</h4>
+                        <span className="text-xs font-semibold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full">
+                          Edukacja
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[36px]">Kursy i webinary dla terapeutów, logopedów i pedagogów</p>
+                      <div className="flex gap-2 mb-4">
+                        <span className="text-xs bg-teal-50 text-teal-700 px-3 py-1 rounded-full font-bold">Online</span>
+                      </div>
+                      <ul className="space-y-2 mb-6 flex-1">
+                        {["Kursy dla specjalistów", "Webinary i nagrania", "Certyfikat GoBrain"].map((feat, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs font-medium text-foreground/90">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
+                            {feat}
+                          </li>
+                        ))}
+                      </ul>
+                      <Button variant="outline" className="w-full h-10 text-xs border-teal-400 text-teal-700 hover:bg-teal-50 mt-auto" asChild data-testid="pricing-training-btn">
+                        <Link to="/szkolenia-i-webinary">Zobacz szkolenia</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 3: Karta Mowy */}
+                  <motion.div variants={fadeInUp} className="bg-background rounded-3xl border-2 border-green-400 shadow-lg relative flex flex-col overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full whitespace-nowrap shadow-md">
+                      Nowość
+                    </div>
+                    <div className="aspect-[16/10] w-full overflow-hidden relative">
+                      <img src={therapistChildImg} alt="Karta Mowy" className="w-full h-full object-cover object-[center_15%]" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-center justify-between mb-1">
+                        <h4 className="text-base font-bold text-foreground">Karta Mowy</h4>
+                        <span className="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-full">
+                          Diagnostyka
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground mb-4 text-xs leading-relaxed min-h-[36px]">Cyfrowe narzędzie diagnostyczne dla logopedów i terapeutów</p>
+                      <div className="flex gap-2 mb-4 flex-wrap">
+                        <span className="text-xs bg-green-50 text-green-700 px-3 py-1 rounded-full font-bold">389 PLN</span>
+                      </div>
+                      <ul className="space-y-2 mb-6 flex-1">
+                        {["Karta badania mowy", "Gry logopedyczne online", "Materiały PDF do druku"].map((feat, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs font-medium text-foreground/90">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-green-500 shrink-0 mt-0.5" />
+                            {feat}
+                          </li>
+                        ))}
+                      </ul>
+                      <Button className="w-full h-10 text-xs font-semibold bg-green-600 hover:bg-green-700 text-white mt-auto" asChild data-testid="pricing-karta-btn">
+                        <Link to="/karta-mowy">Dowiedz się więcej</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+
+                </motion.div>
+              </div>
+            )}
 
             {/* Link to other educational programs */}
             <motion.div
@@ -1126,9 +1341,9 @@ export default function HomePage() {
         {/* SECTION 6 - Reviews Carousel */}
         <ReviewsCarousel />
 
-        {/* SECTION 7 - Founder — expanded expert profile */}
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* SECTION 7 - Founder — skrócona wersja: podstawowe informacje i cytat */}
+        <section className="py-20 bg-background overflow-hidden">
+          <div className="container mx-auto px-4 max-w-5xl">
 
             {/* Header */}
             <motion.div
@@ -1136,28 +1351,28 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="text-center mb-16"
+              className="text-center mb-12"
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                 <GraduationCap className="w-4 h-4" />
                 <span>Twórczyni metody</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Aneta Pakieła</h2>
-              <p className="text-xl text-muted-foreground">Neurologopeda, surdologopeda, twórczyni metody GoBrain</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Aneta Pakieła</h2>
+              <p className="text-lg text-muted-foreground">Neurologopeda, surdologopeda, twórczyni metody GoBrain</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
-              {/* Photo column */}
+              {/* Lewa kolumna: Zdjęcie + podstawowe informacje */}
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:col-span-2 flex flex-col items-center gap-6"
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-5 flex flex-col items-center text-center gap-5"
               >
                 <div className="relative">
-                  <div className="w-60 h-60 rounded-full overflow-hidden shadow-2xl border-4 border-primary/10">
+                  <div className="w-52 h-52 rounded-full overflow-hidden shadow-xl border-4 border-primary/15">
                     <img
                       src={anetaPakielaImg}
                       alt="Aneta Pakieła – twórczyni metody GoBrain"
@@ -1168,129 +1383,74 @@ export default function HomePage() {
                     />
                   </div>
                   <motion.div
-                    animate={{ y: [0, -8, 0] }}
+                    animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-2xl px-4 py-2 shadow-xl"
+                    className="absolute -bottom-3 -right-2 bg-primary text-primary-foreground rounded-2xl px-3.5 py-1.5 shadow-lg"
                   >
-                    <p className="text-xs font-medium opacity-80">Doświadczenie</p>
-                    <p className="font-black text-lg">20+ lat</p>
+                    <p className="text-[10px] font-medium opacity-85">Doświadczenie</p>
+                    <p className="font-black text-base">20+ lat</p>
                   </motion.div>
                 </div>
 
-                {/* Associations */}
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className="w-full space-y-3"
-                >
+                {/* Tytuły zawodowe */}
+                <div className="flex flex-wrap justify-center gap-1.5 max-w-sm">
                   {[
-                    { label: "Polski Komitet Audiofonologii", role: "Członek Zarządu · Współpraca z prof. Tadeuszem Gałkowskim", color: "border-blue-200 bg-blue-50" },
-                    { label: "Warszawski Uniwersytet Medyczny", role: "Studia doktoranckie, Katedra Otolaryngologii", color: "border-green-200 bg-green-50" },
-                    { label: "Polskie Towarzystwo Neurologopedów", role: "Wieloletnia Przewodnicząca Zarządu", color: "border-purple-200 bg-purple-50" },
-                    { label: "Fundacja Usłysz Marzenia", role: "Prezes Fundacji · Praca charytatywna na rzecz dzieci z wadą słuchu i zaburzeniami neurologicznymi", color: "border-pink-200 bg-pink-50" },
-                    { label: "Poradnia Specjalistyczna Logomedic", role: "Dyrektor · Kierowanie zespołem specjalistów", color: "border-orange-200 bg-orange-50" },
-                    { label: "GoBrain Polska", role: "Dyrektor Merytoryczny · Koordynacja i nadzór merytoryczny", color: "border-teal-200 bg-teal-50" },
-                  ].map((assoc, i) => (
-                    <motion.div key={i} variants={fadeInUp} className={`rounded-xl p-3 border ${assoc.color}`}>
-                      <p className="font-bold text-foreground text-sm">{assoc.label}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{assoc.role}</p>
-                    </motion.div>
+                    "Neurologopeda",
+                    "Surdologopeda",
+                    "Pedagog specjalny",
+                    "Twórczyni metody GoBrain",
+                  ].map((t, i) => (
+                    <span key={i} className="px-2.5 py-1 rounded-lg bg-primary/10 text-primary font-semibold text-xs border border-primary/20">
+                      {t}
+                    </span>
                   ))}
-                </motion.div>
+                </div>
+
+                {/* Podstawowe fakty */}
+                <div className="text-xs text-muted-foreground space-y-1">
+                  <p>• Ponad 20 lat praktyki klinicznej i terapeutycznej</p>
+                  <p>• Przeszkoliła ponad 500 terapeutów w całej Polsce</p>
+                  <p>• Badania doktoranckie na Warszawskim Uniwersytecie Medycznym</p>
+                </div>
+
+                {/* Link do szkoleń */}
+                <Link
+                  to="/szkolenia-i-webinary"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors border border-primary/20 hover:border-primary/40 px-4 py-2 rounded-full bg-primary/5 hover:bg-primary/10 mt-1"
+                >
+                  <GraduationCap className="w-4 h-4" />
+                  <span>Pełny profil i szkolenia</span>
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
               </motion.div>
 
-              {/* Content column */}
+              {/* Prawa kolumna: Cytat */}
               <motion.div
-                initial="hidden"
-                whileInView="visible"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                variants={staggerContainer}
-                className="lg:col-span-3 space-y-8"
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-7"
               >
-
-                {/* Titles */}
-                <motion.div variants={fadeInUp}>
-                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">{'Tytuły zawodowe'}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Neurologopeda",
-                      "Surdologopeda",
-                      "Pedagog specjalny",
-                      "Twórczyni metody GoBrain",
-                    ].map((t, i) => (
-                      <span key={i} className="px-3 py-1.5 rounded-lg bg-primary/10 text-primary font-bold text-sm border border-primary/20">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-
-                {/* Certifications */}
-                <motion.div variants={fadeInUp}>
-                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">{'Specjalizacje'}</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {[
-                      { label: 'Diagnosta CAPD', desc: 'Centralne zaburzenia przetwarzania słuchowego', color: 'bg-teal-50 border-teal-200 text-teal-700' },
-                      { label: 'Integracja odruchów II st.', desc: 'Zaawansowany terapeuta', color: 'bg-orange-50 border-orange-200 text-orange-700' },
-                      { label: 'Stymulacja słuchowa', desc: 'Certyfikowany specjalista terapii słuchu', color: 'bg-green-50 border-green-200 text-green-700' },
-                      { label: 'Model INSITE', desc: 'Certyfikowany terapeuta modelu INSITE', color: 'bg-blue-50 border-blue-200 text-blue-700' },
-                      { label: 'Wczesna interwencja', desc: 'Praca terapeutyczna z dziećmi', color: 'bg-pink-50 border-pink-200 text-pink-700' },
-                      { label: 'Neurologopedia', desc: 'Diagnoza i terapia neurologopedyczna', color: 'bg-purple-50 border-purple-200 text-purple-700' },
-                    ].map((cert, i) => (
-                      <motion.div
-                        key={i}
-                        variants={fadeInUp}
-                        whileHover={{ scale: 1.02 }}
-                        className={`rounded-xl p-3 border ${cert.color} transition-all`}
-                      >
-                        <div className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-bold text-sm">{cert.label}</p>
-                            <p className="text-xs opacity-75 mt-0.5">{cert.desc}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-
-                {/* About / Quote */}
-                <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-6">
-                  <Quote className="w-8 h-8 text-primary/30 mb-3" />
-                  <blockquote className="text-base text-foreground leading-relaxed font-medium mb-4 space-y-3">
-                    <p>{'GoBrain to efekt ponad 20 lat praktyki klinicznej — metoda łącząca wiedzę neurologopedyczną z nowoczesnymi technologiami. To nie tylko trening słuchowy, lecz kompleksowe narzędzie wspierające pracę terapeuty i rozwój dziecka w domu, szkole i gabinecie.'}</p>
-                    <p>{'Dedykowany dzieciom od piątego roku życia z deficytami uwagi słuchowej, trudnościami w czytaniu i pisaniu, problemami z wymową oraz zaburzeniami przetwarzania słuchowego (CAPD). Trening GoBrain stymuluje lewą półkulę, organizuje sekwencyjnie informacje i przyspiesza efekty terapeutyczne.'}</p>
+                <div className="bg-card border border-border shadow-lg rounded-3xl p-8 relative">
+                  <Quote className="w-10 h-10 text-primary/25 mb-4" />
+                  <blockquote className="text-base text-foreground leading-relaxed font-medium mb-6 space-y-3">
+                    <p>
+                      „GoBrain to efekt ponad 20 lat praktyki klinicznej — metoda łącząca wiedzę neurologopedyczną z nowoczesnymi technologiami. To nie tylko trening słuchowy, lecz kompleksowe narzędzie wspierające pracę terapeuty i rozwój dziecka w domu, szkole i gabinecie.”
+                    </p>
+                    <p className="text-muted-foreground text-sm font-normal">
+                      „Dedykowany dzieciom od piątego roku życia z deficytami uwagi słuchowej, trudnościami w czytaniu i pisaniu, problemami z wymową oraz zaburzeniami przetwarzania słuchowego (CAPD). Trening GoBrain stymuluje lewą półkulę, organizuje sekwencyjnie informacje i przyspiesza efekty terapeutyczne.”
+                    </p>
                   </blockquote>
-                  <div className="border-t border-border pt-4">
-                    <p className="font-bold text-foreground">Aneta Pakieła</p>
-                    <p className="text-sm text-muted-foreground">Neurologopeda, surdologopeda, twórczyni metody GoBrain</p>
+                  <div className="border-t border-border pt-4 flex items-center justify-between">
+                    <div>
+                      <p className="font-bold text-foreground">Aneta Pakieła</p>
+                      <p className="text-xs text-muted-foreground">Neurologopeda, surdologopeda, twórczyni metody GoBrain</p>
+                    </div>
                   </div>
-                </motion.div>
-
-                {/* Key achievements */}
-                <motion.div variants={fadeInUp}>
-                  <h3 className="text-sm font-black text-muted-foreground tracking-widest uppercase mb-3">Dokonania i działalność</h3>
-                  <div className="space-y-3">
-                    {[
-                      { icon: Brain, text: "Opracowała unikalną metodę ITS GoBrain do terapii zaburzeń przetwarzania słuchowego u dzieci", color: "text-primary bg-primary/10" },
-                      { icon: Users, text: "Przeszkoliła ponad 500 terapeutów w całej Polsce w zakresie diagnozy i terapii CAPD", color: "text-green-600 bg-green-100" },
-                      { icon: GraduationCap, text: "Prowadzi szkolenia certyfikacyjne dla logopedów, pedagogów i psychologów", color: "text-purple-600 bg-purple-100" },
-                      { icon: Activity, text: "Badania doktoranckie na Katedrze Otolaryngologii Warszawskiego Uniwersytetu Medycznego", color: "text-orange-600 bg-orange-100" },
-                    ].map((ach, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <div className={`w-9 h-9 rounded-lg ${ach.color} flex items-center justify-center shrink-0`}>
-                          <ach.icon className="w-4 h-4" />
-                        </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed pt-1">{ach.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-
+                </div>
               </motion.div>
+
             </div>
           </div>
         </section>

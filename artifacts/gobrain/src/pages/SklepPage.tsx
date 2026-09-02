@@ -2,7 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, School, Building2, Users, Star, Mail, Lock } from "lucide-react";
+import { CheckCircle2, ShoppingCart, Shield, CreditCard, Truck, ChevronRight, School, Building2, Users, Star, Mail, Lock, Sparkles } from "lucide-react";
 import parentChildImg from "@/assets/parent-child-home.webp";
 import { Button } from "@/components/ui/button";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
@@ -72,28 +72,28 @@ const products = [
   },
   {
     id: "its-school",
-    badge: "Licencja wielostanowiskowa",
-    badgeColor: "bg-orange-500 text-white",
+    badge: "Dla placówek i gabinetów",
+    badgeColor: "bg-gradient-to-r from-teal-600 to-emerald-600 text-white",
     title: "ITS GoBrain Pre & School",
-    subtitle: "Dla placówek, gabinetów i szkół",
-    price: "799",
+    subtitle: "Dedykowana platforma dla instytucji i terapeutów",
+    price: "1499",
     priceNote: "PLN / rok (brutto)",
     img: productSchoolImg,
     imgAlt: "Program ITS GoBrain Pre & School — interaktywny trening słuchowy dla terapeutów i instytucji",
     imgSrcSet: "/img/product-its-school-ai-640w.webp 640w, /img/product-its-school-ai-1280w.webp 1280w",
-    target: "Dla terapeutów, gabinetów, szkół, przedszkoli, poradni, instytucji",
+    target: "Dla terapeutów, gabinetów, szkół, przedszkoli, poradni i ośrodków",
     features: [
-      "Nieograniczona liczba użytkowników",
-      "Terapeuta kontroluje czas i zakres sesji",
-      "Dostęp do wszystkich zadań i poziomów",
-      "Brak dobowych ograniczeń czasowych",
-      "Licencja 365 dni lub bezterminowa",
+      "Nieograniczona liczba użytkowników (1 licencja dla placówki)",
+      "BONUS w pakiecie: Produkt Terapeuta (wartość 799 zł)",
+      "Dostęp do programów edukacyjnych: słuch fonemowy, litery, czytanie, uwaga",
+      "Baza gotowych pomocy terapeutycznych (PDF) i scenariuszy zajęć",
+      "Diagnoza PreTest & PostTest i monitoring postępów",
       "Faktura VAT w cenie",
     ],
-    cta: "Zamów licencję",
-    ctaHref: AUTOMATER_PRODUCTS.itsSchool,
+    cta: "Zobacz program Pre & School",
+    ctaHref: "/its-school",
     highlight: false,
-    internal: false,
+    internal: true,
   },
   {
     id: "terapeuta",
@@ -265,7 +265,7 @@ export default function SklepPage() {
               <motion.div
                 key={p.id}
                 variants={fadeInUp}
-                className={`relative flex flex-col rounded-2xl border ${p.highlight ? "border-primary shadow-xl shadow-primary/10" : "border-border"} bg-card overflow-hidden`}
+                className={`relative flex flex-col rounded-2xl border ${p.id === 'its-school' ? "border-2 border-teal-500 shadow-xl shadow-teal-500/15" : p.highlight ? "border-primary shadow-xl shadow-primary/10" : "border-border"} bg-card overflow-hidden`}
               >
                 {/* Badge */}
                 <div className="absolute top-3 left-3 z-10">
@@ -291,18 +291,24 @@ export default function SklepPage() {
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-6">
                   <h2 className="text-lg font-bold text-foreground">{p.title}</h2>
-                  <p className="text-sm text-primary font-medium mb-2">{p.subtitle}</p>
+                  <p className={`text-sm font-medium mb-2 ${p.id === 'its-school' ? "text-teal-700 font-semibold" : "text-primary"}`}>{p.subtitle}</p>
                   <p className="text-xs text-muted-foreground mb-4">{p.target}</p>
 
                   {/* Price */}
                   <div className="mb-5">
                     {p.price ? (
-                      <>
+                      <div>
                         <span className="text-3xl font-extrabold text-foreground">{p.price}</span>
                         <span className="text-sm text-muted-foreground ml-1">{p.priceNote}</span>
-                      </>
+                      </div>
                     ) : (
                       <span className="text-lg font-semibold text-muted-foreground">{p.priceNote}</span>
+                    )}
+                    {p.id === 'its-school' && (
+                      <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-teal-50 text-teal-800 border border-teal-200/80 text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+                        <span>W pakiecie: Produkt Terapeuta (799 zł) GRATIS</span>
+                      </div>
                     )}
                   </div>
 
@@ -310,7 +316,7 @@ export default function SklepPage() {
                   <ul className="space-y-2 mb-6 flex-1">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <CheckCircle2 className={`w-4 h-4 ${p.id === 'its-school' ? "text-teal-600" : "text-primary"} mt-0.5 shrink-0`} />
                         {f}
                       </li>
                     ))}
@@ -319,12 +325,12 @@ export default function SklepPage() {
                   {/* CTA */}
                   <Button
                     asChild
-                    className={`w-full font-semibold ${p.highlight ? "shadow-lg shadow-primary/20" : ""}`}
-                    variant={p.highlight ? "default" : "outline"}
+                    className={`w-full font-semibold ${p.id === 'its-school' ? "bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white shadow-lg shadow-teal-900/20 border-0" : p.highlight ? "shadow-lg shadow-primary/20" : ""}`}
+                    variant={p.id === 'its-school' ? "default" : p.highlight ? "default" : "outline"}
                   >
                     {p.internal ? (
                       <Link to={p.ctaHref}>
-                        <ShoppingCart className="w-4 h-4 mr-2" />
+                        {p.id === 'its-school' ? <Sparkles className="w-4 h-4 mr-2" /> : <ShoppingCart className="w-4 h-4 mr-2" />}
                         {p.cta}
                       </Link>
                     ) : (
@@ -334,12 +340,17 @@ export default function SklepPage() {
                       </a>
                     )}
                   </Button>
-                  {!p.internal && (
+                  {p.id === 'its-school' ? (
+                    <p className="flex items-center justify-center gap-1 text-xs text-teal-700 font-medium mt-2">
+                      <ChevronRight className="w-3 h-3 text-teal-600" />
+                      Przejdź do pełnej oferty dla placówek
+                    </p>
+                  ) : !p.internal ? (
                     <p className="flex items-center justify-center gap-1 text-xs text-muted-foreground mt-2">
                       <Lock className="w-3 h-3" />
                       Bezpieczna płatność przez Automater.pl
                     </p>
-                  )}
+                  ) : null}
                 </div>
               </motion.div>
             ))}
