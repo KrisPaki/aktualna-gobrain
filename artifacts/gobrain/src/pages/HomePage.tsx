@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import anetaPakielaImg from "@/assets/aneta-pakiela-new.webp";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
-import heroChildImg from "@/assets/hero-child-new.webp";
+import heroChildImg from "@/assets/hero-child-headphones.webp";
 import childTabletImg from "@/assets/child-tablet-fun.webp";
 import therapistChildImg from "@/assets/therapist-child.webp";
 import childrenClassroomImg from "@/assets/children-classroom.webp";
@@ -199,7 +199,7 @@ export default function HomePage() {
       />
       <div className="pt-16">
         {/* SECTION 1 - Hero */}
-        <section className="relative py-24 md:py-36 overflow-hidden bg-primary text-white">
+        <section className="relative py-12 md:py-16 overflow-hidden bg-primary text-white">
           <div className="absolute inset-0 z-0">
             <img
               src={heroChildImg}
