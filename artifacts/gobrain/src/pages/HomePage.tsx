@@ -69,41 +69,7 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
   return <span ref={ref}>{value}{suffix}</span>;
 }
 
-function VideoEmbed() {
-  const [active, setActive] = useState(false);
-  if (active) {
-    return (
-      <iframe
-        src="/gobrain-video/?embed=1&autoplay=1"
-        className="w-full h-full"
-        title="Film marketingowy GoBrain"
-        allow="autoplay"
-        style={{ display: "block" }}
-      />
-    );
-  }
-  return (
-    <button
-      onClick={() => setActive(true)}
-      aria-label="Odtwórz film o GoBrain"
-      className="w-full h-full relative flex items-center justify-center bg-gradient-to-br from-primary/90 to-primary cursor-pointer group focus:outline-none"
-      style={{ border: "none", padding: 0 }}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08)_0%,_transparent_70%)]" />
-      <div className="relative z-10 flex flex-col items-center gap-4 select-none">
-        <div className="w-20 h-20 rounded-full bg-white/15 flex items-center justify-center shadow-lg group-hover:bg-white/25 group-hover:scale-110 transition-all duration-300">
-          <Play className="w-9 h-9 text-white fill-white ml-1" />
-        </div>
-        <span className="text-white/80 text-sm font-medium tracking-wide">Odtwórz film (43 s)</span>
-      </div>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="w-1 h-1 rounded-full bg-white/30" />
-        ))}
-      </div>
-    </button>
-  );
-}
+
 
 function ProgressBar({ label, before, after, color, bgColor, delay = 0 }: {
   label: string; before: number; after: number; color: string; bgColor: string; delay?: number;
@@ -1509,9 +1475,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* VIDEO SECTION */}
+        {/* VIDEO SECTION - FILM Z HERO (DRUGIE WYSTĄPIENIE NA STRONIE) */}
         <section className="py-20 bg-background border-t border-border">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1524,7 +1490,7 @@ export default function HomePage() {
                 Zobacz jak działa GoBrain
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                43 sekundy, które wyjaśniają wszystko.
+                Poznaj możliwości interaktywnego treningu słuchowego w praktyce.
               </p>
             </motion.div>
             <motion.div
@@ -1532,9 +1498,18 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="mx-auto max-w-4xl rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border aspect-video"
+              className="mx-auto max-w-4xl rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border bg-black aspect-video flex items-center justify-center"
             >
-              <VideoEmbed />
+              <video
+                src={heroGobrainVideo}
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-contain bg-black"
+              />
             </motion.div>
           </div>
         </section>
